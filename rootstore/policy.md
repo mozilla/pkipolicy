@@ -121,9 +121,9 @@ Mozilla products:
     -   maintain a certificate hierarchy such that the included
         certificate does not directly issue end-entity certificates to
         customers (e.g., the included certificate signs intermediate
-        issuing certificates), as described in [CA/Browser Forum
-        Baseline Requirement
-        \#12;](http://www.cabforum.org/documents.html)
+        issuing certificates), as described in section 6.1.7 of the
+        [CA/Browser Forum Baseline
+        Requirements](https://cabforum.org/baseline-requirements-documents/);
     -   prior to issuing certificates, verify certificate signing
         requests in a manner that we deem acceptable for the stated
         purpose(s) of the certificates;
@@ -290,10 +290,10 @@ Mozilla products:
     We reserve the right to accept other criteria in the future.
     
 12. CA operations and issuance of certificates to be used for
-    SSL-enabled servers must also conform to version 1.1.5 of the
+    SSL-enabled servers must also conform to version 1.3 or later of the
     [CA/Browser Forum Baseline Requirements for the Issuance and
     Management of Publicly-Trusted
-    Certificates.](http://www.cabforum.org/documents.html) In the event
+    Certificates.](https://cabforum.org/baseline-requirements-documents/) In the event
     of inconsistency between Mozilla’s CA Certificate Policy
     requirements and the Baseline Requirements, Mozilla’s CA Certificate Policy
     takes precedence. The items listed below will be accepted as reason
@@ -301,8 +301,8 @@ Mozilla products:
     inconsistency that is not listed here, notify Mozilla by sending
     email to certificates@mozilla.org so the item can be considered.
     -   Mozilla’s CA Certificate Policy defining a competent and
-        independent auditor is a superset of Baseline Requirement
-        \#17.6, Auditor Qualifications, and takes precedence over it.
+        independent auditor is a superset of section 8.2 of the
+        Baseline Requirements, and takes precedence over it.
 
 13. By "competent party" we mean a person or other entity who is
     authorized to perform audits according to the stated criteria (e.g.,
@@ -602,9 +602,10 @@ Certificate Policy:
     or more certificates. This may include, but is not limited to
     disablement (partially or fully) or removal of all of the CA’s
     certificates from Mozilla’s products. A certificate that includes
-    domain names that have not been verified according to the
-    [CA/Browser Forum’s Baseline Requirement
-    \#11.1.1](https://www.cabforum.org/documents.html) is considered to
+    domain names that have not been verified according to section 3.2.2.4 of the
+    [CA/Browser Forum’s Baseline
+    Requirements](https://cabforum.org/baseline-requirements-documents/) is
+    considered to
     be mis-issued. A certificate that is intended to be used only as an
     end entity certificate but includes a keyUsage extension with values
     keyCertSign and/or cRLSign or a basicConstraints extension with the
