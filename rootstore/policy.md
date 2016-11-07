@@ -143,17 +143,17 @@ Mozilla products:
         must be verified by using an independent source of information
         or an alternative communication channel before it is included in
         the certificate;
+    -   for a certificate to be used for digitally signing or encrypting
+        email messages, the CA takes reasonable measures to verify that
+        the entity submitting the request controls the email account
+        associated with the email address referenced in the certificate
+        *or* has been authorized by the email account holder to act on
+        the account holder’s behalf;
     -   for a certificate to be used for SSL-enabled servers, the CA
         takes reasonable measures to verify that the entity submitting
         the certificate signing request has registered the domain(s)
         referenced in the certificate *or* has been authorized by the
         domain registrant to act on the registrant’s behalf;
-    -   for certificates to be used for digitally signing code objects,
-        the CA takes reasonable measures to verify that the entity
-        submitting the certificate signing request is the same entity
-        referenced in the certificate *or* has been authorized by the
-        entity referenced in the certificate to act on that entity’s
-        behalf;
     -   for certificates to be used for and marked as Extended
         Validation, the CA complies with [Guidelines for the Issuance
         and Management of Extended Validation
