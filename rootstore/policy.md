@@ -185,37 +185,12 @@ Mozilla products:
     (EKU)](http://tools.ietf.org/html/rfc5280#section-4.2.1.12)
     extension specifying all extended key usages that the subordinate CA
     is authorized to issue certificates for. The anyExtendedKeyUsage
-    KeyPurposeId MUST NOT appear within this extension.'
-    -   If the certificate includes the id-kp-serverAuth extended key
-        usage, then the certificate MUST include the [Name Constraints
-        X.509v3](http://tools.ietf.org/html/rfc5280#section-4.2.1.10)
-        extension with constraints on both dNSName and iPAddress. For
-        each dNSName in permittedSubtrees, the issuing CA MUST confirm
-        that the subordinate CA has registered the dNSName or has been
-        authorized by the domain registrant to act on the registrant’s
-        behalf. Each dNSName in permittedSubtrees must be a registered
-        domain (with zero or more subdomains) according to the [Public
-        Suffix List algorithm.](http://publicsuffix.org/list/)
-        -   For each iPAddress range in permittedSubtrees, the issuing
-            CA MUST confirm that the subordinate CA has been assigned
-            the iPAddress range or has been authorized by the assigner
-            to act on the assignee’s behalf.
-        -   If the subordinate CA is not allowed to issue certificates
-            with an iPAddress, then the subordinate CA certificate MUST
-            specify the entire
-            [IPv4](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
-            and
-            [IPv6](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
-            address ranges in excludedSubtrees. The subordinate CA
-            certificate MUST include within excludedSubtrees an
-            iPAddress GeneralName of 8 zero octets (covering the IPv4
-            address range of 0.0.0.0/0). The subordinate CA certificate
-            MUST also include within excludedSubtrees an iPAddress
-            GeneralName of 32 zero octets (covering the IPv6 address
-            range of ::0/0).
-        -   If the subordinate CA is not allowed to issue certificates
-            with dNSNames, then the subordinate CA certificate MUST
-            include a zero-length dNSName in excludedSubtrees.
+    KeyPurposeId MUST NOT appear within this extension.
+    -   If the certificate includes the id-kp-serverAuth extended key usage,
+        then the certificate must be Name Constrained as described in section
+        7.1.5 of version 1.3 or later of the [CA/Browser Forum Baseline
+        Requirements for the Issuance and Management of Publicly-Trusted
+        Certificates](https://cabforum.org/baseline-requirements-documents/).
     -   If the certificate includes the id-kp-emailProtection extended
         key usage, then all end-entity certificates MUST only include
         e-mail addresses or mailboxes that the issuing CA has confirmed
