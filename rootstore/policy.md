@@ -255,6 +255,15 @@ Mozilla products:
 
 11. We consider the criteria for CA operations published in any of the
     following documents to be acceptable:
+    -   WebTrust ["Principles and Criteria for Certification
+        Authorities 2.0"][WebTrust-2.0] or later and ["WebTrust Principles and
+        Criteria for Certification Authorities – SSL Baseline with Network 
+        Security – Version 2.0"][WebTrust-BRs] or later (as applicable to SSL 
+        certificate issuance) in [WebTrust Program for Certification 
+        Authorities][WebTrust-For-CAs];
+    -   WebTrust ["Principles and Criteria for Certification Authorities -
+        Extended Validation SSL 1.4.5”][WebTrust-EV] or later in
+        [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
     -   Clause 7, "Requirements on CA practice", in ETSI TS 101 456
         V1.4.3 or later version, [Policy requirements for certification
         authorities issuing qualified
@@ -270,22 +279,24 @@ Mozilla products:
         DVCP and OVCP certificate policies for publicly trusted
         certificates - baseline requirements, and any of the "NCP",
         "NCP+", or "LCP" certificate policies);
-    -   [ISO 21188:2006](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=35707)
-        Public key infrastructure for financial services -- Practices
-        and policy framework;
-    -   WebTrust ["Principles and Criteria for Certification Authorities
-        2.0" or
-        later](http://www.webtrust.org/homepage-documents/item54279.pdf)
-        and ["SSL Baseline Requirements Audit Criteria
-        V1.1"](http://www.webtrust.org/homepage-documents/item72056.pdf)
-        (as applicable to SSL certificate issuance) in [WebTrust Program
-        for Certification
-        Authorities;](http://www.webtrust.org/homepage-documents/item27839.aspx)
-    -   WebTrust ["Principles and Criteria for Certification Authorities
-        - Extended Validation Audit Criteria 1.4" or
-        later](http://www.webtrust.org/homepage-documents/item72055.pdf)
-        in [WebTrust Program for Certification
-        Authorities](http://www.webtrust.org/homepage-documents/item27839.aspx).
+    -   Clause 6 “Trust Service Providers practice” in ETSI TS 119 411-1 V1.0.1 or 
+        later version [Policy and security requirements for Trust Service Providers 
+        issuing certificates; Part 1: General requirements][ETSI-119-411-1] 
+        (as applicable to the "EVCP" and "EVCP+" certificate policies, DVCP and 
+        OVCP certificate policies for publicly trusted certificates - baseline 
+        requirements and any of the and any of the "NCP", "NCP+", or "LCP" 
+        certificate policies);
+    -   Clause 7, "Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or
+        later version, [Policy requirements for certification authorities issuing
+        qualified certificates][ETSI-101-456] (only applicable to electronic
+        signature certificate issuance; applicable to either the "QCP public" or
+        "QCP public + SSCD" certificate policies);
+    -   Clause 6 “Trust Service Providers practice” in ETSI TS 119 411-2 V2.0.7 or 
+        later version [Policy and security requirements for Trust Service Providers 
+        issuing certificates; Part 2: Requirements for trust service providers 
+        issuing EU qualified certificates][ETSI-119-411-2] (only applicable to 
+        electronic signature certificate issuance; applicable to either 
+        “QCP-l” or “QCP-l-qscd“ or “QCP-n” or ‘’QCP-n-qscd’’ or ‘’QCP-w).
 
     We reserve the right to accept other criteria in the future.
     
@@ -627,3 +638,12 @@ Certificate Policy:
     www.mozilla.com domains, in news releases sent to organizations
     specializing in computer and Internet news, or as an alert to the
     US-CERT organization of the U.S. Department of Homeland Security.
+
+[ETSI-101-456]: http://www.etsi.org/deliver/etsi_ts/101400_101499/101456/01.04.03_60/ts_101456v010403p.pdf
+[ETSI-102-042]: http://www.etsi.org/deliver/etsi_ts/102000_102099/102042/02.03.01_60/ts_102042v020301p.pdf
+[ETSI-119-411-1]: http://www.etsi.org/deliver/etsi_ts/119400_119499/11941101/01.00.01_60/ts_11941101v010001p.pdf
+[ETSI-119-411-2]: http://www.etsi.org/deliver/etsi_ts/119400_119499/11941102/02.00.07_60/ts_11941102v020007p.pdf
+[WebTrust-2.0]: http://www.webtrust.org/homepage-documents/item54279.pdf
+[WebTrust-BRs]: http://www.webtrust.org/homepage-documents/item79806.pdf
+[WebTrust-For-CAs]: http://www.webtrust.org/homepage-documents/item27839.aspx
+[WebTrust-EV]: http://www.webtrust.org/homepage-documents/item79807.pdf
