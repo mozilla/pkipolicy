@@ -7,9 +7,8 @@ other Mozilla-related software products, Mozilla may include with such software
 a default set of X.509v3 certificates for various Certification Authorities
 (CAs). The certificates included by default have their "trust bits" set for
 various purposes, so that the software in question can use the CA certificates
-to verify certificates for SSL servers, S/MIME email users, and
-digitally-signed code objects without having to ask users for further
-permission or information.
+to verify certificates for SSL servers and S/MIME email users without having
+to ask users for further permission or information.
 
 This is the official Mozilla policy for CA certificates that are distributed
 with Mozilla software products. This policy consists of the following three
@@ -144,12 +143,6 @@ Mozilla products:
         must be verified by using an independent source of information
         or an alternative communication channel before it is included in
         the certificate;
-    -   for a certificate to be used for digitally signing or encrypting
-        email messages, the CA takes reasonable measures to verify that
-        the entity submitting the request controls the email account
-        associated with the email address referenced in the certificate
-        *or* has been authorized by the email account holder to act on
-        the account holder’s behalf;
     -   for a certificate to be used for SSL-enabled servers, the CA
         takes reasonable measures to verify that the entity submitting
         the certificate signing request has registered the domain(s)
@@ -228,13 +221,6 @@ Mozilla products:
         e-mail addresses or mailboxes that the issuing CA has confirmed
         (via technical and/or business controls) that the subordinate CA
         is authorized to use.
-    -   If the certificate includes the id-kp-codeSigning extended key
-        usage, then the certificate MUST contain a directoryName
-        permittedSubtrees constraint where each permittedSubtree
-        contains the organizationName, localityName (where relevant),
-        stateOrProvinceName (where relevant) and countryName fields of
-        an address that the issuing CA has confirmed belongs to the
-        subordinate CA.
 
 10. We recognize that technically constraining subordinate CA
     certificates as described above may not be practical in some cases.
@@ -380,9 +366,8 @@ Mozilla products:
     -   for each CA certificate requested for inclusion, whether or not
         the CA issues certificates for each of the following purposes
         within the CA hierarchy associated with the CA certificate:
-        -   SSL-enabled servers,
-        -   digitally-signed and/or encrypted email, *or*
-        -   digitally-signed executable code objects;
+        -   SSL-enabled servers, *or*
+        -   digitally-signed and/or encrypted email;
     -   for each CA certificate requested for inclusion, whether the CA
         issues Extended Validation certificates within the CA hierarchy
         associated with the CA certificate *and*, if so, the EV policy
@@ -574,7 +559,7 @@ maintain their CA Certificates that are distributed in Mozilla products:
         page, [Applying for root inclusion in Mozilla
         products](https://wiki.mozilla.org/CA:How_to_apply#Enable_Additional_Trust_Bits_for_an_included_root);
     -   disabling a root is the act of turning off one or more of the
-        three trust bits (Websites, Email, Code Signing), and may be
+        trust bits (Websites, Email), and may be
         requested by a representative of the CA or a representative of
         Mozilla by submitting a bug report into the mozilla.org Bugzilla
         system, as described in the [Root Change
@@ -625,8 +610,8 @@ Certificate Policy:
     keyCertSign and/or cRLSign or a basicConstraints extension with the
     cA field set to true is considered to be mis-issued.
 
-4.  A certificate is disabled by turning off one or more of the three
-    trust bits (Websites, Email, Code Signing). Disablement or removal
+4.  A certificate is disabled by turning off one or more of the
+    trust bits (Websites, Email). Disablement or removal
     of a certificate may be initiated by submitting a bug report to the
     mozilla.org Bugzilla system, as described in the [Root Change
     Process](https://wiki.mozilla.org/CA:Root_Change_Process) or the
