@@ -239,17 +239,14 @@ Mozilla products:
     -   WebTrust ["Principles and Criteria for Certification Authorities -
         Extended Validation SSL 1.4.5”][WebTrust-EV] or later in
         [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-    -   Clause 7, "Requirements on CA practice", in ETSI TS 101 456
-        V1.4.3 or later version, [Policy requirements for certification
-        authorities issuing qualified
-        certificates](http://pda.etsi.org/pda/home.asp?wki_id=vXY0eat9Qxoquqxsw%27A2D)
-        (only applicable to electronic signature certificate issuance;
-        applicable to either the "QCP public" or "QCP public + SSCD"
-        certificate policies);
+    -   Clause 7, "Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or
+        later version, [Policy requirements for certification authorities issuing
+        qualified certificates][ETSI-101-456] (only applicable to electronic
+        signature certificate issuance; applicable to either the "QCP public" or
+        "QCP public + SSCD" certificate policies);
     -   Clause 7, "Requirements on CA practice", in ETSI TS 102 042
         V2.3.1 or later version, [Policy requirements for certification
-        authorities issuing public key
-        certificates](http://pda.etsi.org/pda/home.asp?wki_id=LJfRMZJQbbbekfdgITkht)
+        authorities issuing public key certificates][ETSI-102-042]
         (as applicable to the "EVCP" and "EVCP+" certificate policies,
         DVCP and OVCP certificate policies for publicly trusted
         certificates - baseline requirements, and any of the "NCP",
@@ -261,11 +258,6 @@ Mozilla products:
         OVCP certificate policies for publicly trusted certificates - baseline 
         requirements and any of the and any of the "NCP", "NCP+", or "LCP" 
         certificate policies);
-    -   Clause 7, "Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or
-        later version, [Policy requirements for certification authorities issuing
-        qualified certificates][ETSI-101-456] (only applicable to electronic
-        signature certificate issuance; applicable to either the "QCP public" or
-        "QCP public + SSCD" certificate policies);
     -   Clause 6 “Trust Service Providers practice” in ETSI TS 119 411-2 V2.0.7 or 
         later version [Policy and security requirements for Trust Service Providers 
         issuing certificates; Part 2: Requirements for trust service providers 
