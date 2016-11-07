@@ -534,12 +534,10 @@ maintain their CA Certificates that are distributed in Mozilla products:
 9.  We expect CAs to maintain current best practices to prevent
     algorithm attacks against certificates. As such, the following steps
     will be taken:
-    -   after June 30, 2011, software published by Mozilla will return
-        an error when a certificate with an MD5-based signature is used;
-    -   all end-entity certificates with RSA key sizes smaller than 2048
-        bits must expire by December 31, 2013;
-    -   after December 31, 2013, Mozilla will disable or remove all root
-        certificates with RSA key sizes smaller than 2048 bits; and
+    -   software published by Mozilla will return
+        an error when a certificate with an MD2, MD4 or MD5-based signature is used;
+    -   software published by Mozilla will return an error when the
+        SSL/TLS certificate has an RSA key size smaller than 2048 bits; and
     -   all new end-entity certificates must contain at least 20 bits of
         unpredictable random data (preferably in the serial number).
 
