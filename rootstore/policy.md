@@ -1,6 +1,6 @@
 # Mozilla CA Certificate Policy #
 
-*Version 2.3 (draft)*
+*Version 2.3*
 
 When distributing binary and source code versions of Firefox, Thunderbird, and
 other Mozilla-related software products, Mozilla may include with such software
