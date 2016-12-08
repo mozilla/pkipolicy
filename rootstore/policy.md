@@ -105,7 +105,7 @@ Mozilla products:
     -   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
         which no operational CRL or OCSP service exists.
 
-5.  We will consider adding certificates for additional CAs to the
+5.  We will consider adding additional CA certificates to the
     default certificate set upon request only by an authorized
     representative of the subject CA.
 6.  We require that all CAs whose certificates are distributed with our
@@ -342,11 +342,12 @@ Mozilla products:
         certificate(s) requested for inclusion;
     -   for each CA certificate requested for inclusion, whether or not
         the CA issues certificates for each of the following purposes
-        within the CA hierarchy associated with the CA certificate:
+        within the certificate hierarchy associated with the CA
+        certificate:
         -   SSL-enabled servers, *or*
         -   digitally-signed and/or encrypted email;
     -   for each CA certificate requested for inclusion, whether the CA
-        issues Extended Validation certificates within the CA hierarchy
+        issues Extended Validation certificates within the certificate hierarchy
         associated with the CA certificate *and*, if so, the EV policy
         OID associated with the CA certificate;
     -   a Certificate Policy and Certification Practice Statement (or
