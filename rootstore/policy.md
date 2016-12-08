@@ -47,16 +47,26 @@ other software modifications, by making such changes a distributor may affect
 its ability to use Mozilla trademarks in connection with its versions of the
 software; see the Mozilla trademark policy for more information.
 
-This policy applies, as appropriate, to the following certificates:
+This policy applies, as appropriate, to certificates matching any of the
+following:
 
-- CA certificates applying for inclusion in, or included in, Mozilla Products;
-and
+1. CA certificates applying for inclusion in, or included in, Mozilla Products.
 
-- certificates which have at least one valid, unrevoked chain up to such a
-  CA certificate and which have either:
-  * an Extended Key Usage (EKU) extension which contains one or more of the
-    id-kp-serverAuth and id-kp-emailProtection EKUs; or:
-  * no EKU extension.
+2. Intermediate certificates which have at least one valid, unrevoked chain up
+   to such a CA certificate and which are not technically constrained such
+   that they are unable to issue server or email certificates. Such technical
+   constraints could consist of either:
+   * an Extended Key Usage (EKU) extension which does not contain either of the
+     id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+   * name constraints which do not allow SANs of any of the following types:
+     dNSName, iPAddress, SRVName, rfc822Name
+
+3. End-entity certificates which have at least one valid, unrevoked chain up to
+   such a CA certificate through intermediate certificates which are all in
+   scope, such end-entity certificates having either:
+   * an Extended Key Usage (EKU) extension which contains one or more of the
+     id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+   * no EKU extension.
 
 Please contact Mozilla at
 [certificates@mozilla.org](mailto:certificates@mozilla.org) for more
