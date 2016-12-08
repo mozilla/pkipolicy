@@ -96,9 +96,7 @@ Mozilla products:
     -   ASN.1 DER encoding errors;
     -   invalid public keys (e.g., RSA certificates with public exponent
         equal to 1);
-    -   duplicate issuer names and serial numbers (except that a Certificate
-        Transparency pre-certificate is allowed to match the corresponding
-        certificate);
+    -   duplicate issuer names and serial numbers;
     -   incorrect extensions (e.g., SSL certificates that exclude SSL
         usage, or authority key IDs that include both the key ID and the
         issuer’s issuer name and serial number); *or*
