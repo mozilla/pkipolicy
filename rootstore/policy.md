@@ -601,11 +601,6 @@ Certificate Policy:
     specializing in computer and Internet news, or as an alert to the
     US-CERT organization of the U.S. Department of Homeland Security.
 
------
-
-Any copyright in this document is
-[dedicated to the Public Domain](http://creativecommons.org/publicdomain/zero/1.0/).
-
 [ETSI-101-456]: http://www.etsi.org/deliver/etsi_ts/101400_101499/101456/01.04.03_60/ts_101456v010403p.pdf
 [ETSI-102-042]: http://www.etsi.org/deliver/etsi_ts/102000_102099/102042/02.03.01_60/ts_102042v020301p.pdf
 [ETSI-319-411-1]: http://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.01.01_60/en_31941101v010101p.pdf
