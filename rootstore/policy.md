@@ -47,6 +47,17 @@ other software modifications, by making such changes a distributor may affect
 its ability to use Mozilla trademarks in connection with its versions of the
 software; see the Mozilla trademark policy for more information.
 
+This policy applies, as appropriate, to the following certificates:
+
+- CA certificates applying for inclusion in, or included in, Mozilla Products;
+and
+
+- certificates which have at least one valid, unrevoked chain up to such a
+  CA certificate and which have either:
+  * an Extended Key Usage (EKU) extension which contains one or more of the
+    id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+  * no EKU extension.
+
 Please contact Mozilla at
 [certificates@mozilla.org](mailto:certificates@mozilla.org) for more
 information about this policy and answers to related questions.
@@ -145,18 +156,18 @@ Mozilla products:
         must be verified by using an independent source of information
         or an alternative communication channel before it is included in
         the certificate;
-    -   for a certificate to be used for digitally signing or encrypting
+    -   for a certificate capable of being used for digitally signing or encrypting
         email messages, the CA takes reasonable measures to verify that
         the entity submitting the request controls the email account
         associated with the email address referenced in the certificate
         *or* has been authorized by the email account holder to act on
         the account holder’s behalf;
-    -   for a certificate to be used for SSL-enabled servers, the CA
+    -   for a certificate capable of being used for SSL-enabled servers, the CA
         takes reasonable measures to verify that the entity submitting
         the certificate signing request has registered the domain(s)
         referenced in the certificate *or* has been authorized by the
         domain registrant to act on the registrant’s behalf;
-    -   for certificates to be used for and marked as Extended
+    -   for certificates marked as Extended
         Validation, the CA complies with [Guidelines for the Issuance
         and Management of Extended Validation
         Certificates](http://www.cabforum.org/documents.html) version
@@ -266,7 +277,7 @@ Mozilla products:
 
     We reserve the right to accept other criteria in the future.
     
-12. CA operations and issuance of certificates to be used for
+12. CA operations relating to issuance of certificates capable of being used for
     SSL-enabled servers must also conform to version 1.3 or later of the
     [CA/Browser Forum Baseline Requirements for the Issuance and
     Management of Publicly-Trusted
