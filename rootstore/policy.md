@@ -54,8 +54,8 @@ following:
 
 2. Intermediate certificates which have at least one valid, unrevoked chain up
    to such a CA certificate and which are not technically constrained such
-   that they are unable to issue server or email certificates. Such technical
-   constraints could consist of either:
+   that they are unable to issue working server or email certificates. Such
+   technical constraints could consist of either:
    * an Extended Key Usage (EKU) extension which does not contain either of the
      id-kp-serverAuth and id-kp-emailProtection EKUs; or:
    * name constraints which do not allow SANs of any of the following types:
