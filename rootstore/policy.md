@@ -327,7 +327,18 @@ Mozilla products:
     -   the public attestation of the CA’s conformance to the stated
         verification requirements by a competent independent party
         indicates which policy documents were included in the review.
-
+    -   CPs and CPSes are made available to Mozilla under one
+        of the following Creative Commons licenses (or later versions):
+        * Attribution ([CC-BY](https://creativecommons.org/licenses/by/4.0/)) 4.0
+        * Attribution-ShareAlike ([CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)) 4.0
+        * Attribution-NoDerivs ([CC-BY-ND](https://creativecommons.org/licenses/by-nd/4.0/)) 4.0
+        * Public Domain Dedication ([CC-0](https://creativecommons.org/publicdomain/zero/1.0/)) 1.0
+        
+        or a set of equally permissive licensing terms accepted by Mozilla in
+        writing. If no such license is indicated, the fact of application is
+        considered as permission from the CA to allow Mozilla and the public to
+        deal with these documents, and any later versions for root certificates
+        which are included in Mozilla's trust store, under CC-BY-ND.
 18. To request that its certificate(s) be added to the default set a CA
     should submit a formal request by submitting a [bug
     report](https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates)
