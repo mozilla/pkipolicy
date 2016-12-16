@@ -432,7 +432,8 @@ maintain their CA Certificates that are distributed in Mozilla products:
     -   if the CA provides revocation information via an Online
         Certificate Status Protocol (OCSP) service, it must update that
         service at least every four days. OCSP responses from this
-        service must have a maximum expiration time of ten days.
+        service must have a defined value in the nextUpdate field, and it
+        must be no more than ten days after the thisUpdate field.
 
 4.  We require that all CAs whose certificates are distributed with our
     software products provide us an updated statement annually of
