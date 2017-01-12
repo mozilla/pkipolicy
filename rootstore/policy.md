@@ -456,16 +456,22 @@ maintain their CA Certificates that are distributed in Mozilla products:
 
 3.  CAs must maintain an online 24x7 repository mechanism whereby
     application software can automatically check online the current
-    status of all unexpired certificates issued by the CA. For
-    end-entity certificates:
-    -   CRLs must be updated and reissued at least every seven days, and
-        the value of the nextUpdate field shall not be more than ten
-        days beyond the value of the thisUpdate field; or
-    -   if the CA provides revocation information via an Online
-        Certificate Status Protocol (OCSP) service, it must update that
-        service at least every four days. OCSP responses from this
-        service must have a defined value in the nextUpdate field, and it
-        must be no more than ten days after the thisUpdate field.
+    status of all unexpired certificates issued by the CA.
+
+    For end-entity certificates, CRLs must be updated and reissued at least
+    every seven days, and the value of the nextUpdate field shall not be
+    more than ten days beyond the value of the thisUpdate field.
+
+    For end-entity certificates, if the CA provides revocation information
+    via an Online Certificate Status Protocol (OCSP) service:
+    - it must update that service at least every four days; and
+    - responses must have a defined value in the nextUpdate field, and it
+      must be no more than ten days after the thisUpdate field; and
+    - the value in the nextUpdate field must be before or equal to the
+      notAfter date of all certificates included within the
+      BasicOCSPResponse.certs field or, if the certs field is omitted,
+      before or equal to the notAfter date of the CA certificate which
+      issued the certificate that the BasicOCSPResponse is for.
 
 4.  We require that all CAs whose certificates are distributed with our
     software products provide us an updated statement annually of
