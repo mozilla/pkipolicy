@@ -11,8 +11,14 @@ to verify certificates for SSL servers and S/MIME email users without having
 to ask users for further permission or information.
 
 This is the official Mozilla policy for CA certificates that are distributed
-with Mozilla software products. This policy consists of the following three
+with Mozilla software products. This policy consists of the following
 sections:
+
+* [Audit Requirements](audit-requirements)
+
+    Before being included and periodically thereafter, CAs are required to
+    obtain certain audits. This section describes the requirements for those
+    audits.
 
 * [Applying for Inclusion of Root Certificates in Mozilla Products](#applying-for-inclusion-of-root-certificates-in-mozilla-products)
 
@@ -77,14 +83,114 @@ after consulting with the public Mozilla community, in order to ensure that
 all views are taken into account.
 
 
-## Applying for Inclusion of Root Certificates in Mozilla Products ##
+## Audit Requirements ##
 
-This section of the Mozilla CA Certificate Policy
-describes the obligations of Certification Authorities applying for
-inclusion of their root certificates in Mozilla Products. This includes
-considerations that are taken into account such as the CA’s publicly
-available documentation about their policies, and audits of the CA’s
-operations in support of the documented policies.
+Before being included and periodically thereafter, CAs are required to
+obtain certain audits. This section describes the requirements for those
+audits.
+
+1. We consider the criteria for CA operations published in any of the
+   following documents to be acceptable:
+   -   WebTrust ["Principles and Criteria for Certification
+       Authorities 2.0"][WebTrust-2.0] or later and ["WebTrust Principles and
+       Criteria for Certification Authorities – SSL Baseline with Network
+       Security – Version 2.0"][WebTrust-BRs] or later (as applicable to SSL
+       certificate issuance) in [WebTrust Program for Certification
+       Authorities][WebTrust-For-CAs];
+   -   WebTrust ["Principles and Criteria for Certification Authorities -
+       Extended Validation SSL 1.4.5”][WebTrust-EV] or later in
+       [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
+   -   "Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or
+       later version, [Policy requirements for certification authorities issuing
+       qualified certificates][ETSI-101-456] (only applicable to electronic
+       signature certificate issuance; applicable to either the "QCP public" or
+       "QCP public + SSCD" certificate policies);
+   -   "Requirements on CA practice", in ETSI TS 102 042
+       V2.3.1 or later version, [Policy requirements for certification
+       authorities issuing public key certificates][ETSI-102-042]
+       (as applicable to the "EVCP" and "EVCP+" certificate policies,
+       DVCP and OVCP certificate policies for publicly trusted
+       certificates - baseline requirements, and any of the "NCP",
+       "NCP+", or "LCP" certificate policies);
+   -   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
+       later version [Policy and security requirements for Trust Service Providers 
+       issuing certificates; Part 1: General requirements][ETSI-319-411-1],
+       specifying a policy or policies appropriate to the trust bit(s) being
+       applied for;
+   -   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.1.1 or
+       later version [Policy and security requirements for Trust Service Providers
+       issuing certificates; Part 2: Requirements for trust service providers
+       issuing EU qualified certificates][ETSI-319-411-2], specifying a
+       policy or policies appropriate to the trust bit(s) being applied for.
+
+   We reserve the right to accept other criteria in the future.
+
+2. CA operations relating to issuance of certificates capable of being used for
+   SSL-enabled servers must also conform to version 1.3 or later of the
+   [CA/Browser Forum Baseline Requirements for the Issuance and
+   Management of Publicly-Trusted
+   Certificates.](https://cabforum.org/baseline-requirements-documents/) In the
+   event of inconsistency between Mozilla’s CA Certificate Policy
+   requirements and the Baseline Requirements, Mozilla’s CA Certificate Policy
+   takes precedence. The items listed below will be accepted as reason
+   for not following the Baseline Requirements. If you find an
+   inconsistency that is not listed here, notify Mozilla by sending
+   email to certificates@mozilla.org so the item can be considered.
+   -   Mozilla’s CA Certificate Policy defining a competent and
+       independent auditor is a superset of section 8.2 of the
+       Baseline Requirements, and takes precedence over it.
+
+3. By "competent party" we mean a person or other entity who is
+   authorized to perform audits according to the stated criteria (e.g.,
+   by the organization responsible for the criteria or by a relevant
+   government agency) *or* for whom there is sufficient public
+   information available to determine that the party is competent to
+   judge the CA’s conformance to the stated criteria. In the latter
+   case the "public information" referred to should include information
+   regarding the party’s
+   -   knowledge of CA-related technical issues such as public key
+       cryptography and related standards;
+   -   experience in performing security-related audits, evaluations,
+       or risk analyses; *and*
+   -   honesty and objectivity.
+
+4. By "independent party" we mean a person or other entity who is not
+   affiliated with the CA as an employee or director *and* for whom at
+   least one of the following statements is true:
+   -   the party is not financially compensated by the CA;
+   -   the nature and amount of the party’s financial compensation by
+       the CA is publicly disclosed; *or*
+   -   the party is bound by law, government regulation, and/or a
+       professional code of ethics to render an honest and objective
+       judgement regarding the CA.
+
+5. We reserve the right to designate our own representative(s) to act
+   as the competent independent party or parties described above,
+   should that prove to be necessary and appropriate.
+
+6. The burden is on the CA to prove that it has met the above
+   requirements. However the CA may request a preliminary determination
+   from us regarding the acceptability of the criteria and/or the
+   competent independent party or parties by which it proposes to meet
+   the requirements of this policy.
+
+7. The publicly-available documentation relating to each audit must contain at
+   least the following clearly-labelled information:
+
+   - a list of the CA policy documents referenced during the audit;
+   - whether the audit is for a period of time or point in time;
+   - the start date and end date of the period, for those that cover a period
+     of time;
+   - the point in time date, for those that are for a point in time;
+   - the date the report was issued (which will necessarily be after the end
+     date or point in time date).
+
+   For audit reports which are being supplied to maintain a certificate within
+   the Mozilla root program, they must be provided to Mozilla within three
+   months of the point in time date or the end date of the period.
+
+
+## Applying for Inclusion of Root Certificates in Mozilla Products ##
 
 This is the official Mozilla policy for Certification Authorities
 applying for inclusion of their CA Certificates to be distributed in
@@ -250,89 +356,6 @@ Mozilla products:
         criteria by a competent independent party or parties with access
         to the details of the subordinate CA’s internal operations.
 
-11. We consider the criteria for CA operations published in any of the
-    following documents to be acceptable:
-    -   WebTrust ["Principles and Criteria for Certification
-        Authorities 2.0"][WebTrust-2.0] or later and ["WebTrust Principles and
-        Criteria for Certification Authorities – SSL Baseline with Network 
-        Security – Version 2.0"][WebTrust-BRs] or later (as applicable to SSL 
-        certificate issuance) in [WebTrust Program for Certification 
-        Authorities][WebTrust-For-CAs];
-    -   WebTrust ["Principles and Criteria for Certification Authorities -
-        Extended Validation SSL 1.4.5”][WebTrust-EV] or later in
-        [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-    -   "Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or
-        later version, [Policy requirements for certification authorities issuing
-        qualified certificates][ETSI-101-456] (only applicable to electronic
-        signature certificate issuance; applicable to either the "QCP public" or
-        "QCP public + SSCD" certificate policies);
-    -   "Requirements on CA practice", in ETSI TS 102 042
-        V2.3.1 or later version, [Policy requirements for certification
-        authorities issuing public key certificates][ETSI-102-042]
-        (as applicable to the "EVCP" and "EVCP+" certificate policies,
-        DVCP and OVCP certificate policies for publicly trusted
-        certificates - baseline requirements, and any of the "NCP",
-        "NCP+", or "LCP" certificate policies);
-    -   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
-        later version [Policy and security requirements for Trust Service Providers 
-        issuing certificates; Part 1: General requirements][ETSI-319-411-1],
-        specifying a policy or policies appropriate to the trust bit(s) being
-        applied for;
-    -   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.1.1 or
-        later version [Policy and security requirements for Trust Service Providers
-        issuing certificates; Part 2: Requirements for trust service providers
-        issuing EU qualified certificates][ETSI-319-411-2], specifying a
-        policy or policies appropriate to the trust bit(s) being applied for.
-
-    We reserve the right to accept other criteria in the future.
-    
-12. CA operations relating to issuance of certificates capable of being used for
-    SSL-enabled servers must also conform to version 1.3 or later of the
-    [CA/Browser Forum Baseline Requirements for the Issuance and
-    Management of Publicly-Trusted
-    Certificates.](https://cabforum.org/baseline-requirements-documents/) In the event
-    of inconsistency between Mozilla’s CA Certificate Policy
-    requirements and the Baseline Requirements, Mozilla’s CA Certificate Policy
-    takes precedence. The items listed below will be accepted as reason
-    for not following the Baseline Requirements. If you find an
-    inconsistency that is not listed here, notify Mozilla by sending
-    email to certificates@mozilla.org so the item can be considered.
-    -   Mozilla’s CA Certificate Policy defining a competent and
-        independent auditor is a superset of section 8.2 of the
-        Baseline Requirements, and takes precedence over it.
-
-13. By "competent party" we mean a person or other entity who is
-    authorized to perform audits according to the stated criteria (e.g.,
-    by the organization responsible for the criteria or by a relevant
-    government agency) *or* for whom there is sufficient public
-    information available to determine that the party is competent to
-    judge the CA’s conformance to the stated criteria. In the latter
-    case the "public information" referred to should include information
-    regarding the party’s
-    -   knowledge of CA-related technical issues such as public key
-        cryptography and related standards;
-    -   experience in performing security-related audits, evaluations,
-        or risk analyses; *and*
-    -   honesty and objectivity.
-
-14. By "independent party" we mean a person or other entity who is not
-    affiliated with the CA as an employee or director *and* for whom at
-    least one of the following statements is true:
-    -   the party is not financially compensated by the CA;
-    -   the nature and amount of the party’s financial compensation by
-        the CA is publicly disclosed; *or*
-    -   the party is bound by law, government regulation, and/or a
-        professional code of ethics to render an honest and objective
-        judgement regarding the CA.
-
-15. We reserve the right to designate our own representative(s) to act
-    as the competent independent party or parties described above,
-    should that prove to be necessary and appropriate.
-16. The burden is on the CA to prove that it has met the above
-    requirements. However the CA may request a preliminary determination
-    from us regarding the acceptability of the criteria and/or the
-    competent independent party or parties by which it proposes to meet
-    the requirements of this policy.
 17. We rely on publicly disclosed documentation (e.g., in a Certificate
     Policy and Certification Practice Statement) and publicly disclosed
     audit statements to ascertain that the above requirements are met.
@@ -343,10 +366,6 @@ Mozilla products:
         complies with this policy, including a description of the steps
         taken by the CA to verify certificate signing requests;
     -   the documentation is available from the CA’s official website;
-        and
-    -   the public attestation of the CA’s conformance to the stated
-        verification requirements by a competent independent party
-        indicates which policy documents were included in the review.
     -   CPs and CPSes are made available to Mozilla under one
         of the following Creative Commons licenses (or later versions):
         * Attribution ([CC-BY](https://creativecommons.org/licenses/by/4.0/)) 4.0
@@ -359,6 +378,7 @@ Mozilla products:
         considered as permission from the CA to allow Mozilla and the public to
         deal with these documents, and any later versions for root certificates
         which are included in Mozilla's trust store, under CC-BY-ND.
+
 18. To request that its certificate(s) be added to the default set a CA
     should submit a formal request by submitting a [bug
     report](https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates)
@@ -392,6 +412,7 @@ Mozilla products:
     We will reject requests where the CA does not provide such
     information within a reasonable period of time after submitting its
     request.
+
 19. We have appointed a [CA certificate "module
     owner"](https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy)
     and (optionally) one or more "peers" to evaluate CA requests on our
