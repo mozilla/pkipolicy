@@ -14,7 +14,7 @@ This is the official Mozilla policy for CA certificates that are distributed
 with Mozilla software products. This policy consists of the following three
 sections:
 
-* [Applying for Inclusion of Root Certificates in Mozilla Products](#inclusion)
+* [Applying for Inclusion of Root Certificates in Mozilla Products](#applying-for-inclusion-of-root-certificates-in-mozilla-products)
 
     This section describes the obligations of Certification Authorities
     applying for inclusion of their root certificates in Mozilla Products.
@@ -22,7 +22,7 @@ sections:
     publicly available documentation about their policies, and audits of the
     CA’s operations in support of the documented policies.
 
-* [Maintaining Confidence in Included Root Certificates](#maintenance)
+* [Maintaining Confidence in Included Root Certificates](#maintaining-confidence-in-included-root-certificates)
 
     This section describes the obligations of Certification Authorities for
     maintaining confidence in their root certificates that are included in
@@ -30,7 +30,7 @@ sections:
     practices; conforming to current CA industry standards and recommended
     best practices; and making changes to included root certificates.
 
-* [Enforcing the Mozilla CA Certificate Policy](#enforcement)
+* [Enforcing the Mozilla CA Certificate Policy](#enforcing-the-mozilla-ca-certificate-policy)
 
     This section describes the steps that Mozilla may take in order to enforce
     this policy. This includes evaluation of security concerns, and removing
@@ -77,7 +77,6 @@ after consulting with the public Mozilla community, in order to ensure that
 all views are taken into account.
 
 
-<a name="inclusion"></a>
 ## Applying for Inclusion of Root Certificates in Mozilla Products ##
 
 This section of the Mozilla CA Certificate Policy
@@ -404,7 +403,6 @@ Mozilla products:
     who will make a final decision.
 
 
-<a name="maintenance"></a>
 ## Maintaining Confidence in Included Root Certificates ##
 
 This section of the Mozilla CA Certificate Policy
@@ -588,7 +586,6 @@ maintain their CA Certificates that are distributed in Mozilla products:
         Process](https://wiki.mozilla.org/CA:Root_Change_Process).
 
 
-<a name="enforcement"></a>
 ## Enforcing the Mozilla CA Certificate Policy ##
 
 This section of the Mozilla CA Certificate Policy
