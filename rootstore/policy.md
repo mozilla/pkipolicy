@@ -546,8 +546,8 @@ maintain their CA Certificates that are distributed in Mozilla products:
         an error when a certificate with an MD2, MD4 or MD5-based signature is used;
     -   software published by Mozilla will return an error when the
         SSL/TLS certificate has an RSA key size smaller than 2048 bits; and
-    -   all new end-entity certificates must contain at least 20 bits of
-        unpredictable random data (preferably in the serial number).
+    -   all new certificates must have a serial number greater than zero
+        (0) containing at least 64 bits of output from a CSPRNG.
 
 10. Changes may be made to root certificates that are included in
     Mozilla products as follows:
