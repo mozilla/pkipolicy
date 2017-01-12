@@ -428,7 +428,9 @@ maintain their CA Certificates that are distributed in Mozilla products:
     -   the CA obtains reasonable evidence that the subscriber’s private
         key (corresponding to the public key in the certificate) has
         been compromised or is suspected of compromise (e.g. Debian weak
-        keys), or that the certificate has otherwise been misused;
+        keys), or that the certificate has been used for a purpose outside
+        of that indicated in the certificate or in the CA's subscriber
+        agreement;
     -   the CA receives notice or otherwise becomes aware that a
         subscriber has violated one or more of its material obligations
         under the subscriber agreement;
