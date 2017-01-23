@@ -126,14 +126,14 @@ audits.
    We reserve the right to accept other criteria in the future.
 
 2. CA operations relating to issuance of certificates capable of being used for
-   SSL-enabled servers must also conform to version 1.3 or later of the
+   SSL-enabled servers must also conform to the latest version of the
    [CA/Browser Forum Baseline Requirements for the Issuance and
    Management of Publicly-Trusted
    Certificates.](https://cabforum.org/baseline-requirements-documents/) In the
    event of inconsistency between Mozilla’s CA Certificate Policy
    requirements and the Baseline Requirements, Mozilla’s CA Certificate Policy
-   takes precedence. The items listed below will be accepted as reason
-   for not following the Baseline Requirements. If you find an
+   takes precedence. Below is a list of known places where this policy takes
+   precedence over the Baseline Requirements. If you find an
    inconsistency that is not listed here, notify Mozilla by sending
    email to certificates@mozilla.org so the item can be considered.
    -   Mozilla’s CA Certificate Policy defining a competent and
