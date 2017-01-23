@@ -177,7 +177,8 @@ audits.
 7. The publicly-available documentation relating to each audit must contain at
    least the following clearly-labelled information:
 
-   - a list of the CA policy documents referenced during the audit;
+   - a list of the CA policy documents (with version numbers) referenced during
+     the audit;
    - whether the audit is for a period of time or point in time;
    - the start date and end date of the period, for those that cover a period
      of time;
