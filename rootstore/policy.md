@@ -284,10 +284,9 @@ Mozilla products:
         referenced in the certificate *or* has been authorized by the
         domain registrant to act on the registrant’s behalf;
     -   for certificates marked as Extended
-        Validation, the CA complies with [Guidelines for the Issuance
-        and Management of Extended Validation
-        Certificates](http://www.cabforum.org/documents.html) version
-        1.4 or later.
+        Validation, the CA complies with the latest version of the
+        [Guidelines for the Issuance and Management of Extended Validation
+        Certificates](https://cabforum.org/extended-validation/).
 
     We reserve the right to use other requirements in the future.
     
