@@ -42,6 +42,12 @@ sections:
     this policy. This includes evaluation of security concerns, and removing
     or disabling a root certificate.
 
+In addition, Mozilla manages its root store using the Common CA Database
+(CCADB). CAs in the program are required to use the CCADB, and are bound by the
+[Common CCADB Policy v1.0](../ccadb/policy.md) and the
+[Mozilla CCADB Policy v1.0](../ccadb/mozilla.md), which are incorporated here
+by reference.
+
 This policy applies only to software products distributed by Mozilla,
 including the Mozilla Foundation and its subsidiaries. Other entities
 distributing such software are free to adopt their own policies. In
@@ -113,7 +119,7 @@ audits.
        certificates - baseline requirements, and any of the "NCP",
        "NCP+", or "LCP" certificate policies);
    -   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
-       later version [Policy and security requirements for Trust Service Providers 
+       later version [Policy and security requirements for Trust Service Providers
        issuing certificates; Part 1: General requirements][ETSI-319-411-1],
        specifying a policy or policies appropriate to the trust bit(s) being
        applied for;
@@ -239,9 +245,6 @@ Mozilla products:
     software products:
     -   provide some service relevant to typical users of our software
         products;
-    -   publicly disclose information about their policies and business
-        practices (e.g., in a Certificate Policy and Certification
-        Practice Statement);
     -   enforce multi-factor authentication for all accounts capable of
         directly causing certificate issuance or implement technical
         controls operated by the CA to restrict certificate issuance
@@ -258,13 +261,9 @@ Mozilla products:
         purpose(s) of the certificates;
     -   verify that all of the information that is included in SSL
         certificates remains current and correct at time intervals of
-        thirty-nine months or less;
+        thirty-nine months or less; and
     -   otherwise operate in accordance with published criteria that we
-        deem acceptable; *and*
-    -   provide public attestation of their conformance to the stated
-        verification requirements and other operational criteria by a
-        competent independent party or parties with access to details of
-        the CA’s internal operations.
+        deem acceptable.
 
 7.  We consider verification of certificate signing requests to be
     acceptable if it meets or exceeds the following requirements:
@@ -289,7 +288,7 @@ Mozilla products:
         Certificates](https://cabforum.org/extended-validation/).
 
     We reserve the right to use other requirements in the future.
-    
+
 8.  All certificates that are capable of being used to issue new
     certificates, and which directly or transitively chain to a
     certificate included in Mozilla’s CA Certificate Program, MUST be
@@ -331,30 +330,15 @@ Mozilla products:
     certificates, that are not technically constrained, and that
     directly or transitively chain to a certificate included in
     Mozilla’s CA Certificate Program MUST be audited in accordance with
-    Mozilla’s CA Certificate Policy
-    and MUST be publicly disclosed by the CA that has their certificate
+    Mozilla’s CA Certificate Policy and MUST be publicly disclosed in the
+    CCADB by the CA that has their certificate
     included in Mozilla’s CA Certificate Program. The CA with a
     certificate included in Mozilla’s CA Certificate Program MUST
     disclose this information before any such subordinate CA is allowed
     to issue certificates. All disclosure MUST be made freely available
     and without additional requirements, including, but not limited to,
     registration, legal agreements, or restrictions on redistribution of
-    the certificates in whole or in part. The Certificate Policy or
-    Certification Practice Statement of the CA that has their
-    certificate included in Mozilla’s CA Certificate Program must
-    specify where on that CA’s website all such public disclosures are
-    located. For a certificate to be considered **publicly disclosed and
-    audited,** the following information MUST be provided:
-    -   The full DER-encoded X.509 certificate (Each issuing CA should
-        provide one .p7c, .zip, or .tgz file containing all of the
-        non-technically-constrained intermediate certificates that it
-        has signed.);
-    -   The corresponding Certificate Policy or Certification Practice
-        Statement used by the subordinate CA; *and*
-    -   Annual public attestation of conformance to the stated
-        certificate verification requirements and other operational
-        criteria by a competent independent party or parties with access
-        to the details of the subordinate CA’s internal operations.
+    the certificates in whole or in part.
 
 17. We rely on publicly disclosed documentation (e.g., in a Certificate
     Policy and Certification Practice Statement) and publicly disclosed
@@ -372,7 +356,7 @@ Mozilla products:
         * Attribution-ShareAlike ([CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)) 4.0
         * Attribution-NoDerivs ([CC-BY-ND](https://creativecommons.org/licenses/by-nd/4.0/)) 4.0
         * Public Domain Dedication ([CC-0](https://creativecommons.org/publicdomain/zero/1.0/)) 1.0
-        
+
         or a set of equally permissive licensing terms accepted by Mozilla in
         writing. If no such license is indicated, the fact of application is
         considered as permission from the CA to allow Mozilla and the public to
@@ -494,60 +478,19 @@ maintain their CA Certificates that are distributed in Mozilla products:
       before or equal to the notAfter date of the CA certificate which
       issued the certificate that the BasicOCSPResponse is for.
 
-4.  We require that all CAs whose certificates are distributed with our
-    software products provide us an updated statement annually of
-    attestation of their conformance to the stated verification
-    requirements and other operational criteria by a competent
-    independent party or parties, as outlined in this policy. To notify
-    us of an updated statement of attestation, send email to
-    [certificates@mozilla.org](mailto:certificates@mozilla.org) or
-    submit a bug report into the mozilla.org Bugzilla system, filed
-    against the "CA Certificates" component of the "mozilla.org"
-    product. The request should include the following:
-    -   the certificate data identifying the CA certificate(s) to which
-        the updated statement of attestation applies;
-    -   a copy of (or link to) the updated statement of attestation
-        (e.g., "Auditor’s Report and Management Assertions" or
-        equivalent document); and
-    -   contact information for the party making the attestation, if the
-        statement is not posted on an independent website (e.g.
-        cert.webtrust.org).
-
 5.  We require that all CAs whose certificates are distributed with our
-    software products notify us when its policies and business practices
-    change in regards to verification procedures for issuing
-    certificates, when the ownership control of the CA’s certificate(s)
-    changes, or when ownership control of the CA’s operations changes.
-    To notify us of updated policies and business practices, send email
-    to [certificates@mozilla.org](mailto:certificates@mozilla.org) or
-    submit a bug report into the mozilla.org Bugzilla system, filed
-    against the "CA Certificates" component of the "mozilla.org"
-    product. The request should include the following:
-    -   the certificate data identifying the CA certificate(s) that are
-        affected by the change;
-    -   copies of (or links to) the updated Certificate Policy or
-        Certification Practice Statement document(s) or equivalent
-        disclosure document(s); and
-    -   a summary of the changes that impact the verification procedures
-        for issuing certificates.
+    software products notify us when the ownership control of the CA’s
+    certificate(s) changes, or when ownership control of the CA’s operations
+    changes. To notify us, send email
+    to [certificates@mozilla.org](mailto:certificates@mozilla.org).
 
-6.  We require that all CAs whose certificates are distributed with our
-    software products ensure that we have their current contact
-    information. If the CA’s primary representative for their included
-    root certificates leaves the organization, then the burden is on the
-    CA to inform Mozilla of the contact information for the new primary
-    representative, by sending email to
-    [certificates@mozilla.org](mailto:certificates@mozilla.org). If we
-    are not able to contact a CA, or do not have current audit and
-    policy documentation, then the CA’s root certificates may be
-    disabled or removed as described in the [Enforcement Section of the
-    Mozilla CA Certificate Policy](#enforcement)
-7.  A failure to provide required notifications or updates as specified
-    in items \#4, \#5, and \#6 in a timely manner shall be grounds for
+7.  A failure to provide notifications or updates in the CCADB or
+    as otherwise required in a timely manner shall be grounds for
     disabling a CA’s root certificates or removing them from Mozilla
-    products. For this policy "a timely manner" means within 30 days of
-    when the appropriate data or documentation becomes available to the
-    CA.
+    products. For this policy and the CCADB policies, "a timely manner" means
+    within 30 days of when the appropriate data or documentation becomes
+    available to the CA.
+
 8.  We consider the following algorithms and key sizes to be acceptable
     and supported in Mozilla products:
     -   SHA-1 (until a practical collision attack against SHA-1
