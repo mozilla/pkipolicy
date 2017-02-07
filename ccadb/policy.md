@@ -123,6 +123,12 @@ URLs for the following documents are required for each certificate:
   TLS/SSL server certificates)
 * Extended Validation (EV) audit (if applicable)
 
+CAs must provide English versions of any Certificate Policy and Certification
+Practice Statement documents which are not originally in English, with version
+numbers matching the document they are a translation of. The English version is
+not required to be authoritative in all cases of dispute, but the CA must
+attest that the translation is not materially different to the original.
+
 ## 6. Mailshots ##
 
 From time to time, a Store may use the CCADB to send information to CAs.
