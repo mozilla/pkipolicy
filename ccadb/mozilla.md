@@ -1,6 +1,6 @@
 # Mozilla CCADB Policy #
 
-*Version 0.0.1 (draft)*
+*Version 1.0 (draft)*
 
 Mozilla’s root program may be contacted via the email address
 [certificates@mozilla.org](mailto:certificates@mozilla.org).
