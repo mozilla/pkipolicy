@@ -497,10 +497,47 @@ maintain their CA Certificates that are distributed in Mozilla products:
 
     - RSA keys whose modulus size in bits is divisible by 8, and is at
     least 2048.
-    - Digest algorithms: SHA-256, SHA-384, or SHA-512.
+    - Digest algorithms: SHA-1 (see below), SHA-256, SHA-384, or SHA-512.
     - ECDSA keys using one of the following curve-hash pairs:
       * P‐256 with SHA-256
       * P‐384 with SHA-384
+
+    CAs may only sign SHA-1 hashes over end-entity certificates which chain
+    up to roots in Mozilla's program if all the following are true:
+
+    1. The end-entity certificate:
+       * is not within the scope of the Baseline Requirements;
+       * contains an EKU extension which does not contain either of the id-kp-
+         serverAuth or anyExtendedKeyUsage key purposes;
+       * has at least 64 bits of entropy from a CSPRNG in the serial number.
+
+    2. The issuing certificate:
+       * contains an EKU extension which does not contain either of the id-kp-
+         serverAuth or anyExtendedKeyUsage key purposes;
+       * has a pathlen:0 constraint.
+
+    Point 2 does not apply if the certificate is an OCSP signing certificate
+    manually issued directly from a root.
+
+    CAs may only sign SHA-1 hashes over intermediate certificates which
+    chain up to roots in Mozilla's program if the certificate to be signed
+    is a duplicate of an existing SHA-1 intermediate certificate with the
+    only changes being all of:
+
+      * a new key (of the same size);
+      * a new serial number (of the same length);
+      * the addition of an EKU and/or a pathlen constraint to meet the
+        requirements outlined above.
+
+    CAs may only sign SHA-1 hashes over OCSP responses if the signing
+    certificate contains an EKU extension which contains only the
+    id-kp-ocspSigning EKU.
+
+    CAs may only sign SHA-1 hashes over CRLs for roots and intermediates
+    which have issued SHA-1 certificates.
+
+    CAs may not sign SHA-1 hashes over other data, including CT
+    pre-certificates.
 
 9.  We expect CAs to maintain current best practices to prevent
     algorithm attacks against certificates. As such, the following steps
