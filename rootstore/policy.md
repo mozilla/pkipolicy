@@ -340,7 +340,7 @@ Mozilla products:
     registration, legal agreements, or restrictions on redistribution of
     the certificates in whole or in part.
 
-17. We rely on publicly disclosed documentation (e.g., in a Certificate
+11. We rely on publicly disclosed documentation (e.g., in a Certificate
     Policy and Certification Practice Statement) and publicly disclosed
     audit statements to ascertain that the above requirements are met.
     Therefore, inclusion requests will only be considered if the
@@ -363,7 +363,7 @@ Mozilla products:
         deal with these documents, and any later versions for root certificates
         which are included in Mozilla's trust store, under CC-BY-ND.
 
-18. To request that its certificate(s) be added to the default set a CA
+12. To request that its certificate(s) be added to the default set a CA
     should submit a formal request by submitting a [bug
     report](https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates)
     into the mozilla.org Bugzilla system, filed against the "CA
@@ -397,7 +397,7 @@ Mozilla products:
     information within a reasonable period of time after submitting its
     request.
 
-19. We have appointed a [CA certificate "module
+13. We have appointed a [CA certificate "module
     owner"](https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy)
     and (optionally) one or more "peers" to evaluate CA requests on our
     behalf and make decisions regarding all matters relating to CA
@@ -478,20 +478,20 @@ maintain their CA Certificates that are distributed in Mozilla products:
       before or equal to the notAfter date of the CA certificate which
       issued the certificate that the BasicOCSPResponse is for.
 
-5.  We require that all CAs whose certificates are distributed with our
+4.  We require that all CAs whose certificates are distributed with our
     software products notify us when the ownership control of the CA’s
     certificate(s) changes, or when ownership control of the CA’s operations
     changes. To notify us, send email
     to [certificates@mozilla.org](mailto:certificates@mozilla.org).
 
-7.  A failure to provide notifications or updates in the CCADB or
+5.  A failure to provide notifications or updates in the CCADB or
     as otherwise required in a timely manner shall be grounds for
     disabling a CA’s root certificates or removing them from Mozilla
     products. For this policy and the CCADB policies, "a timely manner" means
     within 30 days of when the appropriate data or documentation becomes
     available to the CA.
 
-8.  We consider the following algorithms and key sizes to be acceptable in
+6.  We consider the following algorithms and key sizes to be acceptable in
     root certificates in our root program, and in any certificate which
     chains up to them:
 
@@ -539,7 +539,7 @@ maintain their CA Certificates that are distributed in Mozilla products:
     CAs may not sign SHA-1 hashes over other data, including CT
     pre-certificates.
 
-9.  We expect CAs to maintain current best practices to prevent
+7.  We expect CAs to maintain current best practices to prevent
     algorithm attacks against certificates. As such, the following steps
     will be taken:
     -   software published by Mozilla will return
@@ -549,7 +549,7 @@ maintain their CA Certificates that are distributed in Mozilla products:
     -   all new certificates must have a serial number greater than zero
         (0) containing at least 64 bits of output from a CSPRNG.
 
-10. Changes may be made to root certificates that are included in
+8.  Changes may be made to root certificates that are included in
     Mozilla products as follows:
     -   root changes that are motivated by a serious security concern
         such as a major root compromise should be treated as a
