@@ -491,15 +491,16 @@ maintain their CA Certificates that are distributed in Mozilla products:
     within 30 days of when the appropriate data or documentation becomes
     available to the CA.
 
-8.  We consider the following algorithms and key sizes to be acceptable
-    and supported in Mozilla products:
-    -   SHA-1 (until a practical collision attack against SHA-1
-        certificates is imminent);
-    -   SHA-256, SHA-384, SHA-512;
-    -   Elliptic Curve Digital Signature Algorithm (using ANSI X9.62)
-        over SECG and NIST named curves P-256, P-384, and P-512;
-    -   RSA 2048 bits or higher; and
-    -   RSA 1024 bits (only until December 31, 2013).
+8.  We consider the following algorithms and key sizes to be acceptable in
+    root certificates in our root program, and in any certificate which
+    chains up to them:
+
+    - RSA keys whose modulus size in bits is divisible by 8, and is at
+    least 2048.
+    - Digest algorithms: SHA-256, SHA-384, or SHA-512.
+    - ECDSA keys using one of the following curve-hash pairs:
+      * P‐256 with SHA-256
+      * P‐384 with SHA-384
 
 9.  We expect CAs to maintain current best practices to prevent
     algorithm attacks against certificates. As such, the following steps
