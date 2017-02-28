@@ -123,7 +123,8 @@ URLs for the following documents are required for each certificate:
   TLS/SSL server certificates)
 * Extended Validation (EV) audit (if applicable)
 
-CAs must provide English versions of any Certificate Policy and Certification
+As of June 1 2017, CAs must provide English versions of any Certificate Policy
+and Certification
 Practice Statement documents which are not originally in English, with version
 numbers matching the document they are a translation of. The English version is
 not required to be authoritative in all cases of dispute, but the CA must
