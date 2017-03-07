@@ -74,6 +74,8 @@ v1.0](../ccadb/mozilla.md), which are incorporated here by reference.
 
 ## 3. Certificate Authorities ##
 
+### 3.1 CA Operations ###
+
 We require that all CAs whose certificates are distributed with our software
 products:
 
@@ -93,28 +95,32 @@ products:
 5.  otherwise operate in accordance with published criteria that we
     deem acceptable.
 
+### 3.2 Validation Practices ###
+
 We consider verification of certificate signing requests to be acceptable if it
 meets or exceeds the following requirements:
 
-a.  all information that is supplied by the certificate subscriber
+1.  all information that is supplied by the certificate subscriber
     must be verified by using an independent source of information
     or an alternative communication channel before it is included in
     the certificate;
-b.  for a certificate capable of being used for digitally signing or encrypting
+2.  for a certificate capable of being used for digitally signing or encrypting
     email messages, the CA takes reasonable measures to verify that
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
     the account holder’s behalf;
-c.  for a certificate capable of being used for SSL-enabled servers, the CA
+3.  for a certificate capable of being used for SSL-enabled servers, the CA
     takes reasonable measures to verify that the entity submitting
     the certificate signing request has registered the domain(s)
     referenced in the certificate *or* has been authorized by the
     domain registrant to act on the registrant’s behalf;
-d.  for certificates marked as Extended
+4.  for certificates marked as Extended
     Validation, the CA complies with the latest version of the
     [Guidelines for the Issuance and Management of Extended Validation
     Certificates][EV].
+
+### 3.3 Baseline Requirements Conformance ###
 
 CA operations relating to issuance of certificates capable of being used for
 SSL-enabled servers must also conform to the latest version of the [CA/Browser
@@ -126,8 +132,8 @@ where this policy takes precedence over the Baseline Requirements. If you find
 an inconsistency that is not listed here, notify Mozilla so the item can be
 considered for addition or clarification.
 
-*   Mozilla’s definitions of a "competent" and
-    "independent" auditor are a superset of section 8.2 of the
+*   Mozilla’s definitions of a "competent" and "independent" auditor in section
+    4.2 of this document are a superset of definitions in section 8.2 of the
     Baseline Requirements, and take precedence over them.
 
 ## 4. Documentation ##
@@ -176,12 +182,12 @@ following documents to be acceptable:
 
 #### 4.1.2 Required Audits ####
 
-*   All CAs require a standard audit.
+*   All CAs require a standard audit (criteria 1, 4, 5, 6 or 7).
 *   CAs which issue certificates capable of being used for SSL-enabled servers
-    require a [Baseline Requirements][BRs] audit.
+    require a [Baseline Requirements][BRs] audit (criteria 2, 4, 5, 6 or 7).
 *   CAs which issue certificates which contain an OID recognised by our root
     program as indicating Extended Validation require an [Extended
-    Validation][EV] audit.
+    Validation][EV] audit (criteria 3, 4, 5, 6, or 7).
 
 #### 4.1.3 Public Audit Information ####
 
@@ -205,6 +211,18 @@ months of the point in time date or the end date of the period.
 
 Mozilla requires that audits be performed by a competent independent party.
 
+We reserve the right to designate our own representative(s) to act
+as the competent independent party or parties described below,
+should that prove to be necessary and appropriate.
+
+The burden is on the CA to prove that it has met the below
+requirements. However the CA may request a preliminary determination
+from us regarding the acceptability of the criteria and/or the
+competent independent party or parties by which it proposes to meet
+the requirements of this policy.
+
+#### 4.2.1 Competent Party ####
+
 By "competent party" we mean a person or other entity who is
 authorized to perform audits according to the stated criteria (e.g.,
 by the organization responsible for the criteria or by a relevant
@@ -220,26 +238,18 @@ regarding the party’s:
     or risk analyses; *and*
 3.  honesty and objectivity.
 
+#### 4.2.2 Independent Party ####
+
 By "independent party" we mean a person or other entity who is not
 affiliated with the CA as an employee or director *and* for whom at
 least one of the following statements is true:
 
-a.  the party is not financially compensated by the CA;
-b.  the nature and amount of the party’s financial compensation by
+1.  the party is not financially compensated by the CA;
+2.  the nature and amount of the party’s financial compensation by
     the CA is publicly disclosed; *or*
-c.  the party is bound by law, government regulation, and/or a
+3.  the party is bound by law, government regulation, and/or a
     professional code of ethics to render an honest and objective
     judgement regarding the CA.
-
-We reserve the right to designate our own representative(s) to act
-as the competent independent party or parties described above,
-should that prove to be necessary and appropriate.
-
-The burden is on the CA to prove that it has met the above
-requirements. However the CA may request a preliminary determination
-from us regarding the acceptability of the criteria and/or the
-competent independent party or parties by which it proposes to meet
-the requirements of this policy.
 
 ### 4.3 CPs and CPSes ###
 
