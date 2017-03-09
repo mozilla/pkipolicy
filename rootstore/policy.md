@@ -14,7 +14,7 @@ This is the official Mozilla policy for CA certificates that are distributed
 with Mozilla software products. This policy consists of the following
 sections:
 
-* [Audit Requirements](audit-requirements)
+* [Audit Requirements](#audit-requirements)
 
     Before being included and periodically thereafter, CAs are required to
     obtain certain audits. This section describes the requirements for those
