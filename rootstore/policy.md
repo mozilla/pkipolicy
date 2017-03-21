@@ -29,26 +29,26 @@ the software; see the Mozilla trademark policy for more information.
 This policy applies, as appropriate, to certificates matching any of the
 following (and the CAs which control or issue them):
 
-1. CA certificates applying for inclusion in, or included in, the Mozilla root
-   store.
+1.  CA certificates applying for inclusion in, or included in, the Mozilla root
+    store.
 
-2. Intermediate certificates which have at least one valid, unrevoked chain up
-   to such a CA certificate and which are not technically constrained such
-   that they are unable to issue working server or email certificates. Such
-   technical constraints could consist of either:
+2.  Intermediate certificates which have at least one valid, unrevoked chain up
+    to such a CA certificate and which are not technically constrained such
+    that they are unable to issue working server or email certificates. Such
+    technical constraints could consist of either:
 
-   * an Extended Key Usage (EKU) extension which does not contain either of the
-     id-kp-serverAuth and id-kp-emailProtection EKUs; or:
-   * name constraints which do not allow SANs of any of the following types:
-     dNSName, iPAddress, SRVName, rfc822Name
+    * an Extended Key Usage (EKU) extension which does not contain either of
+      the id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+    * name constraints which do not allow SANs of any of the following types:
+      dNSName, iPAddress, SRVName, rfc822Name
 
-3. End-entity certificates which have at least one valid, unrevoked chain up to
-   such a CA certificate through intermediate certificates which are all in
-   scope, such end-entity certificates having either:
+3.  End-entity certificates which have at least one valid, unrevoked chain up
+    to such a CA certificate through intermediate certificates which are all in
+    scope, such end-entity certificates having either:
 
-   * an Extended Key Usage (EKU) extension which contains one or more of the
-     id-kp-serverAuth and id-kp-emailProtection EKUs; or:
-   * no EKU extension.
+    * an Extended Key Usage (EKU) extension which contains one or more of the
+      id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+    * no EKU extension.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be
@@ -189,37 +189,37 @@ following documents to be acceptable:
 If being audited to the WebTrust criteria, the following audits are required
 (see section 4.1.1 for specific version numbers):
 
-* For the SSL trust bit, a CA and all subordinate CAs technically capable
-of issuing server certificates must have all of the following:
+*   For the SSL trust bit, a CA and all subordinate CAs technically capable
+    of issuing server certificates must have all of the following:
 
-  * [WebTrust for CAs][WebTrust-2.0]
-  * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
-  * [WebTrust for CAs - EV SSL][WebTrust-EV] (if applying for EV recognition)
+    * [WebTrust for CAs][WebTrust-2.0]
+    * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
+    * [WebTrust for CAs - EV SSL][WebTrust-EV] (if applying for EV recognition)
 
-* For the email trust bit, a CA and all subordinate CAs technically capable
-of issuing email certificates must have all of the following:
+*   For the email trust bit, a CA and all subordinate CAs technically capable
+    of issuing email certificates must have all of the following:
 
-  * [WebTrust for CAs][WebTrust-2.0]
+    * [WebTrust for CAs][WebTrust-2.0]
 
 ##### 4.1.2.2 ETSI #####
 
 If being audited to the ETSI criteria, the following audits are required
 (see section 4.1.1 for version numbers):
 
-* For the SSL trust bit, a CA and all subordinate CAs technically capable
-of issuing server certificates must have either of the following:
+*   For the SSL trust bit, a CA and all subordinate CAs technically capable
+    of issuing server certificates must have either of the following:
 
-  * [ETSI TS 102 042][ETSI-102-042] - DVCP, OVCP, PTC-BR
-  * [ETSI EN 319 411-1][ETSI-319-411-1] - DVCP, OVCP, PTC-BR
+    * [ETSI TS 102 042][ETSI-102-042] - DVCP, OVCP, PTC-BR
+    * [ETSI EN 319 411-1][ETSI-319-411-1] - DVCP, OVCP, PTC-BR
 
-* For the email trust bit, a CA and all subordinate CAs technically capable
-of issuing email certificates must have either of the following sets of
-audits:
+*   For the email trust bit, a CA and all subordinate CAs technically capable
+    of issuing email certificates must have either of the following sets of
+    audits:
 
-  * [ETSI TS 101 456][ETSI-101-456]
-    and [ETSI TS 102 042][ETSI-102-042] - LCP, NCP, NCP+
-  * [ETSI EN 319 411-1][ETSI-319-411-1]
-    and [ETSI EN 319 411-2][ETSI-319-411-2] - LCP, NCP, NCP+
+    * [ETSI TS 101 456][ETSI-101-456]
+      and [ETSI TS 102 042][ETSI-102-042] - LCP, NCP, NCP+
+    * [ETSI EN 319 411-1][ETSI-319-411-1]
+      and [ETSI EN 319 411-2][ETSI-319-411-2] - LCP, NCP, NCP+
 
 #### 4.1.3 Public Audit Information ####
 
@@ -319,12 +319,12 @@ Root certificates in our root program, and any certificate which
 chains up to them, MUST use only algorithms and key sizes from the following
 set:
 
-- RSA keys whose modulus size in bits is divisible by 8, and is at
-least 2048.
-- Digest algorithms: SHA-1 (see below), SHA-256, SHA-384, or SHA-512.
-- ECDSA keys using one of the following curve-hash pairs:
-  * P‐256 with SHA-256
-  * P‐384 with SHA-384
+*   RSA keys whose modulus size in bits is divisible by 8, and is at
+    least 2048.
+*   Digest algorithms: SHA-1 (see below), SHA-256, SHA-384, or SHA-512.
+*   ECDSA keys using one of the following curve-hash pairs:
+    * P‐256 with SHA-256
+    * P‐384 with SHA-384
 
 #### 5.1.1 SHA-1 ####
 
@@ -332,12 +332,14 @@ CAs MAY sign SHA-1 hashes over end-entity certificates which chain
 up to roots in Mozilla's program only if all the following are true:
 
 1. The end-entity certificate:
+
    * is not within the scope of the Baseline Requirements;
    * contains an EKU extension which does not contain either of the id-kp-
      serverAuth or anyExtendedKeyUsage key purposes;
    * has at least 64 bits of entropy from a CSPRNG in the serial number.
 
 2. The issuing certificate:
+
    * contains an EKU extension which does not contain either of the id-kp-
      serverAuth or anyExtendedKeyUsage key purposes;
    * has a pathlen:0 constraint.
@@ -350,9 +352,9 @@ chain up to roots in Mozilla's program only if the certificate to be signed
 is a duplicate of an existing SHA-1 intermediate certificate with the
 only changes being all of:
 
-  * a new key (of the same size);
-  * a new serial number (of the same length);
-  * the addition of an EKU and/or a pathlen constraint to meet the
+*   a new key (of the same size);
+*   a new serial number (of the same length);
+*   the addition of an EKU and/or a pathlen constraint to meet the
     requirements outlined above.
 
 CAs MAY sign SHA-1 hashes over OCSP responses only if the signing
@@ -497,14 +499,14 @@ more than ten days beyond the value of the thisUpdate field.
 For end-entity certificates, if the CA provides revocation information
 via an Online Certificate Status Protocol (OCSP) service:
 
-- it MUST update that service at least every four days; and
-- responses MUST have a defined value in the nextUpdate field, and it
-  MUST be no more than ten days after the thisUpdate field; and
-- the value in the nextUpdate field MUST be before or equal to the
-  notAfter date of all certificates included within the
-  BasicOCSPResponse.certs field or, if the certs field is omitted,
-  before or equal to the notAfter date of the CA certificate which
-  issued the certificate that the BasicOCSPResponse is for.
+*   it MUST update that service at least every four days; and
+*   responses MUST have a defined value in the nextUpdate field, and it
+    MUST be no more than ten days after the thisUpdate field; and
+*   the value in the nextUpdate field MUST be before or equal to the
+    notAfter date of all certificates included within the
+    BasicOCSPResponse.certs field or, if the certs field is omitted,
+    before or equal to the notAfter date of the CA certificate which
+    issued the certificate that the BasicOCSPResponse is for.
 
 ## 7. Root Store Changes ##
 
@@ -550,8 +552,8 @@ MUST include the following:
     the CA issues certificates for each of the following purposes
     within the certificate hierarchy associated with the CA
     certificate:
-    -   SSL-enabled servers
-    -   digitally-signed and/or encrypted email;
+    * SSL-enabled servers
+    * digitally-signed and/or encrypted email;
 3.  for each CA certificate requested for inclusion, whether the CA
     issues Extended Validation certificates within the certificate hierarchy
     associated with the CA certificate and, if so, the EV policy
