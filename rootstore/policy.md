@@ -130,10 +130,10 @@ SSL-enabled servers MUST also conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
 Certificates][BRs] ("Baseline Requirements"). In the event of inconsistency
 between Mozilla’s Root Store Policy requirements and the Baseline Requirements,
-Mozilla’s Root Store Policy takes precedence. Below is a list of known places
-where this policy takes precedence over the Baseline Requirements. If you find
-an inconsistency that is not listed here, notify Mozilla so the item can be
-considered for addition or clarification.
+Mozilla’s Root Store Policy takes precedence. The following is a list of known
+places where this policy takes precedence over the Baseline Requirements. If
+you find an inconsistency that is not listed here, notify Mozilla so the item
+can be considered for addition or clarification.
 
 *   Mozilla’s definitions of a "competent" and "independent" auditor in section
     4.2 of this document are a superset of definitions in section 8.2 of the
@@ -151,32 +151,32 @@ audits. This section describes the requirements for those audits.
 We consider the criteria for CA operations published in the
 following documents to be acceptable:
 
-1.  WebTrust "[Principles and Criteria for Certification Authorities - Version
+*   WebTrust "[Principles and Criteria for Certification Authorities - Version
     2.0][WebTrust-2.0]" or later in [WebTrust Program for Certification
     Authorities][WebTrust-For-CAs];
-2.  WebTrust "[Principles and Criteria for Certification Authorities – SSL
+*   WebTrust "[Principles and Criteria for Certification Authorities – SSL
     Baseline with Network Security - Version 2.0][WebTrust-BRs]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-3.  WebTrust "[Principles and Criteria for Certification Authorities -
+*   WebTrust "[Principles and Criteria for Certification Authorities -
     Extended Validation SSL 1.4.5][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-4.  "Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or later version,
+*   Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or later version,
     [Policy requirements for certification authorities issuing qualified
     certificates][ETSI-101-456] (only applicable to electronic signature
     certificate issuance; applicable to either the "QCP public" or
     "QCP public + SSCD" certificate policies);
-5.  "Requirements on CA practice", in ETSI TS 102 042 V2.3.1 or later version,
+*   "Requirements on CA practice", in ETSI TS 102 042 V2.3.1 or later version,
     [Policy requirements for certification authorities issuing public key
     certificates][ETSI-102-042] (as applicable to the "EVCP" and "EVCP+"
     certificate policies, DVCP and OVCP certificate policies for publicly
     trusted certificates - baseline requirements, and any of the "NCP",
     "NCP+", or "LCP" certificate policies);
-6.  “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
+*   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 1: General requirements][ETSI-319-411-1],
     specifying a policy or policies appropriate to the trust bit(s) being
     applied for;
-7.  “Trust Service Providers practice” in ETSI EN 319 411-2 v2.1.1 or
+*   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.1.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 2: Requirements for trust service providers
     issuing EU qualified certificates][ETSI-319-411-2], specifying a
@@ -184,12 +184,42 @@ following documents to be acceptable:
 
 #### 4.1.2 Required Audits ####
 
-*   All CAs MUST have a standard audit (criteria 1, 4, 5, 6 or 7).
-*   CAs which issue certificates capable of being used for SSL-enabled servers
-    MUST have a [Baseline Requirements][BRs] audit (criteria 2, 4, 5, 6 or 7).
-*   CAs which issue certificates which contain an OID recognised by our root
-    program as indicating Extended Validation MUST have an [Extended
-    Validation][EV] audit (criteria 3, 4, 5, 6, or 7).
+##### 4.1.2.1 WebTrust #####
+
+If being audited to the WebTrust criteria, the following audits are required
+(see section 4.1.1 for specific version numbers):
+
+* For the SSL trust bit, a CA and all subordinate CAs technically capable
+of issuing server certificates must have all of the following:
+
+  * [WebTrust for CAs][WebTrust-2.0]
+  * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
+  * [WebTrust for CAs - EV SSL][WebTrust-EV] (if applying for EV recognition)
+
+* For the email trust bit, a CA and all subordinate CAs technically capable
+of issuing email certificates must have all of the following:
+
+  * [WebTrust for CAs][WebTrust-2.0]
+
+##### 4.1.2.2 ETSI #####
+
+If being audited to the ETSI criteria, the following audits are required
+(see section 4.1.1 for version numbers):
+
+* For the SSL trust bit, a CA and all subordinate CAs technically capable
+of issuing server certificates must have either of the following:
+
+  * [ETSI TS 102 042][ETSI-102-042] - DVCP, OVCP, PTC-BR
+  * [ETSI EN 319 411-1][ETSI-319-411-1] - DVCP, OVCP, PTC-BR
+
+* For the email trust bit, a CA and all subordinate CAs technically capable
+of issuing email certificates must have either of the following sets of
+audits:
+
+  * [ETSI TS 101 456][ETSI-101-456]
+    and [ETSI TS 102 042][ETSI-102-042] - LCP, NCP, NCP+
+  * [ETSI EN 319 411-1][ETSI-319-411-1]
+    and [ETSI EN 319 411-2][ETSI-319-411-2] - LCP, NCP, NCP+
 
 #### 4.1.3 Public Audit Information ####
 
