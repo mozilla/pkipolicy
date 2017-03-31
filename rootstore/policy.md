@@ -1,19 +1,19 @@
 # Mozilla Root Store Policy #
 
-*Version 2.4.1 (draft)*
+*Version 2.4.1*
 
 ## 1. Introduction ##
 
 When distributing binary and source code versions of Firefox, Thunderbird, and
-other Mozilla-related software products, Mozilla may include with such software
-a default set of X.509v3 root certificates for various Certification
-Authorities (CAs). The certificates included by default have their "trust bits"
+other Mozilla-related software products, Mozilla includes with such software
+a set of X.509v3 root certificates for various Certification
+Authorities (CAs). The included certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
 certificates to anchor a chain of trust for certificates used by SSL servers
 and S/MIME email users without having to ask users for further permission or
 information.
 
-This policy covers how that default set of certificates and associated trust
+This policy covers how the default set of certificates and associated trust
 bits is maintained for software products distributed by Mozilla. Other entities
 distributing software based on ours are free to adopt their own policies. In
 particular, under the terms of the relevant Mozilla license(s) distributors
@@ -21,8 +21,9 @@ of such software are permitted to add or delete CA certificates in the
 versions that they distribute, and are also permitted to modify the values of
 the trust bits on CA certificates in the default CA certificate set. However,
 as with other software modifications, by making such changes a distributor MAY
-affect its ability to use Mozilla trademarks in connection with its versions of
-the software; see the Mozilla trademark policy for more information.
+well affect its ability to use Mozilla trademarks in connection with its
+versions of the software. See the Mozilla trademark policy for more
+information.
 
 ### 1.1 Scope ###
 
@@ -69,16 +70,9 @@ who will make a final decision.
 You can contact the CA Certificate module team at
 [certificates@mozilla.org][Email-Us] if you have questions about this policy.
 
-## 2. Common CA Database ##
+## 2. Certificate Authorities ##
 
-Mozilla manages its root store using the Common CA Database (CCADB). CAs in the
-program MUST use the CCADB, and are bound by the [Common CCADB Policy
-v1.0](../ccadb/policy.md) and the [Mozilla CCADB Policy
-v1.0](../ccadb/mozilla.md), which are incorporated here by reference.
-
-## 3. Certificate Authorities ##
-
-### 3.1 CA Operations ###
+### 2.1 CA Operations ###
 
 CAs whose certificates are distributed with our software products MUST:
 
@@ -98,7 +92,7 @@ CAs whose certificates are distributed with our software products MUST:
 5.  otherwise operate in accordance with published criteria that we
     deem acceptable.
 
-### 3.2 Validation Practices ###
+### 2.2 Validation Practices ###
 
 We consider verification of certificate signing requests to be acceptable if it
 meets or exceeds the following requirements:
@@ -121,9 +115,9 @@ meets or exceeds the following requirements:
 4.  for certificates marked as Extended
     Validation, the CA MUST comply with the latest version of the
     [Guidelines for the Issuance and Management of Extended Validation
-    Certificates][EV].
+    Certificates][EVGLs].
 
-### 3.3 Baseline Requirements Conformance ###
+### 2.3 Baseline Requirements Conformance ###
 
 CA operations relating to issuance of certificates capable of being used for
 SSL-enabled servers MUST also conform to the latest version of the [CA/Browser
@@ -136,17 +130,17 @@ you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
 
 *   Mozilla’s definitions of a "competent" and "independent" auditor in section
-    4.2 of this document are a superset of definitions in section 8.2 of the
+    3.2 of this document are a superset of definitions in section 8.2 of the
     Baseline Requirements, and take precedence over them.
 
-## 4. Documentation ##
+## 3. Documentation ##
 
-### 4.1 Audits ###
+### 3.1 Audits ###
 
 Before being included and periodically thereafter, CAs MUST obtain certain
 audits. This section describes the requirements for those audits.
 
-#### 4.1.1 Audit Criteria ####
+#### 3.1.1 Audit Criteria ####
 
 We consider the criteria for CA operations published in the
 following documents to be acceptable:
@@ -182,12 +176,12 @@ following documents to be acceptable:
     issuing EU qualified certificates][ETSI-319-411-2], specifying a
     policy or policies appropriate to the trust bit(s) being applied for.
 
-#### 4.1.2 Required Audits ####
+#### 3.1.2 Required Audits ####
 
-##### 4.1.2.1 WebTrust #####
+##### 3.1.2.1 WebTrust #####
 
 If being audited to the WebTrust criteria, the following audits are required
-(see section 4.1.1 for specific version numbers):
+(see section 3.1.1 for specific version numbers):
 
 *   For the SSL trust bit, a CA and all subordinate CAs technically capable
     of issuing server certificates must have all of the following:
@@ -201,10 +195,10 @@ If being audited to the WebTrust criteria, the following audits are required
 
     * [WebTrust for CAs][WebTrust-2.0]
 
-##### 4.1.2.2 ETSI #####
+##### 3.1.2.2 ETSI #####
 
 If being audited to the ETSI criteria, the following audits are required
-(see section 4.1.1 for version numbers):
+(see section 3.1.1 for version numbers):
 
 *   For the SSL trust bit, a CA and all subordinate CAs technically capable
     of issuing server certificates must have either of the following:
@@ -221,7 +215,7 @@ If being audited to the ETSI criteria, the following audits are required
     * [ETSI EN 319 411-1][ETSI-319-411-1]
       and [ETSI EN 319 411-2][ETSI-319-411-2] - LCP, NCP, NCP+
 
-#### 4.1.3 Public Audit Information ####
+#### 3.1.3 Public Audit Information ####
 
 The publicly-available documentation relating to each audit MUST contain at
 least the following clearly-labelled information:
@@ -239,7 +233,7 @@ For audit reports which are being supplied to maintain a certificate within
 the Mozilla root program, they MUST be provided to Mozilla within three
 months of the point in time date or the end date of the period.
 
-### 4.2 Auditors ###
+### 3.2 Auditors ###
 
 Mozilla requires that audits MUST be performed by a competent independent
 party.
@@ -254,7 +248,7 @@ from us regarding the acceptability of the criteria and/or the
 competent independent party or parties by which it proposes to meet
 the requirements of this policy.
 
-#### 4.2.1 Competent Party ####
+#### 3.2.1 Competent Party ####
 
 By "competent party" we mean a person or other entity who is
 authorized to perform audits according to the stated criteria (e.g.,
@@ -271,7 +265,7 @@ regarding the party’s:
     or risk analyses; *and*
 3.  honesty and objectivity.
 
-#### 4.2.2 Independent Party ####
+#### 3.2.2 Independent Party ####
 
 By "independent party" we mean a person or other entity who is not
 affiliated with the CA as an employee or director *and* for whom at
@@ -284,7 +278,7 @@ least one of the following statements is true:
     professional code of ethics to render an honest and objective
     judgement regarding the CA.
 
-### 4.3 CPs and CPSes ###
+### 3.3 CPs and CPSes ###
 
 We rely on publicly disclosed documentation (e.g., in a Certificate Policy and
 Certification Practice Statement) to ascertain that our requirements are met.
@@ -309,7 +303,14 @@ Therefore, the following MUST be true:
     writing. If no such license is indicated, the fact of application is
     considered as permission from the CA to allow Mozilla and the public to
     deal with these documents, and any later versions for root certificates
-    which are included in Mozilla's trust store, under CC-BY-ND.
+    which are included in Mozilla's trust store, under CC-BY-ND 4.0.
+
+## 4. Common CA Database ##
+
+Mozilla manages its root store using the Common CA Database (CCADB). CAs in the
+program MUST use the CCADB, and are bound by the [Common CCADB Policy
+v1.0](../ccadb/policy.md) and the [Mozilla CCADB Policy
+v1.0](../ccadb/mozilla.md), which are incorporated here by reference.
 
 ## 5. Certificates ##
 
@@ -372,7 +373,7 @@ CAs MUST maintain a certificate hierarchy such that the included
 certificate does not directly issue end-entity certificates to
 customers (i.e. the included certificate signs intermediate
 issuing certificates), as described in section 6.1.7 of the
-[Baseline Requirements][BRs];
+[Baseline Requirements][BRs].
 
 CAs MUST maintain current best practices to prevent
 algorithm attacks against certificates. As such, all new certificates
@@ -541,7 +542,7 @@ To request that its certificate(s) be added to the default set a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
 into the mozilla.org Bugzilla system, filed against the "CA
 Certificates" component of the "mozilla.org" product. Mozilla’s wiki
-page, [Applying for root inclusion in Mozilla products][How-To-Apply], provides
+page, "[Applying for root inclusion in Mozilla products][How-To-Apply]", provides
 further details about how to submit a formal request. The request
 MUST be made by an authorized representative of the subject CA, and
 MUST include the following:
@@ -581,14 +582,14 @@ Mozilla products as follows:
     and may be requested by a representative of the CA or a
     representative of Mozilla by submitting a bug report into the
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
-    page, [Applying for root inclusion in Mozilla products][How-To-Apply];
+    page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 2.  enabling EV in a root certificate that is currently included,
     may only be done after careful consideration of the CA’s current
     policies, practices, and audits,
     and may be requested by a representative of the CA or a
     representative of Mozilla by submitting a bug report into the
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
-    page, [Applying for root inclusion in Mozilla products][How-To-Apply];
+    page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 3.  disabling a root is the act of turning off one or more of the
     trust bits (Websites, Email), and may be
     requested by a representative of the CA or a representative of
@@ -623,7 +624,7 @@ as otherwise required in a timely manner SHALL also be grounds for
 disabling a CA’s root certificates or removing them from Mozilla
 products. For this policy and the CCADB policies, "a timely manner" means
 within 30 days of when the appropriate data or documentation becomes
-available to the CA.
+available to the CA, unless a policy specifies a different rule.
 
 If Mozilla disables or removes a CA’s certificate(s) from Mozilla’s
 products based on a CA’s actions (or failure to act) that are
@@ -648,7 +649,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Email-Us]:         mailto:certificates@mozilla.org
 [CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:       https://wiki.mozilla.org/Modules/Activities#Governance
-[EV]:               https://cabforum.org/extended-validation/
+[EVGLs]:            https://cabforum.org/extended-validation/
 [BRs]:              https://cabforum.org/baseline-requirements-documents/
 [ETSI-101-456]:     http://www.etsi.org/deliver/etsi_ts/101400_101499/101456/01.04.03_60/ts_101456v010403p.pdf
 [ETSI-102-042]:     http://www.etsi.org/deliver/etsi_ts/102000_102099/102042/02.03.01_60/ts_102042v020301p.pdf
