@@ -92,6 +92,11 @@ CAs whose certificates are distributed with our software products MUST:
 5.  otherwise operate in accordance with published criteria that we
     deem acceptable.
 
+CAs MUST follow and be aware of discussions in the
+[mozilla.dev.security.policy][MDSP] forum, where Mozilla's root program is
+coordinated. They are encouraged, but not required, to contribute to those
+discussions.
+
 ### 2.2 Validation Practices ###
 
 We consider verification of certificate signing requests to be acceptable if it
@@ -655,6 +660,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Email-Us]:         mailto:certificates@mozilla.org
 [CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:       https://wiki.mozilla.org/Modules/Activities#Governance
+[MDSP]:             https://www.mozilla.org/about/forums/#dev-security-policy
 [EVGLs]:            https://cabforum.org/extended-validation/
 [BRs]:              https://cabforum.org/baseline-requirements-documents/
 [ETSI-101-456]:     http://www.etsi.org/deliver/etsi_ts/101400_101499/101456/01.04.03_60/ts_101456v010403p.pdf
