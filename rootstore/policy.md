@@ -443,7 +443,8 @@ Mozilla’s Root Store Policy and MUST be publicly disclosed in the
 CCADB by the CA that has their certificate
 included in Mozilla’s CA Certificate Program. The CA with a
 certificate included in Mozilla’s CA Certificate Program MUST
-disclose this information before any such subordinate CA is allowed
+disclose this information within a week of certificate creation, and
+before any such subordinate CA is allowed
 to issue certificates. All disclosure MUST be made freely available
 and without additional requirements, including, but not limited to,
 registration, legal agreements, or restrictions on redistribution of
