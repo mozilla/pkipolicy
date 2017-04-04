@@ -114,7 +114,7 @@ meets or exceeds the following requirements:
     the account holder’s behalf;
 3.  for a certificate capable of being used for SSL-enabled servers, the CA
     takes reasonable measures to verify that the entity submitting
-    the certificate signing request has registered the domain(s)
+    the certificate signing request has registered the domain name(s)
     referenced in the certificate *or* has been authorized by the
     domain registrant to act on the registrant’s behalf;
 4.  for certificates marked as Extended
