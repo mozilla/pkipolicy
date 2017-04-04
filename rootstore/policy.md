@@ -83,7 +83,7 @@ CAs whose certificates are distributed with our software products MUST:
     controls operated by the CA to restrict certificate issuance
     through the account to a limited set of pre-approved domains or
     email addresses;
-3.  prior to issuing certificates, verify certificate signing
+3.  prior to issuing certificates, verify certificate
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
 4.  verify that all of the information that is included in SSL
@@ -292,7 +292,7 @@ Therefore, the following MUST be true:
 1.  the publicly disclosed documentation provides sufficient
     information for Mozilla to determine whether and how the CA
     complies with this policy, including a description of the steps
-    taken by the CA to verify certificate signing requests;
+    taken by the CA to verify certificate requests;
 
 2.  the documentation is available from the CA’s official website;
 
