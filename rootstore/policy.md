@@ -613,8 +613,9 @@ Mozilla products as follows:
 
 ### 7.3 Removals ###
 
-Mozilla MAY, at its sole discretion, disable (partially or fully) or
-remove a certificate at any time and for any reason. Mozilla will
+Mozilla MAY, at its sole discretion, decide to disable (partially or fully) or
+remove a certificate at any time and for any reason. This may happen
+immediately or on a planned future date. Mozilla will
 disable or remove a certificate if the CA demonstrates ongoing or
 egregious practices that do not maintain the expected level of service
 or that do not comply with the requirements of this policy.
