@@ -1,6 +1,6 @@
 # Common CCADB Policy #
 
-*Version 1.0 (draft)*
+*Version 1.0*
 
 Several Web PKI root store operators (“Stores”) have collaborated to create
 the Common Certificate Authority Database (CCADB), a data repository of
