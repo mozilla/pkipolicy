@@ -91,9 +91,9 @@ When an intermediate certificate chains up to two included root certificates,
 each instance (i.e. PEM data) of the certificate only needs to be included in
 the CCADB once.
 
-If an intermediate certificate is revoked, the CCADB must be updated to mark it
-as revoked, giving the reason why, within 24 hours for a security incident, and
-within 7 days for any other reason.
+If a non-exempt intermediate certificate is revoked, the CCADB must be updated
+to mark it as revoked, giving the reason why, within 24 hours for a security
+incident, and within 7 days for any other reason.
 
 ## 5. Policies, Practices and Audit Information ##
 
