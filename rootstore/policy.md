@@ -305,6 +305,11 @@ Therefore, the following MUST be true:
     deal with these documents, and any later versions for root certificates
     which are included in Mozilla's trust store, under CC-BY-ND 4.0.
 
+CPs and CPSes MUST be reviewed and updated as necessary at least once every
+year, as required by the Baseline Requirements. CAs MUST indicate that this has
+happened by incrementing the version number and adding a dated changelog entry,
+even if no other changes are made to the document.
+
 ## 4. Common CA Database ##
 
 Mozilla manages its root store using the Common CA Database (CCADB). CAs in the
