@@ -134,9 +134,9 @@ places where this policy takes precedence over the Baseline Requirements. If
 you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
 
-*   Mozilla’s definitions of a "competent" and "independent" auditor in section
-    3.2 of this document are a superset of definitions in section 8.2 of the
-    Baseline Requirements, and take precedence over them.
+*   Mozilla reserves the right to accept audits by auditors who do not meet the
+    qualifications given in section 8.2 of the Baseline Requirements, or refuse
+    audits from auditors who do.
 
 ## 3. Documentation ##
 
@@ -250,48 +250,13 @@ months of the point in time date or the end date of the period.
 
 ### 3.2 Auditors ###
 
-Mozilla requires that audits MUST be performed by a competent independent
-party.
+In normal circumstances, Mozilla requires that audits MUST be performed
+by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-We reserve the right to designate our own representative(s) to act
-as the competent independent party or parties described below,
-should that prove to be necessary and appropriate.
-
-The burden is on the CA to prove that it has met the below
-requirements. However the CA MAY request a preliminary determination
-from us regarding the acceptability of the criteria and/or the
-competent independent party or parties by which it proposes to meet
-the requirements of this policy.
-
-#### 3.2.1 Competent Party ####
-
-By "competent party" we mean a person or other entity who is
-authorized to perform audits according to the stated criteria (e.g.,
-by the organization responsible for the criteria or by a relevant
-government agency) *or* for whom there is sufficient public
-information available to determine that the party is competent to
-judge the CA’s conformance to the stated criteria. In the latter
-case the "public information" referred to SHOULD include information
-regarding the party’s:
-
-1.  knowledge of CA-related technical issues such as public key
-    cryptography and related standards;
-2.  experience in performing security-related audits, evaluations,
-    or risk analyses; *and*
-3.  honesty and objectivity.
-
-#### 3.2.2 Independent Party ####
-
-By "independent party" we mean a person or other entity who is not
-affiliated with the CA as an employee or director *and* for whom at
-least one of the following statements is true:
-
-1.  the party is not financially compensated by the CA;
-2.  the nature and amount of the party’s financial compensation by
-    the CA is publicly disclosed; *or*
-3.  the party is bound by law, government regulation, and/or a
-    professional code of ethics to render an honest and objective
-    judgement regarding the CA.
+If a CA wishes to use auditors who do not fit that definition, they MUST
+receive written permission from Mozilla to do so in advance of the start
+of the audit engagement. Mozilla will make its own determination as to
+the suitability of the suggested party or parties, at its sole discretion.
 
 ### 3.3 CPs and CPSes ###
 
