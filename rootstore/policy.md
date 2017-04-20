@@ -225,14 +225,24 @@ If being audited to the ETSI criteria, the following audits are required
 The publicly-available documentation relating to each audit MUST contain at
 least the following clearly-labelled information:
 
-1.  a list of the CA policy documents (with version numbers) referenced during
+1.  name of the company being audited;
+2.  name and address of the organization performing the audit;
+3.  DN and SHA256 fingerprint of each root and intermediate certificate that
+    was in scope;
+4.  audit criteria (with version number) that were used to audit each of
+    the certificates;
+5.  a list of the CA policy documents (with version numbers) referenced during
     the audit;
-2.  whether the audit is for a period of time or point in time;
-3.  the start date and end date of the period, for those that cover a period
+6.  whether the audit is for a period of time or point in time;
+7.  the start date and end date of the period, for those that cover a period
     of time;
-4.  the point in time date, for those that are for a point in time;
-5.  the date the report was issued (which will necessarily be after the end
-    date or point in time date).
+8.  the point in time date, for those that are for a point in time;
+9.  the date the report was issued (which will necessarily be after the end
+    date or point in time date); and
+10. For ETSI, a statement that the audit was a full audit, and which parts
+    of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
+    EVCP+, Part1 (General Requirements), and/or Part 2 (Requirements for
+    trust service providers).
 
 For audit reports which are being supplied to maintain a certificate within
 the Mozilla root program, they MUST be provided to Mozilla within three
