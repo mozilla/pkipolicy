@@ -16,10 +16,9 @@ information.
 This policy covers how the default set of certificates and associated trust
 bits is maintained for software products distributed by Mozilla. Other entities
 distributing software based on ours are free to adopt their own policies. In
-particular, under the terms of the relevant Mozilla license(s) distributors
-of such software are permitted to add or delete CA certificates in the
-versions that they distribute, and are also permitted to modify the values of
-the trust bits on CA certificates in the default CA certificate set. However,
+particular, under the terms of the relevant Mozilla license(s) distributors of
+such software are permitted to add or delete CA certificates and modify the
+values of the trust bits in the versions that they distribute. However,
 as with other software modifications, by making such changes a distributor MAY
 well affect its ability to use Mozilla trademarks in connection with its
 versions of the software. See the Mozilla trademark policy for more
@@ -30,18 +29,18 @@ information.
 This policy applies, as appropriate, to certificates matching any of the
 following (and the CAs which control or issue them):
 
-1.  CA certificates applying for inclusion in, or included in, the Mozilla root
-    store.
+1.  CA certificates included in, or under consideration for inclusion in, the
+    Mozilla root program.
 
 2.  Intermediate certificates which have at least one valid, unrevoked chain up
-    to such a CA certificate and which are not technically constrained such
-    that they are unable to issue working server or email certificates. Such
-    technical constraints could consist of either:
+    to such a CA certificate and which are not technically constrained to
+    prevent issuance of working server or email certificates. Such technical
+    constraints could consist of either:
 
     * an Extended Key Usage (EKU) extension which does not contain either of
       the id-kp-serverAuth and id-kp-emailProtection EKUs; or:
-    * name constraints which do not allow SANs of any of the following types:
-      dNSName, iPAddress, SRVName, rfc822Name
+    * name constraints which do not allow Subject Alternative Names (SANs) of
+      any of the following types: dNSName, iPAddress, SRVName, rfc822Name
 
 3.  End-entity certificates which have at least one valid, unrevoked chain up
     to such a CA certificate through intermediate certificates which are all in
@@ -59,22 +58,24 @@ interpreted as described in RFC 2119.
 
 Mozilla has appointed a [CA Certificate module owner][CA-Cert-Module]
 and peers to evaluate new CA requests on our behalf and make decisions
-regarding all matters relating to CA certificates included in our products.
+regarding all matters relating to CA certificates included in our root program.
 
-The CA Certificate module team may change this policy in the future. We will do
-so only after consulting with the public Mozilla community, in order to ensure
-that all views are taken into account. CAs or others objecting to a particular
-decision MAY appeal to the [Mozilla governance module owner][Gov-Module]
-who will make a final decision.
+Further, Mozilla has appointed a [Mozilla CA Certificate Policy module
+owner][CA-Policy-Module] and peers to maintain this policy. The policy will
+only be changed after public consultation with the Mozilla community, in order
+to ensure that all views are taken into account. You can contact the Mozilla CA
+Certificate Policy module team at [certificates@mozilla.org][Email-Us] if you
+have questions about this policy.
 
-You can contact the CA Certificate module team at
-[certificates@mozilla.org][Email-Us] if you have questions about this policy.
+CAs or others objecting to a particular decision by either team MAY appeal to
+the [Mozilla governance module owner][Gov-Module] who will make a final
+decision.
 
 ## 2. Certificate Authorities ##
 
 ### 2.1 CA Operations ###
 
-CAs whose certificates are distributed with our software products MUST:
+CAs whose certificates are included in Mozilla's root program MUST:
 
 1.  provide some service relevant to typical users of our software
     products;
@@ -292,9 +293,9 @@ even if no other changes are made to the document.
 
 ## 4. Common CA Database ##
 
-Mozilla manages its root store using the Common CA Database (CCADB). CAs in the
-program MUST use the CCADB, and are bound by the [Common CCADB Policy
-v1.0](../ccadb/policy.md) and the [Mozilla CCADB Policy
+Mozilla manages its root program using the Common CA Database (CCADB). CAs with
+certificates in Mozilla’s root program MUST use the CCADB, and are bound by the
+[Common CCADB Policy v1.0](../ccadb/policy.md) and the [Mozilla CCADB Policy
 v1.0](../ccadb/mozilla.md), which are incorporated here by reference.
 
 ## 5. Certificates ##
@@ -423,11 +424,11 @@ certificates as described above may not be practical in some cases.
 All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
-Mozilla’s CA Certificate Program MUST be audited in accordance with
+Mozilla’s root program MUST be audited in accordance with
 Mozilla’s Root Store Policy and MUST be publicly disclosed in the
 CCADB by the CA that has their certificate
-included in Mozilla’s CA Certificate Program. The CA with a
-certificate included in Mozilla’s CA Certificate Program MUST
+included in Mozilla’s root program. The CA with a
+certificate included in Mozilla’s root program MUST
 disclose this information within a week of certificate creation, and
 before any such subordinate CA is allowed
 to issue certificates. All disclosure MUST be made freely available
@@ -504,18 +505,18 @@ Bugs][Sec-Bugs] SHOULD be followed.
 
 ### 7.1 Inclusions ###
 
-We will determine which CA certificates are included in software
-products distributed by Mozilla, based on the benefits and risks of
-such inclusion to typical users of those products. We will consider adding
+We will determine which CA certificates are included in Mozilla's root program
+based on the benefits and risks of
+such inclusion to typical users of our products. We will consider adding
 additional CA certificates to the default certificate set upon request only by
 an authorized representative of the subject CA. We will make such decisions
 through a public process, based on objective and verifiable criteria.
 
 We will not charge any fees to have a CA’s certificate(s)
-distributed with our software products.
+included in Mozilla's root program.
 
 We reserve the right to not include certificates from a particular CA in
-our software products. This includes (but is not limited to) cases
+our root program. This includes (but is not limited to) cases
 where we believe that a CA has caused undue risks to users’
 security, for example, by:
 
@@ -524,7 +525,7 @@ security, for example, by:
 *   knowingly issue certificates that appear to be intended for
     fraudulent use.
 
-To request that its certificate(s) be added to the default set a CA
+To request that its certificate(s) be added to Mozilla's root program a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
 into the mozilla.org Bugzilla system, filed against the "CA
 Certificates" component of the "mozilla.org" product. Mozilla’s wiki
@@ -560,7 +561,7 @@ request.
 ### 7.2 Updates ###
 
 Changes MAY be made to root certificates that are included in
-Mozilla products as follows:
+Mozilla's root program as follows:
 
 1.  enabling a trust bit in a root certificate that is currently
     included, may only be done after careful consideration of the
@@ -577,7 +578,7 @@ Mozilla products as follows:
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 3.  disabling a root is the act of turning off one or more of the
-    trust bits (Websites, Email), and may be
+    trust bits (SSL or email), and may be
     requested by a representative of the CA or a representative of
     Mozilla by submitting a bug report into the mozilla.org Bugzilla
     system, as described in the [Root Change Process][Root-Changes];
@@ -599,7 +600,7 @@ Mozilla will take any steps we deem appropriate to protect our users
 if we learn that a CA has knowingly or intentionally mis-issued one
 or more certificates. This may include, but is not limited to
 disablement (partially or fully) or removal of all of the CA’s
-certificates from Mozilla’s products. A certificate that includes
+certificates from Mozilla’s root program. A certificate that includes
 domain names that have not been verified according to section 3.2.2.4 of the
 [Baseline Requirements][BRs] is considered to be mis-issued. A certificate
 that is intended to be used only as an end entity certificate but includes a
@@ -608,13 +609,14 @@ extension with the cA field set to true is considered to be mis-issued.
 
 A failure to provide notifications or updates in the CCADB or
 as otherwise required in a timely manner SHALL also be grounds for
-disabling a CA’s root certificates or removing them from Mozilla
-products. For this policy and the CCADB policies, "a timely manner" means
+disabling a CA’s root certificates or removing them from Mozilla's root
+program. For this policy and the CCADB policies, "a timely manner" means
 within 30 days of when the appropriate data or documentation becomes
-available to the CA, unless a policy specifies a different rule.
+available to the CA, unless a Mozilla policy document specifies a different
+rule.
 
 If Mozilla disables or removes a CA’s certificate(s) from Mozilla’s
-products based on a CA’s actions (or failure to act) that are
+root program based on a CA’s actions (or failure to act) that are
 contrary to the Mozilla Root Store Policy,
 Mozilla will publicize that fact in newsgroups on the
 news.mozilla.org server, on Web pages in the mozilla.org and
@@ -634,7 +636,8 @@ to [certificates@mozilla.org][Email-Us].
 Any copyright in this document is [dedicated to the Public Domain][CC-0].
 
 [Email-Us]:         mailto:certificates@mozilla.org
-[CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
+[CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#CA_Certificates
+[CA-Policy-Module]: https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:       https://wiki.mozilla.org/Modules/Activities#Governance
 [MDSP]:             https://www.mozilla.org/about/forums/#dev-security-policy
 [EVGLs]:            https://cabforum.org/extended-validation/
