@@ -233,7 +233,7 @@ least the following clearly-labelled information:
     the certificates;
 5.  a list of the CA policy documents (with version numbers) referenced during
     the audit;
-6.  whether the audit is for a period of time or point in time;
+6.  whether the audit is for a period of time or a point in time;
 7.  the start date and end date of the period, for those that cover a period
     of time;
 8.  the point in time date, for those that are for a point in time;
