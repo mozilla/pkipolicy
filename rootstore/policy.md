@@ -295,8 +295,28 @@ even if no other changes are made to the document.
 
 Mozilla manages its root program using the Common CA Database (CCADB). CAs with
 certificates in Mozilla’s root program MUST use the CCADB, and are bound by the
-[Common CCADB Policy v1.0](../ccadb/policy.md) and the [Mozilla CCADB Policy
-v1.0](../ccadb/mozilla.md), which are incorporated here by reference.
+[Common CCADB Policy v1.0](../ccadb/policy.md), which is incorporated here by
+reference.
+
+When required by the CCADB Policy, Mozilla’s root program may be contacted
+[by email][Email-Us].
+
+Mozilla has requirements for the use of the CCADB above and beyond those in the
+CCADB Policy, as follows:
+
+### 4.1 Additional Requirements ###
+
+* If the revocation of an intermediate certificate chaining up to a root in
+Mozilla’s root program is due to a security concern, as well as performing the
+actions defined in the CCADB Policy, the [Mozilla Policy for Handling Security
+Bugs][Sec-Bugs] MUST be followed.
+* Audits must be conducted and updated audit information provided **annually**.
+
+### 4.2 Surveys ###
+
+Mozilla may conduct a survey of CAs from time to time using the CCADB. CAs are
+required to respond to the surveys with accurate information, within the
+timescale defined in the survey.
 
 ## 5. Certificates ##
 
