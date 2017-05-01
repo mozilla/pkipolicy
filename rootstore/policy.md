@@ -518,12 +518,8 @@ included in Mozilla's root program.
 We reserve the right to not include certificates from a particular CA in
 our root program. This includes (but is not limited to) cases
 where we believe that a CA has caused undue risks to users’
-security, for example, by:
-
-*   knowingly issue certificates without the knowledge of the
-    entities whose information is referenced in the certificates; or
-*   knowingly issue certificates that appear to be intended for
-    fraudulent use.
+security, e.g. by knowingly issuing certificates without the knowledge of the
+entities whose information is referenced in those certificates.
 
 To request that its certificate(s) be added to Mozilla's root program a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
