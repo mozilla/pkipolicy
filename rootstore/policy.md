@@ -438,43 +438,9 @@ the certificates in whole or in part.
 
 ## 6. Revocation ##
 
-CAs MUST revoke Certificates that they have issued upon the
-occurrence of any of the following events:
-
-1.  the subscriber indicates that the original certificate request
-    was not authorized and does not retroactively grant
-    authorization;
-2.  the CA obtains reasonable evidence that the subscriber’s private
-    key (corresponding to the public key in the certificate) has
-    been compromised or is suspected of compromise (e.g. Debian weak
-    keys);
-3.  the CA obtains reasonable evidence that the certificate has been used for a
-    purpose outside of that indicated in the certificate or in the CA's
-    subscriber agreement;
-4.  the CA receives notice or otherwise becomes aware that a
-    subscriber has violated one or more of its material obligations
-    under the subscriber agreement;
-5.  the CA receives notice or otherwise becomes aware of any
-    circumstance indicating that use of the domain name in the
-    certificate is no longer legally permitted (e.g. a court or
-    arbitrator has revoked a subscriber’s right to use the domain
-    name listed in the certificate, a relevant licensing or services
-    agreement with the registrant has terminated, or the registrant
-    of the domain name has failed to renew it);
-6.  the CA receives notice or otherwise becomes aware of a material
-    change in the information contained in the certificate;
-7.  a determination, in the CA’s sole discretion, that the
-    certificate was not issued in accordance with the CA’s
-    Certificate Policy or Certification Practice Statement;
-8.  the CA determines that any of the information appearing in the
-    certificate is not accurate, with the exception of the
-    organizationalUnitName field, if present;
-9.  the CA ceases operations for any reason and has not arranged for
-    another CA to provide revocation support for the certificate;
-10. the CA private key used in issuing the certificate is suspected
-    to have been compromised; or
-11. such additional revocation events as the CA publishes in its
-    policy documentation.
+CAs MUST revoke Certificates that they have issued upon the occurrence of any
+event listed in the appropriate subsection of section 4.9.1 of the Baseline
+Requirements, according to the timeline defined therein.
 
 CAs MUST maintain an online 24x7 repository mechanism whereby
 application software can automatically check online the current
