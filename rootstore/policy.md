@@ -245,8 +245,8 @@ least the following clearly-labelled information:
     EVCP+, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
 
-For audit reports which are being supplied to maintain a certificate within
-the Mozilla root program, they MUST be provided to Mozilla within three
+Audit reports which are being supplied to maintain a certificate within the
+Mozilla root program MUST be provided to Mozilla via the CCADB within three
 months of the point in time date or the end date of the period.
 
 ### 3.2 Auditors ###
