@@ -667,10 +667,10 @@ has provided all the information required by the CCADB, and demonstrated to
 Mozilla that they have all the appropriate audits, CP/CPS documents and other
 systems in place.
 
-When transferring a root certificate that is EV-enabled, the notification MUST
-clearly state whether the transferee is also receiving the (right to use the)
-EV policy OID(s) and, if so, MUST confirm that they have or will get the
-relevant audits before issuing EV certificates.
+The transferor MUST notify Mozilla about any necessary changes to EV status or
+trust bits in Mozilla's root store. If the transferee is receiving the (right
+to use the) associated EV policy OID(s), the transferor MUST confirm that the
+transferee has or will get the relevant audits before issuing EV certificates.
 
 ### 8.3 Change in Secure Location ###
 
