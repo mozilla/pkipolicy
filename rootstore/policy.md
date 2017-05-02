@@ -144,7 +144,9 @@ can be considered for addition or clarification.
 ### 3.1 Audits ###
 
 Before being included and periodically thereafter, CAs MUST obtain certain
-audits. This section describes the requirements for those audits.
+audits for their root certificates and all of their intermediate certificates
+that are not technically constrained to prevent issuance of working server or
+email certificates. This section describes the requirements for those audits.
 
 #### 3.1.1 Audit Criteria ####
 
