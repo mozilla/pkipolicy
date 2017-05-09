@@ -608,12 +608,96 @@ mozilla.com domains, in news releases sent to organizations
 specializing in computer and Internet news, and/or as an alert to the
 US-CERT organization of the U.S. Department of Homeland Security.
 
-### 7.4 Transfers ###
+## 8. CA Operational Changes ##
 
-All CAs whose certificates are distributed with our software products MUST
-notify us when the ownership control of the CA’s certificate(s) changes, or
-when ownership control of the CA’s operations changes. To notify us, send email
-to [certificates@mozilla.org][Email-Us].
+CAs SHOULD NOT assume that trust is transferable. All CAs whose certificates
+are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
+
+* ownership or control of the CA’s certificate(s) changes, or
+* ownership or control of the CA’s operations changes; or
+* there is a [material change][Material-Change] in the CA's operations.
+
+CAs should err on the side of notification if there is any doubt. Mozilla will
+normally keep commercially sensitive information confidential. Throughout any
+change, CA operations MUST continue to meet the requirements of this policy. If
+one of the above events occurs, Mozilla MAY require additional audit(s) as a
+condition of remaining in the root program. CAs are encouraged to notify in
+advance in order to avoid unfortunate surprises.
+
+In addition, one or more of the following sections MAY apply.
+
+### 8.1 Change in Legal Ownership ###
+
+This section applies when one company buys or takes a controlling stake in
+a CA, or when an organization buys the private key of a certificate in
+Mozilla's root program.
+
+Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
+
+If the receiving or acquiring company is new to the Mozilla root program, there
+MUST be a public discussion regarding their admittance to the root program,
+which Mozilla must resolve with a positive conclusion before issuance is
+permitted.
+
+### 8.2 Change in Operational Personnel ###
+
+This section applies when operation of a certificate in Mozilla's root program
+is transferred to a different organization, whether by acquisition or contract.
+
+The transferor MUST ensure that the transferee is able to fully comply with
+this policy. The transferor will continue to be responsible for the root
+certificate's private key until Mozilla has been provided with an audit
+statement (or opinion letter) confirming successful transfer of the root
+certificate and key. Issuance MUST NOT occur until the transferee
+has provided all the information required by the CCADB, and demonstrated to
+Mozilla that they have all the appropriate audits, CP/CPS documents and other
+systems in place.
+
+The transferor MUST notify Mozilla about any necessary changes to EV status or
+trust bits in Mozilla's root store. If the transferee is receiving the (right
+to use the) associated EV policy OID(s), the transferor MUST confirm that the
+transferee has or will get the relevant audits before issuing EV certificates.
+
+### 8.3 Change in Secure Location ###
+
+The section applies when section 8.1 and/or section 8.2 applies, and when the
+cryptographic hardware related to a certificate in Mozilla's root store is
+consequently moved from one secure location to another.
+
+This policy and the relevant WebTrust or ETSI requirements apply at all times,
+even during the physical relocation of a CA's online operations to a new data
+center and moving parts of an offline root certificate from one location to
+another. As such, a CA MUST always ensure that physical access to CA equipment
+is limited to authorized individuals, the equipment is operated under multiple
+person control, and unauthorized CA system usage is able to be detected at all
+times. The auditor MUST confirm that there are appropriate procedures in place
+to ensure that the requirements are met and that those procedures are followed.
+
+The following steps MUST be taken by the organization(s) concerned:
+
+* Make sure the annual audit statements are current.
+* Notify Mozilla of the pending change.
+* Create a transfer plan (and legal agreement if more than one organization is
+involved) and have it reviewed by the auditors.
+* Stop new certificate issuance at the current site before the transfer begins.
+* Have an audit performed at the current site to confirm when the root
+certificate is ready for transfer, and to make sure the key material is
+properly secured.
+* The transfer ceremony should be witnessed by auditors and video recorded,
+with a physical exchange of the HSM or ciphertext containing the associated key
+material and certificates, and the multi-party authorization keys.
+* At the new site perform an audit to confirm that the transfer was successful,
+that the private key remained secure throughout the transfer, and that the root
+certificate is ready to resume issuance. This requirement may be met by
+including the transferred root certificate and key in the new owner's regular
+audits or by getting a PITRA.
+* Send links to the updated CP/CPS and the updated audit statements, opinion
+letter, or PITRA statement to Mozilla.
+
+The regular annual audit statements MUST still happen in a timely manner.
+
+The organization(s) concerned MUST immediately [send a security report to
+Mozilla][Sec-Bugs] if a problem occurs.
 
 -----
 
@@ -644,3 +728,4 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [How-To-Apply]:     https://wiki.mozilla.org/CA:How_to_apply
 [Root-Changes]:     https://wiki.mozilla.org/CA:Root_Change_Process
 [Sec-Bugs]:         https://www.mozilla.org/about/governance/policies/security-group/bugs/
+[Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
