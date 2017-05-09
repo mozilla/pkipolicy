@@ -157,7 +157,7 @@ following documents to be acceptable:
     2.0][WebTrust-2.0]" or later in [WebTrust Program for Certification
     Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities – SSL
-    Baseline with Network Security - Version 2.0][WebTrust-BRs]" or later in
+    Baseline with Network Security - Version 2.2][WebTrust-BRs]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities -
     Extended Validation SSL 1.4.5][WebTrust-EV]" or later in
@@ -715,7 +715,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [ETSI-319-411-1]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.01.01_60/en_31941101v010101p.pdf
 [ETSI-319-411-2]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.01.01_60/en_31941102v020101p.pdf
 [WebTrust-2.0]:     http://www.webtrust.org/homepage-documents/item54279.pdf
-[WebTrust-BRs]:     http://www.webtrust.org/homepage-documents/item79806.pdf
+[WebTrust-BRs]:     http://www.webtrust.org/principles-and-criteria/docs/item83987.pdf
 [WebTrust-For-CAs]: http://www.webtrust.org/homepage-documents/item27839.aspx
 [WebTrust-EV]:      http://www.webtrust.org/homepage-documents/item79807.pdf
 [CC-BY]:            https://creativecommons.org/licenses/by/4.0/
