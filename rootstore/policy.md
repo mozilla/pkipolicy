@@ -103,25 +103,29 @@ discussions.
 We consider verification of certificate signing requests to be acceptable if it
 meets or exceeds the following requirements:
 
-1.  all information that is supplied by the certificate subscriber
+1.  All information that is supplied by the certificate subscriber
     MUST be verified by using an independent source of information
     or an alternative communication channel before it is included in
-    the certificate;
-2.  for a certificate capable of being used for digitally signing or encrypting
+    the certificate.
+2.  For a certificate capable of being used for digitally signing or encrypting
     email messages, the CA takes reasonable measures to verify that
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf;
-3.  for a certificate capable of being used for SSL-enabled servers, the CA
-    takes reasonable measures to verify that the entity submitting
-    the certificate signing request has registered the domain name(s)
-    referenced in the certificate *or* has been authorized by the
-    domain registrant to act on the registrant’s behalf;
-4.  for certificates marked as Extended
-    Validation, the CA MUST comply with the latest version of the
-    [Guidelines for the Issuance and Management of Extended Validation
-    Certificates][EVGLs].
+    the account holder’s behalf.
+3.  For a certificate capable of being used for SSL-enabled servers, the CA
+    must ensure that the applicant has registered the domain(s) referenced
+    in the certificate or has been authorized by the domain registrant to
+    act on their behalf. This must be done using one or more of the 10
+    methods documented in section 3.2.2.4 of version 1.4.1 (and not any
+    other version) of the CA/Browser Forum Baseline Requirements. The CA's
+    CP/CPS must clearly specify the procedure(s) that the CA employs, and
+    each documented procedure should state which subsection of 3.2.2.4 it is
+    complying with. Even if the current version of the BRs contains a method
+    3.2.2.4.11, CAs are not permitted to use this method.
+4.  For certificates marked as Extended Validation, the CA MUST comply with the
+    latest version of the [Guidelines for the Issuance and Management of
+    Extended Validation Certificates][EVGLs].
 
 ### 2.3 Baseline Requirements Conformance ###
 
