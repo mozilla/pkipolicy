@@ -381,6 +381,9 @@ CAs MUST NOT sign SHA-1 hashes over other data, including CT pre-certificates.
 
 ### 5.2 Forbidden and Required Practices ###
 
+CA operations MUST at all times be in accordance with the applicable CP
+and CPS.
+
 CAs MUST maintain a certificate hierarchy such that the included
 certificate does not directly issue end-entity certificates to
 customers (i.e. the included certificate signs intermediate
