@@ -490,10 +490,9 @@ via an Online Certificate Status Protocol (OCSP) service:
 
 ## 7. Root Store Changes ##
 
-Changes that are motivated by a serious security concern
-such as a major root compromise SHOULD be treated as a
-security-sensitive bug, and the [Mozilla Policy for Handling Security
-Bugs][Sec-Bugs] SHOULD be followed.
+Changes that are motivated by a security concern such as certificate
+misissuance or a root or intermediate compromise MUST be treated as a
+security-sensitive, and a [secure bug filed in Bugzilla][Sec-Bugs].
 
 ### 7.1 Inclusions ###
 
@@ -731,5 +730,5 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates
 [How-To-Apply]:     https://wiki.mozilla.org/CA:How_to_apply
 [Root-Changes]:     https://wiki.mozilla.org/CA:Root_Change_Process
-[Sec-Bugs]:         https://www.mozilla.org/about/governance/policies/security-group/bugs/
+[Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Mis-Issuance&groups=crypto-core-security
 [Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
