@@ -37,8 +37,9 @@ following (and the CAs which control or issue them):
     prevent issuance of working server or email certificates. Such technical
     constraints could consist of either:
 
-    * an Extended Key Usage (EKU) extension which does not contain either of
-      the id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+    * an Extended Key Usage (EKU) extension which does not contain any of
+      these KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
+      id-kp-emailProtection; or:
     * name constraints which do not allow Subject Alternative Names (SANs) of
       any of the following types: dNSName, iPAddress, SRVName, rfc822Name
 
@@ -46,8 +47,9 @@ following (and the CAs which control or issue them):
     to such a CA certificate through intermediate certificates which are all in
     scope, such end-entity certificates having either:
 
-    * an Extended Key Usage (EKU) extension which contains one or more of the
-      id-kp-serverAuth and id-kp-emailProtection EKUs; or:
+    * an Extended Key Usage (EKU) extension which contains one or more of these
+      KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
+      id-kp-emailProtection; or:
     * no EKU extension.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
