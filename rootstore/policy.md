@@ -442,11 +442,11 @@ If the certificate includes the id-kp-serverAuth extended key usage,
 then the certificate MUST be Name Constrained as described in section
 7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs].
 
-If the certificate includes the id-kp-emailProtection extended
-key usage, then all end-entity certificates MUST only include
-e-mail addresses or mailboxes that the issuing CA has confirmed
-(via technical and/or business controls) that the subordinate CA
-is authorized to use.
+If the certificate includes the id-kp-emailProtection extended key
+usage, it MUST include the Name Constraints X.509v3 extension with
+constraints on rfc822Name, with at least one name in permittedSubtrees,
+each such name having its ownership validated according to section
+3.2.2.4 of the [Baseline Requirements][BRs].
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
