@@ -306,7 +306,7 @@ even if no other changes are made to the document.
 
 Mozilla manages its root program using the Common CA Database (CCADB). CAs with
 certificates in Mozilla’s root program MUST use the CCADB, and are bound by the
-[Common CCADB Policy v1.0](../ccadb/policy.md), which is incorporated here by
+[Common CCADB Policy v1.0][CCADB-Policy], which is incorporated here by
 reference.
 
 When required by the CCADB Policy, Mozilla’s root program may be contacted
@@ -734,6 +734,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CC-BY-SA]:         https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:         https://creativecommons.org/licenses/by-nd/4.0/
 [CC-0]:             https://creativecommons.org/publicdomain/zero/1.0/
+[CCADB-Policy]:     http://ccadb.org/policy
 [5280-6.1.4]:       http://tools.ietf.org/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:    http://tools.ietf.org/html/rfc5280#section-4.2.1.12
 [CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates
