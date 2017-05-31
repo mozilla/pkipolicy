@@ -316,8 +316,8 @@ CCADB Policy, as follows:
 
 * If the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root program is due to a security concern, as well as performing the
-actions defined in the CCADB Policy, the [Mozilla Policy for Handling Security
-Bugs][Sec-Bugs] MUST be followed.
+actions defined in the CCADB Policy, a [security bug must be filed in
+Bugzilla][Sec-Bugs].
 * Audits must be conducted and updated audit information provided **annually**.
 
 ### 4.2 Surveys ###
@@ -349,14 +349,14 @@ up to roots in Mozilla's program only if all the following are true:
 1. The end-entity certificate:
 
    * is not within the scope of the Baseline Requirements;
-   * contains an EKU extension which does not contain either of the id-kp-
-     serverAuth or anyExtendedKeyUsage key purposes;
+   * contains an EKU extension which does not contain either of the
+     id-kp-serverAuth or anyExtendedKeyUsage key purposes;
    * has at least 64 bits of entropy from a CSPRNG in the serial number.
 
 2. The issuing certificate:
 
-   * contains an EKU extension which does not contain either of the id-kp-
-     serverAuth or anyExtendedKeyUsage key purposes;
+   * contains an EKU extension which does not contain either of the
+     id-kp-serverAuth or anyExtendedKeyUsage key purposes;
    * has a pathlen:0 constraint.
 
 Point 2 does not apply if the certificate is an OCSP signing certificate
