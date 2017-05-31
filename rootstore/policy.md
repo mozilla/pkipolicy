@@ -232,6 +232,9 @@ If being audited to the ETSI criteria, the following audits are required
     * [ETSI EN 319 411-1][ETSI-319-411-1]
       and [ETSI EN 319 411-2][ETSI-319-411-2] - LCP, NCP, NCP+
 
+ETSI TS 102 042 and TS 101 456 audits are only acceptable for audit periods
+ending in July 2017 or earlier.
+
 #### 3.1.3 Public Audit Information ####
 
 The publicly-available documentation relating to each audit MUST contain at
