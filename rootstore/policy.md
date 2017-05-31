@@ -81,18 +81,21 @@ CAs whose certificates are included in Mozilla's root program MUST:
 
 1.  provide some service relevant to typical users of our software
     products;
-2.  enforce multi-factor authentication for all accounts capable of
+2.  follow industry best practice for securing their networks, for example
+    by conforming to the [CAB Forum Network Security Guidelines][NSGs] or a
+    successor document;
+3.  enforce multi-factor authentication for all accounts capable of
     directly causing certificate issuance, or implement technical
     controls operated by the CA to restrict certificate issuance
     through the account to a limited set of pre-approved domains or
     email addresses;
-3.  prior to issuing certificates, verify certificate
+4.  prior to issuing certificates, verify certificate
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
-4.  verify that all of the information that is included in SSL
+5.  verify that all of the information that is included in SSL
     certificates remains current and correct at time intervals of
     thirty-nine months or less; and
-5.  otherwise operate in accordance with published criteria that we
+6.  otherwise operate in accordance with published criteria that we
     deem acceptable.
 
 CAs MUST follow and be aware of discussions in the
@@ -718,6 +721,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [MDSP]:             https://www.mozilla.org/about/forums/#dev-security-policy
 [EVGLs]:            https://cabforum.org/extended-validation/
 [BRs]:              https://cabforum.org/baseline-requirements-documents/
+[NSGs]:             https://cabforum.org/network-security/
 [ETSI-101-456]:     http://www.etsi.org/deliver/etsi_ts/101400_101499/101456/01.04.03_60/ts_101456v010403p.pdf
 [ETSI-102-042]:     http://www.etsi.org/deliver/etsi_ts/102000_102099/102042/02.03.01_60/ts_102042v020301p.pdf
 [ETSI-319-411-1]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.01.01_60/en_31941101v010101p.pdf
