@@ -197,40 +197,48 @@ following documents to be acceptable:
 
 ##### 3.1.2.1 WebTrust #####
 
-If being audited to the WebTrust criteria, the following audits are required
-(see section 3.1.1 for specific version numbers):
+If being audited to the WebTrust criteria, the following audit requirements
+apply (see section 3.1.1 for specific version numbers):
 
 *   For the SSL trust bit, a CA and all subordinate CAs technically capable
-    of issuing server certificates must have all of the following:
+    of issuing server certificates must have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.0]
     * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
-    * [WebTrust for CAs - EV SSL][WebTrust-EV] (if applying for EV recognition)
+    * [WebTrust for CAs - EV SSL][WebTrust-EV] (if issuing EV certificates)
 
 *   For the email trust bit, a CA and all subordinate CAs technically capable
-    of issuing email certificates must have all of the following:
+    of issuing email certificates must have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.0]
 
 ##### 3.1.2.2 ETSI #####
 
-If being audited to the ETSI criteria, the following audits are required
+If being audited to the ETSI criteria, the following audit requirements apply
 (see section 3.1.1 for version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically capable
-    of issuing server certificates must have either of the following:
+*   For the SSL trust bit, a CA and all subordinate CAs technically
+    capable of issuing server certificates must have one of the
+    following audits, with at least one of the noted policies or sets of
+    policies:
 
-    * [ETSI TS 102 042][ETSI-102-042] - DVCP, OVCP, PTC-BR
-    * [ETSI EN 319 411-1][ETSI-319-411-1] - DVCP, OVCP, PTC-BR
+    * [ETSI TS 102 042][ETSI-102-042] (DVCP, OVCP, or PTC-BR)
+    * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP and (DVCP or OVCP)) and/or (NCP
+      and EVCP)
+    * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-w)
 
-*   For the email trust bit, a CA and all subordinate CAs technically capable
-    of issuing email certificates must have either of the following sets of
-    audits:
+    An audit showing conformance with the EVCP policy is required if issuing EV
+    certificates.
+
+*   For the email trust bit, a CA and all subordinate CAs technically
+    capable of issuing email certificates must have one of the
+    following audits, with at least one of the noted policies:
 
     * [ETSI TS 101 456][ETSI-101-456]
-      and [ETSI TS 102 042][ETSI-102-042] - LCP, NCP, NCP+
-    * [ETSI EN 319 411-1][ETSI-319-411-1]
-      and [ETSI EN 319 411-2][ETSI-319-411-2] - LCP, NCP, NCP+
+    * [ETSI TS 102 042][ETSI-102-042] (LCP, NCP, or NCP+)
+    * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+)
+    * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
+      QCP-n-qscd)
 
 ETSI TS 102 042 and TS 101 456 audits are only acceptable for audit periods
 ending in July 2017 or earlier.
