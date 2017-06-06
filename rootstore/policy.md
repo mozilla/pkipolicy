@@ -85,10 +85,10 @@ CAs whose certificates are included in Mozilla's root program MUST:
     by conforming to the [CAB Forum Network Security Guidelines][NSGs] or a
     successor document;
 3.  enforce multi-factor authentication for all accounts capable of causing
-    certificate issuance or performing validation functions, or implement
-    technical controls operated by the CA to restrict certificate issuance
-    through the account to a limited set of pre-approved domains or
-    email addresses;
+    certificate issuance or performing Registration Authority or Delegated
+    Third Party functions, or implement technical controls operated by the CA
+    to restrict certificate issuance through the account to a limited set of
+    pre-approved domains or email addresses;
 4.  prior to issuing certificates, verify certificate
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
