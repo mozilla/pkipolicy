@@ -606,12 +606,12 @@ Mozilla will take any steps we deem appropriate to protect our users
 if we learn that a CA has knowingly or intentionally mis-issued one
 or more certificates. This may include, but is not limited to
 disablement (partially or fully) or removal of all of the CA’s
-certificates from Mozilla’s root program. A certificate that includes
-domain names that have not been verified according to section 3.2.2.4 of the
-[Baseline Requirements][BRs] is considered to be mis-issued. A certificate
-that is intended to be used only as an end entity certificate but includes a
-keyUsage extension with values keyCertSign and/or cRLSign or a basicConstraints
-extension with the cA field set to true is considered to be mis-issued.
+certificates from Mozilla’s root program.
+
+The category of mis-issued certificates includes (but is not limited to) those
+issued to someone who should not have received them, those containing
+information which was not properly validated, those having incorrect technical
+constraints, and those using algorithms other than those permitted.
 
 A failure to provide notifications or updates in the CCADB or
 as otherwise required in a timely manner SHALL also be grounds for
