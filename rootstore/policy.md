@@ -145,8 +145,8 @@ you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
 
 *   Insofar as the Baseline Requirements attempt to define their own scope, the
-    scope of this policy (section 1.1) overrides that. Mozilla expects CA
-    operations relating to issuance of all SSL certificates in the scope of
+    scope of this policy (section 1.1) overrides that. Mozilla thus requires CA
+    operations relating to issuance of **all** SSL certificates in the scope of
     this policy to conform to the Baseline Requirements.
 
 *   Mozilla reserves the right to accept audits by auditors who do not meet the
