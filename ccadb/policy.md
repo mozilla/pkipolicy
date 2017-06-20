@@ -30,12 +30,17 @@ confidential. However, Stores are not obliged to publish any CCADB information.
 
 ## 2. Contact Information ##
 
-CAs are required to provide the name, email address and an office-hours phone
-number of a Primary Point of Contact (POC), and at least one other POC, who may
-or may not be Primary. CAs may optionally designate further POCs, supplying at
-least one contact method for each. CAs must also supply one or two non-personal
-contact email aliases which are more likely to continue working as personnel
-change; these are maintained as part of the CA’s organizational entry.
+CAs are required to provide the following information for a Primary Point of
+Contact (POC), and at least one other POC, who may or may not be Primary:
+
+* Name
+* Email address
+* Office hours phone number
+
+CAs may optionally designate further POCs, supplying at least one contact
+method for each. CAs must also supply one or two non-personal contact email
+aliases which are more likely to continue working as personnel change; these
+are maintained as part of the CA’s organizational entry.
 
 All Primary POCs should be authorized to speak for and to bind the CA that they
 represent. At least one of the Primary POCs will hold a CA Community license;
@@ -121,14 +126,14 @@ URLs for the following documents are required for each certificate:
 * Standard audit (WebTrust or ETSI)
 * Baseline Requirements (BR) audit (if the certificate is capable of issuing
   TLS/SSL server certificates)
-* Extended Validation (EV) audit (if applicable)
+* Extended Validation (EV) SSL and/or Code Signing audit (if applicable)
 
-As of June 1 2017, CAs must provide English versions of any Certificate Policy
-and Certification
-Practice Statement documents which are not originally in English, with version
-numbers matching the document they are a translation of. The English version is
-not required to be authoritative in all cases of dispute, but the CA must
-attest that the translation is not materially different to the original.
+CAs must provide English versions of any Certificate Policy, Certification
+Practice Statement and Audit documents which are not originally in English,
+with version numbers matching the document they are a translation of. The
+English version is not required to be authoritative in all cases of dispute,
+but the CA must attest that the translation is not materially different to the
+original.
 
 ## 6. Mailshots ##
 
