@@ -12,7 +12,7 @@ forum.
 
 You can find out [how to apply to be included in Mozilla's root
 program](https://wiki.mozilla.org/CA:How_to_apply). There is also a
-[list of included roots](https://mozillacaprogram.secure.force.com/CA/IncludedCACertificateReport).
+[list of included roots](https://ccadb-public.secure.force.com/mozilla/IncludedCACertificateReport).
 
 ### Using Mozilla's Root Store ###
 
