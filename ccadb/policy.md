@@ -34,7 +34,7 @@ CAs are required to provide the following information for a Primary Point of
 Contact (POC), and at least one other POC, who may or may not be Primary:
 
 * Name
-* Email address
+* Office email address
 * Office hours phone number
 
 CAs may optionally designate further POCs, supplying at least one contact
