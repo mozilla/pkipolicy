@@ -333,8 +333,8 @@ even if no other changes are made to the document.
 
 Mozilla manages its root program using the Common CA Database (CCADB). CAs with
 certificates in Mozilla’s root program MUST use the CCADB, and are bound by the
-[Common CCADB Policy v1.0][CCADB-Policy], which is incorporated here by
-reference.
+latest published version of the [Common CCADB Policy][CCADB-Policy], which is
+incorporated here by reference.
 
 When required by the CCADB Policy, Mozilla’s root program may be contacted
 [by email][Email-Us].
