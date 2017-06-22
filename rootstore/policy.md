@@ -248,7 +248,22 @@ If being audited to the ETSI criteria, the following audit requirements apply
 ETSI TS 102 042 and TS 101 456 audits are only acceptable for audit periods
 ending in July 2017 or earlier.
 
-#### 3.1.3 Public Audit Information ####
+#### 3.1.3 Audit Parameters ####
+
+Full-surveillance period-of-time audits MUST be conducted and updated audit
+information provided no less frequently than **annually**. Successive audits
+MUST be contiguous (no gaps).
+
+Point-in-time audit statements may be used to confirm that all of the problems
+that an auditor previously identified in a qualified audit statement have been
+corrected. However, a point-in-time assessment does not replace the
+period-of-time assessment.
+
+Audit reports which are being supplied to maintain a certificate within the
+Mozilla root program MUST be provided to Mozilla via the CCADB within three
+months of the point-in-time date or the end date of the period.
+
+#### 3.1.4 Public Audit Information ####
 
 The publicly-available documentation relating to each audit MUST contain at
 least the following clearly-labelled information:
@@ -264,17 +279,13 @@ least the following clearly-labelled information:
 6.  whether the audit is for a period of time or a point in time;
 7.  the start date and end date of the period, for those that cover a period
     of time;
-8.  the point in time date, for those that are for a point in time;
+8.  the point-in-time date, for those that are for a point in time;
 9.  the date the report was issued (which will necessarily be after the end
-    date or point in time date); and
+    date or point-in-time date); and
 10. For ETSI, a statement to indicate if the audit was a full audit, and which
     parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
-
-Audit reports which are being supplied to maintain a certificate within the
-Mozilla root program MUST be provided to Mozilla via the CCADB within three
-months of the point in time date or the end date of the period.
 
 ### 3.2 Auditors ###
 
@@ -337,7 +348,6 @@ CCADB Policy, as follows:
 Mozilla’s root program is due to a security concern, as well as performing the
 actions defined in the CCADB Policy, a [security bug must be filed in
 Bugzilla][Sec-Bugs].
-* Audits must be conducted and updated audit information provided **annually**.
 
 ### 4.2 Surveys ###
 
