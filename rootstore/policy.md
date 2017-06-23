@@ -1,6 +1,6 @@
 # Mozilla Root Store Policy #
 
-*Version 2.5 (draft)*
+*Version 2.5*
 
 ## 1. Introduction ##
 
