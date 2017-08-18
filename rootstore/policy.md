@@ -127,7 +127,8 @@ meets or exceeds the following requirements:
     CP/CPS must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.4 it is
     complying with. Even if the current version of the BRs contains a method
-    3.2.2.4.11, CAs are not permitted to use this method.
+    3.2.2.4.11 ("any other method"), CAs are not permitted to use methods of
+    domain validation which are not among the 10 permitted methods.
 4.  For certificates marked as Extended Validation, the CA MUST comply with the
     latest version of the [Guidelines for the Issuance and Management of
     Extended Validation Certificates][EVGLs].
