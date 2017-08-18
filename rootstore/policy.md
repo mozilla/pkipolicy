@@ -478,9 +478,10 @@ constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
 3.2.2.4 of the [Baseline Requirements][BRs].
 
-Instead of complying with the above paragraph, intermediate certificates
-issued before 22nd June 2017 may, until 15th January 2018, comply with the
-following paragraph:
+Instead of complying with the above paragraph, subordinate CA certificates
+issued before 22nd June 2017 may, until 15th November 2018, comply with the
+following paragraph. Such intermediate certificates must be revoked
+or be publicly disclosed and audited by 15th April 2018.
 
 If the certificate includes the id-kp-emailProtection extended
 key usage, then all end-entity certificates MUST only include
