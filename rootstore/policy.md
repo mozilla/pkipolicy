@@ -479,7 +479,7 @@ each such name having its ownership validated according to section
 3.2.2.4 of the [Baseline Requirements][BRs].
 
 Instead of complying with the above paragraph, subordinate CA certificates
-issued before 22nd June 2017 may, until 15th November 2018, comply with the
+issued before 22nd June 2017 may, until 15th November 2017, comply with the
 following paragraph. Such intermediate certificates must be revoked,
 or be publicly disclosed and audited, by 15th April 2018.
 
