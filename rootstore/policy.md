@@ -2,6 +2,7 @@
 
 *Version 2.6 (draft)*
 
+*[Effective (date)] [Policy-Archive]*
 ## 1. Introduction ##
 
 When distributing binary and source code versions of Firefox, Thunderbird, and
@@ -781,3 +782,4 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Root-Changes]:     https://wiki.mozilla.org/CA:Root_Change_Process
 [Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Mis-Issuance&groups=crypto-core-security
 [Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
+[Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
