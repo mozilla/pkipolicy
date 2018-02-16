@@ -784,7 +784,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [5280-4.2.1.12]:    http://tools.ietf.org/html/rfc5280#section-4.2.1.12
 [CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates
 [How-To-Apply]:     https://wiki.mozilla.org/CA/Application_Process
-[Root-Changes]:     https://wiki.mozilla.org/CA:Root_Change_Process
+[Root-Changes]:     https://wiki.mozilla.org/CA/Certificate_Change_Process
 [Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Mis-Issuance&groups=crypto-core-security
 [Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
 [Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
