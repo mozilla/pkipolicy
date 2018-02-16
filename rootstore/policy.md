@@ -543,11 +543,11 @@ security-sensitive, and a [secure bug filed in Bugzilla][Sec-Bugs].
 ### 7.1 Inclusions ###
 
 We will determine which CA certificates are included in Mozilla's root program
-based on the benefits and risks of
+based on the risks of
 such inclusion to typical users of our products. We will consider adding
 additional CA certificates to the default certificate set upon request only by
 an authorized representative of the subject CA. We will make such decisions
-through a public process, based on objective and verifiable criteria.
+through a public process.
 
 We will not charge any fees to have a CA’s certificate(s)
 included in Mozilla's root program.
@@ -556,7 +556,8 @@ We reserve the right to not include certificates from a particular CA in
 our root program. This includes (but is not limited to) cases
 where we believe that a CA has caused undue risks to users’
 security, e.g. by knowingly issuing certificates without the knowledge of the
-entities whose information is referenced in those certificates.
+entities whose information is referenced in those certificates ('MITM certificates'). 
+Mozilla is under no obligation to explain the reasoning behind any inclusion decision.
 
 To request that its certificate(s) be added to Mozilla's root program a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
