@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
 *Version 2.6 (draft)*
+*[Effective (date)][Policy-Archive]*
 
-*[Effective (date)] [Policy-Archive]*
 ## 1. Introduction ##
 
 When distributing binary and source code versions of Firefox, Thunderbird, and
@@ -470,16 +470,18 @@ subordinate CA is authorized to issue certificates for. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension.
 
 If the certificate includes the id-kp-serverAuth extended key usage,
-then the certificate MUST be Name Constrained as described in section
+then to be considered technically
+constrained, the certificate MUST be Name Constrained as described in section
 7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs].
 
 If the certificate includes the id-kp-emailProtection extended key
-usage, it MUST include the Name Constraints X.509v3 extension with
+usage, then to be considered technically
+constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
 3.2.2.4 of the [Baseline Requirements][BRs].
 
-Instead of complying with the above paragraph, subordinate CA certificates
+Instead of complying with the prior paragraph, subordinate CA certificates
 issued before 22nd June 2017 may, until 15th November 2017, comply with the
 following paragraph. Such intermediate certificates must be revoked,
 or be publicly disclosed and audited, by 15th April 2018.
