@@ -1,6 +1,7 @@
 # Mozilla Root Store Policy #
 
 *Version 2.6 (draft)*
+
 *[Effective (date)][Policy-Archive]*
 
 ## 1. Introduction ##
@@ -118,7 +119,7 @@ meets or exceeds the following requirements:
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf.
+    the account holder’s behalf. The CA's CP/CPS must clearly specify the procedure(s) that the CA employs to perform this verification.
 3.  For a certificate capable of being used for SSL-enabled servers, the CA
     must ensure that the applicant has registered the domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
