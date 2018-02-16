@@ -290,6 +290,8 @@ least the following clearly-labelled information:
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
 
+An English language version of the publicly-available audit information MUST be supplied by the Auditor.
+
 ### 3.2 Auditors ###
 
 In normal circumstances, Mozilla requires that audits MUST be performed
