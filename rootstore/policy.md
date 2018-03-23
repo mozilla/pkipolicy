@@ -81,7 +81,7 @@ decision.
 
 CAs whose certificates are included in Mozilla's root program MUST:
 
-1.  provide some service relevant to typical users of our software
+1.  provide some service relevant to users of our software
     products;
 2.  follow industry best practice for securing their networks, for example
     by conforming to the [CAB Forum Network Security Guidelines][NSGs] or a
