@@ -121,19 +121,25 @@ meets or exceeds the following requirements:
     *or* has been authorized by the email account holder to act on
     the account holder’s behalf. The CA's CP/CPS must clearly specify the procedure(s) that the CA employs to perform this verification.
 3.  For a certificate capable of being used for SSL-enabled servers, the CA
-    must ensure that the applicant has registered the domain(s) referenced
+    must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
-    act on their behalf. This must be done using one or more of the 10
-    methods documented in section 3.2.2.4 of version 1.4.1 (and not any
-    other version) of the CA/Browser Forum Baseline Requirements. The CA's
+    act on their behalf. This must be done using one or more of the
+    methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA's
     CP/CPS must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.4 it is
-    complying with. Even if the current version of the BRs contains a method
-    3.2.2.4.11 ("any other method"), CAs are not permitted to use methods of
-    domain validation which are not among the 10 permitted methods.
-4.  For certificates marked as Extended Validation, the CA MUST comply with the
+    complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") to fulfill the requirements of method 3.2.2.4.8 (IP Address).
+4.  For a certificate capable of being used for SSL-enabled servers, the CA
+    must ensure that the applicant has control over all IP Address(es) referenced
+    in the certificate. This must be done using one or more of the
+    methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA's
+    CP/CPS must clearly specify the procedure(s) that the CA employs, and
+    each documented procedure should state which subsection of 3.2.2.5 it is
+    complying with.
+5.  For certificates marked as Extended Validation, the CA MUST comply with the
     latest version of the [Guidelines for the Issuance and Management of
     Extended Validation Certificates][EVGLs].
+
+Validation methods are occasionally found to contain security flaws. If this happens, Mozilla will communicate to CAs any disclosures or modifications it requires, up to and including discontinuing use of a method immediately.
 
 ### 2.3 Baseline Requirements Conformance ###
 
