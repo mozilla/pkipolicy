@@ -685,8 +685,8 @@ Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
 
 If the receiving or acquiring company is new to the Mozilla root program, there
 MUST be a public discussion regarding their admittance to the root program,
-which Mozilla must resolve with a positive conclusion before issuance is
-permitted.
+which Mozilla must resolve with a positive conclusion in order for the affected certificate(s) to remain in the root program. If the entire CA operation is not included in the scope of the transaction, issuance is not
+permitted until the discussion has been resolved with a positive conclusion.
 
 ### 8.2 Change in Operational Personnel ###
 
