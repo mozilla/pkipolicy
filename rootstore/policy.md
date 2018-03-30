@@ -685,7 +685,7 @@ Mozilla's root program.
 
 Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
 
-If the receiving or acquiring company is new to the Mozilla root program, there
+If the receiving or acquiring company is new to the Mozilla root program, it must comply with the entirety of this policy and there
 MUST be a public discussion regarding their admittance to the root program,
 which Mozilla must resolve with a positive conclusion before issuance is
 permitted.
