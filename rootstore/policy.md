@@ -185,17 +185,6 @@ following documents to be acceptable:
 *   WebTrust "[Principles and Criteria for Certification Authorities -
     Extended Validation SSL 1.4.5][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-*   Requirements on CA practice", in ETSI TS 101 456 V1.4.3 or later version,
-    [Policy requirements for certification authorities issuing qualified
-    certificates][ETSI-101-456] (only applicable to electronic signature
-    certificate issuance; applicable to either the "QCP public" or
-    "QCP public + SSCD" certificate policies);
-*   "Requirements on CA practice", in ETSI TS 102 042 V2.3.1 or later version,
-    [Policy requirements for certification authorities issuing public key
-    certificates][ETSI-102-042] (as applicable to the "EVCP" and "EVCP+"
-    certificate policies, DVCP and OVCP certificate policies for publicly
-    trusted certificates - baseline requirements, and any of the "NCP",
-    "NCP+", or "LCP" certificate policies);
 *   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 1: General requirements][ETSI-319-411-1],
@@ -236,7 +225,6 @@ If being audited to the ETSI criteria, the following audit requirements apply
     following audits, with at least one of the noted policies or sets of
     policies:
 
-    * [ETSI TS 102 042][ETSI-102-042] (DVCP, OVCP, or PTC-BR)
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP and (DVCP or OVCP)) and/or (NCP
       and EVCP)
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-w)
@@ -248,14 +236,9 @@ If being audited to the ETSI criteria, the following audit requirements apply
     capable of issuing email certificates must have one of the
     following audits, with at least one of the noted policies:
 
-    * [ETSI TS 101 456][ETSI-101-456]
-    * [ETSI TS 102 042][ETSI-102-042] (LCP, NCP, or NCP+)
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+)
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
       QCP-n-qscd)
-
-ETSI TS 102 042 and TS 101 456 audits are only acceptable for audit periods
-ending in July 2017 or earlier.
 
 #### 3.1.3 Audit Parameters ####
 
@@ -765,8 +748,6 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [EVGLs]:            https://cabforum.org/extended-validation/
 [BRs]:              https://cabforum.org/baseline-requirements-documents/
 [NSGs]:             https://cabforum.org/network-security/
-[ETSI-101-456]:     http://www.etsi.org/deliver/etsi_ts/101400_101499/101456/01.04.03_60/ts_101456v010403p.pdf
-[ETSI-102-042]:     http://www.etsi.org/deliver/etsi_ts/102000_102099/102042/02.03.01_60/ts_102042v020301p.pdf
 [ETSI-319-411-1]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.01.01_60/en_31941101v010101p.pdf
 [ETSI-319-411-2]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.01.01_60/en_31941102v020101p.pdf
 [WebTrust-2.0]:     http://www.webtrust.org/homepage-documents/item54279.pdf
