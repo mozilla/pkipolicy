@@ -279,7 +279,7 @@ least the following clearly-labelled information:
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
 
-An English language version of the publicly-available audit information MUST be supplied by the Auditor.
+An authoritative English language version of the publicly-available audit information MUST be supplied by the Auditor.
 
 ### 3.2 Auditors ###
 
