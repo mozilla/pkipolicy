@@ -72,33 +72,18 @@ documents for Store contact information.
 ## 4. Intermediate Certificates ##
 
 An intermediate certificate is a certificate capable of issuing new
-certificates that is not a root certificate. Intermediate certificates that
-chain up to root certificate(s) in the CCADB and that are not exempt must be
-entered into the database. This includes certificates that are revoked. For
+certificates that is not a root certificate. To determine which intermediate 
+certificates must be entered into the CCADB, refer to the individual Store policy 
+documents. This includes certificates that are revoked. For
 newly-created intermediate certificates, this must happen before the
 certificate begins issuing publicly-trusted certificates.
 
-Intermediate certificates are exempt from being added to the CCADB if at least
-one of the following is true:
+Each instance (i.e. PEM data) of an intermediate certificate only needs to be 
+included in the CCADB once, even if it chains up to two root certificates.
 
-* The certificate has the Extended Key Usage (EKU) extension and the EKU does
-  not include the anyExtendedKeyUsage or id-kp-serverAuth KeyPurposeIds; or
-* The certificate has the Extended Key Usage (EKU) extension and the EKU
-  includes the anyExtendedKeyUsage or id-kp-serverAuth KeyPurposeIds, and the
-  certificate is name constrained as described in section 7.1.5 of the
-  [CA/Browser Forum's Baseline
-  Requirements](https://cabforum.org/baseline-requirements-documents/); or
-* The root certificate(s) to which the certificate chains up is/are not trusted
-  for server authentication by any Store; or
-* The certificate has expired.
-
-When an intermediate certificate chains up to two included root certificates,
-each instance (i.e. PEM data) of the certificate only needs to be included in
-the CCADB once.
-
-If a non-exempt intermediate certificate is revoked, the CCADB must be updated
-to mark it as revoked, giving the reason why, within 24 hours for a security
-incident, and within 7 days for any other reason.
+If an intermediate certificate is revoked, the CCADB must be updated to mark it 
+as revoked, giving the reason why, within 24 hours for a security incident, and 
+within 7 days for any other reason.
 
 ## 5. Policies, Practices and Audit Information ##
 
