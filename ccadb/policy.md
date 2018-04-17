@@ -69,6 +69,14 @@ updated, the CA should notify one of the Stores containing the certificate,
 because this information may only be edited by Stores. See the Store policy
 documents for Store contact information.
 
+
+If root certificate information needs to be updated, the CA should notify one of 
+the Stores containing the certificate, because this information may only be edited 
+by Stores. See the Store policy documents for Store contact information.
+
+To update audit information for a root certificate, create an [Audit Case][CCADB-Audit-Case].
+
+
 ## 4. Intermediate Certificates ##
 
 An intermediate certificate is a certificate capable of issuing new
@@ -132,3 +140,5 @@ defined by the Store sending the information.
 Any copyright in this document is
 [dedicated to the Public
 Domain](http://creativecommons.org/publicdomain/zero/1.0/).
+
+[CCADB-Audit-Case]:    https://ccadb.org/cas/updates
