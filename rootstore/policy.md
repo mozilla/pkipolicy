@@ -433,6 +433,12 @@ CAs MUST NOT issue certificates that have:
     issuer’s issuer name and serial number); *or*
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
     which no operational CRL or OCSP service exists.
+    
+CAs MUST NOT generate the key pairs for end-entity certificates that have EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
+
+CAs MUST NOT distribute or transfer certificates in PKCS#12 form through insecure electronic channels. If a PKCS#12 file is distributed via a physical data storage device, then:
+*   The storage must be packaged in a way that the opening of the package causes irrecoverable physical damage. (e.g. a security seal); and,
+*   The PKCS#12 file must have a sufficiently secure password, and the password must not be transferred together with the storage.
 
 ### 5.3 Intermediate Certificates ###
 
