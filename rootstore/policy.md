@@ -454,6 +454,11 @@ refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
 issue new certificates.
 
+Subordinate CA certificates created after January 1, 2019:
+* MUST contain an EKU extension; and,
+* MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
+* MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
+
 These requirements include all cross-certified certificates
 which chain to a certificate that is included in Mozilla’s CA
 Certificate Program.
