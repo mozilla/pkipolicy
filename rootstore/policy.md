@@ -475,7 +475,9 @@ KeyPurposeId MUST NOT appear within this extension.
 If the certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically
 constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs].
+7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. 
+The conformance requirements defined in section 2.3 apply to 
+technically constrained subordinate CA certificates.
 
 If the certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
