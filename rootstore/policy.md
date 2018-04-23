@@ -493,18 +493,17 @@ certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
 Mozilla’s root program:
 
-1. MUST be audited in accordance with
-Mozilla’s Root Store Policy. If the subordinate CA has a currently valid audit report at the time of creation of the certificate, it MUST appear on the subordinate CA's next periodic audit reports.
-2. MUST be publicly disclosed in the
-CCADB by the CA that has their certificate
-included in Mozilla’s root program. The CA with a certificate included in Mozilla’s root program MUST
-disclose this information within a week of certificate creation, and
-before any such subordinate CA is allowed
+* MUST be audited in accordance with Mozilla’s Root Store Policy. 
+If the subordinate CA has a currently valid audit report at the time of creation 
+of the certificate, it MUST appear on the subordinate CA's next periodic audit reports.
+* MUST be publicly disclosed in the CCADB by the CA that has their certificate
+included in Mozilla’s root program. The CA with a certificate included in Mozilla’s 
+root program MUST disclose this information within a week of certificate creation, 
+and before any such subordinate CA is allowed
 to issue certificates. All disclosure MUST be made freely available
 and without additional requirements, including, but not limited to,
 registration, legal agreements, or restrictions on redistribution of
 the certificates in whole or in part.
-3. MUST be added to the relevant CP/CPS before issuing certificates.
 
 ## 6. Revocation ##
 
