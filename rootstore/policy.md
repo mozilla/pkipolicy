@@ -669,6 +669,9 @@ CAs SHOULD NOT assume that trust is transferable. All CAs whose certificates
 are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 
 * ownership or control of the CA’s certificate(s) changes, or
+* an organization other than the CA obtains control of an unconstrained 
+intermediate certificate (as defined in section 5.3.2) that directly 
+or transitively chains to the CA's included certificate(s); or,
 * ownership or control of the CA’s operations changes; or
 * there is a [material change][Material-Change] in the CA's operations.
 
