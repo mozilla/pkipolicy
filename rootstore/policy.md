@@ -504,9 +504,9 @@ directly or transitively chain to a certificate included in
 Mozilla’s root program:
 
 * MUST be audited in accordance with Mozilla’s Root Store Policy. 
-If the subordinate CA has a currently valid audit report at the time of creation 
+If the CA has a currently valid audit report at the time of creation 
 of the certificate, then the new certificate MUST appear on the 
-subordinate CA's next periodic audit reports.
+CA's next periodic audit reports.
 * MUST be publicly disclosed in the CCADB by the CA that has their certificate
 included in Mozilla’s root program. The CA with a certificate included in Mozilla’s 
 root program MUST disclose this information within a week of certificate creation, 
