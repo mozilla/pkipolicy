@@ -142,7 +142,7 @@ meets or exceeds the following requirements:
     Extended Validation Certificates][EVGLs].
 
 Validation methods are occasionally found to contain security flaws. When this happens, 
-Mozilla expects CAs to evaluate their practices and respomd appropriately to mitigate the risk. 
+Mozilla expects CAs to evaluate their practices and respond appropriately to mitigate the risk. 
 Mozilla may require CAs to make disclosures or modifications, up to and including 
 immediately discontinuing use of a method.
 
@@ -484,7 +484,7 @@ If the certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically
 constrained, the certificate MUST be Name Constrained as described in section
 7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. 
-The conformance requirements defined in section 2.3 also apply to 
+The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
 
 If the certificate includes the id-kp-emailProtection extended key
@@ -675,8 +675,8 @@ are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 
 * ownership or control of the CA’s certificate(s) changes, or
 * an organization other than the CA obtains control of an unconstrained 
-intermediate certificate (as defined in section 5.3.2) that directly 
-or transitively chains to the CA's included certificate(s); or,
+intermediate certificate (as defined in section 5.3.2 of this policy) that 
+directly or transitively chains to the CA's included certificate(s); or,
 * ownership or control of the CA’s operations changes; or
 * there is a [material change][Material-Change] in the CA's operations.
 
@@ -698,7 +698,7 @@ Mozilla's root program.
 Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
 
 If the receiving or acquiring company is new to the Mozilla root program, 
-it must comply with the entirety of this policy and there
+it must demonstrate compliance with the entirety of this policy and there
 MUST be a public discussion regarding their admittance to the root program,
 which Mozilla must resolve with a positive conclusion in order for the 
 affected certificate(s) to remain in the root program. If the entire 
