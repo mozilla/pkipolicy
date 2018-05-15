@@ -119,7 +119,8 @@ meets or exceeds the following requirements:
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf. The CA's CP/CPS must clearly specify the procedure(s) that the CA employs to perform this verification.
+    the account holder’s behalf. The CA's CP/CPS must clearly specify the 
+    procedure(s) that the CA employs to perform this verification.
 3.  For a certificate capable of being used for SSL-enabled servers, the CA
     must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
@@ -127,7 +128,8 @@ meets or exceeds the following requirements:
     methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA's
     CP/CPS must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.4 it is
-    complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") to fulfill the requirements of method 3.2.2.4.8 (IP Address).
+    complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
+    to fulfill the requirements of method 3.2.2.4.8 (IP Address).
 4.  For a certificate capable of being used for SSL-enabled servers, the CA
     must ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This must be done using one or more of the
@@ -139,7 +141,10 @@ meets or exceeds the following requirements:
     latest version of the [Guidelines for the Issuance and Management of
     Extended Validation Certificates][EVGLs].
 
-Validation methods are occasionally found to contain security flaws. If this happens, Mozilla will communicate to CAs any disclosures or modifications it requires, up to and including discontinuing use of a method immediately.
+Validation methods are occasionally found to contain security flaws. When this happens, 
+Mozilla expects CAs to evaluate their practices and respomd appropriately to mitigate the risk. 
+Mozilla may require CAs to make disclosures or modifications, up to and including 
+immediately discontinuing use of a method.
 
 ### 2.3 Baseline Requirements Conformance ###
 
@@ -457,7 +462,7 @@ refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
 issue new certificates.
 
-Subordinate CA certificates created after January 1, 2019:
+Intermediate certificates created after January 1, 2019:
 * MUST contain an EKU extension; and,
 * MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
 * MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
@@ -468,7 +473,7 @@ Certificate Program.
 
 #### 5.3.1 Technically Constrained ####
 
-We encourage CAs to technically constrain all subordinate CA
+We encourage CAs to technically constrain all intermediate
 certificates. For a certificate to be considered technically
 constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying all extended key usages that the
@@ -479,8 +484,8 @@ If the certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically
 constrained, the certificate MUST be Name Constrained as described in section
 7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. 
-The conformance requirements defined in section 2.3 apply to 
-technically constrained subordinate CA certificates.
+The conformance requirements defined in section 2.3 also apply to 
+technically constrained intermediate certificates.
 
 If the certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
@@ -491,7 +496,7 @@ each such name having its ownership validated according to section
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
-We recognize that technically constraining subordinate CA
+We recognize that technically constraining intermediate
 certificates as described above may not be practical in some cases.
 All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
@@ -500,7 +505,8 @@ Mozilla’s root program:
 
 * MUST be audited in accordance with Mozilla’s Root Store Policy. 
 If the subordinate CA has a currently valid audit report at the time of creation 
-of the certificate, it MUST appear on the subordinate CA's next periodic audit reports.
+of the certificate, then the new certificate MUST appear on the 
+subordinate CA's next periodic audit reports.
 * MUST be publicly disclosed in the CCADB by the CA that has their certificate
 included in Mozilla’s root program. The CA with a certificate included in Mozilla’s 
 root program MUST disclose this information within a week of certificate creation, 
@@ -691,9 +697,12 @@ Mozilla's root program.
 
 Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
 
-If the receiving or acquiring company is new to the Mozilla root program, it must comply with the entirety of this policy and there
+If the receiving or acquiring company is new to the Mozilla root program, 
+it must comply with the entirety of this policy and there
 MUST be a public discussion regarding their admittance to the root program,
-which Mozilla must resolve with a positive conclusion in order for the affected certificate(s) to remain in the root program. If the entire CA operation is not included in the scope of the transaction, issuance is not
+which Mozilla must resolve with a positive conclusion in order for the 
+affected certificate(s) to remain in the root program. If the entire 
+CA operation is not included in the scope of the transaction, issuance is not
 permitted until the discussion has been resolved with a positive conclusion.
 
 ### 8.2 Change in Operational Personnel ###
