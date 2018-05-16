@@ -572,7 +572,7 @@ Before being included, CAs MUST provide evidence that their CA certificates have
 To request that its certificate(s) be added to Mozilla's root program a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
 into the mozilla.org Bugzilla system, filed against the "CA
-Certificates" component of the "mozilla.org" product. Mozilla’s wiki
+Certificate Root Program" component of the "NSS" product. Mozilla’s wiki
 page, "[Applying for root inclusion in Mozilla products][How-To-Apply]", provides
 further details about how to submit a formal request. The request
 MUST be made by an authorized representative of the subject CA, and
@@ -790,7 +790,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CCADB-Policy]:     http://ccadb.org/policy
 [5280-6.1.4]:       http://tools.ietf.org/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:    http://tools.ietf.org/html/rfc5280#section-4.2.1.12
-[CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=mozilla.org&amp;component=CA%20Certificates
+[CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
 [How-To-Apply]:     https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:     https://wiki.mozilla.org/CA/Certificate_Change_Process
 [Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Mis-Issuance&groups=crypto-core-security
