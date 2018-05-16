@@ -442,12 +442,6 @@ CAs MUST NOT issue certificates that have:
 CAs MUST NOT generate the key pairs for end-entity certificates that have an
 EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
 
-PKCS#12 files must employ an encryption key and algorithm that is sufficiently 
-strong to protect the key pair for its useful life based on current guidelines 
-published by a recognized standards body. PKCS#12 files MUST be encrypted 
-and signed; or, MUST have a password that exhibits at least 112 bits of entropy, 
-and the password MUST be transferred using a different channel than the PKCS#12 file.
-
 ### 5.3 Intermediate Certificates ###
 
 All certificates that are capable of being used to issue new certificates, and
