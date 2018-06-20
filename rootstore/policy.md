@@ -627,7 +627,8 @@ Mozilla's root program as follows:
 
 ### 7.3 Removals ###
 
-Mozilla MAY, at its sole discretion, decide to disable (partially or fully) or
+Mozilla MAY, at its sole discretion and without any notice, 
+decide to disable (partially or fully) or
 remove a certificate at any time and for any reason. This may happen
 immediately or on a planned future date. Mozilla will
 disable or remove a certificate if the CA demonstrates ongoing or
@@ -655,12 +656,10 @@ rule.
 
 If Mozilla disables or removes a CA’s certificate(s) from Mozilla’s
 root program based on a CA’s actions (or failure to act) that are
-contrary to the Mozilla Root Store Policy,
-Mozilla will publicize that fact in newsgroups on the
-news.mozilla.org server, on Web pages in the mozilla.org and
-mozilla.com domains, in news releases sent to organizations
-specializing in computer and Internet news, and/or as an alert to the
-US-CERT organization of the U.S. Department of Homeland Security.
+contrary to the Mozilla Root Store Policy, Mozilla will publicize 
+that fact in our ordinary channels (for example, in newsgroups on the
+news.mozilla.org server, and on our websites) and may also alert 
+relevant news or government organizations such as US-CERT.
 
 ## 8. CA Operational Changes ##
 
