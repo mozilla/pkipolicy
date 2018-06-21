@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
-*Version 2.6 (draft)*
+*Version 2.6*
 
-*[Effective (date)][Policy-Archive]*
+*[Effective July 1, 2018][Policy-Archive]*
 
 ## 1. Introduction ##
 
