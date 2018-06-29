@@ -376,16 +376,16 @@ up to roots in Mozilla's program only if all the following are true:
 
 1. The end-entity certificate:
 
-   * is not within the scope of the Baseline Requirements;
-   * contains an EKU extension which does not contain either of the
+   *   is not within the scope of the Baseline Requirements;
+   *   contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-   * has at least 64 bits of entropy from a CSPRNG in the serial number.
+   *   has at least 64 bits of entropy from a CSPRNG in the serial number.
 
 2. The issuing certificate:
 
-   * contains an EKU extension which does not contain either of the
+   *   contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-   * has a pathlen:0 constraint.
+   *   has a pathlen:0 constraint.
 
 Point 2 does not apply if the certificate is an OCSP signing certificate
 manually issued directly from a root.
@@ -457,9 +457,9 @@ or control of a certificate that is capable of being used to
 issue new certificates.
 
 Intermediate certificates created after January 1, 2019:
-* MUST contain an EKU extension; and,
-* MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
-* MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
+*   MUST contain an EKU extension; and,
+*   MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
+*   MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
 
 These requirements include all cross-certified certificates
 which chain to a certificate that is included in Mozilla’s CA
