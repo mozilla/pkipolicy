@@ -1,6 +1,6 @@
 # Common CCADB Policy #
 
-*Version 1.0.3*
+*Version 1.0.4*
 
 Several Web PKI root store operators (“Stores”) have collaborated to create
 the Common Certificate Authority Database (CCADB), a data repository of
@@ -27,6 +27,9 @@ in a timely fashion.
 All data in the CCADB may be made public or semi-public in a variety of forms;
 CAs should not place any information in the CCADB which they wish to keep
 confidential. However, Stores are not obliged to publish any CCADB information.
+
+All client devices that are used to download Personally Identifiable Information 
+from the CCADB must employ disk based encryption.
 
 ## 2. Contact Information ##
 
