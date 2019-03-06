@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
-*Version 2.6.1*
+*Version 2.7*
 
-*[Effective July 1, 2018][Policy-Archive]*
+*[Effective <TBD>][Policy-Archive]*
 
 ## 1. Introduction ##
 
@@ -166,6 +166,9 @@ can be considered for addition or clarification.
 *   Mozilla reserves the right to accept audits by auditors who do not meet the
     qualifications given in section 8.2 of the Baseline Requirements, or refuse
     audits from auditors who do.
+    
+*   Mozilla may restrict permitted algorithms to a subset of those allowed by the 
+    Baseline Requirements.
 
 ## 3. Documentation ##
 
