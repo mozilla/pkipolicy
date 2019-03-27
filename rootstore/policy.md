@@ -257,7 +257,7 @@ MUST be contiguous (no gaps).
 Point-in-time audit statements may be used to confirm that all of the problems
 that an auditor previously identified in a qualified audit statement have been
 corrected. However, a point-in-time audit does not replace the
-period-of-time assessment.
+period-of-time audit.
 
 Audit reports which are being supplied to maintain a certificate within the
 Mozilla root program MUST be provided to Mozilla via the CCADB within three
