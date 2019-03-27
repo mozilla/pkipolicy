@@ -256,7 +256,7 @@ MUST be contiguous (no gaps).
 
 Point-in-time audit statements may be used to confirm that all of the problems
 that an auditor previously identified in a qualified audit statement have been
-corrected. However, a point-in-time assessment does not replace the
+corrected. However, a point-in-time audit does not replace the
 period-of-time assessment.
 
 Audit reports which are being supplied to maintain a certificate within the
@@ -750,9 +750,9 @@ material and certificates, and the multi-party authorization keys.
 that the private key remained secure throughout the transfer, and that the root
 certificate is ready to resume issuance. This requirement may be met by
 including the transferred root certificate and key in the new owner's regular
-audits or by getting a PITRA.
+audits or by getting a point-in-time audit.
 * Send links to the updated CP/CPS and the updated audit statements, opinion
-letter, or PITRA statement to Mozilla.
+letter, or point-in-time audit statement to Mozilla.
 
 The regular annual audit statements MUST still happen in a timely manner.
 
