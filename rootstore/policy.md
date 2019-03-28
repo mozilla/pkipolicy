@@ -35,13 +35,13 @@ following (and the CAs which control or issue them):
     Mozilla root program.
 
 2.  Intermediate certificates which have at least one valid, unrevoked chain up
-    to such a CA certificate and which are not technically constrained to
-    prevent issuance of working server or email certificates. Such technical
-    constraints could consist of either:
+    to such a CA certificate and which are technically capable of issuing 
+    working server or email certificates. Intermediate certificates that are not 
+    considered to be technically capable will contain either:
 
     * an Extended Key Usage (EKU) extension which does not contain any of
       these KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
-      id-kp-emailProtection; or:
+      id-kp-emailProtection; and/or:
     * name constraints which do not allow Subject Alternative Names (SANs) of
       any of the following types: dNSName, iPAddress, SRVName, rfc822Name
 
@@ -176,8 +176,8 @@ can be considered for addition or clarification.
 
 Before being included and periodically thereafter, CAs MUST obtain certain
 audits for their root certificates and all of their intermediate certificates
-that are not technically constrained to prevent issuance of working server or
-email certificates. This section describes the requirements for those audits.
+that are technically capable of issuing working server or email certificates. 
+This section describes the requirements for those audits.
 
 #### 3.1.1 Audit Criteria ####
 
