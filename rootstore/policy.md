@@ -463,6 +463,7 @@ These requirements include all cross-certificates which chain to a certificate
 that is included in Mozilla’s CA Certificate Program.
 
 Intermediate certificates created after January 1, 2019, with the exception of cross-certificates that share a private key with a corresponding root certificate:
+
 *   MUST contain an EKU extension; and,
 *   MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
 *   MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
