@@ -170,6 +170,10 @@ can be considered for addition or clarification.
 *   Mozilla may restrict permitted algorithms to a subset of those allowed by the 
     Baseline Requirements.
 
+### 2.4 Incidents ###
+
+When a CA fails to comply with any requirement of this policy - whether it be a misissuance, a procedural or operational issue, or any other variety of non-compliance - the event is classified as an incident. At a minimum, CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], and MUST regularly update the Incident Report until the corresponding bug is resolved by a Mozilla representative. CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
+
 ## 3. Documentation ##
 
 ### 3.1 Audits ###
@@ -791,3 +795,4 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Mis-Issuance&groups=crypto-core-security
 [Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
 [Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
+[Incident-Report]:  https://wiki.mozilla.org/CA/Responding_To_An_Incident
