@@ -335,6 +335,13 @@ year, as required by the Baseline Requirements. CAs MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document.
 
+Effective for versions dated after 30-September, 2019, CPs and CPSes MUST be 
+structured according to RFC 3647 and MUST:
+*   Include at least every section and subsection defined in RFC 3647; and,
+*   Only use the words "No Stipulation" to mean that the particular document 
+imposes no requirements related to that section; and,
+*   Contain no sections that are blank and have no subsections.
+    
 ## 4. Common CA Database ##
 
 Mozilla manages its root program using the Common CA Database (CCADB). CAs with
