@@ -698,8 +698,9 @@ In addition, one or more of the following sections MAY apply.
 ### 8.1 Change in Legal Ownership ###
 
 This section applies when one company buys or takes a controlling stake in
-a CA, or when an organization buys the private key of a certificate in
-Mozilla's root program.
+a CA, or when an organization buys the private key of a CA certificate that is 
+within the scope of Mozilla's root program, unless it is constrained in 
+compliance with section 5.3.1 of this policy.
 
 Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
 
@@ -713,8 +714,10 @@ permitted until the discussion has been resolved with a positive conclusion.
 
 ### 8.2 Change in Operational Personnel ###
 
-This section applies when operation of a certificate in Mozilla's root program
-is transferred to a different organization, whether by acquisition or contract.
+This section applies when operation of a CA certificate that is within the 
+scope of Mozilla's root program and not constrained in compliance with section 
+5.3.1 of this policy is transferred to a different organization, 
+whether by acquisition or contract.
 
 The transferor MUST ensure that the transferee is able to fully comply with
 this policy. The transferor will continue to be responsible for the root
@@ -732,9 +735,10 @@ transferee has or will get the relevant audits before issuing EV certificates.
 
 ### 8.3 Change in Secure Location ###
 
-The section applies when section 8.1 and/or section 8.2 applies, and when the
-cryptographic hardware related to a certificate in Mozilla's root store is
-consequently moved from one secure location to another.
+The section only applies when section 8.1 and/or section 8.2 applies, and when the
+cryptographic hardware related to a CA certificate that is within the scope of 
+Mozilla's root program and not constrained in compliance with section 
+5.3.1 of this policy is consequently moved from one secure location to another.
 
 This policy and the relevant WebTrust or ETSI requirements apply at all times,
 even during the physical relocation of a CA's online operations to a new data
