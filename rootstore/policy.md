@@ -364,12 +364,130 @@ set:
 
 *   RSA keys whose modulus size in bits is divisible by 8, and is at
     least 2048.
-*   Digest algorithms: SHA-1 (see below), SHA-256, SHA-384, or SHA-512.
-*   ECDSA keys using one of the following curve-hash pairs:
-    * P‐256 with SHA-256
-    * P‐384 with SHA-384
+*   ECDSA keys using one of the following curves:
+    * P-256
+    * P-384
 
-#### 5.1.1 SHA-1 ####
+The following sections detail encoding and signature algorithm requirements for
+each of these keys. The encoding requirements on signature algorithms apply to
+any contexts where the algorithm is encoded as an AlgorithmIdentifier,
+including:
+
+* The signatureAlgorithm field of a Certificate
+* The signature field of a TBSCertificate
+* The signatureAlgorithm field of a CertificateList
+* The signature field of a TBSCertList
+* The signatureAlgorithm field of a BasicOCSPResponse
+
+
+#### 5.1.1 RSA
+
+When RSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
+field MUST consist of an rsaEncryption OID (1.2.840.113549.1.1.1) with a NULL
+parameter. The encoded AlgorithmIdentifier for an RSA key MUST match the
+following hex-encoded bytes:
+`300d06092a864886f70d0101010500`.
+
+When a root or intermediate certificate's RSA key is used to produce a
+signature, only the following algorithms may be used, and with the following
+encoding requirements:
+
+* RSASSA-PKCS1-v1_5 with SHA-1.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+  `300d06092a864886f70d0101050500`.
+
+  See section 5.1.3 for further restrictions on the use of SHA-1.
+
+* RSASSA-PKCS1-v1_5 with SHA-256.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+  `300d06092a864886f70d01010b0500`.
+
+* RSASSA-PKCS1-v1_5 with SHA-384.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+  `300d06092a864886f70d01010c0500`.
+
+* RSASSA-PKCS1-v1_5 with SHA-512.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+  `300d06092a864886f70d01010d0500`.
+
+* RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+
+  ```
+  304106092a864886f70d01010a3034a00f300d0609608648016503040201
+  0500a11c301a06092a864886f70d010108300d0609608648016503040201
+  0500a203020120
+  ```
+
+* RSASSA-PSS with SHA-384, MGF-1 with SHA-384, and a salt length of 48 bytes.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+
+  ```
+  304106092a864886f70d01010a3034a00f300d0609608648016503040202
+  0500a11c301a06092a864886f70d010108300d0609608648016503040202
+  0500a203020130
+  ```
+
+* RSASSA-PSS with SHA-512, MGF-1 with SHA-512, and a salt length of 64 bytes.
+
+  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+
+  ```
+  304106092a864886f70d01010a3034a00f300d0609608648016503040203
+  0500a11c301a06092a864886f70d010108300d0609608648016503040203
+  0500a203020140
+  ```
+
+The above RSASSA-PKCS1-v1_5 encodings consist of the corresponding OID,
+e.g. sha256WithRSAEncryption (1.2.840.113549.1.1.11), with an explicit NULL
+parameter. Certificates MUST NOT omit this NULL parameter. Note this differs
+from ECDSA, with omits the parameter.
+
+The above RSASSA-PSS encodings consist of the RSASSA-PSS OID
+(1.2.840.11.3549.1.1.10) with a corresponding RSASSA-PSS-params structure as
+parameter. The trailerField MUST be omitted, as it is unchanged from the default
+value. The AlgorithmIdentifier structures describing the hash functions in the
+hashAlgorithm field and in the maskGenAlgorithm's parameter MUST themselves
+include an explicit NULL in the parameter field.
+
+#### 5.1.2 ECDSA
+
+When ECDSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
+field MUST be one of the following:
+
+* The encoded AlgorithmIdentifier for a P-256 key MUST match the following
+  hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`.
+
+* The encoded AlgorithmIdentifier for a P-384 key MUST match the following
+  hex-encoded bytes: `301006072a8648ce3d020106052b81040022`.
+
+The above encodings consist of an ecPublicKey OID (1.2.840.10045.2.1) with a
+named curve parameter of the curreponding curve OID. Certificates MUST NOT use
+the implicit or specified curve forms.
+
+When a root or intermediate certificate's ECDSA key is used to produce a
+signature, only the following algorithms may be used, and with the following
+encoding requirements:
+
+* If the signing key is P-256, the signature MUST use ECDSA with SHA-256. The
+  encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+  `300a06082a8648ce3d040302`.
+
+* If the signing key is P-384, the signature MUST use ECDSA with SHA-384. The
+  encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+  `300a06082a8648ce3d040303`.
+
+The above encodings consist of the corresponding OID with the parameters field
+omitted. Certificates MUST NOT include a NULL parameter. Note this differs from
+RSASSA-PKCS1-v1_5, which includes an explicit NULL.
+
+#### 5.1.3 SHA-1 ####
 
 CAs MAY sign SHA-1 hashes over end-entity certificates which chain
 up to roots in Mozilla's program only if all the following are true:
