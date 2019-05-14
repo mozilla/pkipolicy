@@ -342,8 +342,8 @@ structured according to RFC 3647 and MUST:
 imposes no requirements related to that section; and,
 *   Contain no sections that are blank and have no subsections.
 
-6.  CPs and CPSes must clearly indicate which root and intermediate certificates 
-the practices and processes described in those documents apply to.
+6.  CAs must provide a way to clearly determine which CP and CPS 
+applies to each of its root and intermediate certificates.
     
 ## 4. Common CA Database ##
 
