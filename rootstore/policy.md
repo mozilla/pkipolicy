@@ -470,7 +470,7 @@ The above RSASSA-PKCS1-v1_5 encodings consist of the corresponding OID,
 e.g. sha256WithRSAEncryption (1.2.840.113549.1.1.11), with an explicit NULL
 parameter, as specified in [RFC 3279, Section 2.2.1](https://tools.ietf.org/html/rfc3279#section-2.2.1).
 Certificates MUST NOT omit this NULL parameter. Note this differs
-from ECDSA, with omits the parameter.
+from ECDSA, which omits the parameter.
 
 The above RSASSA-PSS encodings consist of the RSASSA-PSS OID
 (1.2.840.11.3549.1.1.10) with a corresponding RSASSA-PSS-params structure as
