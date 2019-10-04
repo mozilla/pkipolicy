@@ -72,7 +72,7 @@ Certificate Policy module team at [certificates@mozilla.org][Email-Us] if you
 have questions about this policy.
 
 CAs or others objecting to a particular decision by either team MAY appeal to
-the [Mozilla governance module owner][Gov-Module] who will make a final
+the [Firefox Technical Leadership Module Committee][Gov-Module] who will make a final
 decision.
 
 ## 2. Certificate Authorities ##
@@ -992,7 +992,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Email-Us]:         mailto:certificates@mozilla.org
 [CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#CA_Certificates
 [CA-Policy-Module]: https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
-[Gov-Module]:       https://wiki.mozilla.org/Modules/Activities#Governance
+[Gov-Module]:       https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
 [MDSP]:             https://www.mozilla.org/about/forums/#dev-security-policy
 [EVGLs]:            https://cabforum.org/extended-validation/
 [BRs]:              https://cabforum.org/baseline-requirements-documents/
