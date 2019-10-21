@@ -908,7 +908,7 @@ In addition, one or more of the following sections MAY apply.
 ### 8.1 Change in Legal Ownership ###
 
 This section applies when one company buys or takes a controlling stake in
-a CA, or when an organization buys the private key of a CA certificate that is 
+a CA, or when an organization obtains control of a CA certificate that is 
 within the scope of Mozilla's root program, unless it is constrained in 
 compliance with section 5.3.1 of this policy.
 
