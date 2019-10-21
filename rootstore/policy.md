@@ -584,7 +584,7 @@ CAs MUST NOT issue certificates that have:
 CAs MUST NOT generate the key pairs for end-entity certificates that have an
 EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
 
-Effective for certificates with a notBefore date of April 1, 2020 or later, 
+Effective for certificates with a notBefore date of July 1, 2020 or later, 
 end-entity certificates MUST include an EKU extension containing KeyPurposeId(s) 
 describing the intended usage(s) of the certificate, and the EKU extension MUST NOT 
 contain the KeyPurposeId anyExtendedKeyUsage.
