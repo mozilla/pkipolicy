@@ -688,7 +688,7 @@ issued upon the occurrence of any event listed in the appropriate
 subsection of section 4.9.1 of the Baseline Requirements, 
 according to the timeline defined therein. CAs MUST also revoke 
 any certificates issued in violation of the then-current version 
-of these requirements accordint to the timeline defined in 
+of these requirements according to the timeline defined in 
 section 4.9.1 of the Baseline Requirements.
 
 ### 6.2 S/MIME ###
