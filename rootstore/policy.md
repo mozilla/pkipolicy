@@ -691,75 +691,35 @@ according to the timeline defined therein.
 ### 6.2 S/MIME ###
 
 For any certificate in a hierarchy capable of being used for 
-S/MIME, CAs MUST revoke certificates in accordance with the 
-requirements in the following subsections:
+S/MIME, CAs MUST revoke certificates upon the occurrence of 
+any of the following events:
 
-#### 6.2.1 Reasons for Revoking a Subscriber Certificate ####
-
-The CA SHALL revoke a Certificate within 24 hours if one or more 
-of the following occurs: 
-
-1. The Subscriber requests in writing that the CA revoke the Certificate;
-2. The Subscriber notifies the CA that the original certificate request 
+1. the subscriber indicates that the original certificate request 
 was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's private key corresponding 
-to the public key in the certificate suffered a key compromise; or
-4. The CA obtains evidence that the validation of email address or 
-domain authorization or control for any email address or domain name 
-in the certificate should not be relied upon.
-
-The CA SHOULD revoke a certificate within 24 hours and MUST revoke 
-a certificate within 5 days if one or more of the following occurs:
-
-1. The CA obtains evidence that the Certificate was misused;
-2. The CA is made aware that a Subscriber has violated one or more of 
-its material obligations under the subscriber agreement or terms of use;
-3. The CA is made aware of any circumstance indicating that use of an 
-email address or domain name in the certificate is no longer legally permitted 
-(e.g. a court or arbitrator has revoked a domain name registrant's 
-right to use the domain name, a relevant licensing or services agreement 
-between the domain name registrant and the applicant has terminated, 
-or the domain name registrant has failed to renew the domain name);
-4. The CA is made aware of a material change in the information 
-contained in the certificate;
-5. The CA is made aware that the certificate was not issued in accordance 
-with the CA's CP or CPS;
-6. The CA determines or is made aware that any of the information 
-appearing in the certificate is inaccurate;
-7. The CA's right to issue certificates expires or is revoked or terminated, 
-unless the CA has made arrangements to continue maintaining the 
-CRL/OCSP repository;
-8. Revocation is required by the CA's CP and/or CPS; or
-9. The CA is made aware of a demonstrated or proven method that exposes the 
-Subscriber's private key to compromise, methods have been developed that 
-can easily calculate it based on the public key, or if there is clear evidence 
-that the specific method used to generate the private key was flawed.
-
-### 6.2.2 Reasons for Revoking a Subordinate CA Certificate ###
-
-The issuing CA SHALL revoke a subordinate CA Certificate within 
-seven (7) days if one or more of the following occurs:
-
-1. The subordinate CA requests revocation in writing;
-2. The subordinate CA notifies the issuing CA that the original 
-certificate request was not authorized and does not 
-retroactively grant authorization;
-3. The issuing CA obtains evidence that the subordinate CA's private key 
-corresponding to the public key in the Certificate suffered a 
-key compromise;
-4. The issuing CA obtains evidence that the certificate was misused;
-5. The issuing CA is made aware that the certificate was not issued 
-in accordance with or that subordinate CA has not complied with the 
-applicable CP or CPS;
-6. The issuing CA determines that any of the information appearing 
-in the certificate is inaccurate or misleading;
-7. The issuing CA or subordinate CA ceases operations for any reason 
-and has not made arrangements for another CA to provide revocation 
-support for the certificate;
-8. The issuing CA's or subordinate CA's right to issue certificates 
-expires or is revoked or terminated, unless the issuing CA has made 
-arrangements to continue maintaining the CRL/OCSP repository; or
-9. Revocation is required by the issuing CA's CP and/or CPS.
+2. the CA obtains reasonable evidence that the subscriber’s 
+private key (corresponding to the public key in the certificate) 
+has been compromised or is suspected of compromise;
+3. the CA obtains reasonable evidence that the certificate 
+has been used for a purpose outside of that indicated 
+in the certificate or in the CA's subscriber agreement;
+4. the CA receives notice or otherwise becomes aware that a 
+subscriber has violated one or more of its material obligations 
+under the subscriber agreement;
+5. the CA receives notice or otherwise becomes aware of any circumstance 
+indicating that use of the email address in the certificate 
+is no longer legally permitted;
+6. the CA receives notice or otherwise becomes aware of a material change 
+in the information contained in the certificate;
+7. a determination that the certificate was not issued in accordance 
+with the CA’s Certificate Policy or Certification Practice Statement;
+8. the CA determines that any of the information 
+appearing in the certificate is not accurate;
+9. the CA ceases operations for any reason and has not arranged 
+for another CA to provide revocation support for the certificate;
+10. the CA private key used in issuing the certificate is suspected 
+to have been compromised; or
+11. such additional revocation events as the CA publishes 
+in its policy documentation.
 
 ## 7. Root Store Changes ##
 
