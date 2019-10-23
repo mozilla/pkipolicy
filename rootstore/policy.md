@@ -177,7 +177,13 @@ can be considered for addition or clarification.
 
 ### 2.4 Incidents ###
 
-When a CA fails to comply with any requirement of this policy - whether it be a misissuance, a procedural or operational issue, or any other variety of non-compliance - the event is classified as an incident. At a minimum, CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], and MUST regularly update the Incident Report until the corresponding bug is resolved by a Mozilla representative. CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
+When a CA fails to comply with any requirement of this policy - whether it be
+a misissuance, a procedural or operational issue, or any other variety of 
+non-compliance - the event is classified as an incident. At a minimum, 
+CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
+and MUST regularly update the Incident Report until the corresponding bug 
+is marked as resolved in the mozilla.org [Bugzilla] [Bugzilla] system by a Mozilla representative. 
+CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
 
 ## 3. Documentation ##
 
@@ -960,6 +966,7 @@ Mozilla][Sec-Bugs] if a problem occurs.
 Any copyright in this document is [dedicated to the Public Domain][CC-0].
 
 [Email-Us]:         mailto:certificates@mozilla.org
+[Bugzilla]:         https://bugzilla.mozilla.org
 [CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#CA_Certificates
 [CA-Policy-Module]: https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:       https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
