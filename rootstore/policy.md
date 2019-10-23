@@ -120,8 +120,12 @@ meets or exceeds the following requirements:
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
     the account holder’s behalf. The CA SHALL NOT delegate validation 
-    of the domain part of an email address. The CA's CP/CPS must clearly specify the 
-    procedure(s) that the CA employs to perform this verification.
+    of the domain portion of an email address. The CA MAY rely 
+    on validation the CA has performed for 
+    an Authorization Domain Name (as specified in the Baseline Requirements) 
+    as being valid for subdomains of that Authorization Domain Name. 
+    The CA's CP/CPS must clearly specify the procedure(s) 
+    that the CA employs to perform this verification.
 3.  For a certificate capable of being used for SSL-enabled servers, the CA
     must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
