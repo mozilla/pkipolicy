@@ -182,7 +182,7 @@ a misissuance, a procedural or operational issue, or any other variety of
 non-compliance - the event is classified as an incident. At a minimum, 
 CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
 and MUST regularly update the Incident Report until the corresponding bug 
-is marked as resolved in the mozilla.org [Bugzilla] [Bugzilla] system by a Mozilla representative. 
+is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
 CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
 
 ## 3. Documentation ##
