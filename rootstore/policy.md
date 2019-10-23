@@ -99,6 +99,8 @@ CAs whose certificates are included in Mozilla's root program MUST:
     825 days or less; and
 6.  otherwise operate in accordance with published criteria that we
     deem acceptable.
+7.  Ensure that all certificates within the scope of this policy, 
+    as described in Section 1.1, adhere to this policy.
 
 CAs MUST follow and be aware of discussions in the
 [mozilla.dev.security.policy][MDSP] forum, where Mozilla's root program is
