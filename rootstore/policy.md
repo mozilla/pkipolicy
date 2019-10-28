@@ -96,10 +96,10 @@ CAs whose certificates are included in Mozilla's root program MUST:
     purpose(s) of the certificates;
 5.  verify that all of the information that is included in SSL
     certificates remains current and correct at time intervals of
-    825 days or less; and
+    825 days or less;
 6.  otherwise operate in accordance with published criteria that we
-    deem acceptable.
-7.  Ensure that all certificates within the scope of this policy, 
+    deem acceptable; and
+7.  ensure that all certificates within the scope of this policy, 
     as described in Section 1.1, adhere to this policy.
 
 CAs MUST follow and be aware of discussions in the
