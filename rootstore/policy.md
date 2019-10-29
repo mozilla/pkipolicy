@@ -732,9 +732,9 @@ appearing in the certificate is not accurate;
 9. the CA ceases operations for any reason and has not arranged 
 for another CA to provide revocation support for the certificate;
 10. the CA private key used in issuing the certificate is suspected 
-to have been compromised; or
+to have been compromised;
 11. such additional revocation events as the CA publishes 
-in its policy documentation.
+in its policy documentation; or
 12. the certificate was issued in violation of the then-current 
 version of these requirements.
 
