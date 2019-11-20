@@ -978,12 +978,12 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [EVGLs]:            https://cabforum.org/extended-validation/
 [BRs]:              https://cabforum.org/baseline-requirements-documents/
 [NSGs]:             https://cabforum.org/network-security/
-[ETSI-319-411-1]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.01.01_60/en_31941101v010101p.pdf
-[ETSI-319-411-2]:   http://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.01.01_60/en_31941102v020101p.pdf
-[WebTrust-2.0]:     http://www.webtrust.org/homepage-documents/item54279.pdf
-[WebTrust-BRs]:     http://www.webtrust.org/principles-and-criteria/docs/item83987.pdf
+[ETSI-319-411-1]:   https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.02.02_60/en_31941101v010202p.pdf
+[ETSI-319-411-2]:   https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.02.02_60/en_31941102v020202p.pdf
+[WebTrust-2.0]:     https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/webtrust-for-ca-22.pdf
+[WebTrust-BRs]:     https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wtbr-241-final--ssl-baseline-with-network-security-june-30-2019.pdf
 [WebTrust-For-CAs]: http://www.webtrust.org/homepage-documents/item27839.aspx
-[WebTrust-EV]:      http://www.webtrust.org/principles-and-criteria/docs/item83989.pdf
+[WebTrust-EV]:      https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/webtrust-principles-and-criteria-for-certification-authoritiesextended-validation-ssl-168.pdf
 [CC-BY]:            https://creativecommons.org/licenses/by/4.0/
 [CC-BY-SA]:         https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:         https://creativecommons.org/licenses/by-nd/4.0/
