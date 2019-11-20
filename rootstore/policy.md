@@ -202,20 +202,20 @@ We consider the criteria for CA operations published in the
 following documents to be acceptable:
 
 *   WebTrust "[Principles and Criteria for Certification Authorities - Version
-    2.0][WebTrust-2.0]" or later in [WebTrust Program for Certification
+    2.2][WebTrust-2.0]" or later in [WebTrust Program for Certification
     Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities – SSL
-    Baseline with Network Security - Version 2.2][WebTrust-BRs]" or later in
+    Baseline with Network Security - Version 2.4.1][WebTrust-BRs]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities -
-    Extended Validation SSL 1.6.0][WebTrust-EV]" or later in
+    Extended Validation SSL 1.6.8][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-*   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.1.1 or
+*   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.2.2 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 1: General requirements][ETSI-319-411-1],
     specifying a policy or policies appropriate to the trust bit(s) being
     applied for;
-*   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.1.1 or
+*   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.2.2 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 2: Requirements for trust service providers
     issuing EU qualified certificates][ETSI-319-411-2], specifying a
