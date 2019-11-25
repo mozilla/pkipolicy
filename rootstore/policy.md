@@ -982,7 +982,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [ETSI-319-411-2]:   https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.02.02_60/en_31941102v020202p.pdf
 [WebTrust-2.0]:     https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/webtrust-for-ca-22.pdf
 [WebTrust-BRs]:     https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wtbr-241-final--ssl-baseline-with-network-security-june-30-2019.pdf
-[WebTrust-For-CAs]: http://www.webtrust.org/homepage-documents/item27839.aspx
+[WebTrust-For-CAs]: https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
 [WebTrust-EV]:      https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/webtrust-principles-and-criteria-for-certification-authoritiesextended-validation-ssl-168.pdf
 [CC-BY]:            https://creativecommons.org/licenses/by/4.0/
 [CC-BY-SA]:         https://creativecommons.org/licenses/by-sa/4.0/
