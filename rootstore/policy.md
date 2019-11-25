@@ -2,7 +2,7 @@
 
 *Version 2.7*
 
-*[Effective <TBD>][Policy-Archive]*
+*[Effective January 1, 2020][Policy-Archive]*
 
 ## 1. Introduction ##
 
