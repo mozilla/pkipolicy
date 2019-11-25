@@ -994,7 +994,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
 [How-To-Apply]:     https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:     https://wiki.mozilla.org/CA/Certificate_Change_Process
-[Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Mis-Issuance&groups=crypto-core-security
+[Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
 [Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
 [Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
 [Incident-Report]:  https://wiki.mozilla.org/CA/Responding_To_An_Incident
