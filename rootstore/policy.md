@@ -350,10 +350,10 @@ even if no other changes are made to the document.
 
 5.  Effective for versions dated April 1, 2020 or later, CPs and CPSes MUST be 
 structured according to RFC 3647 and MUST:
-*   Include at least every section and subsection defined in RFC 3647; and,
-*   Only use the words "No Stipulation" to mean that the particular document 
+       * Include at least every section and subsection defined in RFC 3647; and,
+       * Only use the words "No Stipulation" to mean that the particular document 
 imposes no requirements related to that section; and,
-*   Contain no sections that are blank and have no subsections.
+       * Contain no sections that are blank and have no subsections.
 
 6.  CAs must provide a way to clearly determine which CP and CPS 
 applies to each of its root and intermediate certificates.
@@ -427,57 +427,57 @@ When a root or intermediate certificate's RSA key is used to produce a
 signature, only the following algorithms may be used, and with the following
 encoding requirements:
 
-* RSASSA-PKCS1-v1_5 with SHA-1.
+  * RSASSA-PKCS1-v1_5 with SHA-1.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
-  `300d06092a864886f70d0101050500`.
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    `300d06092a864886f70d0101050500`.
 
   See section 5.1.3 for further restrictions on the use of SHA-1.
 
-* RSASSA-PKCS1-v1_5 with SHA-256.
+  * RSASSA-PKCS1-v1_5 with SHA-256.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
-  `300d06092a864886f70d01010b0500`.
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    `300d06092a864886f70d01010b0500`.
 
-* RSASSA-PKCS1-v1_5 with SHA-384.
+  * RSASSA-PKCS1-v1_5 with SHA-384.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
-  `300d06092a864886f70d01010c0500`.
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    `300d06092a864886f70d01010c0500`.
 
-* RSASSA-PKCS1-v1_5 with SHA-512.
+  * RSASSA-PKCS1-v1_5 with SHA-512.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
-  `300d06092a864886f70d01010d0500`.
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    `300d06092a864886f70d01010d0500`.
 
-* RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes.
+  * RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
 
-  ```
-  304106092a864886f70d01010a3034a00f300d0609608648016503040201
-  0500a11c301a06092a864886f70d010108300d0609608648016503040201
-  0500a203020120
-  ```
+    ```
+    304106092a864886f70d01010a3034a00f300d0609608648016503040201
+    0500a11c301a06092a864886f70d010108300d0609608648016503040201
+    0500a203020120
+    ```
 
-* RSASSA-PSS with SHA-384, MGF-1 with SHA-384, and a salt length of 48 bytes.
+  * RSASSA-PSS with SHA-384, MGF-1 with SHA-384, and a salt length of 48 bytes.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
 
-  ```
-  304106092a864886f70d01010a3034a00f300d0609608648016503040202
-  0500a11c301a06092a864886f70d010108300d0609608648016503040202
-  0500a203020130
-  ```
+    ```
+    304106092a864886f70d01010a3034a00f300d0609608648016503040202
+    0500a11c301a06092a864886f70d010108300d0609608648016503040202
+    0500a203020130
+    ```
 
-* RSASSA-PSS with SHA-512, MGF-1 with SHA-512, and a salt length of 64 bytes.
+  * RSASSA-PSS with SHA-512, MGF-1 with SHA-512, and a salt length of 64 bytes.
 
-  The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
+    The encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
 
-  ```
-  304106092a864886f70d01010a3034a00f300d0609608648016503040203
-  0500a11c301a06092a864886f70d010108300d0609608648016503040203
-  0500a203020140
-  ```
+    ```
+    304106092a864886f70d01010a3034a00f300d0609608648016503040203
+    0500a11c301a06092a864886f70d010108300d0609608648016503040203
+    0500a203020140
+    ```
 
 The above RSASSA-PKCS1-v1_5 encodings consist of the corresponding OID,
 e.g. sha256WithRSAEncryption (1.2.840.113549.1.1.11), with an explicit NULL
@@ -499,10 +499,10 @@ Note: as of version 70, [RSASSA-PSS encodings are not supported by Firefox](http
 When ECDSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
 field MUST be one of the following, as specified by [RFC 5480, Section 2.1.1](https://tools.ietf.org/html/rfc5480#section-2.1.1):
 
-* The encoded AlgorithmIdentifier for a P-256 key MUST match the following
+  * The encoded AlgorithmIdentifier for a P-256 key MUST match the following
   hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`.
 
-* The encoded AlgorithmIdentifier for a P-384 key MUST match the following
+  * The encoded AlgorithmIdentifier for a P-384 key MUST match the following
   hex-encoded bytes: `301006072a8648ce3d020106052b81040022`.
 
 The above encodings consist of an ecPublicKey OID (1.2.840.10045.2.1) with a
@@ -513,11 +513,11 @@ When a root or intermediate certificate's ECDSA key is used to produce a
 signature, only the following algorithms may be used, and with the following
 encoding requirements:
 
-* If the signing key is P-256, the signature MUST use ECDSA with SHA-256. The
+  * If the signing key is P-256, the signature MUST use ECDSA with SHA-256. The
   encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
   `300a06082a8648ce3d040302`.
 
-* If the signing key is P-384, the signature MUST use ECDSA with SHA-384. The
+  * If the signing key is P-384, the signature MUST use ECDSA with SHA-384. The
   encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
   `300a06082a8648ce3d040303`.
 
@@ -533,16 +533,16 @@ up to roots in Mozilla's program only if all the following are true:
 
 1. The end-entity certificate:
 
-   *   is not within the scope of the Baseline Requirements;
-   *   contains an EKU extension which does not contain either of the
+     *   is not within the scope of the Baseline Requirements;
+     *   contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-   *   has at least 64 bits of entropy from a CSPRNG in the serial number.
+     *   has at least 64 bits of entropy from a CSPRNG in the serial number.
 
 2. The issuing certificate:
 
-   *   contains an EKU extension which does not contain either of the
+     *   contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-   *   has a pathlen:0 constraint.
+     *   has a pathlen:0 constraint.
 
 Point 2 does not apply if the certificate is an OCSP signing certificate
 manually issued directly from a root.
