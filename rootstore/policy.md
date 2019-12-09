@@ -350,6 +350,7 @@ even if no other changes are made to the document.
 
 5.  Effective for versions dated April 1, 2020 or later, CPs and CPSes MUST be 
 structured according to RFC 3647 and MUST:
+
        * Include at least every section and subsection defined in RFC 3647; and,
        * Only use the words "No Stipulation" to mean that the particular document 
 imposes no requirements related to that section; and,
