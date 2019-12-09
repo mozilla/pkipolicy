@@ -506,7 +506,7 @@ field MUST be one of the following, as specified by [RFC 5480, Section 2.1.1](ht
   hex-encoded bytes: `301006072a8648ce3d020106052b81040022`.
 
 The above encodings consist of an ecPublicKey OID (1.2.840.10045.2.1) with a
-named curve parameter of the curreponding curve OID. Certificates MUST NOT use
+named curve parameter of the correponding curve OID. Certificates MUST NOT use
 the implicit or specified curve forms.
 
 When a root or intermediate certificate's ECDSA key is used to produce a
