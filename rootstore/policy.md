@@ -534,16 +534,16 @@ up to roots in Mozilla's program only if all the following are true:
 
 1. The end-entity certificate:
 
-       * is not within the scope of the Baseline Requirements;
-       * contains an EKU extension which does not contain either of the
+     * is not within the scope of the Baseline Requirements;
+     * contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-       * has at least 64 bits of entropy from a CSPRNG in the serial number.
+     * has at least 64 bits of entropy from a CSPRNG in the serial number.
 
 2. The issuing certificate:
 
-       * contains an EKU extension which does not contain either of the
+     * contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-       * has a pathlen:0 constraint.
+     * has a pathlen:0 constraint.
 
 Point 2 does not apply if the certificate is an OCSP signing certificate
 manually issued directly from a root.
