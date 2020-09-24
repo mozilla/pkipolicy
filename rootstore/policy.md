@@ -268,7 +268,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
 #### 3.1.3 Audit Parameters ####
 
 Full-surveillance period-of-time audits MUST be conducted and updated audit
-information provided no less frequently than **annually**. Successive audits
+information provided no less frequently than **annually** until the CA certificate is no longer trusted by Mozilla's root store. Successive audits
 MUST be contiguous (no gaps).
 
 Point-in-time audit statements may be used to confirm that all of the problems
