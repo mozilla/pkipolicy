@@ -697,6 +697,8 @@ via an Online Certificate Status Protocol (OCSP) service:
     before or equal to the notAfter date of the CA certificate which
     issued the certificate that the BasicOCSPResponse is for.
 
+Section 4.9.12 of a CA's CP/CPS MUST clearly specify the methods that parties may use to demonstrate private key compromise.
+
 ### 6.1 SSL ###
 
 For any certificate in a hierarchy capable of being used for 
