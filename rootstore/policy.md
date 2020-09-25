@@ -187,6 +187,8 @@ and MUST regularly update the Incident Report until the corresponding bug
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
 CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
 
+If being audited to the WebTrust criteria, the Management Assertion letter MUST include all incidents of which the CA is aware occurring, open, or closed during the audit period. 
+
 ## 3. Documentation ##
 
 ### 3.1 Audits ###
