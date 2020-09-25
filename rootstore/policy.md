@@ -287,21 +287,22 @@ least the following clearly-labelled information:
 
 1.  name of the company being audited;
 2.  name and address of the organization performing the audit;
-3.  Distinguished Name and SHA256 fingerprint of each root and intermediate
+3.  name(s) and qualifications of individuals performing the audit, as required by section 3.2; 
+4.  Distinguished Name and SHA256 fingerprint of each root and intermediate
     certificate that was in scope;
-4.  audit criteria (with version number) that were used to audit each of
+5.  audit criteria (with version number) that were used to audit each of
     the certificates;
-5.  a list of the CA policy documents (with version numbers) referenced during
+6.  a list of the CA policy documents (with version numbers) referenced during
     the audit;
-6.  whether the audit is for a period of time or a point in time;
-7.  the start date and end date of the period, for those that cover a period
+7.  whether the audit is for a period of time or a point in time;
+8.  the start date and end date of the period, for those that cover a period
     of time;
-8.  the point-in-time date, for those that are for a point in time;
-9.  the date the report was issued (which will necessarily be after the end
+9.  the point-in-time date, for those that are for a point in time;
+10. the date the report was issued (which will necessarily be after the end
     date or point-in-time date); 
-10. the facility site locations that were examined (e.g. Toronto datacenter);       
+11. the facility site locations that were examined (e.g. Toronto datacenter);       
     and
-11. For ETSI, a statement to indicate if the audit was a full audit, and which
+12. For ETSI, a statement to indicate if the audit was a full audit, and which
     parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
@@ -313,10 +314,15 @@ An authoritative English language version of the publicly-available audit inform
 In normal circumstances, Mozilla requires that audits MUST be performed
 by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-If a CA wishes to use auditors who do not fit that definition, they MUST
+A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent and not conflicted. Individuals have competence, partnerships and corporations do not. Audit documentation of individual auditor qualifications MUST be provided to Mozilla that is sufficient for Mozilla to determine the competence, experience, and independence of the Qualified Auditor. Mozilla will review each individual auditor’s credentials and ensure that any Qualified Auditor has the collective set of skills required by section 8.2 of the Baseline Requirements. 
+
+If a CA wishes to use auditors who do not fit the definition of Qualified Auditor, then it MUST
 receive written permission from Mozilla to do so in advance of the start
 of the audit engagement. Mozilla will make its own determination as to
 the suitability of the suggested party or parties, at its sole discretion.
+
+ 
+
 
 ### 3.3 CPs and CPSes ###
 
