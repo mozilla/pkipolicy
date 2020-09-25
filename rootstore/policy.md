@@ -778,7 +778,7 @@ security, e.g. by knowingly issuing certificates without the knowledge of the
 entities whose information is referenced in those certificates ('MITM certificates'). 
 Mozilla is under no obligation to explain the reasoning behind any inclusion decision.
 
-Before being included, CAs MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. Evidences include: an auditor-witnessed root key generation ceremony report; contiguous period-of-time audit reports performed no less frequently than annually; 
+Before being included, CAs MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. 
 
 To request that its certificate(s) be added to Mozilla's root program a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
