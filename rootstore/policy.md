@@ -233,7 +233,7 @@ apply (see section 3.1.1 for specific version numbers):
 
     * [WebTrust for CAs][WebTrust-2.0]
     * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
-    * [WebTrust for CAs - EV SSL][WebTrust-EV] (if issuing EV certificates)
+    * [WebTrust for CAs - EV SSL][WebTrust-EV] (if capable of issuing EV certificates)
 
 *   For the email trust bit, a CA and all subordinate CAs technically capable
     of issuing email certificates must have all of the following audits:
@@ -254,7 +254,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
       and EVCP)
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-w)
 
-    An audit showing conformance with the EVCP policy is required if issuing EV
+    An audit showing conformance with the EVCP policy is required if a CA is capable of issuing EV
     certificates.
 
 *   For the email trust bit, a CA and all subordinate CAs technically
