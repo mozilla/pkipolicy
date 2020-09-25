@@ -300,9 +300,10 @@ least the following clearly-labelled information:
 9.  the point-in-time date, for those that are for a point in time;
 10. the date the report was issued (which will necessarily be after the end
     date or point-in-time date); 
-11. the facility site locations that were examined (e.g. Toronto datacenter);       
+11. all incidents (section 2.4) occuring, open, or closed during the audit period, or a statement that the auditor is unaware of any;    
+12. the facility site locations that were examined (e.g. Toronto datacenter);       
     and
-12. For ETSI, a statement to indicate if the audit was a full audit, and which
+13. For ETSI, a statement to indicate if the audit was a full audit, and which
     parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
