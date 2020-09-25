@@ -95,11 +95,12 @@ CAs whose certificates are included in Mozilla's root program MUST:
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
 5.  verify that all of the information that is included in SSL
-    certificates remains current and correct at time intervals of
+    certificates remains current and correct;
+6.  perform domain validation pursuant to section 3.2.2.4 of the Baseline Requirements at intervals of
     395 days or less;
-6.  otherwise operate in accordance with published criteria that we
+7.  otherwise operate in accordance with published criteria that we
     deem acceptable; and
-7.  ensure that all certificates within the scope of this policy, 
+8.  ensure that all certificates within the scope of this policy, 
     as described in Section 1.1, adhere to this policy.
 
 CAs MUST follow and be aware of discussions in the
