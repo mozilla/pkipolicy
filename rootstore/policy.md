@@ -268,9 +268,8 @@ If being audited to the ETSI criteria, the following audit requirements apply
       QCP-n-qscd)
 
 #### 3.1.3 Audit Parameters ####
-
 Full-surveillance period-of-time audits MUST be conducted and updated audit
-information provided no less frequently than **annually** until the CA certificate is no longer trusted by Mozilla's root store. Successive audits
+information provided no less frequently than **annually** from the time of CA key pair generation until the CA certificate is no longer trusted by Mozilla's root store or until all copies of the CA private key have been completely destroyed, as evidenced by a Qualified Auditor's key destruction report, whichever occurs sooner. Successive period-of-time audits
 MUST be contiguous (no gaps).
 
 Point-in-time audit statements may be used to confirm that all of the problems
@@ -779,7 +778,7 @@ security, e.g. by knowingly issuing certificates without the knowledge of the
 entities whose information is referenced in those certificates ('MITM certificates'). 
 Mozilla is under no obligation to explain the reasoning behind any inclusion decision.
 
-Before being included, CAs MUST provide evidence that their CA certificates have continually, from the time of creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements.
+Before being included, CAs MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. Evidences include: an auditor-witnessed root key generation ceremony report; contiguous period-of-time audit reports performed no less frequently than annually; 
 
 To request that its certificate(s) be added to Mozilla's root program a CA
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
@@ -804,8 +803,11 @@ MUST include the following:
     OID associated with the CA certificate;
 4.  a Certificate Policy and Certification Practice Statement (or
     links to a CP and CPS) or equivalent disclosure document(s)
-    for the CA or CAs in question; *and*
-5.  information as to how the CA has fulfilled the requirements
+    for the CA or CAs in question; 
+5.  an auditor-witnessed root key generation ceremony report and contiguous 
+    period-of-time audit reports performed thereafter no less frequently than 
+    annually; *and*
+6.  information as to how the CA has fulfilled the requirements
     stated above regarding its verification of certificate signing
     requests and its conformance to a set of acceptable operational
     criteria.
