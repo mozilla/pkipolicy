@@ -188,7 +188,7 @@ and MUST regularly update the Incident Report until the corresponding bug
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
 CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
 
-If being audited to the WebTrust criteria, the Management Assertion letter MUST include all known incidents that occurred, were still open/unresolved, or were closed, during the audit period. 
+If being audited to the WebTrust criteria, the Management Assertion letter MUST include all known incidents that occurred or were still open/unresolved at any time during the audit period. 
 
 ## 3. Documentation ##
 
@@ -302,7 +302,7 @@ least the following clearly-labelled information:
 9.  the point-in-time date, for those that are for a point in time;
 10. the date the report was issued (which will necessarily be after the end
     date or point-in-time date); 
-11. all incidents (section 2.4) occuring, open, or closed during the audit period, or a statement that the auditor is unaware of any;    
+11. all incidents (as defined in section 2.4) that occurred or were still open/unresolved at any time during the audit period, or a statement that the auditor is unaware of any;    
 12. the facility site locations that were examined (e.g. Toronto datacenter);       
     and
 13. For ETSI, a statement to indicate if the audit was a full audit, and which
