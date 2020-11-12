@@ -618,20 +618,25 @@ contain the KeyPurposeId anyExtendedKeyUsage.
 
 ### 5.3 Intermediate Certificates ###
 
-All certificates that are capable of being used to issue new certificates, and
-which directly or transitively chain to a certificate included in Mozilla’s CA
-Certificate Program, MUST be operated in accordance with this policy and MUST
+All certificates that are capable of being used to issue new certificates and
+that directly or transitively chain to a CA certificate included in Mozilla’s CA
+Certificate Program MUST be operated in accordance with this policy and MUST
 either be technically constrained or be publicly disclosed and audited.
 
 A certificate is deemed as capable of being used to issue new
 certificates if it contains an [X.509v3 basicConstraints extension][5280-6.1.4]
-with the cA boolean set to true. The term "subordinate CA" in this section
+with the cA boolean set to true. 
+
+A certificate is deemed to directly or transitively chain to a CA certificate included in Mozilla's CA Certificate Program if: 
+(1)	the certificate's Issuer Distinguished Name matches (according to the name-matching algorithm specified in RFC 5280, section 7.1) the Subject Distinguished Name in a CA certificate or intermediate certificate that is in scope according to section 1.1 of this Policy, and
+(2)	the certificate is signed with a Private Key whose corresponding Public Key is encoded in the SubjectPublicKeyInfo of that CA certificate or intermediate certificate.
+
+Thus, these requirements also apply to so-called reissued/doppelganger CA certificates (roots and intermediates) and to cross-certificates.
+
+The term "subordinate CA" in this section
 refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
 issue new certificates.
-
-These requirements include all cross-certificates which chain to a certificate 
-that is included in Mozilla’s CA Certificate Program.
 
 Intermediate certificates created after January 1, 2019, with the exception of cross-certificates that share a private key with a corresponding root certificate:
 
