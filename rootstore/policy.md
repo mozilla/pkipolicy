@@ -255,7 +255,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
       and EVCP)
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-w)
 
-    An audit showing conformance with the EVCP policy is required if a CA is [capable of issuing EV certificates[[Capable-of-EV].
+    An audit showing conformance with the EVCP policy is required if a CA is [capable of issuing EV certificates][Capable-of-EV].
 
 *   For the email trust bit, a CA and all subordinate CAs technically
     capable of issuing email certificates must have one of the
