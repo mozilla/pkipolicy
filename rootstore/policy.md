@@ -628,7 +628,7 @@ A certificate is deemed to directly or transitively chain to a CA certificate in
 (1)	the certificate's Issuer Distinguished Name matches (according to the name-matching algorithm specified in RFC 5280, section 7.1) the Subject Distinguished Name in a CA certificate or intermediate certificate that is in scope according to section 1.1 of this Policy, and
 (2)	the certificate is signed with a Private Key whose corresponding Public Key is encoded in the SubjectPublicKeyInfo of that CA certificate or intermediate certificate.
 
-Thus, these requirements also apply to so-called reissued/doppelganger CA certificates (roots and intermediates) and to cross-certificates.
+Thus, the operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST disclose in the CCADB all non-technically constrained CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all non-technically constrained CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots.
 
 The term "subordinate CA" in this section
 refers to any organization or legal entity that is in possession
