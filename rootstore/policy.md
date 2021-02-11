@@ -891,7 +891,7 @@ are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 intermediate certificate (as defined in section 5.3.2 of this policy) that 
 directly or transitively chains to the CA's included certificate(s); or,
 * ownership or control of the CA’s operations changes; or
-* there is a [material change][Material-Change] in the CA's operations.
+* there is a change in the CA's operations that could significantly affect a CA's ability to comply with the requirements of this Policy.
 
 CAs should err on the side of notification if there is any doubt. Mozilla will
 normally keep commercially sensitive information confidential. Throughout any
@@ -1012,7 +1012,6 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [How-To-Apply]:     https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:     https://wiki.mozilla.org/CA/Certificate_Change_Process
 [Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
-[Material-Change]:  http://legal-dictionary.thefreedictionary.com/Material+Changes
 [Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
 [Incident-Report]:  https://wiki.mozilla.org/CA/Responding_To_An_Incident
 [Capable-of-EV]:    https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
