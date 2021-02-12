@@ -301,7 +301,7 @@ least the following clearly-labelled information:
     date or point-in-time date); 
 11. all incidents (as defined in section 2.4), including those reported in Bugzilla, that were:
     * disclosed by the CA or discovered by the auditor, and 
-    * unresolved at any time during the audit period;    
+    * open or occurred at any time during the audit period;    
 12. the facility site locations that were examined (e.g. Toronto datacenter);       
     and
 13. For ETSI, a statement to indicate if the audit was a full audit, and which
