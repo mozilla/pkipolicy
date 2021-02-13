@@ -315,7 +315,7 @@ An authoritative English language version of the publicly-available audit inform
 In normal circumstances, Mozilla requires that audits MUST be performed
 by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent and not conflicted. Individuals have competence, partnerships and corporations do not. Each Audit Report MUST be accompanied by documentation provided to Mozilla of individual auditor qualifications sufficient for Mozilla to determine the competence, experience, and independence of the Qualified Auditor. 
+A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent and not conflicted. Individuals have competence, partnerships and corporations do not. Each Audit Report MUST be accompanied by documentation provided to Mozilla of individual [auditor qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the Qualified Auditor. 
 
 If a CA wishes to use auditors who do not fit the definition of Qualified Auditor, then it MUST
 receive written permission from Mozilla to do so in advance of the start
@@ -987,33 +987,34 @@ Mozilla][Sec-Bugs] if a problem occurs.
 
 Any copyright in this document is [dedicated to the Public Domain][CC-0].
 
-[Email-Us]:         mailto:certificates@mozilla.org
-[Bugzilla]:         https://bugzilla.mozilla.org
-[CA-Cert-Module]:   https://wiki.mozilla.org/Modules/Activities#CA_Certificates
-[CA-Policy-Module]: https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
-[Gov-Module]:       https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
-[MDSP]:             https://www.mozilla.org/about/forums/#dev-security-policy
-[EVGLs]:            https://cabforum.org/extended-validation/
-[BRs]:              https://cabforum.org/baseline-requirements-documents/
-[NSGs]:             https://cabforum.org/network-security/
-[ETSI-319-411-1]:   https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.02.02_60/en_31941101v010202p.pdf
-[ETSI-319-411-2]:   https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.02.02_60/en_31941102v020202p.pdf
-[WebTrust-2.2.1]:   https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
-[WebTrust-BRs]:     https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf
-[WebTrust-For-CAs]: https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
-[WebTrust-EV]:      https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100cwtev-173-110120-finalaoda.pdf
-[CC-BY]:            https://creativecommons.org/licenses/by/4.0/
-[CC-BY-SA]:         https://creativecommons.org/licenses/by-sa/4.0/
-[CC-BY-ND]:         https://creativecommons.org/licenses/by-nd/4.0/
-[CC-0]:             https://creativecommons.org/publicdomain/zero/1.0/
-[CCADB-Policy]:     http://ccadb.org/policy
-[5280-6.1.4]:       http://tools.ietf.org/html/rfc5280#section-6.1.4
-[5280-4.2.1.12]:    http://tools.ietf.org/html/rfc5280#section-4.2.1.12
-[CA-Cert-Bug]:      https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
-[How-To-Apply]:     https://wiki.mozilla.org/CA/Application_Process
-[Root-Changes]:     https://wiki.mozilla.org/CA/Certificate_Change_Process
-[Sec-Bugs]:         https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
-[Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
-[Incident-Report]:  https://wiki.mozilla.org/CA/Responding_To_An_Incident
-[Capable-of-EV]:    https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
-[Audited-Location]: https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
+[Email-Us]:                 mailto:certificates@mozilla.org
+[Bugzilla]:                 https://bugzilla.mozilla.org
+[CA-Cert-Module]:           https://wiki.mozilla.org/Modules/Activities#CA_Certificates
+[CA-Policy-Module]:         https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
+[Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
+[MDSP]:                     https://www.mozilla.org/about/forums/#dev-security-policy
+[EVGLs]:                    https://cabforum.org/extended-validation/
+[BRs]:                      https://cabforum.org/baseline-requirements-documents/
+[NSGs]:                     https://cabforum.org/network-security/
+[ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.02.02_60/en_31941101v010202p.pdf
+[ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.02.02_60/en_31941102v020202p.pdf
+[WebTrust-2.2.1]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
+[WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf
+[WebTrust-For-CAs]:         https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
+[WebTrust-EV]:              https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100cwtev-173-110120-finalaoda.pdf
+[CC-BY]:                    https://creativecommons.org/licenses/by/4.0/
+[CC-BY-SA]:                 https://creativecommons.org/licenses/by-sa/4.0/
+[CC-BY-ND]:                 https://creativecommons.org/licenses/by-nd/4.0/
+[CC-0]:                     https://creativecommons.org/publicdomain/zero/1.0/
+[CCADB-Policy]:             http://ccadb.org/policy
+[5280-6.1.4]:               http://tools.ietf.org/html/rfc5280#section-6.1.4
+[5280-4.2.1.12]:            http://tools.ietf.org/html/rfc5280#section-4.2.1.12
+[CA-Cert-Bug]:              https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
+[How-To-Apply]:             https://wiki.mozilla.org/CA/Application_Process
+[Root-Changes]:             https://wiki.mozilla.org/CA/Certificate_Change_Process
+[Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
+[Policy-Archive]:           https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
+[Incident-Report]:          https://wiki.mozilla.org/CA/Responding_To_An_Incident
+[Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
+[Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
+[Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
