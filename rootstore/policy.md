@@ -302,8 +302,7 @@ least the following clearly-labelled information:
 11. all incidents (as defined in section 2.4), including those reported in Bugzilla, that were:
     * disclosed by the CA or discovered by the auditor, and 
     * open or occurred at any time during the audit period;    
-12. the facility site locations that were examined (e.g. Toronto datacenter);       
-    and
+12. the [CA locations that were or were not audited][Audited-Location]; and
 13. For ETSI, a statement to indicate if the audit was a full audit, and which
     parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
@@ -1017,3 +1016,4 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Policy-Archive]:   https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
 [Incident-Report]:  https://wiki.mozilla.org/CA/Responding_To_An_Incident
 [Capable-of-EV]:    https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
+[Audited-Location]: https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
