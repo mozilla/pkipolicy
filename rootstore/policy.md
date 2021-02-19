@@ -720,6 +720,8 @@ any certificates issued in violation of the then-current version
 of these requirements according to the timeline defined in 
 section 4.9.1 of the Baseline Requirements.
 
+A CA MUST ensure that it populates the CCADB with the appropriate "full CRL" in the [CCADB revocation information field pertaining to certificates issued by the CA][CCADB-Revocation] for each intermediate CA technically capable of issuing server certificates.
+
 ### 6.2 S/MIME ###
 
 For any certificate in a hierarchy capable of being used for 
@@ -1006,7 +1008,8 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CC-BY-SA]:                 https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:                 https://creativecommons.org/licenses/by-nd/4.0/
 [CC-0]:                     https://creativecommons.org/publicdomain/zero/1.0/
-[CCADB-Policy]:             http://ccadb.org/policy
+[CCADB-Policy]:             https://www.ccadb.org/policy
+[CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
 [5280-6.1.4]:               http://tools.ietf.org/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:            http://tools.ietf.org/html/rfc5280#section-4.2.1.12
 [CA-Cert-Bug]:              https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
@@ -1018,3 +1021,4 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
+
