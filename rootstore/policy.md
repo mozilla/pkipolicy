@@ -95,6 +95,7 @@ CAs whose certificates are included in Mozilla's root program MUST:
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
 5.  verify that all of the information that is included in server certificates remains current and correct at intervals of 825 days or less;
+
      5.1. for server certificates issued on or after October 1, 2021, verify each dNSName or IPAddress in a SAN or commonName at an interval of 398 days or less;
 6.  otherwise operate in accordance with published criteria that we
     deem acceptable; and
