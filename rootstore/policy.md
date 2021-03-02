@@ -312,7 +312,7 @@ An authoritative English language version of the publicly-available audit inform
 In normal circumstances, Mozilla requires that audits MUST be performed
 by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent and not conflicted. People have competence, partnerships and corporations do not. Each Audit Report MUST be accompanied by documentation provided to Mozilla of the [audit team qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the Qualified Auditor. 
+A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. Each Audit Report MUST be accompanied by documentation provided to Mozilla of the [audit team qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the auditor. 
 
 If a CA wishes to use auditors who do not fit the definition of Qualified Auditor, then it MUST
 receive written permission from Mozilla to do so in advance of the start
