@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
-*Version 2.7*
+*Version 2.7.1*
 
-*[Effective January 1, 2020][Policy-Archive]*
+*[Effective Day, Month, 2021][Policy-Archive]*
 
 ## 1. Introduction ##
 
