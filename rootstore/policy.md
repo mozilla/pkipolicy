@@ -718,8 +718,6 @@ any certificates issued in violation of the then-current version
 of these requirements according to the timeline defined in 
 section 4.9.1 of the Baseline Requirements.
 
-CAs MUST provide the appropriate "full CRL" in the [CCADB revocation information fields pertaining to certificates issued by the CA][CCADB-Revocation] for each intermediate CA technically capable of issuing server certificates.
-
 ### 6.2 S/MIME ###
 
 For any certificate in a hierarchy capable of being used for 
