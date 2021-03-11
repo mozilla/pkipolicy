@@ -267,7 +267,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
 
 #### 3.1.3 Audit Parameters ####
 Full-surveillance period-of-time audits MUST be conducted and updated audit
-information provided no less frequently than **annually** from the time of CA key pair generation until the CA certificate is no longer trusted by Mozilla's root store or until all copies of the CA private key have been completely destroyed, as evidenced by a Qualified Auditor's key destruction report, whichever occurs sooner. This cradle-to-grave audit requirement applies equally to subordinate CAs as it does to root CAs. Successive period-of-time audits
+information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. This cradle-to-grave audit requirement applies equally to subordinate CAs as it does to root CAs. Successive period-of-time audits
 MUST be contiguous (no gaps).
 
 Point-in-time audit statements may be used to confirm that all of the problems
