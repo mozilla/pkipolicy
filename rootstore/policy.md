@@ -286,7 +286,7 @@ least the following clearly-labelled information:
 
 1.  name of the company being audited;
 2.  name and address of the organization performing the audit;
-3.  name of the lead auditor and qualifications of the team performing the audit, as required by section 3.2; 
+3.  name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2; 
 4.  Distinguished Name and SHA256 fingerprint of each root and intermediate
     certificate that was in scope;
 5.  audit criteria (with version number) that were used to audit each of
