@@ -5,7 +5,7 @@ its [certificate root program](https://wiki.mozilla.org/CA). The
 owner of these documents is the Module Owner of the "[Mozilla CA Certificate
 Policy](https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy)"
 module. Mozilla's PKI policies can be discussed in https://groups.google.com/a/mozilla.org/g/dev-security-policy.
-Archives of previous discussions are in https://www.mozilla.org/about/forums/#dev-security-policy.
+Archives of previous discussions are in https://groups.google.com/g/mozilla.dev.security.policy.
 
 ## Root Program ##
 
