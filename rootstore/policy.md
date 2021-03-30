@@ -2,7 +2,7 @@
 
 *Version 2.7.1*
 
-*[Effective Day, Month, 2021][Policy-Archive]*
+*[Effective May 1, 2021][Policy-Archive]*
 
 ## 1. Introduction ##
 
@@ -102,8 +102,8 @@ CAs whose certificates are included in Mozilla's root program MUST:
 7.  ensure that all certificates within the scope of this policy, 
     as described in Section 1.1, adhere to this policy.
 
-CAs MUST follow and be aware of discussions in the
-[mozilla.dev.security.policy][MDSP] forum, where Mozilla's root program is
+CAs MUST follow and be aware of discussions in 
+[Mozilla's dev-security-policy][MDSP] forum, where Mozilla's root program is
 coordinated. They are encouraged, but not required, to contribute to those
 discussions.
 
@@ -990,7 +990,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CA-Cert-Module]:           https://wiki.mozilla.org/Modules/Activities#CA_Certificates
 [CA-Policy-Module]:         https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
-[MDSP]:                     https://www.mozilla.org/about/forums/#dev-security-policy
+[MDSP]:                     https://groups.google.com/a/mozilla.org/g/dev-security-policy 
 [EVGLs]:                    https://cabforum.org/extended-validation/
 [BRs]:                      https://cabforum.org/baseline-requirements-documents/
 [NSGs]:                     https://cabforum.org/network-security/
