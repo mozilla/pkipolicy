@@ -882,7 +882,7 @@ relevant news or government organizations such as US-CERT.
 
 ## 8. CA Operational Changes ##
 
-CAs SHOULD NOT assume that trust is transferable. All CAs whose certificates
+CAs SHALL NOT assume that trust is transferable. All CAs whose certificates
 are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 
 * ownership or control of the CA’s certificate(s) changes, or
