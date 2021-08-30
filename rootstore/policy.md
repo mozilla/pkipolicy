@@ -548,7 +548,9 @@ up to roots in Mozilla's program only if all the following are true:
 
      * contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes;
-     * has a pathlen:0 constraint.
+     * has a pathlen:0 
+     
+     .
 
 Point 2 does not apply if the certificate is an OCSP signing certificate
 manually issued directly from a root.
@@ -627,7 +629,7 @@ A certificate is deemed to directly or transitively chain to a CA certificate in
 
 Thus, the operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots.
 
-Technically constraint CA certificates which were exempted from being disclosed in previous versions of this policy MUST be filed subsequently to CCADB until XXXXX.
+Technically constrained CA certificates which were exempted from being disclosed in previous versions of this policy MUST be filed subsequently to CCADB until XXXXX.
 
 The term "subordinate CA" in this section
 refers to any organization or legal entity that is in possession
