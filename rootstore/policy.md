@@ -888,7 +888,7 @@ are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 * ownership or control of the CA’s certificate(s) changes, or
 * an organization other than the CA obtains control of an unconstrained 
 intermediate certificate (as defined in section 5.3.2 of this policy) that 
-directly or transitively chains to the CA's included certificate(s); or,
+directly or transitively chains to the CA's included certificate(s) - see [Process for Review and Approval of Externally Operated Subordinate CAs][Process-for-External-CAs]; or,
 * ownership or control of the CA’s operations changes; or
 * there is a change in the CA's operations that could affect the CA's ability to comply with the requirements of this Policy.
 
@@ -1017,4 +1017,5 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
+[Process-for-External-CAs]: https://wiki.mozilla.org/CA/Subordinate_CA_Checklist#Process_for_Review_and_Approval_of_Externally_Operated_Subordinate_CAs
 
