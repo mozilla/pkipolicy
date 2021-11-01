@@ -67,7 +67,7 @@ regarding all matters relating to CA certificates included in our root program.
 Further, Mozilla has appointed a [Mozilla CA Certificate Policy module
 owner][CA-Policy-Module] and peers to maintain this policy. The policy will
 only be changed after public consultation with the Mozilla community, in order
-to ensure that all views are taken into account. You can contact the Mozilla CA
+to ensure that all views are taken into account. This policy will be updated periodically in accordance with the [Process for Updating the Root Store Policy][Policy-Update-Process]. CAs MUST adhere to the current version of this policy. You can contact the Mozilla CA
 Certificate Policy module team at [certificates@mozilla.org][Email-Us] if you
 have questions about this policy.
 
@@ -1012,6 +1012,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [How-To-Apply]:             https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:             https://wiki.mozilla.org/CA/Certificate_Change_Process
 [Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
+[Policy-Update-Process]:    https://wiki.mozilla.org/CA/Updating_Root_Store_Policy
 [Policy-Archive]:           https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
 [Incident-Report]:          https://wiki.mozilla.org/CA/Responding_To_An_Incident
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
