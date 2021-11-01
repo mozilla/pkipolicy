@@ -647,19 +647,29 @@ constrained, the certificate MUST include an [Extended Key Usage
 subordinate CA is authorized to issue. CAs SHOULD NOT include more than a single KeyPurposeID in the EKU extension. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension.
 
-If the certificate includes the id-kp-serverAuth extended key usage,
+If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically
 constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. 
+7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. The id-kp-clientAuth EKU MAY also be present.
 The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
 
-If the certificate includes the id-kp-emailProtection extended key
+If the intermediate CA certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs].
+3.2.2.4 of the [Baseline Requirements][BRs]. The following additional EKUs are allowed:
+ - Client Authentication
+ - MS Smartcard Login
+ - EFS
+ - EFS Recovery
+ - Key Recovery Agent
+ - Key Archival
+ - Bit Locker Drive Encryption
+ - Bit Locker Data Recovery
+ - IPsec IKE
+ - IPSec IKE Intermediate
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
