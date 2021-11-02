@@ -659,17 +659,7 @@ usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs]. The following additional EKUs are allowed:
- - Client Authentication
- - MS Smartcard Login
- - EFS
- - EFS Recovery
- - Key Recovery Agent
- - Key Archival
- - Bit Locker Drive Encryption
- - Bit Locker Data Recovery
- - IPsec IKE
- - IPSec IKE Intermediate
+3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use, that are not inconsistent with id-kp-emailProtection, and that are documented in the CA’s CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
