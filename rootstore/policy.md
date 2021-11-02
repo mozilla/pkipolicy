@@ -661,7 +661,7 @@ each such name having its ownership validated according to section
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
-The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within a week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to 1-July-2021. 
+The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within a week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
 
 We recognize that technically constraining intermediate
 certificates as described above may not be practical in some cases.
