@@ -615,7 +615,7 @@ contain the KeyPurposeId anyExtendedKeyUsage.
 All certificates that are capable of being used to issue new certificates and
 that directly or transitively chain to a CA certificate included in Mozilla’s CA
 Certificate Program MUST be operated in accordance with this policy and MUST
-either be technically constrained or be publicly disclosed and audited.
+either be technically constrained or be audited.
 
 A certificate is deemed as capable of being used to issue new
 certificates if it contains an [X.509v3 basicConstraints extension][5280-6.1.4]
@@ -624,8 +624,6 @@ with the cA boolean set to true.
 A certificate is deemed to directly or transitively chain to a CA certificate included in Mozilla's CA Certificate Program if: 
 (1)	the certificate's Issuer Distinguished Name matches (according to the name-matching algorithm specified in RFC 5280, section 7.1) the Subject Distinguished Name in a CA certificate or intermediate certificate that is in scope according to section 1.1 of this Policy, and
 (2)	the certificate is signed with a Private Key whose corresponding Public Key is encoded in the SubjectPublicKeyInfo of that CA certificate or intermediate certificate.
-
-Thus, the operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST disclose in the CCADB all non-technically constrained CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all non-technically constrained CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots.
 
 The term "subordinate CA" in this section
 refers to any organization or legal entity that is in possession
@@ -663,25 +661,17 @@ each such name having its ownership validated according to section
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
+The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within a week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to 1-July-2021. 
+
 We recognize that technically constraining intermediate
 certificates as described above may not be practical in some cases.
 All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
-Mozilla’s root program:
-
-* MUST be audited in accordance with Mozilla’s Root Store Policy. 
+Mozilla’s root program MUST be audited in accordance with Mozilla’s Root Store Policy. 
 If the CA has a currently valid audit report at the time of creation 
 of the certificate, then the new certificate MUST appear on the 
 CA's next periodic audit reports.
-* MUST be publicly disclosed in the CCADB by the CA that has their certificate
-included in Mozilla’s root program. The CA with a certificate included in Mozilla’s 
-root program MUST disclose this information within a week of certificate creation, 
-and before any such subordinate CA is allowed
-to issue certificates. All disclosure MUST be made freely available
-and without additional requirements, including, but not limited to,
-registration, legal agreements, or restrictions on redistribution of
-the certificates in whole or in part.
 
 ## 6. Revocation ##
 
