@@ -638,14 +638,13 @@ Intermediate certificates created after January 1, 2019, with the exception of c
 *   MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
 *   MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
 
-#### 5.3.1 Technically Constrained ####
-
+#### 5.3.1 Technically Constrained #### 
 We encourage CAs to technically constrain all intermediate
 certificates. For a certificate to be considered technically
 constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying the extended key usage(s) allowed for the type of end entity certificates that the
-subordinate CA is authorized to issue. CAs SHOULD NOT include more than a single KeyPurposeID in the EKU extension. The anyExtendedKeyUsage
-KeyPurposeId MUST NOT appear within this extension.
+subordinate CA is authorized to issue. We also encourage CAs to include only a single KeyPurposeID in the EKU extension. The anyExtendedKeyUsage
+KeyPurposeId MUST NOT appear within this extension. 
 
 If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically
@@ -659,7 +658,7 @@ usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use, that are not inconsistent with id-kp-emailProtection, and that are documented in the CA’s CPS MAY be present.
+3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
