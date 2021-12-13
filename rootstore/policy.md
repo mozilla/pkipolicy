@@ -126,14 +126,14 @@ meets or exceeds the following requirements:
     on validation the CA has performed for 
     an Authorization Domain Name (as specified in the Baseline Requirements) 
     as being valid for subdomains of that Authorization Domain Name. 
-    The CA's CP/CPS must clearly specify the procedure(s) 
+    The CA's CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) 
     that the CA employs to perform this verification.
 3.  For a certificate capable of being used for SSL-enabled servers, the CA
     must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This must be done using one or more of the
     methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA's
-    CP/CPS must clearly specify the procedure(s) that the CA employs, and
+    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address).
@@ -141,7 +141,7 @@ meets or exceeds the following requirements:
     must ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This must be done using one or more of the
     methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA's
-    CP/CPS must clearly specify the procedure(s) that the CA employs, and
+    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.5 it is
     complying with.
 5.  For certificates marked as Extended Validation, the CA MUST comply with the
@@ -334,7 +334,7 @@ Therefore, the following MUST be true:
 
 2.  the documentation is available from the CA’s official website;
 
-3.  CPs and CPSes are made available to Mozilla under one
+3.  the documentation is made available to Mozilla under one
     of the following Creative Commons licenses (or later versions):
 
        * Attribution ([CC-BY]) 4.0
@@ -348,7 +348,7 @@ Therefore, the following MUST be true:
     deal with these documents, and any later versions for root certificates
     which are included in Mozilla's trust store, under CC-BY-ND 4.0.
 
-4.  CPs and CPSes MUST be reviewed and updated as necessary at least once every
+4.  the documentation MUST be reviewed and updated as necessary at least once every
 year, as required by the Baseline Requirements. CAs MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document.
@@ -705,7 +705,7 @@ via an Online Certificate Status Protocol (OCSP) service:
     before or equal to the notAfter date of the CA certificate which
     issued the certificate that the BasicOCSPResponse is for.
 
-Section 4.9.12 of a CA's CP/CPS MUST clearly specify the methods that parties may use to demonstrate private key compromise.
+Section 4.9.12 of a CA's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the methods that parties may use to demonstrate private key compromise.
 
 ### 6.1 SSL ###
 
@@ -931,7 +931,7 @@ certificate's private key until Mozilla has been provided with an audit
 statement (or opinion letter) confirming successful transfer of the root
 certificate and key. Issuance MUST NOT occur until the transferee
 has provided all the information required by the CCADB, and demonstrated to
-Mozilla that they have all the appropriate audits, CP/CPS documents and other
+Mozilla that they have all the appropriate audits, CP or CPS documents, and other
 systems in place.
 
 The transferor MUST notify Mozilla about any necessary changes to EV status or
@@ -973,7 +973,7 @@ that the private key remained secure throughout the transfer, and that the root
 certificate is ready to resume issuance. This requirement may be met by
 including the transferred root certificate and key in the new owner's regular
 audits or by getting a point-in-time audit.
-* Send links to the updated CP/CPS and the updated audit statements, opinion
+* Send links to the updated CP, CPS, and the updated audit statements, opinion
 letter, or point-in-time audit statement to Mozilla.
 
 The regular annual audit statements MUST still happen in a timely manner.
