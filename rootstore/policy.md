@@ -379,6 +379,8 @@ CCADB Policy, as follows:
 
 ### 4.1 Additional Requirements ###
 
+* Effective October 1, 2022, CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs".
+
 * If the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root program is due to a security concern, as well as performing the
 actions defined in the CCADB Policy, a [security bug must be filed in
