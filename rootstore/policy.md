@@ -363,6 +363,8 @@ imposes no requirements related to that section; and,
 
 6.  CAs must provide a way to clearly determine which CP and CPS 
 applies to each of its root and intermediate certificates.
+
+7.  CAs SHALL maintain links to older versions of their CPs and CPSes for as long as any related CA certificate hierarchy is in the Mozilla root program. 
     
 ## 4. Common CA Database ##
 
