@@ -229,14 +229,14 @@ following documents to be acceptable:
 If being audited to the WebTrust criteria, the following audit requirements
 apply (see section 3.1.1 for specific version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically capable
+*   For the SSL trust bit, a CA and all intermediate CAs technically capable
     of issuing server certificates must have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.1]
     * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
     * [WebTrust for CAs - EV SSL][WebTrust-EV] if [capable of issuing EV certificates][Capable-of-EV]
 
-*   For the email trust bit, a CA and all subordinate CAs technically capable
+*   For the email trust bit, a CA and all intermediate CAs technically capable
     of issuing email certificates must have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.1]
@@ -246,7 +246,7 @@ apply (see section 3.1.1 for specific version numbers):
 If being audited to the ETSI criteria, the following audit requirements apply
 (see section 3.1.1 for version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically
+*   For the SSL trust bit, a CA and all intermediate CAs technically
     capable of issuing server certificates must have one of the
     following audits, with at least one of the noted policies or sets of
     policies:
@@ -257,7 +257,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
 
     An audit showing conformance with the EVCP policy is required if a CA is [capable of issuing EV certificates][Capable-of-EV].
 
-*   For the email trust bit, a CA and all subordinate CAs technically
+*   For the email trust bit, a CA and all intermediate CAs technically
     capable of issuing email certificates must have one of the
     following audits, with at least one of the noted policies:
 
@@ -267,7 +267,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
 
 #### 3.1.3 Audit Parameters ####
 Full-surveillance period-of-time audits MUST be conducted and updated audit
-information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. This cradle-to-grave audit requirement applies equally to subordinate CAs as it does to root CAs. Successive period-of-time audits
+information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. This cradle-to-grave audit requirement applies equally to intermediate CAs as it does to root CAs. Successive period-of-time audits
 MUST be contiguous (no gaps).
 
 Point-in-time audit statements may be used to confirm that all of the problems
@@ -627,7 +627,7 @@ A certificate is deemed to directly or transitively chain to a CA certificate in
 
 Thus, the operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST disclose in the CCADB all non-technically constrained CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all non-technically constrained CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots.
 
-The term "subordinate CA" in this section
+The term "intermediate CA operator" in this section
 refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
 issue new certificates.
@@ -644,7 +644,7 @@ We encourage CA operators to technically constrain all intermediate
 certificates. For a certificate to be considered technically
 constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying all extended key usages that the
-subordinate CA is authorized to issue certificates for. The anyExtendedKeyUsage
+intermediate CA is authorized to issue certificates for. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension.
 
 If the certificate includes the id-kp-serverAuth extended key usage,
@@ -677,7 +677,7 @@ CA's next periodic audit reports.
 * MUST be publicly disclosed in the CCADB by the CA operator that has their certificate
 included in Mozilla’s root program. The CA operator with a certificate included in Mozilla’s 
 root program MUST disclose this information within a week of certificate creation, 
-and before any such subordinate CA is allowed
+and before any such intermediate CA is allowed
 to issue certificates. All disclosure MUST be made freely available
 and without additional requirements, including, but not limited to,
 registration, legal agreements, or restrictions on redistribution of
