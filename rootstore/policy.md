@@ -896,7 +896,7 @@ CA operators should err on the side of notification if there is any doubt. Mozil
 normally keep commercially sensitive information confidential. Throughout any
 change, CA operations MUST continue to meet the requirements of this policy. If
 one of the above events occurs, Mozilla MAY require additional audit(s) as a
-condition of remaining in the root program. CA operators are encouraged to notify in
+condition of remaining in the root program. CA operators are encouraged to notify Mozilla in
 advance in order to avoid unfortunate surprises.
 
 In addition, one or more of the following sections MAY apply.
@@ -904,11 +904,11 @@ In addition, one or more of the following sections MAY apply.
 ### 8.1 Change in Legal Ownership ###
 
 This section applies when one company buys or takes a controlling stake in
-a CA, or when an organization obtains control of a CA certificate that is 
+a CA or CA operator, or when an organization obtains control of a CA key pair that is 
 within the scope of Mozilla's root program, unless it is constrained in 
 compliance with section 5.3.1 of this policy.
 
-Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
+Mozilla MUST be notified of any resulting changes in the CA operator's CP or CPS.
 
 If the receiving or acquiring company is new to the Mozilla root program, 
 it must demonstrate compliance with the entirety of this policy and there
@@ -935,8 +935,7 @@ Mozilla that they have all the appropriate audits, CP/CPS documents and other
 systems in place.
 
 The transferor MUST notify Mozilla about any necessary changes to EV status or
-trust bits in Mozilla's root store. If the transferee is receiving the (right
-to use the) associated EV policy OID(s), the transferor MUST confirm that the
+trust bits in Mozilla's root store. If the transferee will be able to issue EV certificates, the transferor MUST confirm that the
 transferee has or will get the relevant audits before issuing EV certificates.
 
 ### 8.3 Change in Secure Location ###
