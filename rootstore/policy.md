@@ -11,7 +11,7 @@ other Mozilla-related software products, Mozilla includes with such software
 a set of X.509v3 root certificates for various Certification
 Authorities (CAs). The included certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
-certificates to anchor a chain of trust for certificates used by SSL servers
+certificates to anchor a chain of trust for certificates used by TLS servers
 and S/MIME email users without having to ask users for further permission or
 information.
 
@@ -128,7 +128,7 @@ meets or exceeds the following requirements:
     as being valid for subdomains of that Authorization Domain Name. 
     The CA's CP/CPS must clearly specify the procedure(s) 
     that the CA employs to perform this verification.
-3.  For a certificate capable of being used for SSL-enabled servers, the CA
+3.  For a certificate capable of being used for TLS-enabled servers, the CA
     must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This must be done using one or more of the
@@ -137,7 +137,7 @@ meets or exceeds the following requirements:
     each documented procedure should state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address).
-4.  For a certificate capable of being used for SSL-enabled servers, the CA
+4.  For a certificate capable of being used for TLS-enabled servers, the CA
     must ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This must be done using one or more of the
     methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA's
@@ -156,7 +156,7 @@ immediately discontinuing use of a method.
 ### 2.3 Baseline Requirements Conformance ###
 
 CA operations relating to issuance of certificates capable of being used for
-SSL-enabled servers MUST also conform to the latest version of the [CA/Browser
+TLS-enabled servers MUST also conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
 Certificates][BRs] ("Baseline Requirements"). In the event of inconsistency
 between Mozilla’s Root Store Policy requirements and the Baseline Requirements,
@@ -167,7 +167,7 @@ can be considered for addition or clarification.
 
 *   Insofar as the Baseline Requirements attempt to define their own scope, the
     scope of this policy (section 1.1) overrides that. Mozilla thus requires CA
-    operations relating to issuance of **all** SSL certificates in the scope of
+    operations relating to issuance of **all** TLS server certificates in the scope of
     this policy to conform to the Baseline Requirements.
 
 *   Mozilla reserves the right to accept audits by auditors who do not meet the
@@ -229,7 +229,7 @@ following documents to be acceptable:
 If being audited to the WebTrust criteria, the following audit requirements
 apply (see section 3.1.1 for specific version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically capable
+*   For the websites trust bit, a CA and all subordinate CAs technically capable
     of issuing server certificates must have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.1]
@@ -246,7 +246,7 @@ apply (see section 3.1.1 for specific version numbers):
 If being audited to the ETSI criteria, the following audit requirements apply
 (see section 3.1.1 for version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically
+*   For the websites trust bit, a CA and all subordinate CAs technically
     capable of issuing server certificates must have one of the
     following audits, with at least one of the noted policies or sets of
     policies:
@@ -596,7 +596,7 @@ CAs MUST NOT issue certificates that have:
 *   duplicate issuer names and serial numbers (except that a Certificate
     Transparency pre-certificate is allowed to match the corresponding
     certificate);
-*   incorrect extensions (e.g., SSL certificates that exclude SSL
+*   incorrect extensions (e.g., TLS certificates that exclude TLS
     usage, or authority key IDs that include both the key ID and the
     issuer’s issuer name and serial number); *or*
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
@@ -707,10 +707,10 @@ via an Online Certificate Status Protocol (OCSP) service:
 
 Section 4.9.12 of a CA's CP/CPS MUST clearly specify the methods that parties may use to demonstrate private key compromise.
 
-### 6.1 SSL ###
+### 6.1 TLS ###
 
 For any certificate in a hierarchy capable of being used for 
-SSL-enabled servers, CAs MUST revoke certificates that they have 
+TLS-enabled servers, CAs MUST revoke certificates that they have 
 issued upon the occurrence of any event listed in the appropriate 
 subsection of section 4.9.1 of the Baseline Requirements, 
 according to the timeline defined therein. CAs MUST also revoke 
@@ -795,7 +795,7 @@ MUST include the following:
     the CA issues certificates for each of the following purposes
     within the certificate hierarchy associated with the CA
     certificate:
-    * SSL-enabled servers
+    * TLS-enabled servers
     * digitally-signed and/or encrypted email;
 3.  for each CA certificate requested for inclusion, whether the CA
     issues Extended Validation certificates within the certificate hierarchy
@@ -836,7 +836,7 @@ Mozilla's root program as follows:
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 3.  disabling a root is the act of turning off one or more of the
-    trust bits (SSL or email), and may be
+    trust bits (websites or email), and may be
     requested by a representative of the CA or a representative of
     Mozilla by submitting a bug report into the mozilla.org Bugzilla
     system, as described in the [Root Change Process][Root-Changes];
