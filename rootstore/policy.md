@@ -683,6 +683,13 @@ and without additional requirements, including, but not limited to,
 registration, legal agreements, or restrictions on redistribution of
 the certificates in whole or in part.
 
+### 5.4 Precertificates ###
+Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in section 3.2.1 of RFC 9162, and thus in-scope for enforcing compliance with these requirements. Thus,
+* if any certificates with the same serial number and issuer exist, and one cannot be verified as the precertificate matching the final certificate using the algorithms in RFC 9162, this will be considered misissuance;
+* issuance of a precertificate that does not comply with this policy is considered equal to misissuance of a final certificate;
+* a CA must be able to revoke a certificate presumed to exist, if revocation of the certificate is required under this policy, even if the final certificate does not actually exist; and
+* a CA must provide CRL and OCSP services and responses in accordance with this policy for all certificates presumed to exist based on the presence of a precertificate, even if the certificate does not actually exist.
+
 ## 6. Revocation ##
 
 CAs MUST maintain an online 24x7 repository mechanism whereby
