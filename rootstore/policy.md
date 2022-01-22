@@ -766,7 +766,7 @@ based on the risks of
 such inclusion to typical users of our products. We will consider adding
 additional CA certificates to the default certificate set upon request only by
 an authorized representative of the subject CA. We will make such decisions
-through a public process.
+through a public process. This public-review-and-discussion process SHALL also occur for any CA operator obtaining an unconstrained CA certificate that has not previously undergone such process, regardless of when the unconstrained CA certificate was obtained. This includes CA operators with intermediate CAs that are currently trusted by Mozilla even though they do not have root CAs trusted by Mozilla (i.e. there is no "bootstrapping" or "grandfathering" for CA operators who have not previously undergone a public-review-and-discussion process by Mozilla).
 
 We will not charge any fees to have a CA’s certificate(s)
 included in Mozilla's root program.
