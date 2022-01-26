@@ -181,12 +181,15 @@ can be considered for addition or clarification.
 
 When a CA fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident. At a minimum, 
+non-compliance - the event is classified as an incident. A "qualification" in a WebTrust audit or a "finding of non-conformity" in an ETSI assessment is also an incident. At a minimum, 
 CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
 and MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
-CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
- 
+CAs SHOULD cease issuance until the problem has been prevented from reoccurring.  
+
+### 2.5 Sanctions ###
+
+Mozilla MAY require revocation of those leaf certificates or intermediate certificates that suffered or that are considered defective because of the incident. Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. Mozilla MAY require the CA operator to submit a plan of action with milestones or additional audits to ensure remediation and to regain confidence in the CA operator. Multiple incidents with the same underlying cause, however minor, may lead to sanctions. If a CA operator has failed to remediate the causes giving rise to an incident, Mozilla MAY impose sanctions, including but not limited to: adding certificates to OneCRL; removing trust bits from root certificates; and removing root certificates from the trust store. 
 
 ## 3. Documentation ##
 
