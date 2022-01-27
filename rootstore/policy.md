@@ -180,15 +180,12 @@ can be considered for addition or clarification.
 
 When a CA operator fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident. A "qualification" in a WebTrust audit or a "finding of non-conformity" in an ETSI assessment is also an incident. At a minimum, 
-CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
+non-compliance - the event is classified as an incident. Any matter discovered during the course of an audit giving rise to a qualification, a modified opinion, or a non-conformity, is also considered an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. In some cases, there may be disagreement between the CA operator and the auditor on the nature or severity of the situation. However, CA operators MUST report these as incidents to Mozilla. In these circumstances, reported incidents may be resolved as INVALID, if Mozilla determines that there has been no non-compliance or that they are not a matter of concern. At a minimum, CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
 and MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
 CAs SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
-### 2.5 Sanctions ###
-
-Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. Mozilla MAY require the CA operator to submit a plan of action with milestones or additional audits to ensure remediation and to regain confidence in the CA operator. Reoccurring incidents with the same underlying cause, or failure to remediate the causes giving rise to incidents, will lead to sanctions. Mozilla MAY impose sanctions, including but not limited to the full or partial disablement of certificates as set forth in section 7.3 by adding certificates to OneCRL, removing trust bits from root certificates, or removing root certificates from the trust store. 
+Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits will be expected sooner than the CA operator’s next scheduled audit, and thus may be expected to be for a period less than a year.
 
 ## 3. Documentation ##
 
@@ -321,6 +318,8 @@ If a CA operator wishes to use auditors who do not fit the definition of Qualifi
 receive written permission from Mozilla to do so in advance of the start
 of the audit engagement. Mozilla will make its own determination as to
 the suitability of the suggested party or parties, at its sole discretion.
+
+Mozilla MAY, at its sole discretion, determine that an audit provided does not provide sufficient assurance that the requirements within this section 3 have been sufficiently met. In such circumstances, CA operators will be expected to obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
 
 ### 3.3 CPs and CPSes ###
@@ -861,6 +860,8 @@ immediately or on a planned future date. Mozilla will
 disable or remove a certificate if the CA operator demonstrates ongoing or
 egregious practices that do not maintain the expected level of service
 or that do not comply with the requirements of this policy.
+
+Mozilla MAY remove or disable a certificate if the CA operator has reoccurring incidents with the same underlying cause or failed to remediate the causes giving rise to incidents. 
 
 Mozilla will take any steps we deem appropriate to protect our users
 if we learn that a CA operator has knowingly or intentionally mis-issued one
