@@ -11,7 +11,7 @@ other Mozilla-related software products, Mozilla includes with such software
 a set of X.509v3 root certificates for various Certification
 Authorities (CAs). The included certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
-certificates to anchor a chain of trust for certificates used by SSL servers
+certificates to anchor a chain of trust for certificates used by TLS servers
 and S/MIME email users without having to ask users for further permission or
 information.
 
@@ -597,7 +597,7 @@ CAs MUST NOT issue certificates that have:
 *   duplicate issuer names and serial numbers (except that a Certificate
     Transparency pre-certificate is allowed to match the corresponding
     certificate);
-*   incorrect extensions (e.g., SSL certificates that exclude SSL
+*   incorrect extensions (e.g., TLS certificates that exclude TLS
     usage, or authority key IDs that include both the key ID and the
     issuer’s issuer name and serial number); *or*
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
@@ -715,10 +715,10 @@ via an Online Certificate Status Protocol (OCSP) service:
 
 Section 4.9.12 of a CA's CP/CPS MUST clearly specify the methods that parties may use to demonstrate private key compromise.
 
-### 6.1 SSL ###
+### 6.1 TLS ###
 
 For any certificate in a hierarchy capable of being used for 
-SSL-enabled servers, CAs MUST revoke certificates that they have 
+TLS-enabled servers, CAs MUST revoke certificates that they have 
 issued upon the occurrence of any event listed in the appropriate 
 subsection of section 4.9.1 of the Baseline Requirements, 
 according to the timeline defined therein. CAs MUST also revoke 
@@ -803,7 +803,7 @@ MUST include the following:
     the CA issues certificates for each of the following purposes
     within the certificate hierarchy associated with the CA
     certificate:
-    * SSL-enabled servers
+    * TLS-enabled servers
     * digitally-signed and/or encrypted email;
 3.  for each CA certificate requested for inclusion, whether the CA
     issues Extended Validation certificates within the certificate hierarchy
