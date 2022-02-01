@@ -180,8 +180,8 @@ can be considered for addition or clarification.
 
 When a CA operator fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident. Any matter discovered during the course of an audit giving rise to a qualification, a modified opinion, or a non-conformity, is also considered an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. In some cases, there may be disagreement between the CA operator and the auditor on the nature or severity of the situation. However, CA operators MUST report these as incidents to Mozilla. In these circumstances, reported incidents may be resolved as INVALID, if Mozilla determines that there has been no non-compliance or that they are not a matter of concern. At a minimum, CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
-and MUST regularly update the Incident Report until the corresponding bug 
+non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report]. Any matter documented in an audit as a qualification, a modified opinion, or a non-conformity is also considered an incident and MUST have a corresponding Incident Report. CA operators 
+MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
 CAs SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
@@ -307,6 +307,8 @@ least the following clearly-labelled information:
 
 An authoritative English language version of the publicly-available audit information MUST be supplied by the Auditor.
 
+If Mozilla determines that an audit provided does not meet the requirements of this policy, then CA operators will be expected to obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
+
 ### 3.2 Auditors ###
 
 In normal circumstances, Mozilla requires that audits MUST be performed
@@ -318,8 +320,6 @@ If a CA operator wishes to use auditors who do not fit the definition of Qualifi
 receive written permission from Mozilla to do so in advance of the start
 of the audit engagement. Mozilla will make its own determination as to
 the suitability of the suggested party or parties, at its sole discretion.
-
-Mozilla MAY, at its sole discretion, determine that an audit provided does not provide sufficient assurance that the requirements within this section 3 have been sufficiently met. In such circumstances, CA operators will be expected to obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
 
 ### 3.3 CPs and CPSes ###
@@ -860,8 +860,6 @@ immediately or on a planned future date. Mozilla will
 disable or remove a certificate if the CA operator demonstrates ongoing or
 egregious practices that do not maintain the expected level of service
 or that do not comply with the requirements of this policy.
-
-Mozilla MAY remove or disable a certificate if the CA operator has reoccurring incidents with the same underlying cause or failed to remediate the causes giving rise to incidents. 
 
 Mozilla will take any steps we deem appropriate to protect our users
 if we learn that a CA operator has knowingly or intentionally mis-issued one
