@@ -640,10 +640,10 @@ Intermediate certificates created after January 1, 2019, with the exception of c
 
 #### 5.3.1 Technically Constrained #### 
 We encourage CAs to technically constrain all intermediate
-certificates. For a certificate to be considered technically
+certificates. For an intermediate certificate to be considered technically
 constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying the extended key usage(s) allowed for the type of end entity certificates that the
-subordinate CA is authorized to issue. We also encourage CAs to include only a single KeyPurposeID in the EKU extension. The anyExtendedKeyUsage
+intermediate CA is authorized to issue. We also encourage CAs to include only a single KeyPurposeID in the EKU extension of intermediate certificates. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension. 
 
 If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
