@@ -588,7 +588,7 @@ algorithm attacks against certificates. As such, all new certificates
 MUST have a serial number greater than zero, containing at least 64 bits of
 output from a CSPRNG.
 
-CAs MUST NOT issue certificates or, where applicable, CRLs or OCSP responses, that have:
+CAs MUST NOT issue certificates, CRLs, or OCSP responses, that have:
 
 *   ASN.1 DER encoding errors;
 *   invalid public keys (e.g., RSA certificates with public exponent
@@ -596,7 +596,7 @@ CAs MUST NOT issue certificates or, where applicable, CRLs or OCSP responses, th
 *   duplicate issuer names and serial numbers (except that a Certificate
     Transparency pre-certificate is allowed to match the corresponding
     certificate);
-*   missing or incorrect extensions (e.g., TLS certificates with no subjectAltName extension, delegated OCSP responders without the id-pkix-ocsp-nocheck extension); *or*
+*   missing or incorrect extensions (e.g., TLS certificates with no subjectAltName extension, delegated OCSP responders without the id-pkix-ocsp-nocheck extension, partial/scoped CRLs that lack a distributionPoint in a critical issuingDistributionPoint extension); *or*
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
     which no operational CRL or OCSP service exists.
     
