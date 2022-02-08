@@ -591,19 +591,20 @@ algorithm attacks against certificates. As such, all new certificates
 MUST have a serial number greater than zero, containing at least 64 bits of
 output from a CSPRNG.
 
-CAs MUST NOT issue certificates that have:
+CAs MUST NOT issue certificates, CRLs, or OCSP responses, that have:
 
 *   ASN.1 DER encoding errors;
 *   invalid public keys (e.g., RSA certificates with public exponent
-    equal to 1);
+    equal to 1); *or*
+*   missing or incorrect extensions (e.g., TLS certificates with no subjectAltName extension, delegated OCSP responders without the id-pkix-ocsp-nocheck extension, partial/scoped CRLs that lack a distributionPoint in a critical issuingDistributionPoint extension).
+
+CAs MUST NOT issue certificates that have:    
+
 *   duplicate issuer names and serial numbers (except that a Certificate
     Transparency pre-certificate is allowed to match the corresponding
-    certificate);
-*   incorrect extensions (e.g., TLS certificates that exclude TLS
-    usage, or authority key IDs that include both the key ID and the
-    issuer’s issuer name and serial number); *or*
+    certificate); *or*
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
-    which no operational CRL or OCSP service exists.
+    which no operational CRL or OCSP service exists.    
     
 CAs MUST NOT generate the key pairs for end-entity certificates that have an
 EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
