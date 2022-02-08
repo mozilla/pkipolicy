@@ -614,8 +614,7 @@ contain the KeyPurposeId anyExtendedKeyUsage.
 
 All certificates that are capable of being used to issue working server or email certificates and
 that directly or transitively chain to a CA certificate included in Mozilla’s CA
-Certificate Program MUST be operated in accordance with this policy and MUST
-be disclosed in the CCADB.
+Certificate Program MUST be operated in accordance with this policy, audited, and disclosed in the CCADB.
 
 A certificate is deemed as capable of being used to issue new
 certificates if it contains an [X.509v3 basicConstraints extension][5280-6.1.4]
@@ -625,7 +624,7 @@ A certificate is deemed to directly or transitively chain to a CA certificate in
 (1)	the certificate's Issuer Distinguished Name matches (according to the name-matching algorithm specified in RFC 5280, section 7.1) the Subject Distinguished Name in a CA certificate or intermediate certificate that is in scope according to section 1.1 of this Policy, and
 (2)	the certificate is signed with a Private Key whose corresponding Public Key is encoded in the SubjectPublicKeyInfo of that CA certificate or intermediate certificate.
 
-The term "subordinate CA" in this section
+The term "intermediate CA operator" in this section
 refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
 issue new certificates.
