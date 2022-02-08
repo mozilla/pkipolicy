@@ -363,7 +363,9 @@ imposes no requirements related to that section; and
 
 6.  CA operators MUST provide a way to clearly determine which CP and CPS 
 applies to each of its root and intermediate certificates.
-    
+
+7.  CAs SHALL maintain links to older versions of each CP and CPS until all root CA certificate hierarchies operated in accordance with such CP and CPS are no longer trusted in the Mozilla root program. 
+
 ## 4. Common CA Database ##
 
 Mozilla manages its root program using the Common CA Database (CCADB). CA operators with
