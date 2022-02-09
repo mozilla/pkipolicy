@@ -617,10 +617,9 @@ contain the KeyPurposeId anyExtendedKeyUsage.
 
 ### 5.3 Intermediate Certificates ###
 
-All certificates that are capable of being used to issue new certificates and
+All certificates that are capable of being used to issue working server or email certificates and
 that directly or transitively chain to a CA certificate included in Mozilla’s CA
-Certificate Program MUST be operated in accordance with this policy and MUST
-either be technically constrained or be publicly disclosed and audited.
+Certificate Program MUST be operated in accordance with this policy, audited, and disclosed in the CCADB.
 
 A certificate is deemed as capable of being used to issue new
 certificates if it contains an [X.509v3 basicConstraints extension][5280-6.1.4]
@@ -667,25 +666,17 @@ each such name having its ownership validated according to section
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
+The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within a week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
+
 We recognize that technically constraining intermediate
 certificates as described above may not be practical in some cases.
 All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
-Mozilla’s root program:
-
-* MUST be audited in accordance with Mozilla’s Root Store Policy. 
+Mozilla’s root program MUST be audited in accordance with Mozilla’s Root Store Policy. 
 If the CA has a currently valid audit report at the time of creation 
 of the certificate, then the new certificate MUST appear on the 
-CA's next periodic audit reports; *and*
-* MUST be publicly disclosed in the CCADB by the CA operator that has their certificate
-included in Mozilla’s root program. The CA operator with a certificate included in Mozilla’s 
-root program MUST disclose this information within a week of certificate creation, 
-and before any such intermediate CA is allowed
-to issue certificates. All disclosure MUST be made freely available
-and without additional requirements, including, but not limited to,
-registration, legal agreements, or restrictions on redistribution of
-the certificates in whole or in part.
+CA's next periodic audit reports.
 
 ### 5.4 Precertificates ###
 Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in [section 3.2.1 of RFC 9162][9162-3.2.1], and thus in-scope for enforcing compliance with these requirements. Thus,
