@@ -11,7 +11,7 @@ other Mozilla-related software products, Mozilla includes with such software
 a set of X.509v3 root certificates for various Certification
 Authorities (CAs). The included certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
-certificates to anchor a chain of trust for certificates used by SSL servers
+certificates to anchor a chain of trust for certificates used by TLS servers
 and S/MIME email users without having to ask users for further permission or
 information.
 
@@ -21,7 +21,7 @@ distributing software based on ours are free to adopt their own policies. In
 particular, under the terms of the relevant Mozilla license(s) distributors of
 such software are permitted to add or delete CA certificates and modify the
 values of the trust bits in the versions that they distribute. However,
-as with other software modifications, by making such changes a distributor MAY
+as with other software modifications, by making such changes a distributor may
 well affect its ability to use Mozilla trademarks in connection with its
 versions of the software. See the Mozilla trademark policy for more
 information.
@@ -29,29 +29,29 @@ information.
 ### 1.1 Scope ###
 
 This policy applies, as appropriate, to certificates matching any of the
-following (and the CAs which control or issue them):
+following (and the CA operators that control or issue them):
 
 1.  CA certificates included in, or under consideration for inclusion in, the
-    Mozilla root program.
+    Mozilla root program;
 
-2.  Intermediate certificates which have at least one valid, unrevoked chain up
-    to such a CA certificate and which are technically capable of issuing 
-    working server or email certificates. Intermediate certificates that are not 
-    considered to be technically capable will contain either:
+2.  Intermediate certificates that have at least one valid, unrevoked chain up
+    to such a CA certificate and that are technically capable of issuing 
+    working server or email certificates. For an intermediate certificate to be  
+    considered technically constrained, it MUST contain either:
 
-    * an Extended Key Usage (EKU) extension which does not contain any of
+    * an Extended Key Usage (EKU) extension that does not contain any of
       these KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
-      id-kp-emailProtection; and/or:
-    * name constraints which do not allow Subject Alternative Names (SANs) of
-      any of the following types: dNSName, iPAddress, SRVName, rfc822Name
+      id-kp-emailProtection; or
+    * name constraints that do not allow Subject Alternative Names (SANs) of
+      any of the following types: dNSName, iPAddress, SRVName, or rfc822Name; *and*
 
-3.  End-entity certificates which have at least one valid, unrevoked chain up
-    to such a CA certificate through intermediate certificates which are all in
+3.  End-entity certificates that have at least one valid, unrevoked chain up
+    to such a CA certificate through intermediate certificates that are all in
     scope, such end-entity certificates having either:
 
-    * an Extended Key Usage (EKU) extension which contains one or more of these
+    * an Extended Key Usage (EKU) extension that contains one or more of these
       KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
-      id-kp-emailProtection; or:
+      id-kp-emailProtection; or
     * no EKU extension.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
@@ -67,11 +67,11 @@ regarding all matters relating to CA certificates included in our root program.
 Further, Mozilla has appointed a [Mozilla CA Certificate Policy module
 owner][CA-Policy-Module] and peers to maintain this policy. The policy will
 only be changed after public consultation with the Mozilla community, in order
-to ensure that all views are taken into account. You can contact the Mozilla CA
+to ensure that all views are taken into account. This policy will be updated periodically in accordance with the [Process for Updating the Root Store Policy][Policy-Update-Process]. CAs MUST adhere to the current version of this policy. You can contact the Mozilla CA
 Certificate Policy module team at [certificates@mozilla.org][Email-Us] if you
 have questions about this policy.
 
-CAs or others objecting to a particular decision by either team MAY appeal to
+CA operators or others objecting to a particular decision by either team MAY appeal to
 the [Firefox Technical Leadership Module Committee][Gov-Module] who will make a final
 decision.
 
@@ -79,7 +79,7 @@ decision.
 
 ### 2.1 CA Operations ###
 
-CAs whose certificates are included in Mozilla's root program MUST:
+CA operators whose certificates are included in Mozilla's root program MUST:
 
 1.  provide some service relevant to users of our software
     products;
@@ -98,11 +98,11 @@ CAs whose certificates are included in Mozilla's root program MUST:
 
      5.1. for server certificates issued on or after October 1, 2021, each dNSName or IPAddress in a SAN or commonName MUST have been validated in accordance with section 3.2.2 of the CA/Browser Forum's Baseline Requirements within the prior 398 days;
 6.  otherwise operate in accordance with published criteria that we
-    deem acceptable; and
+    deem acceptable; *and*
 7.  ensure that all certificates within the scope of this policy, 
     as described in Section 1.1, adhere to this policy.
 
-CAs MUST follow and be aware of discussions in 
+CA operators MUST follow and be aware of discussions in 
 [Mozilla's dev-security-policy][MDSP] forum, where Mozilla's root program is
 coordinated. They are encouraged, but not required, to contribute to those
 discussions.
@@ -112,28 +112,28 @@ discussions.
 We consider verification of certificate signing requests to be acceptable if it
 meets or exceeds the following requirements:
 
-1.  All information that is supplied by the certificate subscriber
+1.  all information that is supplied by the certificate subscriber
     MUST be verified by using an independent source of information
     or an alternative communication channel before it is included in
-    the certificate.
-2.  For a certificate capable of being used for digitally signing or encrypting
-    email messages, the CA takes reasonable measures to verify that
+    the certificate;
+2.  for a certificate capable of being used for digitally signing or encrypting
+    email messages, the CA operator MUST take reasonable measures to verify that
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf. The CA SHALL NOT delegate validation 
+    the account holder’s behalf. The CA operator SHALL NOT delegate validation 
     of the domain portion of an email address. The CA MAY rely 
     on validation the CA has performed for 
     an Authorization Domain Name (as specified in the Baseline Requirements) 
     as being valid for subdomains of that Authorization Domain Name. 
-    The CA's CP/CPS must clearly specify the procedure(s) 
+    The CA's CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) 
     that the CA employs to perform this verification.
 3.  For a certificate capable of being used for SSL-enabled servers, the CA
     must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This must be done using one or more of the
     methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA's
-    CP/CPS must clearly specify the procedure(s) that the CA employs, and
+    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address).
@@ -141,7 +141,7 @@ meets or exceeds the following requirements:
     must ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This must be done using one or more of the
     methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA's
-    CP/CPS must clearly specify the procedure(s) that the CA employs, and
+    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
     each documented procedure should state which subsection of 3.2.2.5 it is
     complying with.
 5.  For certificates marked as Extended Validation, the CA MUST comply with the
@@ -149,14 +149,14 @@ meets or exceeds the following requirements:
     Extended Validation Certificates][EVGLs].
 
 Validation methods are occasionally found to contain security flaws. When this happens, 
-Mozilla expects CAs to evaluate their practices and respond appropriately to mitigate the risk. 
-Mozilla may require CAs to make disclosures or modifications, up to and including 
+Mozilla expects CA operators to evaluate their practices and respond appropriately to mitigate the risk. 
+Mozilla MAY require CAs to make disclosures or modifications, up to and including 
 immediately discontinuing use of a method.
 
 ### 2.3 Baseline Requirements Conformance ###
 
 CA operations relating to issuance of certificates capable of being used for
-SSL-enabled servers MUST also conform to the latest version of the [CA/Browser
+TLS-enabled servers MUST also conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
 Certificates][BRs] ("Baseline Requirements"). In the event of inconsistency
 between Mozilla’s Root Store Policy requirements and the Baseline Requirements,
@@ -166,34 +166,34 @@ you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
 
 *   Insofar as the Baseline Requirements attempt to define their own scope, the
-    scope of this policy (section 1.1) overrides that. Mozilla thus requires CA
-    operations relating to issuance of **all** SSL certificates in the scope of
-    this policy to conform to the Baseline Requirements.
+    scope of this policy (section 1.1) overrides that. CA
+    operations relating to issuance of **all** TLS server certificates in the scope of
+    this policy SHALL conform to the Baseline Requirements.
 
-*   Mozilla reserves the right to accept audits by auditors who do not meet the
+*   Mozilla MAY accept audits by auditors who do not meet the
     qualifications given in section 8.2 of the Baseline Requirements, or refuse
     audits from auditors who do.
     
-*   Mozilla may restrict permitted algorithms to a subset of those allowed by the 
+*   Mozilla MAY restrict permitted algorithms to a subset of those allowed by the 
     Baseline Requirements.
 
 ### 2.4 Incidents ###
 
-When a CA fails to comply with any requirement of this policy - whether it be
+When a CA operator fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident. At a minimum, 
-CAs MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report], 
-and MUST regularly update the Incident Report until the corresponding bug 
+non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report]. Any matter documented in an audit as a qualification, a modified opinion, or a non-conformity is also considered an incident and MUST have a corresponding Incident Report. CA operators 
+MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
-CAs SHOULD cease issuance until the problem has been prevented from reoccurring.
- 
+CAs SHOULD cease issuance until the problem has been prevented from reoccurring.  
+
+Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits will be expected sooner than the CA operator’s next scheduled audit, and thus may be expected to be for a period less than a year.
 
 ## 3. Documentation ##
 
 ### 3.1 Audits ###
 
-Before being included and periodically thereafter, CAs MUST obtain certain
-audits for their root certificates and all of their intermediate certificates
+Before being included and at least annually thereafter, CA operators MUST obtain certain
+audits for their root certificates and all intermediate certificates
 that are technically capable of issuing working server or email certificates. 
 This section describes the requirements for those audits.
 
@@ -229,15 +229,15 @@ following documents to be acceptable:
 If being audited to the WebTrust criteria, the following audit requirements
 apply (see section 3.1.1 for specific version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically capable
-    of issuing server certificates must have all of the following audits:
+*   For the websites trust bit, a CA and all intermediate CAs technically capable
+    of issuing server certificates MUST have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.1]
     * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]
     * [WebTrust for CAs - EV SSL][WebTrust-EV] if [capable of issuing EV certificates][Capable-of-EV]
 
-*   For the email trust bit, a CA and all subordinate CAs technically capable
-    of issuing email certificates must have all of the following audits:
+*   For the email trust bit, a CA and all intermediate CAs technically capable
+    of issuing email certificates MUST have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.1]
 
@@ -246,8 +246,8 @@ apply (see section 3.1.1 for specific version numbers):
 If being audited to the ETSI criteria, the following audit requirements apply
 (see section 3.1.1 for version numbers):
 
-*   For the SSL trust bit, a CA and all subordinate CAs technically
-    capable of issuing server certificates must have one of the
+*   For the websites trust bit, a CA and all intermediate CAs technically
+    capable of issuing server certificates MUST have one of the
     following audits, with at least one of the noted policies or sets of
     policies:
 
@@ -255,10 +255,10 @@ If being audited to the ETSI criteria, the following audit requirements apply
       and EVCP)
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-w)
 
-    An audit showing conformance with the EVCP policy is required if a CA is [capable of issuing EV certificates][Capable-of-EV].
+    An audit showing conformance with the EVCP policy is REQUIRED if a CA is [capable of issuing EV certificates][Capable-of-EV].
 
-*   For the email trust bit, a CA and all subordinate CAs technically
-    capable of issuing email certificates must have one of the
+*   For the email trust bit, a CA and all intermediate CAs technically
+    capable of issuing email certificates MUST have one of the
     following audits, with at least one of the noted policies:
 
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+)
@@ -267,10 +267,10 @@ If being audited to the ETSI criteria, the following audit requirements apply
 
 #### 3.1.3 Audit Parameters ####
 Full-surveillance period-of-time audits MUST be conducted and updated audit
-information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. This cradle-to-grave audit requirement applies equally to subordinate CAs as it does to root CAs. Successive period-of-time audits
+information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. This cradle-to-grave audit requirement applies equally to intermediate CAs as it does to root CAs. Successive period-of-time audits
 MUST be contiguous (no gaps).
 
-Point-in-time audit statements may be used to confirm that all of the problems
+Point-in-time audit statements MAY be used to confirm that all of the problems
 that an auditor previously identified in a qualified audit statement have been
 corrected. However, a point-in-time audit does not replace the
 period-of-time audit.
@@ -300,22 +300,25 @@ least the following clearly-labelled information:
 10. the date the report was issued (which will necessarily be after the end
     date or point-in-time date); 
 11. all incidents (as defined in section 2.4) disclosed by the CA, discovered by the auditor, or reported by a third party, that, at any time during the audit period, occurred or were open in Bugzilla;
-12. the [CA locations that were or were not audited][Audited-Location]; and
-13. For ETSI, a statement to indicate if the audit was a full audit, and which
+12. the [CA locations that were or were not audited][Audited-Location]; *and*
+13. for ETSI, a statement to indicate if the audit was a full audit, and which
     parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
     EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
     trust service providers).
 
 An authoritative English language version of the publicly-available audit information MUST be supplied by the Auditor.
 
+If Mozilla determines that an audit provided does not meet the requirements of this policy, then CA operators will be expected to obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
+
 ### 3.2 Auditors ###
 
 In normal circumstances, Mozilla requires that audits MUST be performed
 by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. Each Audit Report MUST be accompanied by documentation provided to Mozilla of the [audit team qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the auditor. 
+A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c]. WebTrust auditors MUST be enrolled by CPA Canada in the [WebTrust for Certification Authorities program][WebTrust].
+Each Audit Report MUST be accompanied by documentation provided to Mozilla of the [audit team qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the auditor. 
 
-If a CA wishes to use auditors who do not fit the definition of Qualified Auditor, then it MUST
+If a CA operator wishes to use auditors who do not fit the definition of Qualified Auditor, then it MUST
 receive written permission from Mozilla to do so in advance of the start
 of the audit engagement. Mozilla will make its own determination as to
 the suitability of the suggested party or parties, at its sole discretion.
@@ -327,14 +330,14 @@ We rely on publicly disclosed documentation (e.g., in a Certificate Policy and
 Certification Practice Statement) to ascertain that our requirements are met.
 Therefore, the following MUST be true:
 
-1.  the publicly disclosed documentation provides sufficient
-    information for Mozilla to determine whether and how the CA
+1.  the publicly disclosed documentation MUST provide sufficient
+    information for Mozilla to determine whether and how the CA operator
     complies with this policy, including a description of the steps
     taken by the CA to verify certificate requests;
 
-2.  the documentation is available from the CA’s official website;
+2.  the publicly disclosed documentation MUST be available from the CA operator’s official website;
 
-3.  CPs and CPSes are made available to Mozilla under one
+3.  the documentation is made available to Mozilla under one
     of the following Creative Commons licenses (or later versions):
 
        * Attribution ([CC-BY]) 4.0
@@ -344,29 +347,30 @@ Therefore, the following MUST be true:
 
     or a set of equally permissive licensing terms accepted by Mozilla in
     writing. If no such license is indicated, the fact of application is
-    considered as permission from the CA to allow Mozilla and the public to
+    considered as permission from the CA operator to allow Mozilla and the public to
     deal with these documents, and any later versions for root certificates
-    which are included in Mozilla's trust store, under CC-BY-ND 4.0.
+    which are included in Mozilla's trust store, under CC-BY-ND 4.0;
 
-4.  CPs and CPSes MUST be reviewed and updated as necessary at least once every
+4.  the documentation MUST be reviewed and updated as necessary at least once every
 year, as required by the Baseline Requirements. CAs MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
-even if no other changes are made to the document.
+even if no other changes are made to the document;
 
-5.  Effective for versions dated April 1, 2020 or later, CPs and CPSes MUST be 
-structured according to RFC 3647 and MUST:
+5.  CPs and CPSes MUST be structured according to RFC 3647 and MUST:
 
-       * Include at least every section and subsection defined in RFC 3647; and,
-       * Only use the words "No Stipulation" to mean that the particular document 
-imposes no requirements related to that section; and,
-       * Contain no sections that are blank and have no subsections.
+       * include at least every section and subsection defined in RFC 3647; 
+       * only use the words "No Stipulation" to mean that the particular document 
+imposes no requirements related to that section; and
+       * contain no sections that are blank and have no subsections; *and*
 
-6.  CAs must provide a way to clearly determine which CP and CPS 
+6.  CA operators MUST provide a way to clearly determine which CP and CPS 
 applies to each of its root and intermediate certificates.
-    
+
+7.  CAs SHALL maintain links to older versions of each CP and CPS until all root CA certificate hierarchies operated in accordance with such CP and CPS are no longer trusted in the Mozilla root program. 
+
 ## 4. Common CA Database ##
 
-Mozilla manages its root program using the Common CA Database (CCADB). CAs with
+Mozilla manages its root program using the Common CA Database (CCADB). CA operators with
 certificates in Mozilla’s root program MUST use the CCADB, and are bound by the
 latest published version of the [Common CCADB Policy][CCADB-Policy], which is
 incorporated here by reference.
@@ -381,13 +385,13 @@ CCADB Policy, as follows:
 
 * If the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root program is due to a security concern, as well as performing the
-actions defined in the CCADB Policy, a [security bug must be filed in
+actions defined in the CCADB Policy, a [security bug MUST be filed in
 Bugzilla][Sec-Bugs].
 
 ### 4.2 Surveys ###
 
-Mozilla may conduct a survey of CAs from time to time using the CCADB. CAs are
-required to respond to the surveys with accurate information, within the
+Mozilla MAY conduct a survey of CA operators from time to time using the CCADB. CA operators are
+REQUIRED to respond to the surveys with accurate information, within the
 timescale defined in the survey.
 
 ## 5. Certificates ##
@@ -430,7 +434,7 @@ CAs MUST NOT use the id-RSASSA-PSS OID (1.2.840.113549.1.1.10) within a
 SubjectPublicKeyInfo to represent a RSA key.
 
 When a root or intermediate certificate's RSA key is used to produce a
-signature, only the following algorithms may be used, and with the following
+signature, only the following algorithms MAY be used, and with the following
 encoding requirements:
 
   * RSASSA-PKCS1-v1_5 with SHA-1.
@@ -516,7 +520,7 @@ named curve parameter of the correponding curve OID. Certificates MUST NOT use
 the implicit or specified curve forms.
 
 When a root or intermediate certificate's ECDSA key is used to produce a
-signature, only the following algorithms may be used, and with the following
+signature, only the following algorithms MAY be used, and with the following
 encoding requirements:
 
   * If the signing key is P-256, the signature MUST use ECDSA with SHA-256. The
@@ -577,30 +581,31 @@ CAs MUST NOT sign SHA-1 hashes over other data, including CT pre-certificates.
 CA operations MUST at all times be in accordance with the applicable CP
 and CPS.
 
-CAs MUST maintain a certificate hierarchy such that the included
+CA operators MUST maintain a certificate hierarchy such that the included
 certificate does not directly issue end-entity certificates to
 customers (i.e. the included certificate signs intermediate
 issuing certificates), as described in section 6.1.7 of the
 [Baseline Requirements][BRs].
 
-CAs MUST maintain current best practices to prevent
+CA operators MUST maintain current best practices to prevent
 algorithm attacks against certificates. As such, all new certificates
 MUST have a serial number greater than zero, containing at least 64 bits of
 output from a CSPRNG.
 
-CAs MUST NOT issue certificates that have:
+CAs MUST NOT issue certificates, CRLs, or OCSP responses, that have:
 
 *   ASN.1 DER encoding errors;
 *   invalid public keys (e.g., RSA certificates with public exponent
-    equal to 1);
+    equal to 1); *or*
+*   missing or incorrect extensions (e.g., TLS certificates with no subjectAltName extension, delegated OCSP responders without the id-pkix-ocsp-nocheck extension, partial/scoped CRLs that lack a distributionPoint in a critical issuingDistributionPoint extension).
+
+CAs MUST NOT issue certificates that have:    
+
 *   duplicate issuer names and serial numbers (except that a Certificate
     Transparency pre-certificate is allowed to match the corresponding
-    certificate);
-*   incorrect extensions (e.g., SSL certificates that exclude SSL
-    usage, or authority key IDs that include both the key ID and the
-    issuer’s issuer name and serial number); *or*
+    certificate); *or*
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
-    which no operational CRL or OCSP service exists.
+    which no operational CRL or OCSP service exists.    
     
 CAs MUST NOT generate the key pairs for end-entity certificates that have an
 EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
@@ -627,15 +632,15 @@ A certificate is deemed to directly or transitively chain to a CA certificate in
 
 Thus, the operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST disclose in the CCADB all non-technically constrained CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all non-technically constrained CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots.
 
-The term "subordinate CA" in this section
+The term "intermediate CA operator" in this section
 refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
 issue new certificates.
 
 Intermediate certificates created after January 1, 2019, with the exception of cross-certificates that share a private key with a corresponding root certificate:
 
-*   MUST contain an EKU extension; and,
-*   MUST NOT include the anyExtendedKeyUsage KeyPurposeId; and,
+*   MUST contain an EKU extension;
+*   MUST NOT include the anyExtendedKeyUsage KeyPurposeId; *and*
 *   MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
 
 #### 5.3.1 Technically Constrained #### 
@@ -672,19 +677,26 @@ Mozilla’s root program:
 * MUST be audited in accordance with Mozilla’s Root Store Policy. 
 If the CA has a currently valid audit report at the time of creation 
 of the certificate, then the new certificate MUST appear on the 
-CA's next periodic audit reports.
-* MUST be publicly disclosed in the CCADB by the CA that has their certificate
-included in Mozilla’s root program. The CA with a certificate included in Mozilla’s 
+CA's next periodic audit reports; *and*
+* MUST be publicly disclosed in the CCADB by the CA operator that has their certificate
+included in Mozilla’s root program. The CA operator with a certificate included in Mozilla’s 
 root program MUST disclose this information within a week of certificate creation, 
-and before any such subordinate CA is allowed
+and before any such intermediate CA is allowed
 to issue certificates. All disclosure MUST be made freely available
 and without additional requirements, including, but not limited to,
 registration, legal agreements, or restrictions on redistribution of
 the certificates in whole or in part.
 
+### 5.4 Precertificates ###
+Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in [section 3.2.1 of RFC 9162][9162-3.2.1], and thus in-scope for enforcing compliance with these requirements. Thus,
+* if any certificates with the same serial number and issuer exist, and one cannot be verified as the precertificate matching the final certificate using the algorithms in RFC 9162, this will be considered misissuance;
+* issuance of a precertificate that does not comply with this policy is considered equal to misissuance of a final certificate;
+* a CA must be able to revoke a certificate presumed to exist, if revocation of the certificate is required under this policy, even if the final certificate does not actually exist; and
+* a CA must provide CRL and OCSP services and responses in accordance with this policy for all certificates presumed to exist based on the presence of a precertificate, even if the certificate does not actually exist.
+
 ## 6. Revocation ##
 
-CAs MUST maintain an online 24x7 repository mechanism whereby
+CA operators MUST maintain an online 24x7 repository mechanism whereby
 application software can automatically check online the current
 status of all unexpired certificates issued by the CA.
 
@@ -695,21 +707,21 @@ more than ten days beyond the value of the thisUpdate field.
 For end-entity certificates, if the CA provides revocation information
 via an Online Certificate Status Protocol (OCSP) service:
 
-*   it MUST update that service at least every four days; and
+*   it MUST update that service at least every four days; 
 *   responses MUST have a defined value in the nextUpdate field, and it
-    MUST be no more than ten days after the thisUpdate field; and
+    MUST be no more than ten days after the thisUpdate field; *and*
 *   the value in the nextUpdate field MUST be before or equal to the
     notAfter date of all certificates included within the
     BasicOCSPResponse.certs field or, if the certs field is omitted,
     before or equal to the notAfter date of the CA certificate which
     issued the certificate that the BasicOCSPResponse is for.
 
-Section 4.9.12 of a CA's CP/CPS MUST clearly specify the methods that parties may use to demonstrate private key compromise.
+Section 4.9.12 of a CA's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the methods that parties may use to demonstrate private key compromise.
 
-### 6.1 SSL ###
+### 6.1 TLS ###
 
 For any certificate in a hierarchy capable of being used for 
-SSL-enabled servers, CAs MUST revoke certificates that they have 
+TLS-enabled servers, CAs MUST revoke certificates that they have 
 issued upon the occurrence of any event listed in the appropriate 
 subsection of section 4.9.1 of the Baseline Requirements, 
 according to the timeline defined therein. CAs MUST also revoke 
@@ -748,7 +760,7 @@ for another CA to provide revocation support for the certificate;
 10. the CA private key used in issuing the certificate is suspected 
 to have been compromised;
 11. such additional revocation events as the CA publishes 
-in its policy documentation; or
+in its policy documentation; *or*
 12. the certificate was issued in violation of the then-current 
 version of these requirements.
 
@@ -765,27 +777,28 @@ based on the risks of
 such inclusion to typical users of our products. We will consider adding
 additional CA certificates to the default certificate set upon request only by
 an authorized representative of the subject CA. We will make such decisions
-through a public process.
+through a public process. This public-review-and-discussion process SHALL also occur for any CA operator obtaining an unconstrained CA certificate that has not previously undergone such process, regardless of when the unconstrained CA certificate was obtained. This includes CA operators with intermediate CAs that are currently trusted by Mozilla even though they do not have root CAs trusted by Mozilla (i.e. there is no "bootstrapping" or "grandfathering" for CA operators who have not previously undergone a public-review-and-discussion process by Mozilla).
+
 
 We will not charge any fees to have a CA’s certificate(s)
 included in Mozilla's root program.
 
-We reserve the right to not include certificates from a particular CA in
+We reserve the right to not include certificates from a particular CA operator in
 our root program. This includes (but is not limited to) cases
-where we believe that a CA has caused undue risks to users’
+where we believe that a CA operator has caused undue risks to users’
 security, e.g. by knowingly issuing certificates without the knowledge of the
 entities whose information is referenced in those certificates ('MITM certificates'). 
 Mozilla is under no obligation to explain the reasoning behind any inclusion decision.
 
-Before being included, CAs MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. 
+Before being included, CA operators MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. 
 
-To request that its certificate(s) be added to Mozilla's root program a CA
+To request that its certificate(s) be added to Mozilla's root program a CA operator
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
 into the mozilla.org Bugzilla system, filed against the "CA
 Certificate Root Program" component of the "NSS" product. Mozilla’s wiki
 page, "[Applying for root inclusion in Mozilla products][How-To-Apply]", provides
 further details about how to submit a formal request. The request
-MUST be made by an authorized representative of the subject CA, and
+MUST be made by an authorized representative of the subject CA operator, and
 MUST include the following:
 
 1.  the certificate data (or links to the data) for the CA
@@ -794,7 +807,7 @@ MUST include the following:
     the CA issues certificates for each of the following purposes
     within the certificate hierarchy associated with the CA
     certificate:
-    * SSL-enabled servers
+    * TLS-enabled servers
     * digitally-signed and/or encrypted email;
 3.  for each CA certificate requested for inclusion, whether the CA
     issues Extended Validation certificates within the certificate hierarchy
@@ -806,12 +819,12 @@ MUST include the following:
 5.  an auditor-witnessed root key generation ceremony report and contiguous 
     period-of-time audit reports performed thereafter no less frequently than 
     annually; *and*
-6.  information as to how the CA has fulfilled the requirements
+6.  information as to how the CA operator has fulfilled the requirements
     stated above regarding its verification of certificate signing
     requests and its conformance to a set of acceptable operational
     criteria.
 
-We will reject requests where the CA does not provide such
+We will reject requests where the CA operator does not provide such
 information within a reasonable period of time after submitting its
 request.
 
@@ -821,25 +834,25 @@ Changes MAY be made to root certificates that are included in
 Mozilla's root program as follows:
 
 1.  enabling a trust bit in a root certificate that is currently
-    included, may only be done after careful consideration of the
-    CA’s current policies, practices, and audits,
-    and may be requested by a representative of the CA or a
+    included, MAY only be done after careful consideration of the
+    CA operator’s current policies, practices, and audits,
+    and MAY be requested by a representative of the CA or a
     representative of Mozilla by submitting a bug report into the
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 2.  enabling EV in a root certificate that is currently included,
-    may only be done after careful consideration of the CA’s current
+    MAY only be done after careful consideration of the CA operator’s current
     policies, practices, and audits,
-    and may be requested by a representative of the CA or a
+    and MAY be requested by a representative of the CA operator or a
     representative of Mozilla by submitting a bug report into the
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 3.  disabling a root is the act of turning off one or more of the
-    trust bits (SSL or email), and may be
-    requested by a representative of the CA or a representative of
+    trust bits (SSL or email), and MAY be
+    requested by a representative of the CA operator or a representative of
     Mozilla by submitting a bug report into the mozilla.org Bugzilla
-    system, as described in the [Root Change Process][Root-Changes];
-4.  a representative of the CA or a representative of Mozilla may
+    system, as described in the [Root Change Process][Root-Changes]; *and*
+4.  a representative of the CA operator or a representative of Mozilla MAY
     request that a root certificate be removed by submitting a bug
     report into the mozilla.org Bugzilla system, as described in the
     [Root Change Process][Root-Changes].
@@ -847,16 +860,16 @@ Mozilla's root program as follows:
 ### 7.3 Removals ###
 
 Mozilla MAY, at its sole discretion, decide to disable (partially or fully) or
-remove a certificate at any time and for any reason. This may happen
+remove a certificate at any time and for any reason. This MAY happen
 immediately or on a planned future date. Mozilla will
-disable or remove a certificate if the CA demonstrates ongoing or
+disable or remove a certificate if the CA operator demonstrates ongoing or
 egregious practices that do not maintain the expected level of service
 or that do not comply with the requirements of this policy.
 
 Mozilla will take any steps we deem appropriate to protect our users
-if we learn that a CA has knowingly or intentionally mis-issued one
-or more certificates. This may include, but is not limited to
-disablement (partially or fully) or removal of all of the CA’s
+if we learn that a CA operator has knowingly or intentionally mis-issued one
+or more certificates. This MAY include, but is not limited to,
+disablement (partially or fully) or removal of all of the CA operator’s
 certificates from Mozilla’s root program.
 
 The category of mis-issued certificates includes (but is not limited to) those
@@ -866,36 +879,36 @@ constraints, and those using algorithms other than those permitted.
 
 A failure to provide notifications or updates in the CCADB or
 as otherwise required in a timely manner SHALL also be grounds for
-disabling a CA’s root certificates or removing them from Mozilla's root
+disabling a CA operator’s root certificates or removing them from Mozilla's root
 program. For this policy and the CCADB policies, "a timely manner" means
 within 30 days of when the appropriate data or documentation becomes
-available to the CA, unless a Mozilla policy document specifies a different
+available to the CA operator, unless a Mozilla policy document specifies a different
 rule.
 
-If Mozilla disables or removes a CA’s certificate(s) from Mozilla’s
-root program based on a CA’s actions (or failure to act) that are
+If Mozilla disables or removes a CA operator’s certificate(s) from Mozilla’s
+root program based on a CA operator’s actions (or failure to act) that are
 contrary to the Mozilla Root Store Policy, Mozilla will publicize 
 that fact (for example, in newsgroups on the
-news.mozilla.org server, and on our websites) and may also alert 
+news.mozilla.org server, and on our websites) and MAY also alert 
 relevant news or government organizations such as US-CERT.
 
 ## 8. CA Operational Changes ##
 
-CAs SHOULD NOT assume that trust is transferable. All CAs whose certificates
+CA operators SHALL NOT assume that trust is transferable. All CA operators whose certificates
 are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 
-* ownership or control of the CA’s certificate(s) changes, or
-* an organization other than the CA obtains control of an unconstrained 
+* ownership or control of the CA’s certificate(s) changes;
+* an organization other than the CA operator obtains control of an unconstrained 
 intermediate certificate (as defined in section 5.3.2 of this policy) that 
-directly or transitively chains to the CA's included certificate(s); or,
-* ownership or control of the CA’s operations changes; or
-* there is a change in the CA's operations that could affect the CA's ability to comply with the requirements of this Policy.
+directly or transitively chains to the CA's included certificate(s);
+* ownership or control of the CA’s operations changes; *or*
+* there is a change in the CA's operations that could affect the CA operator's ability to comply with the requirements of this Policy.
 
-CAs should err on the side of notification if there is any doubt. Mozilla will
+CA operators SHOULD err on the side of notification if there is any doubt. Mozilla will
 normally keep commercially sensitive information confidential. Throughout any
 change, CA operations MUST continue to meet the requirements of this policy. If
 one of the above events occurs, Mozilla MAY require additional audit(s) as a
-condition of remaining in the root program. CAs are encouraged to notify in
+condition of remaining in the root program. CA operators are encouraged to notify Mozilla in
 advance in order to avoid unfortunate surprises.
 
 In addition, one or more of the following sections MAY apply.
@@ -903,17 +916,17 @@ In addition, one or more of the following sections MAY apply.
 ### 8.1 Change in Legal Ownership ###
 
 This section applies when one company buys or takes a controlling stake in
-a CA, or when an organization obtains control of a CA certificate that is 
+a CA or CA operator, or when an organization obtains control of a CA key pair that is 
 within the scope of Mozilla's root program, unless it is constrained in 
 compliance with section 5.3.1 of this policy.
 
-Mozilla MUST be notified of any resulting changes in the CA's CP or CPS.
+Mozilla MUST be notified of any resulting changes in the CA operator's CP or CPS.
 
 If the receiving or acquiring company is new to the Mozilla root program, 
-it must demonstrate compliance with the entirety of this policy and there
-MUST be a public discussion regarding their admittance to the root program,
-which Mozilla must resolve with a positive conclusion in order for the 
-affected certificate(s) to remain in the root program. If the entire 
+it MUST demonstrate compliance with the entirety of this policy. There
+MUST be a public discussion regarding its admittance to the root program. 
+If Mozilla reaches a positive conclusion after public discussion, then the  
+affected certificate(s) MAY remain in the root program. If the entire 
 CA operation is not included in the scope of the transaction, issuance is not
 permitted until the discussion has been resolved with a positive conclusion.
 
@@ -930,12 +943,11 @@ certificate's private key until Mozilla has been provided with an audit
 statement (or opinion letter) confirming successful transfer of the root
 certificate and key. Issuance MUST NOT occur until the transferee
 has provided all the information required by the CCADB, and demonstrated to
-Mozilla that they have all the appropriate audits, CP/CPS documents and other
+Mozilla that they have all the appropriate audits, CP or CPS documents, and other
 systems in place.
 
 The transferor MUST notify Mozilla about any necessary changes to EV status or
-trust bits in Mozilla's root store. If the transferee is receiving the (right
-to use the) associated EV policy OID(s), the transferor MUST confirm that the
+trust bits in Mozilla's root store. If the transferee will be able to issue EV certificates, the transferor MUST confirm that the
 transferee has or will get the relevant audits before issuing EV certificates.
 
 ### 8.3 Change in Secure Location ###
@@ -948,7 +960,7 @@ Mozilla's root program and not constrained in compliance with section
 This policy and the relevant WebTrust or ETSI requirements apply at all times,
 even during the physical relocation of a CA's online operations to a new data
 center and moving parts of an offline root certificate from one location to
-another. As such, a CA MUST always ensure that physical access to CA equipment
+another. As such, a CA operator MUST always ensure that physical access to CA equipment
 is limited to authorized individuals, the equipment is operated under multiple
 person control, and unauthorized CA system usage is able to be detected at all
 times. The auditor MUST confirm that there are appropriate procedures in place
@@ -956,23 +968,23 @@ to ensure that the requirements are met and that those procedures are followed.
 
 The following steps MUST be taken by the organization(s) concerned:
 
-* Make sure the annual audit statements are current.
-* Notify Mozilla of the pending change.
-* Create a transfer plan (and legal agreement if more than one organization is
-involved) and have it reviewed by the auditors.
-* Stop new certificate issuance at the current site before the transfer begins.
-* Have an audit performed at the current site to confirm when the root
-certificate is ready for transfer, and to make sure the key material is
-properly secured.
-* The transfer ceremony should be witnessed by auditors and video recorded,
+* ensure that annual audit statements are current;
+* notify Mozilla of the pending change;
+* create a transfer plan (and legal agreement if more than one organization is
+involved) and have it reviewed by the auditors;
+* stop new certificate issuance at the current site before the transfer begins;
+* have an audit performed at the current site to confirm when the root
+certificate is ready for transfer, and ensure that key material is
+properly secured;
+* have the transfer ceremony witnessed by auditors and video recorded,
 with a physical exchange of the HSM or ciphertext containing the associated key
-material and certificates, and the multi-party authorization keys.
-* At the new site perform an audit to confirm that the transfer was successful,
+material and certificates, and the multi-party authorization keys;
+* perform an audit at the new site to confirm that the transfer was successful,
 that the private key remained secure throughout the transfer, and that the root
-certificate is ready to resume issuance. This requirement may be met by
+certificate is ready to resume issuance. This requirement MAY be met by
 including the transferred root certificate and key in the new owner's regular
 audits or by getting a point-in-time audit.
-* Send links to the updated CP/CPS and the updated audit statements, opinion
+* Send links to the updated CP, CPS, and the updated audit statements, opinion
 letter, or point-in-time audit statement to Mozilla.
 
 The regular annual audit statements MUST still happen in a timely manner.
@@ -1007,13 +1019,16 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
 [5280-6.1.4]:               http://tools.ietf.org/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:            http://tools.ietf.org/html/rfc5280#section-4.2.1.12
+[9162-3.2.1]:               https://datatracker.ietf.org/doc/html/rfc9162#section-3.2.1
 [CA-Cert-Bug]:              https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
 [How-To-Apply]:             https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:             https://wiki.mozilla.org/CA/Certificate_Change_Process
 [Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
+[Policy-Update-Process]:    https://wiki.mozilla.org/CA/Updating_Root_Store_Policy
 [Policy-Archive]:           https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
 [Incident-Report]:          https://wiki.mozilla.org/CA/Responding_To_An_Incident
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
-
+[ACAB'c]:                   https://www.acab-c.com/members/
+[WebTrust]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
