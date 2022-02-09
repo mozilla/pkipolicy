@@ -328,7 +328,7 @@ the suitability of the suggested party or parties, at its sole discretion.
 
 We rely on publicly disclosed documentation (e.g., in a Certificate Policy and
 Certification Practice Statement) to ascertain that our requirements are met.
-Therefore, the following MUST be true:
+Therefore:
 
 1.  the publicly disclosed documentation MUST provide sufficient
     information for Mozilla to determine whether and how the CA operator
@@ -337,7 +337,7 @@ Therefore, the following MUST be true:
 
 2.  the publicly disclosed documentation MUST be available from the CA operator’s official website;
 
-3.  the documentation is made available to Mozilla under one
+3.  the documentation MUST be made available to Mozilla under one
     of the following Creative Commons licenses (or later versions):
 
        * Attribution ([CC-BY]) 4.0
