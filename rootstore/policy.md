@@ -643,28 +643,27 @@ Intermediate certificates created after January 1, 2019, with the exception of c
 *   MUST NOT include the anyExtendedKeyUsage KeyPurposeId; *and*
 *   MUST NOT include both the id-kp-serverAuth and id-kp-emailProtection KeyPurposeIds in the same certificate.
 
-#### 5.3.1 Technically Constrained ####
-
-We encourage CA operators to technically constrain all intermediate
-certificates. For a certificate to be considered technically
+#### 5.3.1 Technically Constrained #### 
+We encourage CAs to technically constrain all intermediate
+certificates. For an intermediate certificate to be considered technically
 constrained, the certificate MUST include an [Extended Key Usage
-(EKU)][5280-4.2.1.12] extension specifying all extended key usages that the
-intermediate CA is authorized to issue certificates for. The anyExtendedKeyUsage
-KeyPurposeId MUST NOT appear within this extension.
+(EKU)][5280-4.2.1.12] extension specifying the extended key usage(s) allowed for the type of end entity certificates that the
+intermediate CA is authorized to issue. We also encourage CAs to include only a single KeyPurposeID in the EKU extension of intermediate certificates. The anyExtendedKeyUsage
+KeyPurposeId MUST NOT appear within this extension. 
 
-If the certificate includes the id-kp-serverAuth extended key usage,
+If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically
 constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. 
+7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. The id-kp-clientAuth EKU MAY also be present.
 The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
 
-If the certificate includes the id-kp-emailProtection extended key
+If the intermediate CA certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs].
+3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
