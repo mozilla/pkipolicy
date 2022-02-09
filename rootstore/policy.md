@@ -891,9 +891,9 @@ are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
 * ownership or control of the CA’s certificate(s) changes;
 * an organization other than the CA operator obtains control of an unconstrained 
 intermediate certificate (as defined in section 5.3.2 of this policy) that 
-directly or transitively chains to the CA's included certificate(s);
-* ownership or control of the CA’s operations changes; *or*
-* there is a change in the CA's operations that could affect the CA operator's ability to comply with the requirements of this Policy.
+directly or transitively chains to the CA's included certificate(s) - see [Process for Review and Approval of Externally Operated Subordinate CAs][Process-for-External-CAs]; or,
+* ownership or control of the CA’s operations changes; or
+* there is a change in the CA's operations that could affect the CA's ability to comply with the requirements of this Policy.
 
 CA operators SHOULD err on the side of notification if there is any doubt. Mozilla will
 normally keep commercially sensitive information confidential. Throughout any
@@ -1021,5 +1021,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
+[Process-for-External-CAs]: https://wiki.mozilla.org/CA/External_Sub_CAs_not_Technically_Constrained
 [ACAB'c]:                   https://www.acab-c.com/members/
 [WebTrust]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
+
