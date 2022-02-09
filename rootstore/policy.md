@@ -128,7 +128,7 @@ meets or exceeds the following requirements:
     as being valid for subdomains of that Authorization Domain Name. 
     The CA's CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) 
     that the CA employs to perform this verification.
-3.  For a certificate capable of being used for SSL-enabled servers, the CA
+3.  For a certificate capable of being used for TLS-enabled servers, the CA
     must ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This must be done using one or more of the
@@ -137,7 +137,7 @@ meets or exceeds the following requirements:
     each documented procedure should state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address).
-4.  For a certificate capable of being used for SSL-enabled servers, the CA
+4.  For a certificate capable of being used for TLS-enabled servers, the CA
     must ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This must be done using one or more of the
     methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA's
@@ -841,7 +841,7 @@ Mozilla's root program as follows:
     mozilla.org Bugzilla system, as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 3.  disabling a root is the act of turning off one or more of the
-    trust bits (SSL or email), and MAY be
+    trust bits (websites or email), and MAY be
     requested by a representative of the CA operator or a representative of
     Mozilla by submitting a bug report into the mozilla.org Bugzilla
     system, as described in the [Root Change Process][Root-Changes]; *and*
