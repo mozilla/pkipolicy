@@ -32,18 +32,18 @@ This policy applies, as appropriate, to certificates matching any of the
 following (and the CA operators that control or issue them):
 
 1.  CA certificates included in, or under consideration for inclusion in, the
-    Mozilla root program;
+    Mozilla root program.
 
 2.  Intermediate certificates that have at least one valid, unrevoked chain up
     to such a CA certificate and that are technically capable of issuing 
-    working server or email certificates. For an intermediate certificate to be  
-    considered technically constrained, it MUST contain either:
+    working server or email certificates. Intermediate certificates that are not   
+    considered to be technically constrained will contain either:
 
     * an Extended Key Usage (EKU) extension that does not contain any of
       these KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
       id-kp-emailProtection; or
     * name constraints that do not allow Subject Alternative Names (SANs) of
-      any of the following types: dNSName, iPAddress, SRVName, or rfc822Name; *and*
+      any of the following types: dNSName, iPAddress, SRVName, or rfc822Name.
 
 3.  End-entity certificates that have at least one valid, unrevoked chain up
     to such a CA certificate through intermediate certificates that are all in
