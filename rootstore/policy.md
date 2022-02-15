@@ -37,7 +37,7 @@ following (and the CA operators that control or issue them):
 2.  Intermediate certificates that have at least one valid, unrevoked chain up
     to such a CA certificate and that are technically capable of issuing 
     working server or email certificates. Intermediate certificates that are not   
-    considered to be technically constrained will contain either:
+    considered to be technically capable will contain either:
 
     * an Extended Key Usage (EKU) extension that does not contain any of
       these KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
