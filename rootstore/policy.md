@@ -8,8 +8,8 @@
 
 When distributing binary and source code versions of Firefox, Thunderbird, and
 other Mozilla-related software products, Mozilla includes with such software
-a set of X.509v3 root certificates for various Certification
-Authorities (CAs). The included certificates have their "trust bits"
+a set of X.509v3 root certificates from various Certification
+Authority (CA) operators. The included certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
 certificates to anchor a chain of trust for certificates used by TLS servers
 and S/MIME email users without having to ask users for further permission or
@@ -356,17 +356,17 @@ year, as required by the Baseline Requirements. CAs MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
-5.  CPs and CPSes MUST be structured according to RFC 3647 and MUST:
+5.  CPs and CPSes (or a combined CP/CPS) MUST be structured according to RFC 3647 and MUST:
 
        * include at least every section and subsection defined in RFC 3647; 
        * only use the words "No Stipulation" to mean that the particular document 
 imposes no requirements related to that section; and
        * contain no sections that are blank and have no subsections; *and*
 
-6.  CA operators MUST provide a way to clearly determine which CP and CPS 
+6.  CA operators MUST provide a way to clearly determine which CP, CPS, or CP/CPS 
 applies to each of its root and intermediate certificates.
 
-7.  CA operators SHALL maintain links to older versions of each CP and CPS until all root CA certificate hierarchies operated in accordance with such CP and CPS are no longer trusted in the Mozilla root program. 
+7.  CA operators SHALL maintain links to older versions of each CP and CPS (or CP/CPS) until all root CA certificate hierarchies operated in accordance with such documents are no longer trusted in the Mozilla root program. 
 
 ## 4. Common CA Database ##
 
@@ -581,7 +581,7 @@ CAs MUST NOT sign SHA-1 hashes over other data, including CT pre-certificates.
 ### 5.2 Forbidden and Required Practices ###
 
 CA operations MUST at all times be in accordance with the applicable CP
-and CPS.
+and CPS (or combined CP/CPS).
 
 CA operators MUST maintain a certificate hierarchy such that the included
 certificate does not directly issue end-entity certificates to
@@ -664,7 +664,7 @@ usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CPS MAY be present.
+3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or CP/CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
@@ -915,7 +915,7 @@ a CA or CA operator, or when an organization obtains control of a CA key pair th
 within the scope of Mozilla's root program, unless it is constrained in 
 compliance with section 5.3.1 of this policy.
 
-Mozilla MUST be notified of any resulting changes in the CA operator's CP or CPS.
+Mozilla MUST be notified of any resulting changes in the CA operator's CP, CPS, or combined CP/CPS.
 
 If the receiving or acquiring company is new to the Mozilla root program, 
 it MUST demonstrate compliance with the entirety of this policy. There
@@ -938,7 +938,7 @@ certificate's private key until Mozilla has been provided with an audit
 statement (or opinion letter) confirming successful transfer of the root
 certificate and key. Issuance MUST NOT occur until the transferee
 has provided all the information required by the CCADB, and demonstrated to
-Mozilla that they have all the appropriate audits, CP or CPS documents, and other
+Mozilla that they have all the appropriate audits, CP/CPS documents, and other
 systems in place.
 
 The transferor MUST notify Mozilla about any necessary changes to EV status or
