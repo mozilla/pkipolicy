@@ -67,7 +67,7 @@ regarding all matters relating to CA certificates included in our root program.
 Further, Mozilla has appointed a [Mozilla CA Certificate Policy module
 owner][CA-Policy-Module] and peers to maintain this policy. The policy will
 only be changed after public consultation with the Mozilla community, in order
-to ensure that all views are taken into account. This policy will be updated periodically in accordance with the [Process for Updating the Root Store Policy][Policy-Update-Process]. CAs MUST adhere to the current version of this policy. You can contact the Mozilla CA
+to ensure that all views are taken into account. This policy MAY be updated periodically in accordance with the [Process for Updating the Root Store Policy][Policy-Update-Process]. CAs MUST adhere to the current version of this policy. You can contact the Mozilla CA
 Certificate Policy module team at [certificates@mozilla.org][Email-Us] if you
 have questions about this policy.
 
@@ -366,7 +366,7 @@ imposes no requirements related to that section; and
 6.  CA operators MUST provide a way to clearly determine which CP and CPS 
 applies to each of its root and intermediate certificates.
 
-7.  CAs SHALL maintain links to older versions of each CP and CPS until all root CA certificate hierarchies operated in accordance with such CP and CPS are no longer trusted in the Mozilla root program. 
+7.  CA operators SHALL maintain links to older versions of each CP and CPS until all root CA certificate hierarchies operated in accordance with such CP and CPS are no longer trusted in the Mozilla root program. 
 
 ## 4. Common CA Database ##
 
@@ -594,14 +594,14 @@ algorithm attacks against certificates. As such, all new certificates
 MUST have a serial number greater than zero, containing at least 64 bits of
 output from a CSPRNG.
 
-CAs MUST NOT issue certificates, CRLs, or OCSP responses, that have:
+CA operators MUST NOT issue certificates, CRLs, or OCSP responses, that have:
 
 *   ASN.1 DER encoding errors;
 *   invalid public keys (e.g., RSA certificates with public exponent
     equal to 1); *or*
 *   missing or incorrect extensions (e.g., TLS certificates with no subjectAltName extension, delegated OCSP responders without the id-pkix-ocsp-nocheck extension, partial/scoped CRLs that lack a distributionPoint in a critical issuingDistributionPoint extension).
 
-CAs MUST NOT issue certificates that have:    
+CA operators MUST NOT issue certificates that have:    
 
 *   duplicate issuer names and serial numbers (except that a Certificate
     Transparency pre-certificate is allowed to match the corresponding
@@ -609,7 +609,7 @@ CAs MUST NOT issue certificates that have:
 *   cRLDistributionPoints or OCSP authorityInfoAccess extensions for
     which no operational CRL or OCSP service exists.    
     
-CAs MUST NOT generate the key pairs for end-entity certificates that have an
+CA operators MUST NOT generate the key pairs for end-entity certificates that have an
 EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
 
 Effective for certificates with a notBefore date of July 1, 2020 or later, 
@@ -621,7 +621,7 @@ contain the KeyPurposeId anyExtendedKeyUsage.
 
 All certificates that are capable of being used to issue working server or email certificates and
 that directly or transitively chain to a CA certificate included in Mozilla’s CA
-Certificate Program MUST be operated in accordance with this policy, audited, and disclosed in the CCADB.
+Certificate Program MUST be operated in accordance with this policy and disclosed in the CCADB.
 
 A certificate is deemed as capable of being used to issue new
 certificates if it contains an [X.509v3 basicConstraints extension][5280-6.1.4]
@@ -668,7 +668,9 @@ each such name having its ownership validated according to section
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
-The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within a week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
+The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program that do not have an EKU or that have an EKU that contains any of these values: id-kp-serverAuth, id-kp-emailProtection, or anyExtendedKeyUsage. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
+
+All disclosure MUST be made freely available and without additional requirements, including, but not limited to, registration, legal agreements, or restrictions on redistribution of the certificates in whole or in part.
 
 We recognize that technically constraining intermediate
 certificates as described above may not be practical in some cases.
@@ -940,7 +942,7 @@ Mozilla that they have all the appropriate audits, CP or CPS documents, and othe
 systems in place.
 
 The transferor MUST notify Mozilla about any necessary changes to EV status or
-trust bits in Mozilla's root store. If the transferee will be able to issue EV certificates, the transferor MUST confirm that the
+trust bits in Mozilla's root store. If the transferee will be technically capable of issuing EV certificates, the transferor MUST confirm that the
 transferee has or will get the relevant audits before issuing EV certificates.
 
 ### 8.3 Change in Secure Location ###
