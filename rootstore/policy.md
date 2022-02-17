@@ -631,8 +631,6 @@ A certificate is deemed to directly or transitively chain to a CA certificate in
 (1)	the certificate's Issuer Distinguished Name matches (according to the name-matching algorithm specified in RFC 5280, section 7.1) the Subject Distinguished Name in a CA certificate or intermediate certificate that is in scope according to section 1.1 of this Policy, and
 (2)	the certificate is signed with a Private Key whose corresponding Public Key is encoded in the SubjectPublicKeyInfo of that CA certificate or intermediate certificate.
 
-Thus, the operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST disclose in the CCADB all non-technically constrained CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program. This applies to all non-technically constrained CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots.
-
 The term "intermediate CA operator" in this section
 refers to any organization or legal entity that is in possession
 or control of a certificate that is capable of being used to
@@ -668,7 +666,7 @@ each such name having its ownership validated according to section
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
-The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program that do not have an EKU or that have an EKU that contains any of these values: id-kp-serverAuth, id-kp-emailProtection, or anyExtendedKeyUsage. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. Technically constrained CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
+The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program that do not have an EKU or that have an EKU that contains any of these values: id-kp-serverAuth, id-kp-emailProtection, or anyExtendedKeyUsage. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
 
 All disclosure MUST be made freely available and without additional requirements, including, but not limited to, registration, legal agreements, or restrictions on redistribution of the certificates in whole or in part.
 
