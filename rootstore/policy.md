@@ -540,6 +540,14 @@ RSASSA-PKCS1-v1_5, which includes an explicit NULL.
 
 #### 5.1.3 SHA-1 ####
 
+Effective July 1, 2022, CAs SHALL NOT sign SHA-1 hashes over end-entity certificates with an EKU extension containing the id-kp-emailProtection key purpose.
+
+Effective July 1, 2023, CAs SHALL NOT sign SHA-1 hashes over:
+  * certificates with an EKU extension containing the id-kp-ocspSigning key purpose; 
+  * intermediate certificates that chain up to roots in Mozilla's program; 
+  * OCSP responses; or
+  * CRLs.
+
 CAs MAY sign SHA-1 hashes over end-entity certificates which chain
 up to roots in Mozilla's program only if all the following are true:
 
@@ -567,14 +575,14 @@ only changes being all of:
 *   a new key (of the same size);
 *   a new serial number (of the same length);
 *   the addition of an EKU and/or a pathlen constraint to meet the
-    requirements outlined above.
+    requirements outlined above. 
 
 CAs MAY sign SHA-1 hashes over OCSP responses only if the signing
 certificate contains an EKU extension which contains only the
 id-kp-ocspSigning EKU.
 
 CAs MAY sign SHA-1 hashes over CRLs for roots and intermediates
-only if they have issued SHA-1 certificates.
+only if they have issued SHA-1 certificates. 
 
 CAs MUST NOT sign SHA-1 hashes over other data, including CT pre-certificates.
 
