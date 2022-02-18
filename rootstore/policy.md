@@ -2,7 +2,7 @@
 
 *Version 2.8*
 
-*[Effective Month 1, 2022][Policy-Archive]*
+*[Effective May 1, 2022][Policy-Archive]*
 
 ## 1. Introduction ##
 
@@ -186,7 +186,7 @@ MUST regularly update the Incident Report until the corresponding bug
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
 CAs SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
-Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits will be expected sooner than the CA operator’s next scheduled audit, and thus may be expected to be for a period less than a year.
+Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
 
 ## 3. Documentation ##
 
@@ -308,7 +308,7 @@ least the following clearly-labelled information:
 
 An authoritative English language version of the publicly-available audit information MUST be supplied by the Auditor.
 
-If Mozilla determines that an audit provided does not meet the requirements of this policy, then CA operators will be expected to obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
+If Mozilla determines that an audit provided does not meet the requirements of this policy, then Mozilla MAY require CA operators to obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
 ### 3.2 Auditors ###
 
@@ -657,10 +657,9 @@ constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying the extended key usage(s) allowed for the type of end entity certificates that the
 intermediate CA is authorized to issue. We also encourage CAs to include only a single KeyPurposeID in the EKU extension of intermediate certificates. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension. 
-
+ 
 If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
-then to be considered technically
-constrained, the certificate MUST be Name Constrained as described in section
+then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
 7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. The id-kp-clientAuth EKU MAY also be present.
 The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
@@ -670,11 +669,11 @@ usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or CP/CPS MAY be present.
+3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
-The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program that do not have an EKU or that have an EKU that contains any of these values: id-kp-serverAuth, id-kp-emailProtection, or anyExtendedKeyUsage. This applies to all CA certificates, including those that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose this such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. CA certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
+The operator of a CA certificate trusted in Mozilla’s CA Certificate Program MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s CA Certificate Program that are technically capable of issuing working server or email certificates, including those CA certificates that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA with a certificate included in Mozilla’s root program MUST disclose  such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. Name-constrained CA certificates that are technically capable of issuing working server or email certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
 
 All disclosure MUST be made freely available and without additional requirements, including, but not limited to, registration, legal agreements, or restrictions on redistribution of the certificates in whole or in part.
 
