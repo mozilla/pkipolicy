@@ -618,7 +618,7 @@ CA operators MUST NOT issue certificates that have:
     which no operational CRL or OCSP service exists.    
     
 CA operators MUST NOT generate the key pairs for end-entity certificates that have an
-EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage.
+EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage, unless the certificate is being issued to the CA itself.
 
 Effective for certificates with a notBefore date of July 1, 2020 or later, 
 end-entity certificates MUST include an EKU extension containing KeyPurposeId(s) 
