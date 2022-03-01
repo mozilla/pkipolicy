@@ -683,9 +683,9 @@ All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
 Mozilla’s root program MUST be audited in accordance with Mozilla’s Root Store Policy. 
-If the CA has a currently valid audit report at the time of creation 
-of the certificate, then the new certificate MUST appear on the 
-CA's next periodic audit reports.
+If the CA operator has a currently valid audit report at the time of creation 
+of the intermediate certificate, then the new intermediate certificate MUST appear on the 
+CA operator's next periodic audit reports.
 
 ### 5.4 Precertificates ###
 Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in [section 3.2.1 of RFC 9162][9162-3.2.1] and its predecessor, RFC 6962, and thus in-scope for enforcing compliance with these requirements. Thus,
