@@ -895,11 +895,11 @@ relevant news or government organizations such as US-CERT.
 ## 8. CA Operational Changes ##
 
 CA operators SHALL NOT assume that trust is transferable. All CA operators whose certificates
-are included in Mozilla's root program MUST [notify Mozilla][Email-Us] if:
+are included in Mozilla's root program MUST [notify Mozilla][Email-Us] before:
 
 * ownership or control of the CA’s certificate(s) changes;
 * an organization other than the CA operator obtains control of an unconstrained 
-intermediate certificate (as defined in section 5.3.2 of this policy) that 
+intermediate certificate (as defined in section 5.3 of this policy) that 
 directly or transitively chains to the CA's included certificate(s) - see [Process for Review and Approval of Externally Operated Subordinate CAs][Process-for-External-CAs]; or,
 * ownership or control of the CA’s operations changes; or
 * there is a change in the CA's operations that could affect the CA's ability to comply with the requirements of this Policy.
