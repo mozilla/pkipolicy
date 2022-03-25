@@ -747,6 +747,7 @@ The CA's subscriber agreement for TLS end-entity certificates MUST inform certif
 If the certificate is revoked for a reason not listed below, then the reasonCode extension MUST NOT be provided in the CRL.
 
 **keyCompromise** 
+
 The CRLReason keyCompromise MUST be used when one or more of the following occurs:
 *   the CA obtains verifiable evidence that the certificate subscriber’s private key corresponding to the public key in the certificate suffered a key compromise;
 *   the CA is made aware of a demonstrated or proven method that exposes the certificate subscriber’s private key to compromise;
@@ -755,8 +756,8 @@ The CRLReason keyCompromise MUST be used when one or more of the following occur
 *   the certificate subscriber requests that the CA revoke the certificate for this reason, with the scope of revocation being described below.
 
 The scope of revocation depends on whether the certificate subscriber has proven possession of the private key of the certificate. A CSR alone does not prove possession of the certificate’s private key for the purpose of initiating a revocation.
-If anyone requesting revocation has previously demonstrated or can currently demonstrate possession of the private key of the certificate, then the CA MUST revoke all instances of that key across all subscribers. 
-If the certificate subscriber requests that the CA revoke the certificate for keyCompromise, and has not previously demonstrated and cannot currently demonstrate possession of the associated private key of that certificate, the CA MAY revoke all certificates associated with that subscriber that contain that public key. The CA MUST NOT assume that it has evidence of private key compromise for the purposes of revoking the certificates of other subscribers, but MAY block issuance of future certificates with that key for that subscriber.
+*   If anyone requesting revocation has previously demonstrated or can currently demonstrate possession of the private key of the certificate, then the CA MUST revoke all instances of that key across all subscribers. 
+*   If the certificate subscriber requests that the CA revoke the certificate for keyCompromise, and has not previously demonstrated and cannot currently demonstrate possession of the associated private key of that certificate, the CA MAY revoke all certificates associated with that subscriber that contain that public key. The CA MUST NOT assume that it has evidence of private key compromise for the purposes of revoking the certificates of other subscribers, but MAY block issuance of future certificates with that key for that subscriber.
 
 When the CA obtains verifiable evidence of private key compromise for a certificate whose CRL entry does not contain a reasonCode extension or has a reasonCode extension with a non-keyCompromise reason, the CA SHOULD update the CRL entry to enter keyCompromise as the CRLReason in the reasonCode extension.  Additionally, the CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the certificate was compromised prior to the revocation date that is indicated in the CRL entry for that certificate. 
 Note: Backdating the revocationDate field is an exception to best practice described in RFC 5280 (section 5.3.2); however, this policy specifies the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the certificate is first considered to be compromised.
@@ -764,6 +765,7 @@ Note: Backdating the revocationDate field is an exception to best practice descr
 Otherwise, the keyCompromise CRLReason MUST NOT be used.
 
 **privilegeWithdrawn**
+
 The CRLReason privilegeWithdrawn MUST be used if one or more of the following occurs and has not resulted in keyCompromise as described above.
 *   the CA obtains evidence that the certificate was misused;
 *   the CA is made aware that the certificate subscriber has violated one or more of its material obligations under the subscriber agreement or terms of use;
@@ -775,6 +777,7 @@ The CRLReason privilegeWithdrawn MUST be used if one or more of the following oc
 Otherwise, the privilegeWithdrawn CRLReason MUST NOT be used.
 
 **cessationOfOperation**
+
 The CRLReason cessationOfOperation is intended to be used when the website with the certificate is shut down prior to the expiration of the certificate, or if the subscriber no longer owns or controls the domain name in the certificate. This revocation reason is intended to be used in the following circumstances:
 *   the certificate subscriber no longer owns the domain names in the certificate;
 *   the certificate subscriber will no longer be using the certificate because they are discontinuing their website;
@@ -788,6 +791,7 @@ The CRLReason cessationOfOperation MUST be used when:
 Otherwise, the cessationOfOperation CRLReason MUST NOT be used.
 
 **affiliationChanged** 
+
 The CRLReason affiliationChanged is intended to be used to indicate that the subject's name or other subject information in the certificate has changed, but there is no cause to suspect that the certificate’s private key has been compromised. 
 
 The CRLReason affiliationChanged MUST be used when:
@@ -797,6 +801,7 @@ The CRLReason affiliationChanged MUST be used when:
 Otherwise, the affiliationChanged CRLReason MUST NOT be used.
 
 **superseded**
+
 The CRLReason superseded is intended to be used to indicate when:
 *   the certificate subscriber has requested a new certificate to replace an existing certificate; or
 *   the CA obtains reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the certificate should not be relied upon; or
