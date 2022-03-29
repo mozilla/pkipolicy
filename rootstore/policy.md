@@ -351,20 +351,20 @@ Therefore:
     deal with these documents, and any later versions for root certificates
     which are included in Mozilla's trust store, under CC-BY-ND 4.0;
 
-4.  the documentation MUST be reviewed and updated as necessary at least once every
+4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
 year, as required by the Baseline Requirements. CAs MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
-5.  CPs and CPSes (or a combined CP/CPS) MUST be structured according to RFC 3647 and MUST:
+5.  all CPs, CPSes, and combined CP/CPSes MUST be structured according to RFC 3647 and MUST:
 
        * include at least every section and subsection defined in RFC 3647; 
        * only use the words "No Stipulation" to mean that the particular document 
 imposes no requirements related to that section; and
-       * contain no sections that are blank and have no subsections; *and*
+       * contain no sections that are blank and have no subsections; 
 
-6.  CA operators MUST provide a way to clearly determine which CP, CPS, or CP/CPS 
-applies to each of its root and intermediate certificates.
+6.  CA operators MUST provide a way to clearly determine which CP, CPS, or combined CP/CPS 
+applies to each of its root and intermediate certificates; *and*
 
 7.  CA operators SHALL maintain links to older versions of each CP and CPS (or CP/CPS) until all root CA certificate hierarchies operated in accordance with such documents are no longer trusted in the Mozilla root program. 
 
