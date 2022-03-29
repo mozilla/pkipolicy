@@ -504,7 +504,7 @@ value. The AlgorithmIdentifier structures describing the hash functions in the
 hashAlgorithm field and in the maskGenAlgorithm's parameter MUST themselves
 include an explicit NULL in the parameter field, as specified by [RFC 4055, Section 6](https://tools.ietf.org/html/rfc4055#section-6)
 
-Note: as of version 70, [RSASSA-PSS encodings are not supported by Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1088140).
+Note: as of Firefox version 100, [RSASSA-PSS encodings are supported](https://bugzilla.mozilla.org/show_bug.cgi?id=1088140).
 
 #### 5.1.2 ECDSA
 
