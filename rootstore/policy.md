@@ -315,7 +315,8 @@ If Mozilla determines that an audit provided does not meet the requirements of t
 In normal circumstances, Mozilla requires that audits MUST be performed
 by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c]. WebTrust auditors MUST be enrolled by CPA Canada in the [WebTrust for Certification Authorities program][WebTrust].
+A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI Audit Attestation Letters MUST follow the Audit Attestation Letter template on the [ACAB'c website](https://www.acab-c.com/downloads), and ETSI auditors SHOULD be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c] and follow the ACAB'c Charter and Code of Conduct. WebTrust audit statements MUST follow the practitioner guidance, principles, and illustrative assurance reports on the [CPA Canada website](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria), and WebTrust auditors SHOULD be listed as [enrolled WebTrust practitioners][WebTrust Practitioners] on the CPA Canada website.
+
 Each Audit Report MUST be accompanied by documentation provided to Mozilla of the [audit team qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the auditor. 
 
 If a CA operator wishes to use auditors who do not fit the definition of Qualified Auditor, then it MUST
@@ -1116,5 +1117,5 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
 [Process-for-External-CAs]: https://wiki.mozilla.org/CA/External_Sub_CAs_not_Technically_Constrained
 [ACAB'c]:                   https://www.acab-c.com/members/
-[WebTrust]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
+[WebTrust Practitioners]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
 
