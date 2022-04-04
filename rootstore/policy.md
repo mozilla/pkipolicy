@@ -367,7 +367,7 @@ imposes no requirements related to that section; and
 6.  CA operators MUST provide a way to clearly determine which CP, CPS, or combined CP/CPS 
 applies to each of its root and intermediate certificates; *and*
 
-7.  CA operators SHALL maintain links to older versions of each CP and CPS (or CP/CPS) until all root CA certificate hierarchies operated in accordance with such documents are no longer trusted in the Mozilla root program. 
+7.  CA operators SHALL maintain links to older versions of each CP and CPS (or CP/CPS), regardless of changes in ownership or control of the root CA, until the entire root CA certificate hierarchy operated in accordance with such documents is no longer trusted in the Mozilla root program. 
 
 ## 4. Common CA Database ##
 
