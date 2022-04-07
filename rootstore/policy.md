@@ -1077,6 +1077,37 @@ The regular annual audit statements MUST still happen in a timely manner.
 The organization(s) concerned MUST immediately [send a security report to
 Mozilla][Sec-Bugs] if a problem occurs.
 
+## 8.4 Externally-Operated Subordinate CAs
+
+The operator of a root CA certificate that is included in Mozilla’s root store is at all times completely and ultimately accountable for every certificate signed under that root CA certificate, whether directly or through subordinate CAs or cross-certified CAs. The operator of the root CA certificate SHALL ensure that the operator of each subordinate or cross-certified CA fully and continually adheres to this policy.
+
+The root CA operator MUST complete Mozilla’s [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs) (including successful review and approval by Mozilla) before a new externally-operated subordinate CA begins issuing certificates under any of the following conditions:
+
+- The subordinate CA operator will obtain a non-technically-constrained (per section 5.3.1 of this policy) CA certificate, and the subordinate CA operator is not approved by Mozilla to issue the type of certificates (email, TLS, or EV TLS), which they will be able to issue under the new CA certificate.
+- The root CA operator is cross-signing a root certificate of a CA operator who is not currently in Mozilla’s root store.
+- The root CA operator is cross-signing a root certificate of another CA operator who is currently in Mozilla’s root store, but the other CA operator has been approved for different trust bits (email, TLS, or EV TLS) than those trust bits that will be recognized under the cross-signed certificate that it will be receiving.
+
+We reserve the right to not approve subordinate CA certificates. This includes (but is not limited to) cases where we believe that approval of a subordinate CA operator would cause undue risks to users’ security. Mozilla is under no obligation to explain the reasoning behind such decisions.
+
+When any of the following conditions apply, the root CA operator is not required to perform Mozilla’s [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs) before the subordinate CA certificate begins issuing certificates:
+
+- The subordinate CA will be operated directly by the root CA operator under the exact same policies and practices of the root CA operator and within the same scope of audit reporting, and no new organizations will be involved in the management or operation of the CA.
+
+- The CA certificate is technically constrained as described in section 5.3.1 of this policy.
+
+- The subordinate CA operator:
+
+  - has previously undergone the [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs); 
+  - has been approved for the type of certificates to be issued (email, TLS, or EV TLS); and
+  - will operate under the same policies and practices as the previous review, and under the same scope of audit reporting as the prior subordinate CA certificate. (Newer versions of policies and practices MAY be used, provided that the subordinate CA operator follows the same versions of the policies for both the existing and new CA certificates.)
+
+- As of May 1, 2022, the subordinate CA operator was already transitively trusted for issuing the same type of certificates under an existing subordinate CA certificate issued by a root CA in Mozilla’s trust store.
+
+- The root CA operator is cross-signing a root certificate of another CA operator that is currently in Mozilla’s root store, and that other CA operator:
+
+  - will only be able to issue the same type of certificate (email, TLS, or EV TLS) that they are already approved for in Mozilla’s root store; and 
+  - will operate both the cross-signed certificate and their root certificate under the same policies, practices, and scope of audit that their root certificate was approved for. (Newer versions of policies and practices MAY be used, provided that the cross-signed CA operator follows the same versions of the policies for both the cross-signed certificate and their root certificate.)
+
 -----
 
 Any copyright in this document is [dedicated to the Public Domain][CC-0].
@@ -1115,7 +1146,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
-[Process-for-External-CAs]: https://wiki.mozilla.org/CA/External_Sub_CAs_not_Technically_Constrained
+[Process-for-External-CAs]: https://wiki.mozilla.org/CA/External_Sub_CAs
 [ACAB'c]:                   https://www.acab-c.com/members/
 [WebTrust Practitioners]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
 
