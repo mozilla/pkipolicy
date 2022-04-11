@@ -627,9 +627,7 @@ contain the KeyPurposeId anyExtendedKeyUsage.
 
 ### 5.3 Intermediate Certificates ###
 
-All certificates that are capable of being used to issue working server or email certificates and
-that directly or transitively chain to a CA certificate included in Mozilla’s CA
-Certificate Program MUST be operated in accordance with this policy and disclosed in the CCADB.
+All certificates that are capable of being used to issue new certificates and that directly or transitively chain to a CA certificate included in Mozilla’s CA Certificate Program MUST be operated in accordance with this policy and MUST either be technically constrained or be publicly disclosed and audited.
 
 A certificate is deemed as capable of being used to issue new
 certificates if it contains an [X.509v3 basicConstraints extension][5280-6.1.4]
