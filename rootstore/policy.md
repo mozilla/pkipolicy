@@ -83,7 +83,7 @@ CA operators whose certificates are included in Mozilla's root program MUST:
 1.  provide some service relevant to users of our software
     products;
 2.  follow industry best practice for securing their networks, for example
-    by conforming to the [CAB Forum Network Security Guidelines][NSGs] or a
+    by conforming to the [CA/Browser Forum's Network and Certificate System Security Requirements][NSRs] or a
     successor document;
 3.  enforce multi-factor authentication for all accounts capable of causing
     certificate issuance or performing Registration Authority or Delegated
@@ -1112,7 +1112,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [MDSP]:                     https://groups.google.com/a/mozilla.org/g/dev-security-policy 
 [EVGLs]:                    https://cabforum.org/extended-validation/
 [BRs]:                      https://cabforum.org/baseline-requirements-documents/
-[NSGs]:                     https://cabforum.org/network-security/
+[NSRs]:                     https://cabforum.org/network-security-requirements/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.02.02_60/en_31941101v010202p.pdf
 [ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.02.02_60/en_31941102v020202p.pdf
 [WebTrust-2.2.1]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
