@@ -36,8 +36,7 @@ following (and the CA operators that control or issue them):
 
 2.  Intermediate certificates that have at least one valid, unrevoked chain up
     to such a CA certificate and that are technically capable of issuing 
-    working server or email certificates. Intermediate certificates that are not   
-    considered to be technically capable will contain either:
+    working server or email certificates. Intermediate certificates that are not considered to be technically capable will contain either:
 
     * an Extended Key Usage (EKU) extension that does not contain any of
       these KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
@@ -741,7 +740,7 @@ When an end-entity TLS certificate (i.e. a certificate capable of being used for
 *   affiliationChanged (RFC 5280 CRLReason #3)
 *   superseded (RFC 5280 CRLReason #4)
 
-The CA's subscriber agreement for TLS end-entity certificates MUST inform certificate subscribers about the revocation reason options listed above and provide explanation about when to choose each option. Tools that the CA provides to the certificate subscriber MUST allow for these options to be easily specified when the certificate subscriber requests revocation of their certificate, with the default value being that no revocation reason is provided (i.e. the default corresponds to the CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL). 
+The CA's subscriber agreement for TLS end-entity certificates MUST inform certificate subscribers about the revocation reason options listed above and [provide explanation about when to choose each option][Revocation-Reasons]. Tools that the CA provides to the certificate subscriber MUST allow for these options to be easily specified when the certificate subscriber requests revocation of their certificate, with the default value being that no revocation reason is provided (i.e. the default corresponds to the CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL). 
 
 ** The privilegeWithdrawn reasonCode does not need to be made available to the certificate subscriber as a revocation reason option, because the use of this reasonCode is determined by the CA and not the subscriber.
 
@@ -862,8 +861,7 @@ based on the risks of
 such inclusion to typical users of our products. We will consider adding
 additional CA certificates to the default certificate set upon request only by
 an authorized representative of the subject CA. We will make such decisions
-through a public process. This public-review-and-discussion process SHALL also occur for any CA operator obtaining a new unconstrained CA certificate that has not previously undergone such process, regardless of the fact that the CA operator previously obtained an unconstrained CA certificate from another CA operator that is already in the program. In other words, this includes CA operators with intermediate CAs that are currently trusted by Mozilla who do not have root CAs trusted by Mozilla (i.e. there is no exception for CA operators who have not previously undergone a public-review-and-discussion process by Mozilla). See [Process for Review and Approval of Externally Operated Subordinate CAs][Process-for-External-CAs].
-
+through a public process.
 
 We will not charge any fees to have a CA’s certificate(s)
 included in Mozilla's root program.
@@ -1092,19 +1090,13 @@ We reserve the right to not approve subordinate CA certificates. This includes (
 When any of the following conditions apply, the root CA operator is not required to perform Mozilla’s [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs) before the subordinate CA certificate begins issuing certificates:
 
 - The subordinate CA will be operated directly by the root CA operator under the exact same policies and practices of the root CA operator and within the same scope of audit reporting, and no new organizations will be involved in the management or operation of the CA.
-
 - The CA certificate is technically constrained as described in section 5.3.1 of this policy.
-
 - The subordinate CA operator:
-
   - has previously undergone the [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs); 
   - has been approved for the type of certificates to be issued (email, TLS, or EV TLS); and
   - will operate under the same policies and practices as the previous review, and under the same scope of audit reporting as the prior subordinate CA certificate. (Newer versions of policies and practices MAY be used, provided that the subordinate CA operator follows the same versions of the policies for both the existing and new CA certificates.)
-
 - As of May 1, 2022, the subordinate CA operator was already transitively trusted for issuing the same type of certificates under an existing subordinate CA certificate issued by a root CA in Mozilla’s trust store.
-
 - The root CA operator is cross-signing a root certificate of another CA operator that is currently in Mozilla’s root store, and that other CA operator:
-
   - will only be able to issue the same type of certificate (email, TLS, or EV TLS) that they are already approved for in Mozilla’s root store; and 
   - will operate both the cross-signed certificate and their root certificate under the same policies, practices, and scope of audit that their root certificate was approved for. (Newer versions of policies and practices MAY be used, provided that the cross-signed CA operator follows the same versions of the policies for both the cross-signed certificate and their root certificate.)
 
@@ -1149,4 +1141,5 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Process-for-External-CAs]: https://wiki.mozilla.org/CA/External_Sub_CAs
 [ACAB'c]:                   https://www.acab-c.com/members/
 [WebTrust Practitioners]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
+[Revocation-Reasons]:        https://wiki.mozilla.org/CA/Revocation_Reasons
 
