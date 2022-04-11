@@ -23,7 +23,7 @@ such software are permitted to add or delete CA certificates and modify the
 values of the trust bits in the versions that they distribute. However,
 as with other software modifications, by making such changes a distributor may
 well affect its ability to use Mozilla trademarks in connection with its
-versions of the software. See the Mozilla trademark policy for more
+versions of the software. See the [Mozilla trademark policy][Trademark-Policy] for more
 information.
 
 ### 1.1 Scope ###
@@ -1104,6 +1104,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 
 [Email-Us]:                 mailto:certificates@mozilla.org
 [Bugzilla]:                 https://bugzilla.mozilla.org
+[Trademark-Policy]:         https://www.mozilla.org/foundation/trademarks/policy/
 [CA-Cert-Module]:           https://wiki.mozilla.org/Modules/Activities#CA_Certificates
 [CA-Policy-Module]:         https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
