@@ -314,7 +314,7 @@ If Mozilla determines that an audit provided does not meet the requirements of t
 In normal circumstances, Mozilla requires that audits MUST be performed
 by a Qualified Auditor, as defined in the Baseline Requirements section 8.2.
 
-A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI Audit Attestation Letters MUST follow the Audit Attestation Letter template on the [ACAB'c website](https://www.acab-c.com/downloads), and ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c] and follow the ACAB'c Charter and Code of Conduct. WebTrust audit statements MUST follow the practitioner guidance, principles, and illustrative assurance reports on the [CPA Canada website](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria), and WebTrust auditors MUST be listed as [enrolled WebTrust practitioners][WebTrust Practitioners] on the CPA Canada website. Mozilla MAY, at its sole discretion, decide to temporarily waive membership or enrollment requirements
+A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI Audit Attestation Letters MUST follow the Audit Attestation Letter template on the [ACAB'c website](https://www.acab-c.com/downloads), and ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c] and follow the ACAB'c Charter and Code of Conduct. WebTrust audit statements MUST follow the practitioner guidance, principles, and illustrative assurance reports on the [CPA Canada website](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria), and WebTrust auditors MUST be listed as [enrolled WebTrust practitioners][WebTrust Practitioners] on the CPA Canada website. Mozilla MAY, at its sole discretion, decide to temporarily waive membership or enrollment requirements.
 
 Each Audit Report MUST be accompanied by documentation provided to Mozilla of the [audit team qualifications][Auditor-Qualifications] sufficient for Mozilla to determine the competence, experience, and independence of the auditor. 
 
@@ -981,7 +981,7 @@ are included in Mozilla's root program MUST [notify Mozilla][Email-Us] before:
 * ownership or control of the CA’s certificate(s) changes;
 * an organization other than the CA operator obtains control of an unconstrained 
 intermediate certificate (as defined in section 5.3 of this policy) that 
-directly or transitively chains to the CA's included certificate(s) - see [Process for Review and Approval of Externally Operated Subordinate CAs][Process-for-External-CAs]; or,
+directly or transitively chains to the CA's included certificate(s) - see [Process for non-Technically-Constrained Subordinate CAs][Process-for-External-CAs]; or,
 * ownership or control of the CA’s operations changes; or
 * there is a change in the CA's operations that could affect the CA's ability to comply with the requirements of this Policy.
 
@@ -1077,7 +1077,7 @@ Mozilla][Sec-Bugs] if a problem occurs.
 
 The operator of a root CA certificate that is included in Mozilla’s root store is at all times completely and ultimately accountable for every certificate signed under that root CA certificate, whether directly or through subordinate CAs or cross-certified CAs. The operator of the root CA certificate SHALL ensure that the operator of each subordinate or cross-certified CA fully and continually adheres to this policy.
 
-The root CA operator MUST complete Mozilla’s [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs) (including successful review and approval by Mozilla) before a new externally-operated subordinate CA begins issuing certificates under any of the following conditions:
+The root CA operator MUST complete Mozilla’s [Process for non-Technically-Constrained Subordinate CAs][Process-for-External-CAs] (including successful review and approval by Mozilla) before a new externally-operated subordinate CA begins issuing certificates under any of the following conditions:
 
 - The subordinate CA operator will obtain a non-technically-constrained (per section 5.3.1 of this policy) CA certificate, and the subordinate CA operator is not approved by Mozilla to issue the type of certificates (email, TLS, or EV TLS), which they will be able to issue under the new CA certificate.
 - The root CA operator is cross-signing a root certificate of a CA operator who is not currently in Mozilla’s root store.
@@ -1085,12 +1085,12 @@ The root CA operator MUST complete Mozilla’s [Process for non-Technically-Cons
 
 We reserve the right to not approve subordinate CA certificates. This includes (but is not limited to) cases where we believe that approval of a subordinate CA operator would cause undue risks to users’ security. Mozilla is under no obligation to explain the reasoning behind such decisions.
 
-When any of the following conditions apply, the root CA operator is not required to perform Mozilla’s [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs) before the subordinate CA certificate begins issuing certificates:
+When any of the following conditions apply, the root CA operator is not required to perform Mozilla’s [Process for non-Technically-Constrained Subordinate CAs][Process-for-External-CAs] before the subordinate CA certificate begins issuing certificates:
 
 - The subordinate CA will be operated directly by the root CA operator under the exact same policies and practices of the root CA operator and within the same scope of audit reporting, and no new organizations will be involved in the management or operation of the CA.
 - The CA certificate is technically constrained as described in section 5.3.1 of this policy.
 - The subordinate CA operator:
-  - has previously undergone the [Process for non-Technically-Constrained Subordinate CAs](https://wiki.mozilla.org/CA/External_Sub_CAs); 
+  - has previously undergone the [Process for non-Technically-Constrained Subordinate CAs][Process-for-External-CAs]; 
   - has been approved for the type of certificates to be issued (email, TLS, or EV TLS); and
   - will operate under the same policies and practices as the previous review, and under the same scope of audit reporting as the prior subordinate CA certificate. (Newer versions of policies and practices MAY be used, provided that the subordinate CA operator follows the same versions of the policies for both the existing and new CA certificates.)
 - As of May 1, 2022, the subordinate CA operator was already transitively trusted for issuing the same type of certificates under an existing subordinate CA certificate issued by a root CA in Mozilla’s trust store.
