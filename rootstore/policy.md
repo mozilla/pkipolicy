@@ -210,12 +210,12 @@ following documents to be acceptable:
 *   WebTrust "[Principles and Criteria for Certification Authorities -
     Extended Validation SSL 1.7.3][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-*   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.2.2 or
+*   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.3.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 1: General requirements][ETSI-319-411-1],
     specifying a policy or policies appropriate to the trust bit(s) being
     applied for;
-*   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.2.2 or
+*   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.4.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 2: Requirements for trust service providers
     issuing EU qualified certificates][ETSI-319-411-2], specifying a
@@ -1112,8 +1112,8 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [EVGLs]:                    https://cabforum.org/extended-validation/
 [BRs]:                      https://cabforum.org/baseline-requirements-documents/
 [NSRs]:                     https://cabforum.org/network-security-requirements/
-[ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.02.02_60/en_31941101v010202p.pdf
-[ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.02.02_60/en_31941102v020202p.pdf
+[ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.03.01_60/en_31941101v010301p.pdf
+[ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.04.01_60/en_31941102v020401p.pdf
 [WebTrust-2.2.1]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
 [WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf
 [WebTrust-For-CAs]:         https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
