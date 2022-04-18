@@ -686,9 +686,9 @@ of the intermediate certificate, then the new intermediate certificate MUST appe
 CA operator's next periodic audit reports.
 
 ### 5.4 Precertificates ###
-Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in [section 3.2.1 of RFC 9162][9162-3.2.1] and its predecessor, RFC 6962, and thus in-scope for enforcing compliance with these requirements. Thus,
-* if any certificates with the same serial number and issuer exist, and one cannot be verified as the precertificate matching the final certificate using the algorithms in RFC 6962 or RFC 9162, this will be considered misissuance;
-* issuance of a precertificate that does not comply with this policy is considered equal to misissuance of a final certificate;
+Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in section 3.1 of RFC 6962, and thus in-scope for enforcing compliance with these requirements. Thus,
+* if a final certificate cannot be verified as matching a precertificate using the algorithms in RFC 6962, then two distinct final certificates are presumed to exist, and it is misissuance if the two final certificates have the same serial number and issuer, even if only one final certificate actually exists;
+* if a precertificate implies the existence of a final certificate that does not comply with this policy, it is considered misissuance of the final certificate, even if the certificate does not actually exist;
 * a CA must be able to revoke a certificate presumed to exist, if revocation of the certificate is required under this policy, even if the final certificate does not actually exist; and
 * a CA must provide CRL and OCSP services and responses in accordance with this policy for all certificates presumed to exist based on the presence of a precertificate, even if the certificate does not actually exist.
 
