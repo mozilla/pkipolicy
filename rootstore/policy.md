@@ -777,7 +777,7 @@ Otherwise, the privilegeWithdrawn CRLReason MUST NOT be used.
 **cessationOfOperation**
 
 The CRLReason cessationOfOperation is intended to be used when the website with the certificate is shut down prior to the expiration of the certificate, or if the subscriber no longer owns or controls the domain name in the certificate. This revocation reason is intended to be used in the following circumstances:
-*   the certificate subscriber no longer owns the domain names in the certificate;
+*   the certificate subscriber no longer controls, or is no longer authorized to use, all of the domain names in the certificate;
 *   the certificate subscriber will no longer be using the certificate because they are discontinuing their website; or
 *   the CA is made aware of any circumstance indicating that use of a fully‐qualified domain name or IP address in the certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a domain name registrant’s right to use the domain name, a relevant licensing or services agreement between the domain name registrant and the applicant has terminated, or the domain name registrant has failed to renew the domain name).
 
