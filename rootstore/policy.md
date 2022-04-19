@@ -686,7 +686,7 @@ of the intermediate certificate, then the new intermediate certificate MUST appe
 CA operator's next periodic audit reports.
 
 ### 5.4 Precertificates ###
-Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in section 3.1 of RFC 6962, and thus in-scope for enforcing compliance with these requirements. Thus,
+Certificate Transparency precertificates are considered by Mozilla to be a binding intent to issue a certificate, as described in [section 3.1 of RFC 6962][6962-3.1], and thus in-scope for enforcing compliance with these requirements. Thus,
 * if a final certificate cannot be verified as matching a precertificate using the algorithms in RFC 6962, then two distinct final certificates are presumed to exist, and it is misissuance if the two final certificates have the same serial number and issuer, even if only one final certificate actually exists;
 * if a precertificate implies the existence of a final certificate that does not comply with this policy, it is considered misissuance of the final certificate, even if the certificate does not actually exist;
 * a CA must be able to revoke a certificate presumed to exist, if revocation of the certificate is required under this policy, even if the final certificate does not actually exist; and
@@ -1125,7 +1125,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
 [5280-6.1.4]:               http://tools.ietf.org/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:            http://tools.ietf.org/html/rfc5280#section-4.2.1.12
-[9162-3.2.1]:               https://datatracker.ietf.org/doc/html/rfc9162#section-3.2.1
+[6962-3.1]:                 https://datatracker.ietf.org/doc/html/rfc6962#section-3.1
 [CA-Cert-Bug]:              https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
 [How-To-Apply]:             https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:             https://wiki.mozilla.org/CA/Certificate_Change_Process
