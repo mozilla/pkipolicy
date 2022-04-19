@@ -770,7 +770,7 @@ The CRLReason privilegeWithdrawn MUST be used if one or more of the following oc
 *   the CA is made aware that a wildcard certificate has been used to authenticate a fraudulently misleading subordinate fully‐qualified domain name;
 *   the CA is made aware of a material change in the information contained in the certificate; 
 *   the CA determines or is made aware that any of the information appearing in the certificate is inaccurate; or
-*   the CA is made aware that the original certificate request was not authorized and does not retroactively grant authorization.
+*   the CA is made aware that the original certificate request was not authorized and that the Subscriber does not retroactively grant authorization.
 
 Otherwise, the privilegeWithdrawn CRLReason MUST NOT be used.
 
