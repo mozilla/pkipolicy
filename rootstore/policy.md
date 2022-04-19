@@ -1078,9 +1078,9 @@ The operator of a root CA certificate that is included in Mozilla’s root store
 
 The root CA operator MUST complete Mozilla’s [Process for non-Technically-Constrained Subordinate CAs][Process-for-External-CAs] (including successful review and approval by Mozilla) before a new externally-operated subordinate CA begins issuing certificates under any of the following conditions:
 
-- The subordinate CA operator will obtain a non-technically-constrained (per section 5.3.1 of this policy) CA certificate, and the subordinate CA operator is not approved by Mozilla to issue the type of certificates (email, TLS, or EV TLS), which they will be able to issue under the new CA certificate.
-- The root CA operator is cross-signing a root certificate of a CA operator who is not currently in Mozilla’s root store.
-- The root CA operator is cross-signing a root certificate of another CA operator who is currently in Mozilla’s root store, but the other CA operator has been approved for different trust bits (email, TLS, or EV TLS) than those trust bits that will be recognized under the cross-signed certificate that it will be receiving.
+- The subordinate CA operator will obtain a unconstrained (per section 5.3.1 of this policy) CA certificate, and the subordinate CA operator is not approved by Mozilla to issue the type of certificates (email, TLS, or EV TLS), which they will be able to issue under the new CA certificate.
+- The root CA operator is cross-signing a CA certificate of a CA operator who is not currently in Mozilla’s root store.
+- The root CA operator is cross-signing a CA certificate of another CA operator who is currently in Mozilla’s root store, but the other CA operator has not been approved for the same trust bits (email or websites) or EV, and those trust bits or EV will be recognized under the cross-signed certificate that it will be receiving.
 
 We reserve the right to not approve subordinate CA certificates. This includes (but is not limited to) cases where we believe that approval of a subordinate CA operator would cause undue risks to users’ security. Mozilla is under no obligation to explain the reasoning behind such decisions.
 
@@ -1093,9 +1093,9 @@ When any of the following conditions apply, the root CA operator is not required
   - has been approved for the type of certificates to be issued (email, TLS, or EV TLS); and
   - will operate under the same policies and practices as the previous review, and under the same scope of audit reporting as the prior subordinate CA certificate. (Newer versions of policies and practices MAY be used, provided that the subordinate CA operator follows the same versions of the policies for both the existing and new CA certificates.)
 - As of May 1, 2022, the subordinate CA operator was already transitively trusted for issuing the same type of certificates under an existing subordinate CA certificate issued by a root CA in Mozilla’s trust store.
-- The root CA operator is cross-signing a root certificate of another CA operator that is currently in Mozilla’s root store, and that other CA operator:
+- The root CA operator is cross-signing a CA certificate of another CA operator that is currently in Mozilla’s root store, and that other CA operator:
   - will only be able to issue the same type of certificate (email, TLS, or EV TLS) that they are already approved for in Mozilla’s root store; and 
-  - will operate both the cross-signed certificate and their root certificate under the same policies, practices, and scope of audit that their root certificate was approved for. (Newer versions of policies and practices MAY be used, provided that the cross-signed CA operator follows the same versions of the policies for both the cross-signed certificate and their root certificate.)
+  - will operate both the cross-signed certificate and their CA certificate(s) under the same policies, practices, and scope of audit that their CA certificate was approved for. Newer versions of policies and practices MAY be used, provided that the cross-signed CA operator follows the same versions of the policies for both the cross-signed certificate and their CA certificate(s).
 
 -----
 
