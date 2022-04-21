@@ -764,7 +764,9 @@ Otherwise, the keyCompromise CRLReason MUST NOT be used.
 
 **privilegeWithdrawn**
 
-The CRLReason privilegeWithdrawn MUST be used if one or more of the following occurs and has not resulted in keyCompromise as described above.
+The CRLReason privilegeWithdrawn is intended to be used when there has been a subscriber-side infraction that has not resulted in keyCompromise, such as the certificate subscriber provided misleading information in their certificate request or has not upheld their material obligations under the subscriber agreement or terms of use.
+
+Unless the keyCompromise CRLReason is being used, the CRLReason privilegeWithdrawn MUST be used when:
 *   the CA obtains evidence that the certificate was misused;
 *   the CA is made aware that the certificate subscriber has violated one or more of its material obligations under the subscriber agreement or terms of use;
 *   the CA is made aware that a wildcard certificate has been used to authenticate a fraudulently misleading subordinate fully‐qualified domain name;
@@ -789,7 +791,7 @@ Otherwise, the cessationOfOperation CRLReason MUST NOT be used.
 
 **affiliationChanged** 
 
-The CRLReason affiliationChanged is intended to be used to indicate that the subject's name or other subject information in the certificate has changed, but there is no cause to suspect that the certificate’s private key has been compromised. 
+The CRLReason affiliationChanged is intended to be used to indicate that the subject's name or other subject identity information in the certificate has changed, but there is no cause to suspect that the certificate’s private key has been compromised. 
 
 Unless the keyCompromise CRLReason is being used, the CRLReason affiliationChanged MUST be used when:
 *   the certificate subscriber has requested that their certificate be revoked for this reason; or 
