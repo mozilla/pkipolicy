@@ -68,7 +68,7 @@ regarding all matters relating to CA certificates included in our root store.
 Further, Mozilla has appointed a [Mozilla CA Certificate Policy module
 owner][CA-Policy-Module] and peers to maintain this policy. The policy will
 only be changed after public consultation with the Mozilla community, in order
-to ensure that all views are taken into account. This policy MAY be updated periodically in accordance with the [Process for Updating the Root Store Policy][Policy-Update-Process]. CAs MUST adhere to the current version of this policy. You can contact the Mozilla CA
+to ensure that all views are taken into account. This policy MAY be updated periodically in accordance with the [Process for Updating the Root Store Policy][Policy-Update-Process]. CA operators MUST adhere to the current version of this policy. You can contact the Mozilla CA
 Certificate Policy module team at [certificates@mozilla.org][Email-Us] if you
 have questions about this policy.
 
@@ -127,25 +127,25 @@ meets or exceeds the following requirements:
     on validation the CA has performed for 
     an Authorization Domain Name (as specified in the Baseline Requirements) 
     as being valid for subdomains of that Authorization Domain Name. 
-    The CA's CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) 
+    The CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) 
     that the CA employs to perform this verification;
 3.  for a certificate capable of being used for TLS-enabled servers, the CA
-    must ensure that the applicant has registered all domain(s) referenced
+    MUST ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
-    act on their behalf. This must be done using one or more of the
-    methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA's
+    act on their behalf. This MUST be done using one or more of the
+    methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
-    each documented procedure should state which subsection of 3.2.2.4 it is
+    each documented procedure SHOULD state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address);
 4.  for a certificate capable of being used for TLS-enabled servers, the CA
-    must ensure that the applicant has control over all IP Address(es) referenced
-    in the certificate. This must be done using one or more of the
-    methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA's
-    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
-    each documented procedure should state which subsection of 3.2.2.5 it is
+    MUST ensure that the applicant has control over all IP Address(es) referenced
+    in the certificate. This MUST be done using one or more of the
+    methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA operator's
+    CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
+    each documented procedure SHOULD state which subsection of 3.2.2.5 it is
     complying with; *and*
-5.  for certificates marked as Extended Validation, the CA MUST comply with the
+5.  for certificates marked as Extended Validation, CA operators MUST comply with the
     latest version of the [Guidelines for the Issuance and Management of
     Extended Validation Certificates][EVGLs].
 
@@ -160,8 +160,8 @@ CA operations relating to issuance of certificates capable of being used for
 TLS-enabled servers MUST also conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
 Certificates][BRs] ("Baseline Requirements"). In the event of inconsistency
-between Mozilla’s Root Store Policy requirements and the Baseline Requirements,
-Mozilla’s Root Store Policy takes precedence. The following is a list of known
+between this policy's requirements and the Baseline Requirements,
+this policy's requirements take precedence. The following is a list of known
 places where this policy takes precedence over the Baseline Requirements. If
 you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
@@ -185,7 +185,7 @@ a misissuance, a procedural or operational issue, or any other variety of
 non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report]. Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding Incident Report. CA operators 
 MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
-CAs SHOULD cease issuance until the problem has been prevented from reoccurring.  
+CA operators SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
 
@@ -354,7 +354,7 @@ Therefore:
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
 4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-year, as required by the Baseline Requirements. CAs MUST indicate that this has
+year, as required by the Baseline Requirements. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
@@ -713,7 +713,7 @@ via an Online Certificate Status Protocol (OCSP) service:
     before or equal to the notAfter date of the CA certificate which
     issued the certificate that the BasicOCSPResponse is for.
 
-Section 4.9.12 of a CA's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the methods that parties may use to demonstrate private key compromise.
+Section 4.9.12 of a CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the methods that parties may use to demonstrate private key compromise.
 
 ### 6.1 TLS ###
 
@@ -739,7 +739,7 @@ When an end entity TLS certificate (i.e. a certificate capable of being used for
 
 The CA operator's subscriber agreement for TLS end entity certificates MUST inform certificate subscribers about the revocation reason options listed above and [provide explanation about when to choose each option][Revocation-Reasons]. Tools that the CA operator provides to the certificate subscriber MUST allow for these options to be easily specified when the certificate subscriber requests revocation of their certificate, with the default value being that no revocation reason is provided (i.e. the default corresponds to the CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL). 
 
-** The privilegeWithdrawn reasonCode does not need to be made available to the certificate subscriber as a revocation reason option, because the use of this reasonCode is determined by the CA and not the subscriber.
+** The privilegeWithdrawn reasonCode does not need to be made available to the certificate subscriber as a revocation reason option, because the use of this reasonCode is determined by the CA operator and not the subscriber.
 
 If the certificate is revoked for a reason not listed below, then the reasonCode extension MUST NOT be provided in the CRL.
 
@@ -753,11 +753,11 @@ The CRLReason keyCompromise MUST be used when one or more of the following occur
 *   the certificate subscriber requests that the CA operator revoke the certificate for this reason, with the scope of revocation being described below.
 
 The scope of revocation depends on whether the certificate subscriber has proven possession of the private key of the certificate. A CSR alone does not prove possession of the certificate’s private key for the purpose of initiating a revocation.
-*   If anyone requesting revocation for keyCompromise has previously demonstrated or can currently demonstrate possession of the private key of the certificate, then the CA operator MUST revoke all instances of that key across all subscribers. 
+*   If anyone requesting revocation for keyCompromise has previously demonstrated or can currently [demonstrate possession of the private key of the certificate](https://wiki.mozilla.org/CA/Revocation_Reasons#Possession_of_Private_Key), then the CA operator MUST revoke all instances of that key across all subscribers. 
 *   If the certificate subscriber requests that the CA operator revoke the certificate for keyCompromise, and has not previously demonstrated and cannot currently demonstrate possession of the associated private key of that certificate, the CA operator MAY revoke all certificates associated with that subscriber that contain that public key. The CA operator MUST NOT assume that it has evidence of private key compromise for the purposes of revoking the certificates of other subscribers, but MAY block issuance of future certificates with that key.
 
 When the CA operator obtains verifiable evidence of private key compromise for a certificate whose CRL entry does not contain a reasonCode extension or has a reasonCode extension with a non-keyCompromise reason, the CA operator SHOULD update the CRL entry to enter keyCompromise as the CRLReason in the reasonCode extension.  Additionally, the CA operator SHOULD update the revocation date in a CRL entry when it is determined that the private key of the certificate was compromised prior to the revocation date that is indicated in the CRL entry for that certificate. 
-Note: Backdating the revocationDate field is an exception to best practice described in RFC 5280 (section 5.3.2); however, this policy specifies the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the certificate is first considered to be compromised.
+Note: [Backdating the revocationDate field](https://wiki.mozilla.org/CA/Revocation_Reasons#Updating_CRL_Entries) is an exception to best practice described in RFC 5280 (section 5.3.2); however, this policy specifies the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the certificate is first considered to be compromised.
 
 Otherwise, the keyCompromise CRLReason MUST NOT be used.
 
