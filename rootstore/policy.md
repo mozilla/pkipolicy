@@ -427,8 +427,8 @@ including:
 
 When RSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
 field MUST consist of an rsaEncryption OID (1.2.840.113549.1.1.1) with a NULL
-parameter, as specified by [RFC 8017, Appendix A.1](https://tools.ietf.org/html/rfc8017#appendix-A.1)
-and [RFC 3279, Section 2.3.1](https://tools.ietf.org/html/rfc3279#section-2.3.1).
+parameter, as specified by [RFC 8017, Appendix A.1](https://datatracker.ietf.org/doc/html/rfc8017#appendix-A.1)
+and [RFC 3279, Section 2.3.1](https://datatracker.ietf.org/doc/html/rfc3279#section-2.3.1).
 The encoded AlgorithmIdentifier for an RSA key MUST match the
 following hex-encoded bytes:
 `300d06092a864886f70d0101010500`.
@@ -494,7 +494,7 @@ encoding requirements:
 
 The above RSASSA-PKCS1-v1_5 encodings consist of the corresponding OID,
 e.g. sha256WithRSAEncryption (1.2.840.113549.1.1.11), with an explicit NULL
-parameter, as specified in [RFC 3279, Section 2.2.1](https://tools.ietf.org/html/rfc3279#section-2.2.1).
+parameter, as specified in [RFC 3279, Section 2.2.1](https://datatracker.ietf.org/doc/html/rfc3279#section-2.2.1).
 Certificates MUST NOT omit this NULL parameter. Note this differs
 from ECDSA, which omits the parameter.
 
@@ -503,14 +503,14 @@ The above RSASSA-PSS encodings consist of the RSASSA-PSS OID
 parameter. The trailerField MUST be omitted, as it is unchanged from the default
 value. The AlgorithmIdentifier structures describing the hash functions in the
 hashAlgorithm field and in the maskGenAlgorithm's parameter MUST themselves
-include an explicit NULL in the parameter field, as specified by [RFC 4055, Section 6](https://tools.ietf.org/html/rfc4055#section-6).
+include an explicit NULL in the parameter field, as specified by [RFC 4055, Section 6](https://datatracker.ietf.org/doc/html/rfc4055#section-6).
 
 Note: as of Firefox version 100, [RSASSA-PSS encodings are supported](https://bugzilla.mozilla.org/show_bug.cgi?id=1088140).
 
 #### 5.1.2 ECDSA
 
 When ECDSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
-field MUST be one of the following, as specified by [RFC 5480, Section 2.1.1](https://tools.ietf.org/html/rfc5480#section-2.1.1):
+field MUST be one of the following, as specified by [RFC 5480, Section 2.1.1](https://datatracker.ietf.org/doc/html/rfc5480#section-2.1.1):
 
   * the encoded AlgorithmIdentifier for a P-256 key MUST match the following
   hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`; *or*
@@ -535,7 +535,7 @@ encoding requirements:
   `300a06082a8648ce3d040303`.
 
 The above encodings consist of the corresponding OID with the parameters field
-omitted, as specified by [RFC 5758, Section 3.2](https://tools.ietf.org/html/rfc5758#section-3.2).
+omitted, as specified by [RFC 5758, Section 3.2](https://datatracker.ietf.org/doc/html/rfc5758#section-3.2).
 Certificates MUST NOT include a NULL parameter. Note this differs from
 RSASSA-PKCS1-v1_5, which includes an explicit NULL.
 
@@ -1124,8 +1124,8 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CC-0]:                     https://creativecommons.org/publicdomain/zero/1.0/
 [CCADB-Policy]:             https://www.ccadb.org/policy
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
-[5280-6.1.4]:               http://tools.ietf.org/html/rfc5280#section-6.1.4
-[5280-4.2.1.12]:            http://tools.ietf.org/html/rfc5280#section-4.2.1.12
+[5280-6.1.4]:               https://datatracker.ietf.org/doc/html/rfc5280#section-6.1.4
+[5280-4.2.1.12]:            https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12
 [6962-3.1]:                 https://datatracker.ietf.org/doc/html/rfc6962#section-3.1
 [CA-Cert-Bug]:              https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
 [How-To-Apply]:             https://wiki.mozilla.org/CA/Application_Process
