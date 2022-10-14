@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
-*Version 2.8*
+*Version 2.8.1*
 
-*[Effective June 1, 2022][Policy-Archive]*
+*[Effective xxx, 2022][Policy-Archive]*
 
 ## 1. Introduction ##
 
@@ -973,6 +973,22 @@ contrary to this policy, Mozilla will publicize
 that fact (for example, in newsgroups on the
 news.mozilla.org server, and on our websites) and MAY also alert 
 relevant news or government organizations such as US-CERT.
+
+### 7.4 Root CA Life Cycles ###
+Root CA certificates included in the Mozilla root store will be distrusted when their CA key material is over 15 years old. The date of CA key material generation SHALL be determined by reference to the auditor’s key generation ceremony report. For key material generated before July 1, 2012, Mozilla will assume that the key material was generated on the “Valid From” date in the root CA certificate. For transition purposes, root CA certificates in the Mozilla root store will be distrusted according to the following schedule:  
+
+| Key Material Created | 	Distrust Date|
+|-------------|-------------|
+| Before January 1, 2006 |	April 15, 2025 |
+| 2006-2007 |	April 15, 2026 |
+| 2008-2009 |	April 15, 2027 |
+| 2010-2011 |	April 15, 2028 |
+| 2012- April 14, 2014 | 	April 15, 2029 |
+| April 15, 2014 - present | 	15 years from creation |
+
+This schedule is subject to change if underlying algorithms become more susceptible to cryptanalytic attack or if other circumstances arise that make this schedule obsolete.
+
+CA operators MUST apply to Mozilla for inclusion of their next generation root certificate at least 2 years before the Distrust Date above.
 
 ## 8. CA Operational Changes ##
 
