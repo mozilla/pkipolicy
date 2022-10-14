@@ -134,8 +134,8 @@ meets or exceeds the following requirements:
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This MUST be done using one or more of the
     methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA operator's
-    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
-    each documented procedure SHOULD state which subsection of 3.2.2.4 it is
+    CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
+    each documented procedure MUST state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address);
 4.  for a certificate capable of being used for TLS-enabled servers, the CA
@@ -368,7 +368,7 @@ imposes no requirements related to that section; and
 6.  CA operators MUST provide a way to clearly determine which CP, CPS, or combined CP/CPS 
 applies to each of its root and intermediate certificates; *and*
 
-7.  CA operators SHALL maintain links to older versions of each CP and CPS (or CP/CPS), regardless of changes in ownership or control of the root CA, until the entire root CA certificate hierarchy operated in accordance with such documents is no longer trusted by the Mozilla root store. 
+7.  Effective December 31, 2022, CA operators SHALL maintain links in their online repositories to all reasonably available historic versions of CPs and CPSes (or CP/CPSes) from the creation of included CAs, regardless of changes in ownership or control of such CAs, until the entire CA certificate hierarchies (i.e. end entity certificates, intermediate CA certificates, and cross-certificates) operated in accordance with such documents are no longer trusted by the Mozilla root store. 
 
 ## 4. Common CA Database ##
 
@@ -385,7 +385,7 @@ CCADB Policy, as indicated below in this section 4.
 
 ### 4.1 Additional Requirements ###
 
-* Effective October 1, 2022, CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs"; *and*
+* CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs" within 7 days of such intermediate CA issuing its first certificate; *and*
 * if the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root store is due to a security concern, as well as performing the
 actions defined in the CCADB Policy, a [security bug MUST be filed in
