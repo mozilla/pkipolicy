@@ -103,9 +103,8 @@ CA operators whose certificates are included in Mozilla's root store MUST:
 7.  ensure that all certificates within the scope of this policy, 
     as described in Section 1.1, adhere to this policy.
 
-CA operators MUST follow and be aware of discussions in 
-[Mozilla's dev-security-policy][MDSP] forum, where Mozilla's root store is
-coordinated. They are encouraged, but not required, to contribute to those
+CA operators MUST follow and be aware of discussions in both the
+[Mozilla dev-security-policy][MDSP] forum and the [CCADB Public List][CCADB-List], where root store policies and program updates are announced and public discussions of root inclusion requests occur. They are encouraged, but not required, to contribute to those
 discussions.
 
 ### 2.2 Validation Practices ###
@@ -1122,6 +1121,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CC-BY-SA]:                 https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:                 https://creativecommons.org/licenses/by-nd/4.0/
 [CC-0]:                     https://creativecommons.org/publicdomain/zero/1.0/
+[CCADB-List]:               https://groups.google.com/a/ccadb.org/g/public
 [CCADB-Policy]:             https://www.ccadb.org/policy
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
 [5280-6.1.4]:               https://datatracker.ietf.org/doc/html/rfc5280#section-6.1.4
