@@ -2,7 +2,7 @@
 
 *Version 2.8.1*
 
-*[Effective xxx, 2022][Policy-Archive]*
+*[Effective xxx, 2023][Policy-Archive]*
 
 ## 1. Introduction ##
 
@@ -385,7 +385,7 @@ CCADB Policy, as indicated below in this section 4.
 ### 4.1 Additional Requirements ###
 
 * CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs" within 7 days of such intermediate CA issuing its first certificate; 
-* Each CRL referenced by the JSON Array of Partitioned CRLs MUST contain a critical Issuing Distribution Point extension. The Issuing Distribution Point extension MUST contain a distributionPoint containing a UniformResourceIdentifier whose value equals the URL of the CRL in the JSON Array of Partitioned CRL; *and*
+* Each CRL referenced by the JSON Array of Partitioned CRLs MUST contain a critical Issuing Distribution Point extension as described in section 6.3; *and*
 * if the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root store is due to a security concern, as well as performing the
 actions defined in the CCADB Policy, a [security bug MUST be filed in
@@ -846,6 +846,13 @@ to have been compromised;
 in its policy documentation; *or*
 12. the certificate was issued in violation of the then-current 
 version of these requirements.
+
+### 6.3 CRLs ###
+
+A CRL whose scope does not include all unexpired certificates that are issued by the CA SHALL contain a critical Issuing Distribution Point extension. The distributionPoint field of the extension SHALL include a UniformResourceIdentifier whose value is derived from one of the two following sources:
+
+1.    The UniformResourceIdentifier as encoded in the distributionPoint field of an issued certificate's CRL Distribution Points extension (see RFC 5280 section 5.2.5); or
+2.    The URL as included in the "JSON Array of Partitioned CRLs" field in the CCADB entry corresponding to the certificate for the issuing CA.
 
 ## 7. Root Store Changes ##
 
