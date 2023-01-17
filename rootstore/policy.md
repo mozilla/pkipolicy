@@ -353,7 +353,7 @@ Therefore:
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
 4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-year, as required by the Baseline Requirements. CA operators MUST indicate that this has
+365 days, as required by the Baseline Requirements. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
