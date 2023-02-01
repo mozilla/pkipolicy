@@ -2,7 +2,7 @@
 
 *Version 2.8.1*
 
-*[Effective xxx, 2023][Policy-Archive]*
+*[Effective February 15, 2023][Policy-Archive]*
 
 ## 1. Introduction ##
 
