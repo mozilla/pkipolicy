@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
-*Version 2.8*
+*Version 2.8.1*
 
-*[Effective June 1, 2022][Policy-Archive]*
+*[Effective February 15, 2023][Policy-Archive]*
 
 ## 1. Introduction ##
 
@@ -103,9 +103,8 @@ CA operators whose certificates are included in Mozilla's root store MUST:
 7.  ensure that all certificates within the scope of this policy, 
     as described in Section 1.1, adhere to this policy.
 
-CA operators MUST follow and be aware of discussions in 
-[Mozilla's dev-security-policy][MDSP] forum, where Mozilla's root store is
-coordinated. They are encouraged, but not required, to contribute to those
+CA operators MUST follow and be aware of discussions in both the
+[Mozilla dev-security-policy][MDSP] forum and the [CCADB Public List][CCADB-List], where root store policies and program updates are announced and public discussions of root inclusion requests occur. They are encouraged, but not required, to contribute to those
 discussions.
 
 ### 2.2 Validation Practices ###
@@ -134,8 +133,8 @@ meets or exceeds the following requirements:
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This MUST be done using one or more of the
     methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA operator's
-    CPS (or, if applicable, the CP or CP/CPS) must clearly specify the procedure(s) that the CA employs, and
-    each documented procedure SHOULD state which subsection of 3.2.2.4 it is
+    CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
+    each documented procedure MUST state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
     to fulfill the requirements of method 3.2.2.4.8 (IP Address);
 4.  for a certificate capable of being used for TLS-enabled servers, the CA
@@ -354,7 +353,7 @@ Therefore:
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
 4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-year, as required by the Baseline Requirements. CA operators MUST indicate that this has
+365 days, as required by the Baseline Requirements. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
@@ -368,7 +367,7 @@ imposes no requirements related to that section; and
 6.  CA operators MUST provide a way to clearly determine which CP, CPS, or combined CP/CPS 
 applies to each of its root and intermediate certificates; *and*
 
-7.  CA operators SHALL maintain links to older versions of each CP and CPS (or CP/CPS), regardless of changes in ownership or control of the root CA, until the entire root CA certificate hierarchy operated in accordance with such documents is no longer trusted by the Mozilla root store. 
+7.  CA operators SHALL maintain links to all historic versions of each CP and CPS (or CP/CPS) from the creation of included CA certificates, regardless of changes in ownership or control of such CA certificates, until the entire CA certificate hierarchies (i.e. end entity certificates, intermediate CA certificates, and cross-certificates) operated in accordance with such documents are no longer trusted by the Mozilla root store. For CA certificates that were included in Mozilla's root store before December 31, 2022, the CA Operator shall maintain links in their online repositories to all reasonably available historic versions of CPs and CPSes (or CP/CPSes) from creation of the included CA certificates.
 
 ## 4. Common CA Database ##
 
@@ -385,7 +384,8 @@ CCADB Policy, as indicated below in this section 4.
 
 ### 4.1 Additional Requirements ###
 
-* Effective October 1, 2022, CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs"; *and*
+* CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs" within 7 days of such intermediate CA issuing its first certificate; 
+* Each CRL referenced by the JSON Array of Partitioned CRLs MUST contain a critical Issuing Distribution Point extension as described in section 6.1.2; *and*
 * if the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root store is due to a security concern, as well as performing the
 actions defined in the CCADB Policy, a [security bug MUST be filed in
@@ -812,6 +812,13 @@ Unless the keyCompromise CRLReason is being used, the CRLReason superseded MUST 
 
 Otherwise, the superseded CRLReason MUST NOT be used.
 
+#### 6.1.2 TLS Certificate CRL Issuing Distribution Points ####
+
+A CRL whose scope does not include all unexpired certificates that are issued by the CA SHALL contain a critical Issuing Distribution Point extension (OID 2.5.29.28). The distributionPoint field of the extension SHALL include a UniformResourceIdentifier whose value is derived from one of the two following sources:
+
+1.    The UniformResourceIdentifier as encoded in the distributionPoint field of an issued certificate's CRL Distribution Points extension (see RFC 5280 section 5.2.5); or
+2.    The URL as included in the "JSON Array of Partitioned CRLs" field in the CCADB entry corresponding to the certificate for the issuing CA.
+
 ### 6.2 S/MIME ###
 
 For any certificate in a hierarchy capable of being used for 
@@ -1122,6 +1129,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CC-BY-SA]:                 https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:                 https://creativecommons.org/licenses/by-nd/4.0/
 [CC-0]:                     https://creativecommons.org/publicdomain/zero/1.0/
+[CCADB-List]:               https://groups.google.com/a/ccadb.org/g/public
 [CCADB-Policy]:             https://www.ccadb.org/policy
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
 [5280-6.1.4]:               https://datatracker.ietf.org/doc/html/rfc5280#section-6.1.4
