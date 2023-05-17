@@ -97,7 +97,7 @@ CA operators whose certificates are included in Mozilla's root store MUST:
     purpose(s) of the certificates;
 5.  verify that all of the information that is included in server certificates remains current and correct at intervals of 825 days or less;
 
-     5.1. for server certificates issued on or after October 1, 2021, each dNSName or IPAddress in a SAN or commonName MUST have been validated in accordance with section 3.2.2 of the CA/Browser Forum's Baseline Requirements within the preceding 398 days;
+     5.1. for server certificates issued on or after October 1, 2021, each dNSName or IPAddress in a SAN or commonName MUST have been validated in accordance with section 3.2.2 of the CA/Browser Forum's TLS Baseline Requirements within the preceding 398 days;
 6.  otherwise operate in accordance with published criteria that we
     deem acceptable; *and*
 7.  ensure that all certificates within the scope of this policy, 
@@ -121,18 +121,14 @@ meets or exceeds the following requirements:
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf. The CA operator SHALL NOT delegate validation 
-    of the domain portion of an email address. The CA MAY rely 
-    on validation the CA has performed for 
-    an Authorization Domain Name (as specified in the Baseline Requirements) 
-    as being valid for subdomains of that Authorization Domain Name. 
+    the account holder’s behalf. This MUST be done using one or more of the methods documented in section 3.2.2 of the CA/Browser Forum's S/MIME Baseline Requirements. 
     The CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) 
     that the CA employs to perform this verification;
 3.  for a certificate capable of being used for TLS-enabled servers, the CA
     MUST ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This MUST be done using one or more of the
-    methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA operator's
+    methods documented in section 3.2.2.4 of the TLS Baseline Requirements. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
     each documented procedure MUST state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
@@ -140,7 +136,7 @@ meets or exceeds the following requirements:
 4.  for a certificate capable of being used for TLS-enabled servers, the CA
     MUST ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This MUST be done using one or more of the
-    methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA operator's
+    methods documented in section 3.2.2.5 of the TLS Baseline Requirements. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
     each documented procedure SHOULD state which subsection of 3.2.2.5 it is
     complying with; *and*
@@ -156,25 +152,25 @@ immediately discontinuing use of a method.
 ### 2.3 Baseline Requirements Conformance ###
 
 CA operations relating to issuance of certificates capable of being used for
-TLS-enabled servers MUST also conform to the latest version of the [CA/Browser
+TLS-enabled servers MUST conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
-Certificates][BRs] ("Baseline Requirements"). In the event of inconsistency
-between this policy's requirements and the Baseline Requirements,
+Certificates][BRs] ("TLS Baseline Requirements"). CA operations relating to issuance of certificates capable of being used for digitally signing or encrypting email messages, MUST conform to the latest version of the CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates ("S/MIME Baseline Requirements").  In the event of inconsistency
+between this policy's requirements and either the S/MIME or TLS Baseline Requirements,
 this policy's requirements take precedence. The following is a list of known
-places where this policy takes precedence over the Baseline Requirements. If
+places where this policy takes precedence over the S/MIME and TLS Baseline Requirements. If
 you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
 
-*   Insofar as the Baseline Requirements attempt to define their own scope, the
+*   Insofar as the S/MIME or TLS Baseline Requirements attempt to define their own scope, the
     scope of this policy (section 1.1) overrides that. CA
-    operations relating to issuance of **all** TLS server certificates in the scope of
-    this policy SHALL conform to the Baseline Requirements.
+    operations relating to issuance of **all** S/MIME or TLS server certificates in the scope of
+    this policy SHALL conform to the S/MIME or TLS Baseline Requirements, as applicable.
 
 *   Mozilla MAY accept audits by auditors who do not meet the
-    qualifications given in section 8.2 of the Baseline Requirements, or refuse
+    qualifications given in section 8.2 of the S/MIME or TLS Baseline Requirements, or refuse
     audits from auditors who do.
     
-*   Mozilla MAY restrict permitted algorithms to a subset of those allowed by the 
+*   Mozilla MAY restrict permitted algorithms to a subset of those allowed by the S/MIME or TLS 
     Baseline Requirements.
 
 ### 2.4 Incidents ###
@@ -313,7 +309,7 @@ If Mozilla determines that an audit provided does not meet the requirements of t
 ### 3.2 Auditors ###
 
 In normal circumstances, Mozilla requires that audits MUST be performed
-by a Qualified Auditor, as defined in the Baseline Requirements, section 8.2.
+by a Qualified Auditor, as defined in the S/MIME or TLS Baseline Requirements, section 8.2.
 
 A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI Audit Attestation Letters MUST follow the Audit Attestation Letter template on the [ACAB'c website](https://www.acab-c.com/downloads), and ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c] and follow the ACAB'c Charter and Code of Conduct. WebTrust audit statements MUST follow the practitioner guidance, principles, and illustrative assurance reports on the [CPA Canada website](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria), and WebTrust auditors MUST be listed as [enrolled WebTrust practitioners][WebTrust Practitioners] on the CPA Canada website. Mozilla MAY, at its sole discretion, decide to temporarily waive membership or enrollment requirements.
 
@@ -353,7 +349,7 @@ Therefore:
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
 4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-365 days, as required by the Baseline Requirements. CA operators MUST indicate that this has
+365 days, as required by the S/MIME or TLS Baseline Requirements. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
@@ -409,11 +405,13 @@ set:
     least 2048 bits; *or*
 *   ECDSA keys using one of the following curves:
     * P-256; *or*
-    * P-384; *or*
-*   EdDSA keys using one of the following curves:
-    * Curve25519; *or*
-    * Curve448.
+    * P-384.
 
+The following curves are not prohibited, but are not currently supported:
+
+    P-521;
+    Curve25519; and
+    Curve448.
 
 The following sections detail encoding and signature algorithm requirements for
 each of these keys. The encoding requirements on signature algorithms apply to
@@ -558,7 +556,7 @@ up to roots in Mozilla's program only if all the following are true:
 
 1. the end entity certificate:
 
-     * is not within the scope of the Baseline Requirements;
+     * is not within the scope of the S/MIME or TLS Baseline Requirements;
      * contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes; *and*
      * has at least 64 bits of entropy from a CSPRNG in the serial number; *and*
@@ -755,11 +753,11 @@ Section 4.9.12 of a CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST
 For any certificate in a hierarchy capable of being used for 
 TLS-enabled servers, CAs MUST revoke certificates that they have 
 issued upon the occurrence of any event listed in the appropriate 
-subsection of section 4.9.1 of the Baseline Requirements, 
+subsection of section 4.9.1 of the TLS Baseline Requirements, 
 according to the timeline defined therein. CAs MUST also revoke 
 any certificates issued in violation of the then-current version 
 of these requirements according to the timeline defined in 
-section 4.9.1 of the Baseline Requirements.
+section 4.9.1 of the TLS Baseline Requirements.
 
 #### 6.1.1 End Entity TLS Certificate CRLRevocation Reasons ####
 
@@ -914,7 +912,7 @@ security, e.g. by knowingly issuing certificates without the knowledge of the
 entities whose information is referenced in those certificates ('MITM certificates'). 
 Mozilla is under no obligation to explain the reasoning behind any inclusion decision.
 
-Before being included, CA operators MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. 
+Before being included, CA operators MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and the S/MIME or TLS Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and the S/MIME or TLS Baseline Requirements, as applicable. 
 
 To request that its certificate(s) be added to Mozilla's root store, a CA operator
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
