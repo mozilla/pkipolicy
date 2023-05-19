@@ -203,13 +203,13 @@ We consider the criteria for CA operations published in the
 following documents to be acceptable:
 
 *   WebTrust "[Principles and Criteria for Certification Authorities - Version
-    2.2.1][WebTrust-2.2.1]" or later in [WebTrust Program for Certification
+    2.2.2][WebTrust-2.2.2]" or later in [WebTrust Program for Certification
     Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities – SSL
-    Baseline with Network Security - Version 2.5][WebTrust-BRs]" or later in
+    Baseline with Network Security - Version 2.6][WebTrust-BRs]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities -
-    Extended Validation SSL 1.7.3][WebTrust-EV]" or later in
+    Extended Validation SSL 1.7.8][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
 *   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.3.1 or
     later version [Policy and security requirements for Trust Service Providers
@@ -232,14 +232,14 @@ apply (see section 3.1.1 for specific version numbers):
 *   For the websites trust bit, a CA and all intermediate CAs technically capable
     of issuing server certificates MUST have all of the following audits:
 
-    * [WebTrust for CAs][WebTrust-2.2.1];
+    * [WebTrust for CAs][WebTrust-2.2.2];
     * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]; *and*
     * [WebTrust for CAs - EV SSL][WebTrust-EV] if [capable of issuing EV certificates][Capable-of-EV].
 
 *   For the email trust bit, a CA and all intermediate CAs technically capable
     of issuing email certificates MUST have all of the following audits:
 
-    * [WebTrust for CAs][WebTrust-2.2.1].
+    * [WebTrust for CAs][WebTrust-2.2.2].
 
 ##### 3.1.2.2 ETSI #####
 
@@ -1121,10 +1121,10 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [NSRs]:                     https://cabforum.org/network-security-requirements/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.03.01_60/en_31941101v010301p.pdf
 [ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.04.01_60/en_31941102v020401p.pdf
-[WebTrust-2.2.1]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
-[WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf
+[WebTrust-2.2.2]:           https://www.cpacanada.ca/-/media/site/operational/ep-education-pld/docs/mds21216webtrustca-222final-(15).pdf
+[WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ep-education-pld/docs/mds21216wtbr-26-rev-august-2022final.pdf
 [WebTrust-For-CAs]:         https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
-[WebTrust-EV]:              https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100cwtev-173-110120-finalaoda.pdf
+[WebTrust-EV]:              https://www.cpacanada.ca/-/media/site/operational/ep-education-pld/docs/mds21216wtev-178final.pdf
 [CC-BY]:                    https://creativecommons.org/licenses/by/4.0/
 [CC-BY-SA]:                 https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:                 https://creativecommons.org/licenses/by-nd/4.0/
