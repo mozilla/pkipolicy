@@ -369,6 +369,10 @@ applies to each of its root and intermediate certificates; *and*
 
 7.  CA operators SHALL maintain links to all historic versions of each CP and CPS (or CP/CPS) from the creation of included CA certificates, regardless of changes in ownership or control of such CA certificates, until the entire CA certificate hierarchies (i.e. end entity certificates, intermediate CA certificates, and cross-certificates) operated in accordance with such documents are no longer trusted by the Mozilla root store. For CA certificates that were included in Mozilla's root store before December 31, 2022, the CA Operator shall maintain links in their online repositories to all reasonably available historic versions of CPs and CPSes (or CP/CPSes) from creation of the included CA certificates.
 
+### 3.4 Compliance Self-Assessments ###
+
+Effective Month, Day, 2023, CA operators with CA certificates capable of issuing working TLS server certificates MUST complete a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) at least every 365 days and provide the Common CA Database with the information where that Compliance Self-Assessment can be retrieived. 
+
 ## 4. Common CA Database ##
 
 Mozilla manages its root store using the Common CA Database (CCADB). CA operators with
