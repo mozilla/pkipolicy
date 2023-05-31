@@ -154,7 +154,7 @@ immediately discontinuing use of a method.
 CA operations relating to issuance of certificates capable of being used for
 TLS-enabled servers MUST conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
-Certificates][BRs] ("TLS Baseline Requirements"). CA operations relating to issuance of certificates capable of being used for digitally signing or encrypting email messages, MUST conform to the latest version of the CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates ("S/MIME Baseline Requirements").  In the event of inconsistency
+Certificates][TLS-BRs] ("TLS Baseline Requirements"). Certificates issued on or after September 1, 2023, that are capable of being used to digitally sign or encrypt email messages, and CA operations relating to the issuance of such certificates, MUST conform to the latest version of the [CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates][SMIME-BRs] ("S/MIME Baseline Requirements"). In the event of inconsistency
 between this policy's requirements and either the S/MIME or TLS Baseline Requirements,
 this policy's requirements take precedence. The following is a list of known
 places where this policy takes precedence over the S/MIME and TLS Baseline Requirements. If
@@ -628,8 +628,8 @@ and CPS (or combined CP/CPS).
 CA operators MUST maintain a certificate hierarchy such that an included
 root certificate does not directly issue end entity certificates to
 customers (i.e. a root certificate signs intermediate
-issuing certificates), as described in section 6.1.7 of the
-[Baseline Requirements][BRs].
+issuing certificates), as described in section 6.1.7 of the TLS
+[Baseline Requirements][TLS-BRs].
 
 CA operators MUST maintain current best practices to prevent
 algorithm attacks against certificates. As such, all new certificates
@@ -687,7 +687,7 @@ KeyPurposeId MUST NOT appear within this extension.
  
 If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
 then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. The id-kp-clientAuth EKU MAY also be present.
+7.1.5 of version 1.3 or later of the [TLS Baseline Requirements][TLS-BRs]. The id-kp-clientAuth EKU MAY also be present.
 The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
 
@@ -696,7 +696,7 @@ usage, then to be considered technically
 constrained, it MUST include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
+3.2.2.4 of the [TLS Baseline Requirements][TLS-BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
@@ -1150,7 +1150,8 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
 [MDSP]:                     https://groups.google.com/a/mozilla.org/g/dev-security-policy 
 [EVGLs]:                    https://cabforum.org/extended-validation/
-[BRs]:                      https://cabforum.org/baseline-requirements-documents/
+[TLS-BRs]:                  https://cabforum.org/baseline-requirements-documents/
+[SMIME-BRs]:                https://cabforum.org/smime-br/
 [NSRs]:                     https://cabforum.org/network-security-requirements/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.03.01_60/en_31941101v010301p.pdf
 [ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.04.01_60/en_31941102v020401p.pdf
