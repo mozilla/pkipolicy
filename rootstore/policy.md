@@ -684,19 +684,20 @@ constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying the extended key usage(s) allowed for the type of end entity certificates that the
 intermediate CA is authorized to issue. We also encourage CA operators to include only a single KeyPurposeID in the EKU extension of intermediate certificates. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension. 
- 
-If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
-then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [TLS Baseline Requirements][TLS-BRs]. The id-kp-clientAuth EKU MAY also be present.
+
 The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
 
+If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
+then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
+7.1.5 of version 1.3 or later of the [TLS Baseline Requirements][TLS-BRs]. The id-kp-clientAuth EKU MAY also be present.
+
 If the intermediate CA certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
-constrained, it MUST include the Name Constraints X.509v3 extension with
+constrained, it MUST comply with section 7.1.5 of the [S/MIME Baseline Requirements][SMIME-BRs] and include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [TLS Baseline Requirements][TLS-BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
+3.2.2 of the [S/MIME Baseline Requirements][SMIME-BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
