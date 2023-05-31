@@ -235,7 +235,8 @@ apply (see section 3.1.1 for specific version numbers):
 *   For the email trust bit, a CA and all intermediate CAs technically capable
     of issuing email certificates MUST have all of the following audits:
 
-    * [WebTrust for CAs][WebTrust-2.2.1]; and, for audit periods beginning after September 1, 2023, 
+    * [WebTrust for CAs][WebTrust-2.2.1]; 
+    and, for audit periods beginning on or after September 1, 2023, 
     * [WebTrust for CAs - S/MIME][WebTrust-SMIME].
 
 ##### 3.1.2.2 ETSI #####
@@ -255,13 +256,13 @@ If being audited to the ETSI criteria, the following audit requirements apply
     An audit showing conformance with the EVCP policy is REQUIRED if a CA is [capable of issuing EV certificates][Capable-of-EV].
 
 *   For the email trust bit, a CA and all intermediate CAs technically
-    capable of issuing email certificates MUST have one of the
+    capable of issuing email certificates MUST have the
     following audits, with at least one of the noted policies:
 
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+); *or*
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
       QCP-n-qscd); 
-      and, for audit periods beginning after September 1, 2023, 
+      and, for audit periods beginning on or after September 1, 2023, 
     * [ETSI TS 119 411-6][ETSI-119-411-6].
       
 
