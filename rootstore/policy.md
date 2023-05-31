@@ -235,7 +235,8 @@ apply (see section 3.1.1 for specific version numbers):
 *   For the email trust bit, a CA and all intermediate CAs technically capable
     of issuing email certificates MUST have all of the following audits:
 
-    * [WebTrust for CAs][WebTrust-2.2.1].
+    * [WebTrust for CAs][WebTrust-2.2.1]; and, for audit periods beginning after September 1, 2023, 
+    * [WebTrust for CAs - S/MIME][WebTrust-SMIME].
 
 ##### 3.1.2.2 ETSI #####
 
@@ -259,7 +260,10 @@ If being audited to the ETSI criteria, the following audit requirements apply
 
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+); *or*
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
-      QCP-n-qscd)
+      QCP-n-qscd); 
+      and, for audit periods beginning after September 1, 2023, 
+    * [ETSI TS 119 411-6][ETSI-119-411-6].
+      
 
 #### 3.1.3 Audit Parameters ####
 Full-surveillance period-of-time audits MUST be conducted and updated audit
@@ -1156,8 +1160,10 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [NSRs]:                     https://cabforum.org/network-security-requirements/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.03.01_60/en_31941101v010301p.pdf
 [ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.04.01_60/en_31941102v020401p.pdf
+[ETSI-119-411-6]:           https://www.etsi.org/committee/1399-esi
 [WebTrust-2.2.1]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
 [WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf
+[WebTrust-SMIME]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/01618_ms_smime-certificates_final_aoda-compliant.pdf
 [WebTrust-For-CAs]:         https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
 [WebTrust-EV]:              https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100cwtev-173-110120-finalaoda.pdf
 [CC-BY]:                    https://creativecommons.org/licenses/by/4.0/
