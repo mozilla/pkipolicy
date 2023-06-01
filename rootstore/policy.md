@@ -412,12 +412,6 @@ set:
     * P-256; *or*
     * P-384.
 
-The following curves are not prohibited, but are not currently supported:
-
-    P-521;
-    Curve25519; and
-    Curve448.
-
 The following sections detail encoding and signature algorithm requirements for
 each of these keys. The encoding requirements on signature algorithms apply to
 any contexts where the algorithm is encoded as an AlgorithmIdentifier,
@@ -593,37 +587,6 @@ CAs MAY sign SHA-1 hashes over CRLs for roots and intermediates
 only if they have issued SHA-1 certificates. 
 
 CAs MUST NOT sign SHA-1 hashes over other data, including CT pre-certificates.
-
-#### 5.1.4 EdDSA ####
-
-EdDSA keys MAY be included in certificates that chain to a root certificate in our root program if
-the certificate contains `id-kp-emailProtection` in the EKU extension. Otherwise, EdDSA keys MUST NOT be included.
-
-When EdDSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
-field MUST be one of the following, as specified by [RFC 8410, Section 4](https://datatracker.ietf.org/doc/html/rfc8410#section-4):
-
-  * the encoded AlgorithmIdentifier for a Curve22519 key MUST match the following
-  hex-encoded bytes: `300506032b6570`; *or*
-
-  * the encoded AlgorithmIdentifier for a Curve448 key MUST match the following
-  hex-encoded bytes: `300506032b6571`.
-
-The above encodings consist of the algorithm OID corresponding to each curve's digital signature algorithm. Algorithm parameters are omitted.
-
-When a root or intermediate certificate's EdDSA key is used to produce a
-signature, only the following algorithms MAY be used, and with the following
-encoding requirements:
-
-  * If the signing key is Curve25519, the signature MUST use Ed25519. The
-  encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
-  `300506032b6570`.
-
-  * If the signing key is Curve448, the signature MUST use Ed448. The
-  encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
-  `300506032b6571`.
-
-The above encodings consist of the algorithm OID corresponding to each curve's digital signature algorithm. Algorithm parameters are omitted,
-as specified by [RFC 8410, Section 6](https://datatracker.ietf.org/doc/html/rfc8410#section-6).
 
 ### 5.2 Forbidden and Required Practices ###
 
