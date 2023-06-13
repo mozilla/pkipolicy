@@ -236,7 +236,7 @@ apply (see section 3.1.1 for specific version numbers):
     of issuing email certificates MUST have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.1]; 
-    and, for audit periods beginning on or after September 1, 2023, 
+    and, for audit periods ending after December 1, 2023, 
     * [WebTrust for CAs - S/MIME][WebTrust-SMIME].
 
 ##### 3.1.2.2 ETSI #####
@@ -262,7 +262,7 @@ If being audited to the ETSI criteria, the following audit requirements apply
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+); *or*
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
       QCP-n-qscd); 
-      and, for audit periods beginning on or after September 1, 2023, 
+      and, for audit periods ending after December 1, 2023, 
     * [ETSI TS 119 411-6][ETSI-119-411-6].
       
 
