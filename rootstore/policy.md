@@ -95,9 +95,7 @@ CA operators whose certificates are included in Mozilla's root store MUST:
 4.  prior to issuing certificates, verify certificate
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
-5.  verify that all of the information that is included in server certificates remains current and correct at intervals of 825 days or less;
-
-     5.1. for server certificates issued on or after October 1, 2021, each dNSName or IPAddress in a SAN or commonName MUST have been validated in accordance with section 3.2.2 of the CA/Browser Forum's Baseline Requirements within the preceding 398 days;
+5.  verify each dNSName or IPAddress in a SAN or commonName in server certificates in accordance with sections 3.2.2.4 and 3.2.2.5 of the CA/Browser Forum's Baseline Requirements at intervals of 398 days or less, and verify that all other information that is included in server certificates remains current and correct at intervals of 825 days or less;
 6.  otherwise operate in accordance with published criteria that we
     deem acceptable; *and*
 7.  ensure that all certificates within the scope of this policy, 
