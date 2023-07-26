@@ -353,7 +353,7 @@ Therefore:
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
 4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-365 days, as required by the Baseline Requirements. CA operators MUST indicate that this has
+366 days. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
@@ -371,7 +371,7 @@ applies to each of its root and intermediate certificates; *and*
 
 ### 3.4 Compliance Self-Assessments ###
 
-Effective January 1, 2024, CA operators with CA certificates capable of issuing working TLS server certificates MUST complete a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) at least every 365 days and provide the Common CA Database with the location where that Compliance Self-Assessment can be retrieved. 
+Effective January 1, 2024, CA operators with CA certificates capable of issuing working TLS server certificates MUST complete a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) at least every 366 days and provide the Common CA Database with the location where that Compliance Self-Assessment can be retrieved. 
 
 ## 4. Common CA Database ##
 
