@@ -281,32 +281,7 @@ months of the point-in-time date or the end date of the period.
 
 #### 3.1.4 Public Audit Information ####
 
-The publicly-available documentation relating to each audit MUST contain at
-least the following clearly-labelled information:
-
-1.  name of the company being audited;
-2.  name and address of the organization performing the audit;
-3.  name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2; 
-4.  Distinguished Name and SHA256 fingerprint of each root and intermediate
-    certificate that was in scope;
-5.  audit criteria (with version number) that were used to audit each of
-    the certificates;
-6.  a list of the CA policy documents (with version numbers) referenced during
-    the audit;
-7.  whether the audit is for a period of time or a point in time;
-8.  the start date and end date of the period, for those that cover a period
-    of time;
-9.  the point-in-time date, for those that are for a point in time;
-10. the date the report was issued (which will necessarily be after the end
-    date or point-in-time date); 
-11. all incidents (as defined in section 2.4) disclosed by the CA, discovered by the auditor, or reported by a third party, that, at any time during the audit period, occurred or were open in Bugzilla;
-12. the [CA locations that were or were not audited][Audited-Location]; *and*
-13. for ETSI, a statement to indicate if the audit was a full audit, and which
-    parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
-    EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
-    trust service providers).
-
-An authoritative English language version of the publicly-available audit information MUST be supplied by the Auditor.
+The publicly-available documentation relating to each audit MUST contain the information required by section 5.1 of the CCADB Policy and the [CA locations that were or were not audited][Audited-Location]. Audit reports must also contain or be accompanied by the name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2.
 
 If Mozilla determines that an audit provided does not meet the requirements of this policy, then Mozilla MAY require that the CA operator obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
