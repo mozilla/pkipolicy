@@ -181,9 +181,9 @@ can be considered for addition or clarification.
 
 When a CA operator fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report]. Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding Incident Report. CA operators 
-MUST regularly update the Incident Report until the corresponding bug 
-is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
+non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all [incidents][Incident] to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report).
+Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
+is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a root store representative. 
 CA operators SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
@@ -1116,7 +1116,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
 [Policy-Update-Process]:    https://wiki.mozilla.org/CA/Updating_Root_Store_Policy
 [Policy-Archive]:           https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
-[Incident-Report]:          https://wiki.mozilla.org/CA/Responding_To_An_Incident
+[Incident]:                 https://wiki.mozilla.org/CA/Responding_To_An_Incident
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
