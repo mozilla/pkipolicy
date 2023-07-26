@@ -183,7 +183,7 @@ When a CA operator fails to comply with any requirement of this policy - whether
 a misissuance, a procedural or operational issue, or any other variety of 
 non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all [incidents][Incident] to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report). 
 
-The compromise of a CA operator's internal system in which the attacker might be able to affect certificate issuance is considered a type of security incident that MUST be reported with an incident report as soon as possible. If the incident report contains sensitive information, a [security bug may be filed in Bugzilla][Sec-Bugs]. Additionally, other important security incidents and compromises of a CA operator's internal systems that may affect certificate issuance SHOULD be reported. 
+The compromise of a CA operator's internal systems in which the attacker might be able to affect CA operations is a vulnerability or security incident that MUST be reported with a [Vulnerability Disclosure](https://wiki.mozilla.org/CA/Vulnerability_Disclosure) as soon as possible with a [security bug filed in Bugzilla][Sec-Bugs].
 
 Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a root store representative. 
@@ -1141,7 +1141,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CA-Cert-Bug]:              https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Root%20Program
 [How-To-Apply]:             https://wiki.mozilla.org/CA/Application_Process
 [Root-Changes]:             https://wiki.mozilla.org/CA/Certificate_Change_Process
-[Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
+[Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?bug_type=task&component=CA%20Security%20Vulnerability&groups=ca-program-security&product=CA%20Program
 [Policy-Update-Process]:    https://wiki.mozilla.org/CA/Updating_Root_Store_Policy
 [Policy-Archive]:           https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
 [Incident]:                 https://wiki.mozilla.org/CA/Responding_To_An_Incident
