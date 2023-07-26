@@ -801,8 +801,8 @@ Otherwise, the affiliationChanged CRLReason MUST NOT be used.
 
 **superseded**
 
-The CRLReason superseded is intended to be used to indicate when:
-*   the certificate subscriber has requested a new certificate to replace an existing certificate; or
+The CRLReason superseded is intended to be used to indicate the certificate is being replaced because:
+*   the certificate subscriber has requested a new certificate;
 *   the CA operator obtains reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the certificate should not be relied upon; *or*
 *   the CA operator has revoked the certificate for compliance reasons such as the certificate does not comply with this policy, the CA/Browser Forum's Baseline Requirements, or the CA operator’s CP or CPS.
 
