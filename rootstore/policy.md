@@ -183,13 +183,13 @@ When a CA operator fails to comply with any requirement of this policy - whether
 a misissuance, a procedural or operational issue, or any other variety of 
 non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all [incidents][Incident] to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report). 
 
-The compromise of a CA operator's internal systems in which the attacker might be able to affect CA operations is a vulnerability or security incident that MUST be reported with a [Vulnerability Disclosure](https://wiki.mozilla.org/CA/Vulnerability_Disclosure) as soon as possible with a [security bug filed in Bugzilla][Sec-Bugs].
-
 Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a root store representative. 
 CA operators SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
+
+Additionally, and not in lieu of the requirement to publicly report incidents as outlined above, a CA Operator MUST disclose serious vulnerabilities and security incidents in accordance with guidance found on the [Vulnerability Disclosure wiki page](https://wiki.mozilla.org/CA/Vulnerability_Disclosure).
 
 ## 3. Documentation ##
 
