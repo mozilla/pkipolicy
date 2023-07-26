@@ -357,12 +357,12 @@ Therefore:
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
-5.  all CPs, CPSes, and combined CP/CPSes MUST be structured according to RFC 3647 and MUST:
+5.  all CPs, CPSes, and combined CP/CPSes MUST be structured according to the common outline set forth in [section 6 of RFC 3647][3647-6] and MUST:
 
-       * include at least every section and subsection defined in RFC 3647; 
+       * include at least every section and subsection defined in [section 6 of RFC 3647][3647-6]; 
        * only use the words "No Stipulation" to mean that the particular document 
 imposes no requirements related to that section; and
-       * contain no sections that are blank and have no subsections; 
+       * contain no sections that are entirely blank, having no text or subsections; 
 
 6.  CA operators MUST provide a way to clearly determine which CP, CPS, or combined CP/CPS 
 applies to each of its root and intermediate certificates; *and*
@@ -1132,6 +1132,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CCADB-List]:               https://groups.google.com/a/ccadb.org/g/public
 [CCADB-Policy]:             https://www.ccadb.org/policy
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
+[3647-6]:                   https://datatracker.ietf.org/doc/html/rfc3647#section-6
 [5280-6.1.4]:               https://datatracker.ietf.org/doc/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:            https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12
 [6962-3.1]:                 https://datatracker.ietf.org/doc/html/rfc6962#section-3.1
