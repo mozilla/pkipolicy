@@ -46,13 +46,11 @@ following (and to the CA operators* that control or issue them):
 
 3.  end entity certificates that have at least one valid, unrevoked chain up
     to such a CA certificate through intermediate certificates that are all in
-    scope, such end entity certificates having either:
+    scope and
 
-    * an Extended Key Usage (EKU) extension that contains one or more of these
-      KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
-      id-kp-emailProtection; or
-    * no EKU extension.
-
+    * an Extended Key Usage (EKU) extension that contains the anyExtendedKeyUsage or id-kp-serverAuth KeyPurposeId, or no EKU extension (i.e. a "server certificate"); or
+    * an EKU extension of id-kp-emailProtection and an rfc822Name or an otherName of type id-on-SmtpUTF8Mailbox in the subjectAltName (i.e. an "email certificate").
+    
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in RFC 2119.
