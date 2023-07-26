@@ -189,7 +189,7 @@ CA operators SHOULD cease issuance until the problem has been prevented from reo
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
 
-Additionally, and not in lieu of the requirement to publicly report incidents as outlined above, a CA Operator MUST disclose serious vulnerabilities and security incidents in accordance with guidance found on the [Vulnerability Disclosure wiki page](https://wiki.mozilla.org/CA/Vulnerability_Disclosure).
+Additionally, and not in lieu of the requirement to publicly report incidents as outlined above, a CA Operator MUST disclose a serious vulnerability or security incident in [Bugzilla][Bugzilla] as a [secure bug][Sec-Bugs] in accordance with guidance found on the [Vulnerability Disclosure wiki page][Vulnerability-Disclosure].
 
 ## 3. Documentation ##
 
@@ -391,8 +391,7 @@ CCADB Policy, as indicated below in this section 4.
 * Each CRL referenced by the JSON Array of Partitioned CRLs MUST contain a critical Issuing Distribution Point extension as described in section 6.1.2; *and*
 * if the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root store is due to a security concern, as well as performing the
-actions defined in the CCADB Policy, a [security bug MUST be filed in
-Bugzilla][Sec-Bugs].
+actions defined in the CCADB Policy, a [Vulnerability Disclosure][Vulnerability-Disclosure] MUST be filed as [a secure bug in Bugzilla][Sec-Bugs].
 
 ### 4.2 Surveys ###
 
@@ -859,9 +858,8 @@ version of these requirements.
 
 ## 7. Root Store Changes ##
 
-Changes that are motivated by a security concern such as certificate
-misissuance or a root or intermediate compromise MUST be treated as a
-security-sensitive, and a [secure bug filed in Bugzilla][Sec-Bugs].
+Changes that are motivated by a security concern, such as a root or intermediate CA compromise, MUST be treated as 
+security-sensitive, and a [Vulnerability Disclosure][Vulnerability-Disclosure] must be filed as a secure bug in [Bugzilla][Sec-Bugs].
 
 ### 7.1 Inclusions ###
 
@@ -1080,8 +1078,7 @@ letter, or point-in-time audit statement to Mozilla.
 
 The regular annual audit statements MUST still happen in a timely manner.
 
-The organization(s) concerned MUST immediately [send a security report to
-Mozilla][Sec-Bugs] if a problem occurs.
+If a security issue arises during key transfer, then the organization(s) concerned MUST immediately file a [Vulnerability Disclosure][Vulnerability-Disclosure] in Bugzilla using a [secure bug][Sec-Bugs].
 
 ## 8.4 Externally-Operated Subordinate CAs
 
@@ -1152,4 +1149,5 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [ACAB'c]:                   https://www.acab-c.com/members/
 [WebTrust Practitioners]:                 https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/licensed-webtrust-practitioners-international
 [Revocation-Reasons]:        https://wiki.mozilla.org/CA/Revocation_Reasons
+[Vulnerability-Disclosure]:  https://wiki.mozilla.org/CA/Vulnerability_Disclosure
 
