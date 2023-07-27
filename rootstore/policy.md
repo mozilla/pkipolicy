@@ -325,8 +325,7 @@ Therefore:
     deal with these documents, and any later versions for root certificates
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
-4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-365 days, as required by the S/MIME or TLS Baseline Requirements. CA operators MUST indicate that this has
+4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every 365 days, as required by the S/MIME or TLS Baseline Requirements. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
@@ -341,6 +340,10 @@ imposes no requirements related to that section; and
 applies to each of its root and intermediate certificates; *and*
 
 7.  CA operators SHALL maintain links to all historic versions of each CP and CPS (or CP/CPS) from the creation of included CA certificates, regardless of changes in ownership or control of such CA certificates, until the entire CA certificate hierarchies (i.e. end entity certificates, intermediate CA certificates, and cross-certificates) operated in accordance with such documents are no longer trusted by the Mozilla root store. For CA certificates that were included in Mozilla's root store before December 31, 2022, the CA Operator shall maintain links in their online repositories to all reasonably available historic versions of CPs and CPSes (or CP/CPSes) from creation of the included CA certificates.
+
+### 3.4 Compliance Self-Assessments ###
+
+CA operators with CA certificates capable of issuing working TLS server certificates MUST submit a link to their annual [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) via the CCADB. The initial annual self-assessment must be completed and submitted to the CCADB within 90 calendar days from the CA operator's earliest appearing root record "BR Audit Period End Date" that is after December 31, 2022. CA operators SHOULD submit the link to their self-assessment at the same time as when they update their audit records (within 455 calendar days after the CA operator's earliest appearing root record's "BR Audit Period End Date" for the preceding audit period). CA operators SHOULD use the latest available version of the CCADB self-assessment template. CA operators MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before their submission.
 
 ## 4. Common CA Database ##
 
