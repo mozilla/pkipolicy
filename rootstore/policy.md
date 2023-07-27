@@ -46,13 +46,11 @@ following (and to the CA operators* that control or issue them):
 
 3.  end entity certificates that have at least one valid, unrevoked chain up
     to such a CA certificate through intermediate certificates that are all in
-    scope, such end entity certificates having either:
+    scope and
 
-    * an Extended Key Usage (EKU) extension that contains one or more of these
-      KeyPurposeIds: anyExtendedKeyUsage, id-kp-serverAuth,
-      id-kp-emailProtection; or
-    * no EKU extension.
-
+    * an Extended Key Usage (EKU) extension that contains the anyExtendedKeyUsage or id-kp-serverAuth KeyPurposeId, or no EKU extension (i.e. a "server certificate"); or
+    * an EKU extension of id-kp-emailProtection and an rfc822Name or an otherName of type id-on-SmtpUTF8Mailbox in the subjectAltName (i.e. an "email certificate").
+    
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in RFC 2119.
@@ -95,9 +93,7 @@ CA operators whose certificates are included in Mozilla's root store MUST:
 4.  prior to issuing certificates, verify certificate
     requests in a manner that we deem acceptable for the stated
     purpose(s) of the certificates;
-5.  verify that all of the information that is included in server certificates remains current and correct at intervals of 825 days or less;
-
-     5.1. for server certificates issued on or after October 1, 2021, each dNSName or IPAddress in a SAN or commonName MUST have been validated in accordance with section 3.2.2 of the CA/Browser Forum's Baseline Requirements within the preceding 398 days;
+5.  verify each dNSName or IPAddress in a SAN or commonName in server certificates in accordance with sections 3.2.2.4 and 3.2.2.5 of the CA/Browser Forum's Baseline Requirements at intervals of 398 days or less, and verify that all other information that is included in server certificates remains current and correct at intervals of 825 days or less;
 6.  otherwise operate in accordance with published criteria that we
     deem acceptable; *and*
 7.  ensure that all certificates within the scope of this policy, 
@@ -121,18 +117,14 @@ meets or exceeds the following requirements:
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf. The CA operator SHALL NOT delegate validation 
-    of the domain portion of an email address. The CA MAY rely 
-    on validation the CA has performed for 
-    an Authorization Domain Name (as specified in the Baseline Requirements) 
-    as being valid for subdomains of that Authorization Domain Name. 
+    the account holder’s behalf. This MUST be done using one or more of the methods documented in section 3.2.2 of the CA/Browser Forum's S/MIME Baseline Requirements. 
     The CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) 
     that the CA employs to perform this verification;
 3.  for a certificate capable of being used for TLS-enabled servers, the CA
     MUST ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This MUST be done using one or more of the
-    methods documented in section 3.2.2.4 of the CA/Browser Forum Baseline Requirements. The CA operator's
+    methods documented in section 3.2.2.4 of the TLS Baseline Requirements. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
     each documented procedure MUST state which subsection of 3.2.2.4 it is
     complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
@@ -140,7 +132,7 @@ meets or exceeds the following requirements:
 4.  for a certificate capable of being used for TLS-enabled servers, the CA
     MUST ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This MUST be done using one or more of the
-    methods documented in section 3.2.2.5 of the CA/Browser Forum Baseline Requirements. The CA operator's
+    methods documented in section 3.2.2.5 of the TLS Baseline Requirements. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
     each documented procedure SHOULD state which subsection of 3.2.2.5 it is
     complying with; *and*
@@ -156,34 +148,34 @@ immediately discontinuing use of a method.
 ### 2.3 Baseline Requirements Conformance ###
 
 CA operations relating to issuance of certificates capable of being used for
-TLS-enabled servers MUST also conform to the latest version of the [CA/Browser
+TLS-enabled servers MUST conform to the latest version of the [CA/Browser
 Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted
-Certificates][BRs] ("Baseline Requirements"). In the event of inconsistency
-between this policy's requirements and the Baseline Requirements,
+Certificates][TLS-BRs] ("TLS Baseline Requirements"). Certificates issued on or after September 1, 2023, that are capable of being used to digitally sign or encrypt email messages, and CA operations relating to the issuance of such certificates, MUST conform to the latest version of the [CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted S/MIME Certificates][SMIME-BRs] ("S/MIME Baseline Requirements"). In the event of inconsistency
+between this policy's requirements and either the S/MIME or TLS Baseline Requirements,
 this policy's requirements take precedence. The following is a list of known
-places where this policy takes precedence over the Baseline Requirements. If
+places where this policy takes precedence over the S/MIME and TLS Baseline Requirements. If
 you find an inconsistency that is not listed here, notify Mozilla so the item
 can be considered for addition or clarification.
 
-*   Insofar as the Baseline Requirements attempt to define their own scope, the
+*   Insofar as the S/MIME or TLS Baseline Requirements attempt to define their own scope, the
     scope of this policy (section 1.1) overrides that. CA
-    operations relating to issuance of **all** TLS server certificates in the scope of
-    this policy SHALL conform to the Baseline Requirements.
+    operations relating to issuance of **all** S/MIME or TLS server certificates in the scope of
+    this policy SHALL conform to the S/MIME or TLS Baseline Requirements, as applicable.
 
 *   Mozilla MAY accept audits by auditors who do not meet the
-    qualifications given in section 8.2 of the Baseline Requirements, or refuse
+    qualifications given in section 8.2 of the S/MIME or TLS Baseline Requirements, or refuse
     audits from auditors who do.
     
-*   Mozilla MAY restrict permitted algorithms to a subset of those allowed by the 
+*   Mozilla MAY restrict permitted algorithms to a subset of those allowed by the S/MIME or TLS 
     Baseline Requirements.
 
 ### 2.4 Incidents ###
 
 When a CA operator fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an [Incident Report][Incident-Report]. Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding Incident Report. CA operators 
-MUST regularly update the Incident Report until the corresponding bug 
-is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a Mozilla representative. 
+non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all [incidents][Incident] to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report).
+Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
+is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a root store representative. 
 CA operators SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
@@ -203,13 +195,13 @@ We consider the criteria for CA operations published in the
 following documents to be acceptable:
 
 *   WebTrust "[Principles and Criteria for Certification Authorities - Version
-    2.2.1][WebTrust-2.2.1]" or later in [WebTrust Program for Certification
+    2.2.2][WebTrust-2.2.2]" or later in [WebTrust Program for Certification
     Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities – SSL
-    Baseline with Network Security - Version 2.5][WebTrust-BRs]" or later in
+    Baseline with Network Security - Version 2.6][WebTrust-BRs]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
 *   WebTrust "[Principles and Criteria for Certification Authorities -
-    Extended Validation SSL 1.7.3][WebTrust-EV]" or later in
+    Extended Validation SSL 1.7.8][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
 *   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.3.1 or
     later version [Policy and security requirements for Trust Service Providers
@@ -232,14 +224,17 @@ apply (see section 3.1.1 for specific version numbers):
 *   For the websites trust bit, a CA and all intermediate CAs technically capable
     of issuing server certificates MUST have all of the following audits:
 
-    * [WebTrust for CAs][WebTrust-2.2.1];
+    * [WebTrust for CAs][WebTrust-2.2.2];
     * [WebTrust for CAs - SSL Baseline with Network Security][WebTrust-BRs]; *and*
     * [WebTrust for CAs - EV SSL][WebTrust-EV] if [capable of issuing EV certificates][Capable-of-EV].
 
 *   For the email trust bit, a CA and all intermediate CAs technically capable
     of issuing email certificates MUST have all of the following audits:
 
-    * [WebTrust for CAs][WebTrust-2.2.1].
+    * [WebTrust for CAs][WebTrust-2.2.2]; 
+    and, for audit periods ending after December 1, 2023, 
+    * [WebTrust for CAs - S/MIME][WebTrust-SMIME].
+
 
 ##### 3.1.2.2 ETSI #####
 
@@ -258,12 +253,15 @@ If being audited to the ETSI criteria, the following audit requirements apply
     An audit showing conformance with the EVCP policy is REQUIRED if a CA is [capable of issuing EV certificates][Capable-of-EV].
 
 *   For the email trust bit, a CA and all intermediate CAs technically
-    capable of issuing email certificates MUST have one of the
+    capable of issuing email certificates MUST have the
     following audits, with at least one of the noted policies:
 
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+); *or*
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
-      QCP-n-qscd)
+      QCP-n-qscd); 
+      and, for audit periods ending after December 1, 2023, 
+    * [ETSI TS 119 411-6][ETSI-119-411-6].
+      
 
 #### 3.1.3 Audit Parameters ####
 Full-surveillance period-of-time audits MUST be conducted and updated audit
@@ -281,39 +279,14 @@ months of the point-in-time date or the end date of the period.
 
 #### 3.1.4 Public Audit Information ####
 
-The publicly-available documentation relating to each audit MUST contain at
-least the following clearly-labelled information:
-
-1.  name of the company being audited;
-2.  name and address of the organization performing the audit;
-3.  name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2; 
-4.  Distinguished Name and SHA256 fingerprint of each root and intermediate
-    certificate that was in scope;
-5.  audit criteria (with version number) that were used to audit each of
-    the certificates;
-6.  a list of the CA policy documents (with version numbers) referenced during
-    the audit;
-7.  whether the audit is for a period of time or a point in time;
-8.  the start date and end date of the period, for those that cover a period
-    of time;
-9.  the point-in-time date, for those that are for a point in time;
-10. the date the report was issued (which will necessarily be after the end
-    date or point-in-time date); 
-11. all incidents (as defined in section 2.4) disclosed by the CA, discovered by the auditor, or reported by a third party, that, at any time during the audit period, occurred or were open in Bugzilla;
-12. the [CA locations that were or were not audited][Audited-Location]; *and*
-13. for ETSI, a statement to indicate if the audit was a full audit, and which
-    parts of the criteria were applied, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP,
-    EVCP+, QCP-w, Part1 (General Requirements), and/or Part 2 (Requirements for
-    trust service providers).
-
-An authoritative English language version of the publicly-available audit information MUST be supplied by the Auditor.
+The publicly-available documentation relating to each audit MUST contain the information required by section 5.1 of the CCADB Policy and the [CA locations that were or were not audited][Audited-Location]. Audit reports must also contain or be accompanied by the name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2.
 
 If Mozilla determines that an audit provided does not meet the requirements of this policy, then Mozilla MAY require that the CA operator obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
 ### 3.2 Auditors ###
 
 In normal circumstances, Mozilla requires that audits MUST be performed
-by a Qualified Auditor, as defined in the Baseline Requirements, section 8.2.
+by a Qualified Auditor, as defined in the S/MIME or TLS Baseline Requirements, section 8.2.
 
 A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI Audit Attestation Letters MUST follow the Audit Attestation Letter template on the [ACAB'c website](https://www.acab-c.com/downloads), and ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c] and follow the ACAB'c Charter and Code of Conduct. WebTrust audit statements MUST follow the practitioner guidance, principles, and illustrative assurance reports on the [CPA Canada website](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria), and WebTrust auditors MUST be listed as [enrolled WebTrust practitioners][WebTrust Practitioners] on the CPA Canada website. Mozilla MAY, at its sole discretion, decide to temporarily waive membership or enrollment requirements.
 
@@ -352,17 +325,16 @@ Therefore:
     deal with these documents, and any later versions for root certificates
     that are included in Mozilla's root store, under CC-BY-ND 4.0;
 
-4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every
-366 days. CA operators MUST indicate that this has
+4.  all CPs, CPSes, and combined CP/CPSes MUST be reviewed and updated as necessary at least once every 365 days, as required by the S/MIME or TLS Baseline Requirements. CA operators MUST indicate that this has
 happened by incrementing the version number and adding a dated changelog entry,
 even if no other changes are made to the document;
 
-5.  all CPs, CPSes, and combined CP/CPSes MUST be structured according to RFC 3647 and MUST:
+5.  all CPs, CPSes, and combined CP/CPSes MUST be structured according to the common outline set forth in [section 6 of RFC 3647][3647-6] and MUST:
 
-       * include at least every section and subsection defined in RFC 3647; 
+       * include at least every section and subsection defined in [section 6 of RFC 3647][3647-6]; 
        * only use the words "No Stipulation" to mean that the particular document 
 imposes no requirements related to that section; and
-       * contain no sections that are blank and have no subsections; 
+       * contain no sections that are entirely blank, having no text or subsections; 
 
 6.  CA operators MUST provide a way to clearly determine which CP, CPS, or combined CP/CPS 
 applies to each of its root and intermediate certificates; *and*
@@ -414,6 +386,10 @@ set:
 *   ECDSA keys using one of the following curves:
     * P-256; *or*
     * P-384.
+
+The following curves are not prohibited, but are not currently supported: P-521, Curve25519, and Curve448.
+
+EdDSA keys MAY be included in certificates that chain to a root certificate in our root store if the certificate contains ‘id-kp-emailProtection` in the EKU extension. Otherwise, EdDSA keys MUST NOT be included.
 
 The following sections detail encoding and signature algorithm requirements for
 each of these keys. The encoding requirements on signature algorithms apply to
@@ -558,7 +534,7 @@ up to roots in Mozilla's program only if all the following are true:
 
 1. the end entity certificate:
 
-     * is not within the scope of the Baseline Requirements;
+     * is not within the scope of the S/MIME or TLS Baseline Requirements;
      * contains an EKU extension which does not contain either of the
      id-kp-serverAuth or anyExtendedKeyUsage key purposes; *and*
      * has at least 64 bits of entropy from a CSPRNG in the serial number; *and*
@@ -599,8 +575,8 @@ and CPS (or combined CP/CPS).
 CA operators MUST maintain a certificate hierarchy such that an included
 root certificate does not directly issue end entity certificates to
 customers (i.e. a root certificate signs intermediate
-issuing certificates), as described in section 6.1.7 of the
-[Baseline Requirements][BRs].
+issuing certificates), as described in section 6.1.7 of the TLS
+[Baseline Requirements][TLS-BRs].
 
 CA operators MUST maintain current best practices to prevent
 algorithm attacks against certificates. As such, all new certificates
@@ -655,23 +631,24 @@ constrained, the certificate MUST include an [Extended Key Usage
 (EKU)][5280-4.2.1.12] extension specifying the extended key usage(s) allowed for the type of end entity certificates that the
 intermediate CA is authorized to issue. We also encourage CA operators to include only a single KeyPurposeID in the EKU extension of intermediate certificates. The anyExtendedKeyUsage
 KeyPurposeId MUST NOT appear within this extension. 
- 
-If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
-then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [Baseline Requirements][BRs]. The id-kp-clientAuth EKU MAY also be present.
+
 The conformance requirements defined in section 2.3 of this policy also apply to 
 technically constrained intermediate certificates.
 
+If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
+then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
+7.1.5 of version 1.3 or later of the [TLS Baseline Requirements][TLS-BRs]. The id-kp-clientAuth EKU MAY also be present.
+
 If the intermediate CA certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
-constrained, it MUST include the Name Constraints X.509v3 extension with
+constrained, it MUST comply with section 7.1.5 of the [S/MIME Baseline Requirements][SMIME-BRs] and include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
 each such name having its ownership validated according to section
-3.2.2.4 of the [Baseline Requirements][BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
+3.2.2 of the [S/MIME Baseline Requirements][SMIME-BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
 
-The operator of a CA certificate included in Mozilla’s root store MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s root store that are technically capable of issuing working server or email certificates, including those CA certificates that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA operator with a certificate included in Mozilla’s root store MUST disclose  such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. Name-constrained CA certificates that are technically capable of issuing working server or email certificates that were exempt from disclosure in previous versions of this policy MUST be disclosed in the CCADB prior to July 1, 2022. 
+The operator of a CA certificate included in Mozilla’s root store MUST publicly disclose in the CCADB all CA certificates they issue that chain up to that CA certificate trusted in Mozilla’s root store that are technically capable of issuing working server or email certificates, including such CA certificates that are revoked but not yet expired and those CA certificates that share the same key pair whether they are self-signed, doppelgänger, reissued, cross-signed, or other roots. The CA operator with a certificate included in Mozilla’s root store MUST disclose such CA certificate within one week of certificate creation, and before any such CA is allowed to issue certificates. Name-constrained CA certificates that are technically capable of issuing working server or email certificates that were exempt from disclosure in previous versions of this policy MUST also be disclosed in the CCADB. 
 
 All disclosure MUST be made freely available and without additional requirements, including, but not limited to, registration, legal agreements, or restrictions on redistribution of the certificates in whole or in part.
 
@@ -724,11 +701,11 @@ Section 4.9.12 of a CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST
 For any certificate in a hierarchy capable of being used for 
 TLS-enabled servers, CAs MUST revoke certificates that they have 
 issued upon the occurrence of any event listed in the appropriate 
-subsection of section 4.9.1 of the Baseline Requirements, 
+subsection of section 4.9.1 of the TLS Baseline Requirements, 
 according to the timeline defined therein. CAs MUST also revoke 
 any certificates issued in violation of the then-current version 
 of these requirements according to the timeline defined in 
-section 4.9.1 of the Baseline Requirements.
+section 4.9.1 of the TLS Baseline Requirements.
 
 #### 6.1.1 End Entity TLS Certificate CRLRevocation Reasons ####
 
@@ -805,8 +782,8 @@ Otherwise, the affiliationChanged CRLReason MUST NOT be used.
 
 **superseded**
 
-The CRLReason superseded is intended to be used to indicate when:
-*   the certificate subscriber has requested a new certificate to replace an existing certificate; or
+The CRLReason superseded is intended to be used to indicate the certificate is being replaced because:
+*   the certificate subscriber has requested a new certificate;
 *   the CA operator obtains reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the certificate should not be relied upon; *or*
 *   the CA operator has revoked the certificate for compliance reasons such as the certificate does not comply with this policy, the CA/Browser Forum's Baseline Requirements, or the CA operator’s CP or CPS.
 
@@ -883,7 +860,7 @@ security, e.g. by knowingly issuing certificates without the knowledge of the
 entities whose information is referenced in those certificates ('MITM certificates'). 
 Mozilla is under no obligation to explain the reasoning behind any inclusion decision.
 
-Before being included, CA operators MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and Baseline Requirements. 
+Before being included, CA operators MUST provide evidence that their CA certificates fully comply with the current Mozilla Root Store Requirements and the S/MIME or TLS Baseline Requirements, and have continually, from the time of CA private key creation, complied with the then-current Mozilla Root Store Policy and the S/MIME or TLS Baseline Requirements, as applicable. 
 
 To request that its certificate(s) be added to Mozilla's root store, a CA operator
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
@@ -984,6 +961,12 @@ contrary to this policy, Mozilla will publicize
 that fact (for example, in newsgroups on the
 news.mozilla.org server, and on our websites) and MAY also alert 
 relevant news or government organizations such as US-CERT.
+
+### 7.4 Root CA Lifecycles ###
+
+For a root CA certificate trusted for server authentication, Mozilla will remove the websites trust bit when the CA key material is more than 15 years old. For a root CA certificate trusted for secure email, Mozilla will set the "Distrust for S/MIME After Date" for the CA certificate to 18 years from the CA key material generation date. The CA key material generation date SHALL be determined by reference to the auditor-witnessed key generation ceremony report. If the CA operator cannot provide the key generation ceremony report for a root CA certificate created before July 1, 2012, then Mozilla will use the “Valid From” date in the root CA certificate to establish the key material generation date. For transition purposes, root CA certificates in the Mozilla root store will be distrusted according to the schedule located at https://wiki.mozilla.org/CA/Root_CA_Lifecycles, which is subject to change if underlying algorithms become more susceptible to cryptanalytic attack or if other circumstances arise that make this schedule obsolete.
+
+CA operators are strongly urged to apply to Mozilla for inclusion of their next generation root certificate at least 2 years before the distrust date of the CA certificate they wish to replace.
 
 ## 8. CA Operational Changes ##
 
@@ -1121,14 +1104,17 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
 [MDSP]:                     https://groups.google.com/a/mozilla.org/g/dev-security-policy 
 [EVGLs]:                    https://cabforum.org/extended-validation/
-[BRs]:                      https://cabforum.org/baseline-requirements-documents/
+[TLS-BRs]:                  https://cabforum.org/baseline-requirements-documents/
+[SMIME-BRs]:                https://cabforum.org/smime-br/
 [NSRs]:                     https://cabforum.org/network-security-requirements/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.03.01_60/en_31941101v010301p.pdf
 [ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.04.01_60/en_31941102v020401p.pdf
-[WebTrust-2.2.1]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100awebtrust-for-ca-221-110120-finalaoda.pdf
-[WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf
+[ETSI-119-411-6]:           https://www.etsi.org/committee/1399-esi
+[WebTrust-2.2.2]:           https://www.cpacanada.ca/-/media/site/operational/ep-education-pld/docs/mds21216webtrustca-222final-(15).pdf
+[WebTrust-BRs]:             https://www.cpacanada.ca/-/media/site/operational/ep-education-pld/docs/mds21216wtbr-26-rev-august-2022final.pdf
+[WebTrust-SMIME]:           https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/01618_ms_smime-certificates_final_aoda-compliant.pdf
 [WebTrust-For-CAs]:         https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria
-[WebTrust-EV]:              https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100cwtev-173-110120-finalaoda.pdf
+[WebTrust-EV]:              https://www.cpacanada.ca/-/media/site/operational/ep-education-pld/docs/mds21216wtev-178final.pdf
 [CC-BY]:                    https://creativecommons.org/licenses/by/4.0/
 [CC-BY-SA]:                 https://creativecommons.org/licenses/by-sa/4.0/
 [CC-BY-ND]:                 https://creativecommons.org/licenses/by-nd/4.0/
@@ -1136,6 +1122,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CCADB-List]:               https://groups.google.com/a/ccadb.org/g/public
 [CCADB-Policy]:             https://www.ccadb.org/policy
 [CCADB-Revocation]:         https://www.ccadb.org/cas/fields#revocation-information
+[3647-6]:                   https://datatracker.ietf.org/doc/html/rfc3647#section-6
 [5280-6.1.4]:               https://datatracker.ietf.org/doc/html/rfc5280#section-6.1.4
 [5280-4.2.1.12]:            https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12
 [6962-3.1]:                 https://datatracker.ietf.org/doc/html/rfc6962#section-3.1
@@ -1145,7 +1132,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Sec-Bugs]:                 https://bugzilla.mozilla.org/enter_bug.cgi?product=NSS&component=CA%20Certificate%20Compliance&groups=crypto-core-security
 [Policy-Update-Process]:    https://wiki.mozilla.org/CA/Updating_Root_Store_Policy
 [Policy-Archive]:           https://wiki.mozilla.org/CA/Root_Store_Policy_Archive
-[Incident-Report]:          https://wiki.mozilla.org/CA/Responding_To_An_Incident
+[Incident]:                 https://wiki.mozilla.org/CA/Responding_To_An_Incident
 [Capable-of-EV]:            https://wiki.mozilla.org/CA/EV_Processing_for_CAs#EV_TLS_Capable
 [Audited-Location]:         https://wiki.mozilla.org/CA/Audit_Statements#Audited_Locations 
 [Auditor-Qualifications]:   https://wiki.mozilla.org/CA/Audit_Statements#Auditor_Qualifications
