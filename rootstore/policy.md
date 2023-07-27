@@ -1,8 +1,8 @@
 # Mozilla Root Store Policy #
 
-*Version 2.8.1*
+*Version 2.9*
 
-*[Effective February 15, 2023][Policy-Archive]*
+*[Effective August X, 2023][Policy-Archive]*
 
 ## 1. Introduction ##
 
