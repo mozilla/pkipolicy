@@ -371,7 +371,7 @@ applies to each of its root and intermediate certificates; *and*
 
 ### 3.4 Compliance Self-Assessments ###
 
-Effective January 1, 2024, CA operators with CA certificates capable of issuing working TLS server certificates MUST complete a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) at least every 366 days and provide the Common CA Database with the location where that Compliance Self-Assessment can be retrieved. 
+Effective January 1, 2024, CA operators with CA certificates capable of issuing working TLS server certificates MUST submit a link to their annual [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) via the CCADB. CA operators SHOULD submit the link to their Compliance Self-Assessment at the same time as when they update their audit records (within 455 calendar days after the CA operator's earliest appearing root record's "BR Audit Period End Date" for the preceding audit period). CA operators SHOULD use the latest available version of the CCADB self-assessment template. CA operators MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before their submission.
 
 ## 4. Common CA Database ##
 
