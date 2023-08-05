@@ -48,8 +48,9 @@ following (and to the CA operators* that control or issue them):
     to such a CA certificate through intermediate certificates that are all in
     scope and
 
-    * an Extended Key Usage (EKU) extension that contains the anyExtendedKeyUsage or id-kp-serverAuth KeyPurposeId, or no EKU extension (i.e. a "server certificate"); or
-    * an EKU extension of id-kp-emailProtection and an rfc822Name or an otherName of type id-on-SmtpUTF8Mailbox in the subjectAltName (i.e. an "email certificate").
+    * an EKU extension that contains the anyExtendedKeyUsage KeyPurposeId, or no EKU extension;
+    * an EKU extension that contains the id-kp-serverAuth KeyPurposeId; or
+    * an EKU extension that contains the id-kp-emailProtection KeyPurposeId and an rfc822Name or an otherName of type id-on-SmtpUTF8Mailbox in the subjectAltName.
     
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be
@@ -117,22 +118,20 @@ meets or exceeds the following requirements:
     the entity submitting the request controls the email account
     associated with the email address referenced in the certificate
     *or* has been authorized by the email account holder to act on
-    the account holder’s behalf. This MUST be done using one or more of the methods documented in section 3.2.2 of the CA/Browser Forum's S/MIME Baseline Requirements. 
-    The CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) 
+    the account holder’s behalf. This MUST be done using one or more of the methods documented in section 3.2.2 of the [CA/Browser Forum's S/MIME Baseline Requirements][SMIME-BRs]. The CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) 
     that the CA employs to perform this verification;
 3.  for a certificate capable of being used for TLS-enabled servers, the CA
     MUST ensure that the applicant has registered all domain(s) referenced
     in the certificate or has been authorized by the domain registrant to
     act on their behalf. This MUST be done using one or more of the
-    methods documented in section 3.2.2.4 of the TLS Baseline Requirements. The CA operator's
+    methods documented in section 3.2.2.4 of the [TLS Baseline Requirements][TLS-BRs]. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
     each documented procedure MUST state which subsection of 3.2.2.4 it is
-    complying with. CAs are not permitted to use 3.2.2.5 (4) ("any other method") 
-    to fulfill the requirements of method 3.2.2.4.8 (IP Address);
+    complying with;
 4.  for a certificate capable of being used for TLS-enabled servers, the CA
     MUST ensure that the applicant has control over all IP Address(es) referenced
     in the certificate. This MUST be done using one or more of the
-    methods documented in section 3.2.2.5 of the TLS Baseline Requirements. The CA operator's
+    methods documented in section 3.2.2.5 of the [TLS Baseline Requirements][TLS-BRs]. The CA operator's
     CPS (or, if applicable, the CP or CP/CPS) MUST clearly specify the procedure(s) that the CA employs, and
     each documented procedure SHOULD state which subsection of 3.2.2.5 it is
     complying with; *and*
@@ -176,10 +175,12 @@ a misissuance, a procedural or operational issue, or any other variety of
 non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all [incidents][Incident] to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report). 
 
 Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
-is marked as resolved in the mozilla.org [Bugzilla][Bugzilla] system by a root store representative. 
+is marked as resolved in [Bugzilla][Bugzilla] by a root store representative. 
 CA operators SHOULD cease issuance until the problem has been prevented from reoccurring.  
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
+
+#### 2.4.1 Vulnerability and Security Incident Reporting ####
 
 Additionally, and not in lieu of the requirement to publicly report incidents as outlined above, a CA Operator MUST disclose a serious vulnerability or security incident in [Bugzilla][Bugzilla] as a [secure bug][Sec-Bugs] in accordance with guidance found on the [Vulnerability Disclosure wiki page][Vulnerability-Disclosure].
 
@@ -235,8 +236,8 @@ apply (see section 3.1.1 for specific version numbers):
     of issuing email certificates MUST have all of the following audits:
 
     * [WebTrust for CAs][WebTrust-2.2.2]; 
-    and, for audit periods ending after December 1, 2023, 
-    * [WebTrust for CAs - S/MIME][WebTrust-SMIME].
+    and,  
+    * for audit periods ending after October 30, 2023, a period-of-time audit performed in accordance with [WebTrust for CAs - S/MIME][WebTrust-SMIME].
 
 
 ##### 3.1.2.2 ETSI #####
@@ -262,9 +263,8 @@ If being audited to the ETSI criteria, the following audit requirements apply
     * [ETSI EN 319 411-1][ETSI-319-411-1] (LCP, NCP, or NCP+); *or*
     * [ETSI EN 319 411-2][ETSI-319-411-2] (QCP-l, QCP-l-qscd, QCP-n, or
       QCP-n-qscd); 
-      and, for audit periods ending after December 1, 2023, 
-    * [ETSI TS 119 411-6][ETSI-119-411-6].
-      
+      and,  
+    * for audit periods ending after October 30, 2023, a period-of-time audit performed in accordance with [ETSI TS 119 411-6][ETSI-119-411-6].
 
 #### 3.1.3 Audit Parameters ####
 Full-surveillance period-of-time audits MUST be conducted and updated audit
@@ -282,7 +282,7 @@ months of the point-in-time date or the end date of the period.
 
 #### 3.1.4 Public Audit Information ####
 
-The publicly-available documentation relating to each audit MUST contain the information required by section 5.1 of the CCADB Policy and the [CA locations that were or were not audited][Audited-Location]. Audit reports must also contain or be accompanied by the name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2.
+The publicly-available documentation relating to each audit MUST contain the information required by section 5.1 of the [CCADB Policy](https://www.ccadb.org/policy) and the [CA locations that were or were not audited][Audited-Location]. Audit reports must also contain or be accompanied by the name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2.
 
 If Mozilla determines that an audit provided does not meet the requirements of this policy, then Mozilla MAY require that the CA operator obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
@@ -346,24 +346,21 @@ applies to each of its root and intermediate certificates; *and*
 
 ### 3.4 Compliance Self-Assessments ###
 
-CA operators with CA certificates capable of issuing working TLS server certificates MUST submit a link to their annual [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) via the CCADB. The initial annual self-assessment must be completed and submitted to the CCADB within 90 calendar days from the CA operator's earliest appearing root record "BR Audit Period End Date" that is after December 31, 2022. CA operators SHOULD submit the link to their self-assessment at the same time as when they update their audit records (within 455 calendar days after the CA operator's earliest appearing root record's "BR Audit Period End Date" for the preceding audit period). CA operators SHOULD use the latest available version of the CCADB self-assessment template. CA operators MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before their submission.
+CA operators with CA certificates capable of issuing working TLS server certificates MUST perform a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) annually and provide a link to their self-assessment within 90 days of the audit period end date of their annual BR audit statement ("BR Audit Period End Date" in the CCADB), for "BR Audit Period End Dates" after September 1, 2023. CA operators SHOULD submit the link to their self-assessment at the same time as when they update their audit statements for their root CA certificates in a [CCADB Case](https://www.ccadb.org/cas/updates). CA operators SHOULD use the latest available version of the[Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) template, and MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before their submission.
 
 ## 4. Common CA Database ##
 
 Mozilla manages its root store using the Common CA Database (CCADB). CA operators with
 certificates in Mozilla’s root store MUST use the CCADB, and are bound by the
-latest published version of the [Common CCADB Policy][CCADB-Policy], which is
+latest published version of the [CCADB Policy][CCADB-Policy], which is
 incorporated here by reference.
-
-When required by the CCADB Policy, Mozilla’s root store may be contacted
-[by email][Email-Us].
 
 Mozilla has requirements for the use of the CCADB above and beyond those in the
 CCADB Policy, as indicated below in this section 4.
 
 ### 4.1 Additional Requirements ###
 
-* CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the CCADB fields under "Pertaining to Certificates Issued by This CA" with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs" within 7 days of such intermediate CA issuing its first certificate; 
+* CA operators with intermediate CA certificates that are capable of issuing TLS certificates chaining up to root certificates in Mozilla's root store SHALL populate the "Pertaining to Certificates Issued by This CA" section of the CCADB records corresponding to those intermediate CA certificates with either the CRL Distribution Point for the "Full CRL Issued By This CA" or a "JSON Array of Partitioned CRLs" within 7 days of such intermediate CA issuing its first certificate;
 * Each CRL referenced by the JSON Array of Partitioned CRLs MUST contain a critical Issuing Distribution Point extension as described in section 6.1.2; *and*
 * if the revocation of an intermediate certificate chaining up to a root in
 Mozilla’s root store is due to a security concern, as well as performing the
@@ -371,7 +368,7 @@ actions defined in the CCADB Policy, a [Vulnerability Disclosure][Vulnerability-
 
 ### 4.2 Surveys ###
 
-Mozilla MAY conduct a survey of CA operators from time to time using the CCADB. CA operators are
+Mozilla MAY conduct a survey of CA operators from time to time. CA operators are
 REQUIRED to respond to the surveys with accurate information, within the
 timescale defined in the survey.
 
@@ -865,7 +862,7 @@ Before being included, CA operators MUST provide evidence that their CA certific
 
 To request that its certificate(s) be added to Mozilla's root store, a CA operator
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
-into the mozilla.org Bugzilla system, filed against the "CA
+into [Bugzilla][Bugzilla], filed against the "CA
 Certificate Root Program" component of the "NSS" product. Mozilla’s wiki
 page, "[Applying for root inclusion in Mozilla products][How-To-Apply]", provides
 further details about how to submit a formal request. The request
@@ -908,24 +905,21 @@ Mozilla's root store as follows:
     included, MAY only be done after careful consideration of the
     CA operator’s current policies, practices, and audits,
     and MAY be requested by a representative of the CA or a
-    representative of Mozilla by submitting a bug report into the
-    mozilla.org Bugzilla system, as described in Mozilla’s wiki
+    representative of Mozilla by submitting a bug report into [Bugzilla][Bugzilla], as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 2.  enabling EV in a CA certificate that is currently included,
     MAY only be done after careful consideration of the CA operator’s current
     policies, practices, and audits,
     and MAY be requested by a representative of the CA operator or a
-    representative of Mozilla by submitting a bug report into the
-    mozilla.org Bugzilla system, as described in Mozilla’s wiki
+    representative of Mozilla by submitting a bug report into [Bugzilla][Bugzilla], as described in Mozilla’s wiki
     page, "[Applying for root inclusion in Mozilla products][How-To-Apply]";
 3.  disabling a CA certificate is the act of turning off one or more of the
     trust bits (websites or email), and MAY be
     requested by a representative of the CA operator or a representative of
-    Mozilla by submitting a bug report into the mozilla.org Bugzilla
-    system, as described in the [Root Change Process][Root-Changes]; *and*
+    Mozilla by submitting a bug report into [Bugzilla][Bugzilla], as described in the [Root Change Process][Root-Changes]; *and*
 4.  a representative of the CA operator or a representative of Mozilla MAY
     request that a CA certificate be removed by submitting a bug
-    report into the mozilla.org Bugzilla system, as described in the
+    report into [Bugzilla][Bugzilla], as described in the
     [Root Change Process][Root-Changes].
 
 ### 7.3 Removals ###
@@ -959,8 +953,7 @@ rule.
 If Mozilla disables or removes a CA operator’s certificate(s) from Mozilla’s
 root store based on a CA operator’s actions (or failure to act) that are
 contrary to this policy, Mozilla will publicize 
-that fact (for example, in newsgroups on the
-news.mozilla.org server, and on our websites) and MAY also alert 
+that fact (for example, on the [Mozilla dev-security-policy list][MDSP], and on our websites) and MAY also alert 
 relevant news or government organizations such as US-CERT.
 
 ### 7.4 Root CA Lifecycles ###
