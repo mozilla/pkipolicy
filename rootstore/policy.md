@@ -600,8 +600,7 @@ CA operators MUST NOT issue certificates that have:
 CA operators MUST NOT generate the key pairs for end entity certificates that have an
 EKU extension containing the KeyPurposeIds id-kp-serverAuth or anyExtendedKeyUsage, unless the certificate is being issued to the CA itself.
 
-Effective for certificates with a notBefore date of July 1, 2020 or later, 
-end entity certificates MUST include an EKU extension containing KeyPurposeId(s) 
+All end entity certificates MUST include an EKU extension containing KeyPurposeId(s) 
 describing the intended usage(s) of the certificate, and the EKU extension MUST NOT 
 contain the KeyPurposeId anyExtendedKeyUsage.
 
@@ -842,11 +841,10 @@ security-sensitive, and a [Vulnerability Disclosure][Vulnerability-Disclosure] m
 ### 7.1 Inclusions ###
 
 We will determine which CA certificates are included in Mozilla's root store
-based on the risks of
-such inclusion to typical users of our products. We will consider adding
-additional CA certificates to the default certificate set upon request only by
+based on the [risks of such inclusion to typical users of our products](https://wiki.mozilla.org/CA/Root_Inclusion_Considerations). We will consider adding
+additional CA certificates to the default certificate set upon r quest only by
 an authorized representative of the subject CA. We will make such decisions
-through a public process.
+through a [public process](https://wiki.mozilla.org/CA/Application_Process).
 
 We will not charge any fees to have a CA operator’s certificate(s)
 included in Mozilla's root store.
@@ -958,7 +956,7 @@ relevant news or government organizations such as US-CERT.
 
 ### 7.4 Root CA Lifecycles ###
 
-For a root CA certificate trusted for server authentication, Mozilla will remove the websites trust bit when the CA key material is more than 15 years old. For a root CA certificate trusted for secure email, Mozilla will set the "Distrust for S/MIME After Date" for the CA certificate to 18 years from the CA key material generation date. The CA key material generation date SHALL be determined by reference to the auditor-witnessed key generation ceremony report. If the CA operator cannot provide the key generation ceremony report for a root CA certificate created before July 1, 2012, then Mozilla will use the “Valid From” date in the root CA certificate to establish the key material generation date. For transition purposes, root CA certificates in the Mozilla root store will be distrusted according to the schedule located at https://wiki.mozilla.org/CA/Root_CA_Lifecycles, which is subject to change if underlying algorithms become more susceptible to cryptanalytic attack or if other circumstances arise that make this schedule obsolete.
+For a root CA certificate trusted for server authentication, Mozilla will remove the websites trust bit when the CA key material is more than 15 years from the CA key material generation date. For a root CA certificate trusted for secure email, Mozilla will set the "Distrust for S/MIME After Date" for the CA certificate to 18 years from the CA key material generation date. The CA key material generation date SHALL be determined by reference to the auditor-witnessed key generation ceremony report. If the CA operator cannot provide the key generation ceremony report for a root CA certificate created before July 1, 2012, then Mozilla will use the “Valid From” date in the root CA certificate to establish the key material generation date. For transition purposes, root CA certificates in the Mozilla root store will be distrusted according to the schedule located at https://wiki.mozilla.org/CA/Root_CA_Lifecycles, which is subject to change if underlying algorithms become more susceptible to cryptanalytic attack or if other circumstances arise that make this schedule obsolete.
 
 CA operators are strongly urged to apply to Mozilla for inclusion of their next generation root certificate at least 2 years before the distrust date of the CA certificate they wish to replace.
 
