@@ -800,38 +800,7 @@ A CRL whose scope does not include all unexpired certificates that are issued by
 
 ### 6.2 S/MIME ###
 
-For any certificate in a hierarchy capable of being used for 
-S/MIME, CA operators MUST revoke certificates upon the occurrence of 
-any of the following events:
-
-1. the subscriber indicates that the original certificate request 
-was not authorized and does not retroactively grant authorization;
-2. the CA operator obtains reasonable evidence that the subscriber’s 
-private key (corresponding to the public key in the certificate) 
-has been compromised or is suspected of compromise;
-3. the CA operator obtains reasonable evidence that the certificate 
-has been used for a purpose outside of that indicated 
-in the certificate or in the CA operator's subscriber agreement;
-4. the CA operator receives notice or otherwise becomes aware that a 
-subscriber has violated one or more of its material obligations 
-under the subscriber agreement;
-5. the CA operator receives notice or otherwise becomes aware of any circumstance 
-indicating that use of the email address in the certificate 
-is no longer legally permitted;
-6. the CA operator receives notice or otherwise becomes aware of a material change 
-in the information contained in the certificate;
-7. a determination that the certificate was not issued in accordance 
-with the CA operator’s Certificate Policy or Certification Practice Statement;
-8. the CA operator determines that any of the information 
-appearing in the certificate is not accurate;
-9. the CA operator ceases operations for any reason and has not arranged 
-for another CA operator to provide revocation support for the certificate;
-10. the CA private key used in issuing the certificate is suspected 
-to have been compromised;
-11. such additional revocation events as the CA operator publishes 
-in its policy documentation; *or*
-12. the certificate was issued in violation of the then-current 
-version of these requirements.
+Section 4.9.1 of the [S/MIME Baseline Requirements][SMIME-BRs] sets forth the revocation requirements for certificates capable of being used for S/MIME. Additionally, CA operators MUST revoke any certificate capable of being used for S/MIME that was issued in violation of the then-current version of this Policy. 
 
 ## 7. Root Store Changes ##
 
