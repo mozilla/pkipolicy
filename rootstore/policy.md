@@ -348,7 +348,7 @@ applies to each of its root and intermediate certificates; *and*
 
 ### 3.4 Compliance Self-Assessments ###
 
-CA operators with CA certificates capable of issuing working TLS server certificates MUST perform a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) annually and provide a link to their self-assessment within 90 days of the audit period end date of their annual BR audit statement ("BR Audit Period End Date" in the CCADB), for "BR Audit Period End Dates" after September 1, 2023. CA operators SHOULD submit the link to their self-assessment at the same time as when they update their audit statements for their root CA certificates in a [CCADB Case](https://www.ccadb.org/cas/updates). CA operators SHOULD use the latest available version of the[Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) template, and MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before their submission.
+CA operators with CA certificates capable of issuing working TLS server certificates MUST perform a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) annually. The annual self-assessment must be completed and submitted to the CCADB within 92 calendar days from the CA operator's earliest appearing root record “BR Audit Period End Date” that is after December 31, 2023. CA operators SHOULD submit the self-assessment at the same time as uploading audit reports in a [CCADB Case](https://www.ccadb.org/cas/updates). CA operators SHOULD use the latest available version of the [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) template, and MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before their submission.
 
 ## 4. Common CA Database ##
 
@@ -636,14 +636,15 @@ The conformance requirements defined in section 2.3 of this policy also apply to
 technically constrained intermediate certificates.
 
 If the intermediate CA certificate includes the id-kp-serverAuth extended key usage,
-then to be considered technically constrained, the certificate MUST be Name Constrained as described in section
-7.1.5 of version 1.3 or later of the [TLS Baseline Requirements][TLS-BRs]. The id-kp-clientAuth EKU MAY also be present.
+then to be considered technically constrained, the certificate MUST be name-constrained as described in section
+7.1.2.5 of the [TLS Baseline Requirements][TLS-BRs], each entry in permittedSubtrees having been validated according to section
+3.2.2 of the TLS Baseline Requirements. The id-kp-clientAuth EKU MAY also be present.
 
 If the intermediate CA certificate includes the id-kp-emailProtection extended key
 usage, then to be considered technically
 constrained, it MUST comply with section 7.1.5 of the [S/MIME Baseline Requirements][SMIME-BRs] and include the Name Constraints X.509v3 extension with
 constraints on rfc822Name, with at least one name in permittedSubtrees,
-each such name having its ownership validated according to section
+each name having been validated according to section
 3.2.2 of the [S/MIME Baseline Requirements][SMIME-BRs]. The values id-kp-serverAuth and anyExtendedKeyUsage MUST NOT be present. id-kp-clientAuth MAY be present. Other values that the CA is allowed to use and are documented in the CA’s CP, CPS, or combined CP/CPS MAY be present.
 
 #### 5.3.2 Publicly Disclosed and Audited ####
