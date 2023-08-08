@@ -207,16 +207,18 @@ following documents to be acceptable:
 *   WebTrust "[Principles and Criteria for Certification Authorities -
     Extended Validation SSL 1.7.8][WebTrust-EV]" or later in
     [WebTrust Program for Certification Authorities][WebTrust-For-CAs];
-*   “Trust Service Providers practice” in ETSI EN 319 411-1 v1.3.1 or
+*   WebTrust "[Principles and Criteria for Certification Authorities - S/MIME Certificates][WebTrust-SMIME];
+*   "Trust Service Providers practice" in ETSI EN 319 411-1 v1.3.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 1: General requirements][ETSI-319-411-1],
     specifying a policy or policies appropriate to the trust bit(s) being
-    applied for; *and*
-*   “Trust Service Providers practice” in ETSI EN 319 411-2 v2.4.1 or
+    applied for; 
+*   "Trust Service Providers practice" in ETSI EN 319 411-2 v2.4.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 2: Requirements for trust service providers
     issuing EU qualified certificates][ETSI-319-411-2], specifying a
-    policy or policies appropriate to the trust bit(s) being applied for.
+    policy or policies appropriate to the trust bit(s) being applied for; *and*
+*   ETSI "[Requirements for Trust Service Providers issuing publicly trusted S/MIME certificates][ETSI-119-411-6]", ETSI TS 119 411-6.
 
 #### 3.1.2 Required Audits ####
 
@@ -699,10 +701,10 @@ Section 4.9.12 of a CA operator's CPS (or, if applicable, the CP or CP/CPS) MUST
 For any certificate in a hierarchy capable of being used for 
 TLS-enabled servers, CAs MUST revoke certificates that they have 
 issued upon the occurrence of any event listed in the appropriate 
-subsection of section 4.9.1 of the TLS Baseline Requirements, 
+subsection of section 4.9.1 of the [TLS Baseline Requirements][TLS-BRs], 
 according to the timeline defined therein. CAs MUST also revoke 
 any certificates issued in violation of the then-current version 
-of these requirements according to the timeline defined in 
+of this policy according to the timeline defined in 
 section 4.9.1 of the TLS Baseline Requirements.
 
 #### 6.1.1 End Entity TLS Certificate CRLRevocation Reasons ####
@@ -800,7 +802,7 @@ A CRL whose scope does not include all unexpired certificates that are issued by
 
 ### 6.2 S/MIME ###
 
-Section 4.9.1 of the [S/MIME Baseline Requirements][SMIME-BRs] sets forth the revocation requirements for certificates capable of being used for S/MIME. Additionally, CA operators MUST revoke any certificate capable of being used for S/MIME that was issued in violation of the then-current version of this Policy. 
+For any certificate in a hierarchy capable of being used for S/MIME, CAs MUST revoke certificates that they have issued upon the occurrence of any event listed in the appropriate subsection of section 4.9.1 of the [S/MIME Baseline Requirements][SMIME-BRs], according to the timeline defined therein. CAs MUST also revoke any certificates issued in violation of the then-current version of this policy according to the timeline defined in section 4.9.1 of the S/MIME Baseline Requirements.
 
 ## 7. Root Store Changes ##
 
