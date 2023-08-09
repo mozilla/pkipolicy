@@ -658,7 +658,7 @@ certificates as described above may not be practical in some cases.
 All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
-Mozilla’s root store MUST be audited in accordance with this policy. 
+Mozilla’s root store MUST be audited in accordance with this policy, and the corresponding audit statements must be disclosed in the CCADB according to [section 5 of the CCADB Policy](https://www.ccadb.org/policy#5-policies-audits-and-practices). 
 If the CA operator has a currently valid audit report at the time of creation 
 of the intermediate certificate, then the new intermediate certificate MUST appear on the 
 CA operator's next periodic audit reports.
