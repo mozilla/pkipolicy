@@ -284,7 +284,7 @@ months of the point-in-time date or the end date of the period.
 
 #### 3.1.4 Public Audit Information ####
 
-The publicly-available documentation relating to each audit MUST contain the information required by section 5.1 of the [CCADB Policy](https://www.ccadb.org/policy) and the [CA locations that were or were not audited][Audited-Location]. Audit reports must also contain or be accompanied by the name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2.
+The publicly-available documentation relating to each audit MUST contain the information required by section 5.1 of the [CCADB Policy](https://www.ccadb.org/policy) and the [CA locations that were or were not audited][Audited-Location]. Audit reports MUST also contain or be accompanied by the name of the lead auditor and [qualifications of the team][Auditor-Qualifications] performing the audit, as required by section 3.2.
 
 If Mozilla determines that an audit provided does not meet the requirements of this policy, then Mozilla MAY require that the CA operator obtain a new audit, at the CA operator's expense, for the period of time in question. Additionally, depending on the nature of concerns with the audit, Mozilla MAY require that the CA operator obtain such an audit from a new auditor.
 
@@ -348,7 +348,7 @@ applies to each of its root and intermediate certificates; *and*
 
 ### 3.4 Compliance Self-Assessments ###
 
-CA operators with CA certificates capable of issuing working TLS server certificates MUST perform a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) annually. The annual self-assessment must be completed and submitted to the CCADB within 92 calendar days from the CA operator's earliest appearing root record “BR Audit Period End Date” that is after December 31, 2023. CA operators SHOULD submit the self-assessment at the same time as uploading audit reports in a [CCADB Case](https://www.ccadb.org/cas/updates). CA operators SHOULD use the latest available version of the [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) template, and MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before submission.
+CA operators with CA certificates capable of issuing working TLS server certificates MUST perform a [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) annually. The annual self-assessment MUST be completed and submitted to the CCADB within 92 calendar days from the CA operator's earliest appearing root record “BR Audit Period End Date” that is after December 31, 2023. CA operators SHOULD submit the self-assessment at the same time as uploading audit reports in a [CCADB Case](https://www.ccadb.org/cas/updates). CA operators SHOULD use the latest available version of the [Compliance Self-Assessment](https://www.ccadb.org/cas/self-assessment) template, and MUST NOT use a version of the self-assessment template that has been superseded by more than 90 calendar days before submission.
 
 ## 4. Common CA Database ##
 
@@ -648,7 +648,7 @@ certificates as described above may not be practical in some cases.
 All certificates that are capable of being used to issue new
 certificates, that are not technically constrained, and that
 directly or transitively chain to a certificate included in
-Mozilla’s root store MUST be audited in accordance with this policy, and the corresponding audit statements must be disclosed in the CCADB according to [section 5 of the CCADB Policy](https://www.ccadb.org/policy#5-policies-audits-and-practices). 
+Mozilla’s root store MUST be audited in accordance with this policy, and the corresponding audit statements MUST be disclosed in the CCADB according to [section 5 of the CCADB Policy](https://www.ccadb.org/policy#5-policies-audits-and-practices). 
 If the CA operator has a currently valid audit report at the time of creation 
 of the intermediate certificate, then the new intermediate certificate MUST appear on the 
 CA operator's next periodic audit reports.
@@ -795,7 +795,7 @@ For any certificate in a hierarchy capable of being used for S/MIME, CAs MUST re
 ## 7. Root Store Changes ##
 
 Changes that are motivated by a security concern, such as a root or intermediate CA compromise, MUST be treated as 
-security-sensitive, and a [Vulnerability Disclosure][Vulnerability-Disclosure] must be filed as a secure bug in [Bugzilla][Sec-Bugs].
+security-sensitive, and a [Vulnerability Disclosure][Vulnerability-Disclosure] MUST be filed as a secure bug in [Bugzilla][Sec-Bugs].
 
 ### 7.1 Inclusions ###
 
