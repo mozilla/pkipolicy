@@ -172,7 +172,7 @@ can be considered for addition or clarification.
 
 When a CA operator fails to comply with any requirement of this policy - whether it be
 a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an incident and MUST be reported to Mozilla as soon as the CA operator is made aware. At a minimum, CA operators MUST promptly report all [incidents][Incident] to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report). 
+non-compliance - the event is classified as an [incident][Incident]. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report). An incident report MUST be filed as soon as the CA operator is made aware but no later than 72 hours after discovery. If a full incident report is not yet ready, the CA operator MUST provide a preliminary report containing an executive summary of the incident and a date by which the full report will be posted. The CA operator MUST submit a full incident report within two weeks of being made aware of the incident. 
 
 Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
 is marked as resolved in [Bugzilla][Bugzilla] by a root store representative. 
