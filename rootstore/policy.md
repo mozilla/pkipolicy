@@ -384,10 +384,11 @@ set:
 *   RSA keys whose modulus size in bits is divisible by 8, and is at
     least 2048 bits; *or*
 *   ECDSA keys using one of the following curves:
-    * P-256; *or*
-    * P-384.
+    * P-256; 
+    * P-384; *or*
+    * P-521.
 
-The following curves are not prohibited, but are not currently supported: P-521, Curve25519, and Curve448.
+The following curves are not prohibited, but are not currently supported: Curve25519 and Curve448.
 
 EdDSA keys MAY be included in certificates that chain to a root certificate in our root store if the certificate contains ‘id-kp-emailProtection` in the EKU extension. Otherwise, EdDSA keys MUST NOT be included.
 
