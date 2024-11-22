@@ -170,15 +170,14 @@ can be considered for addition or clarification.
 
 ### 2.4 Incidents
 
-When a CA operator fails to comply with any requirement of this policy - whether it be
-a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an [incident][Incident]. At a minimum, CA operators MUST promptly report all incidents to Mozilla in the form of an Incident Report that follows [guidance provided on the CCADB website](https://www.ccadb.org/cas/incident-report). An incident report MUST be filed as soon as the CA operator is made aware but no later than 72 hours after discovery. If a full incident report is not yet ready, the CA operator MUST provide a preliminary report containing an executive summary of the incident and a date by which the full report will be posted. The CA operator MUST submit a full incident report within two weeks of being made aware of the incident. Once the report is posted, CA operators SHOULD respond promptly to questions that are asked, and in no circumstances MUST a question linger without a response for more than seven days, even if the response is only to acknowledge the question and provide a later date when a response will be delivered.
+When a CA operator fails to comply with any requirement of this policy - whether it be a misissuance, a procedural or operational issue, or any other variety of 
+non-compliance - the event is classified as an [incident][Incident]. This policy incorporates by reference the [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report) (IRGs) as if fully set forth herein. As such, CA operators MUST report all incidents within 72 hours of the CA being made aware, and if a Full Incident Report is not yet ready, the CA operator MUST provide a Preliminary Incident Report, all in accordance with the IRGs.
 
-Any matter documented in an audit as a qualification, a modified opinion, or a major non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). CA operators MUST regularly update the Incident Report until the corresponding bug 
-is marked as resolved in [Bugzilla][Bugzilla] by a root store representative. 
-CA operators SHOULD cease issuance until the problem has been prevented from reoccurring.  
+Any matter documented in an audit as a qualification, a modified opinion, or non-conformity is also considered an incident and MUST have a corresponding [Audit Incident Report](https://www.ccadb.org/cas/incident-report#audit-incident-reports). 
 
-Mozilla expects the timely remediation of the problems that caused or gave rise to the incident. In response to incidents, Mozilla MAY require the CA operator to submit a plan of action with milestones or to submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
+CA operators MUST regularly update Incident Reports in accordance with the IRGs until the corresponding [Bugzilla][Bugzilla] bug is marked as resolved by a root store representative.
+
+Mozilla expects the timely remediation of the problems that caused or gave rise to an incident. In response to incidents, Mozilla MAY further require that the CA operator submit a plan of action with milestones or submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
 
 #### 2.4.1 Vulnerability and Security Incident Reporting
 
