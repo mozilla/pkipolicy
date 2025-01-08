@@ -944,7 +944,7 @@ The regular annual audit statements MUST still happen in a timely manner.
 
 If a security issue arises during key transfer, then the organization(s) concerned MUST immediately file a [Vulnerability Disclosure][Vulnerability-Disclosure] in Bugzilla using a [secure bug][Sec-Bugs].
 
-## 8.4 Externally-Operated Subordinate CAs
+### 8.4 Externally-Operated Subordinate CAs
 
 The operator of a root CA certificate that is included in Mozilla’s root store is at all times completely and ultimately accountable for every certificate signed under that root CA certificate, whether directly or through subordinate CAs or cross-certified CAs. The operator of the root CA certificate SHALL ensure that the operator of each subordinate or cross-certified CA fully and continually adheres to this policy.
 
