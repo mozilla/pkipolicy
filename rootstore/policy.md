@@ -745,6 +745,8 @@ Mozilla is under no obligation to explain the reasoning behind any inclusion dec
 
 Before being included, CA operators MUST provide evidence that their CA key pairs and CA certificates fully comply with the current Mozilla Root Store Requirements and the S/MIME or TLS Baseline Requirements, and have continually, from the time of CA private key creation (see section 3.1.3), complied with the then-current Mozilla Root Store Policy and the S/MIME or TLS Baseline Requirements, as applicable. 
 
+Additionally, CA operators applying for inclusion of new TLS-issuing root certificates MUST demonstrate support for at least one automated method of certificate issuance for each type of TLS certificate (EV, OV, DV, IV) that the CA issues. This means (1) automated domain control validation, as defined in the TLS Baseline Requirements; and (2) automated certificate issuance and retrieval processes. Such automated methods MUST minimize hands-on human input during routine certificate issuance and renewal processes and comply with the TLS Baseline Requirements, and EV Guidelines, if applicable. Acceptable "hands-on" input includes initial software setup, configuration, updates, and identity verification where required. CA operators MUST disclose the URL for each such automation endpoint in the CCADB and renew test certificates using such capability at least every 30 days to demonstrate compliance with these automation requirements.
+
 To request that its certificate(s) be added to Mozilla's root store, a CA operator
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
 into [Bugzilla][Bugzilla], filed against the "CA
@@ -771,8 +773,10 @@ MUST include the following:
     for the CA or CAs in question; 
 5.  an auditor-witnessed root key generation ceremony report and contiguous 
     period-of-time audit reports performed thereafter no less frequently than 
-    annually; *and*
-6.  information as to how the CA operator has fulfilled the requirements
+    annually;
+6.  evidence of automated certificate issuance support as specified above;
+    *and*
+7.  information as to how the CA operator has fulfilled the requirements
     stated above regarding its verification of certificate signing
     requests and its conformance to a set of acceptable operational
     criteria.
