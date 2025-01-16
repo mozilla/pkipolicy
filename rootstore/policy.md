@@ -716,6 +716,21 @@ A CRL whose scope does not include all unexpired certificates that are issued by
 1.    The UniformResourceIdentifier as encoded in the distributionPoint field of an issued certificate's CRL Distribution Points extension (see RFC 5280 section 5.2.5); or
 2.    The URL as included in the "JSON Array of Partitioned CRLs" field in the CCADB entry corresponding to the certificate for the issuing CA.
 
+#### 6.1.3 Delayed Revocation
+
+Mozilla’s goal is to ensure that revocation occurs as swiftly as possible while maintaining the overall security and stability of the web. For any certificate in a hierarchy capable of being used for TLS-enabled servers, CAs MUST revoke certificates that they have issued upon the occurrence of any event listed in the appropriate subsection of section 4.9.1 of the [TLS Baseline Requirements][TLS-BRs] (including for any violation of the then-current version of this policy), according to the timeline defined therein. Mozilla does not grant exceptions to the revocation requirements of the TLS BRs.
+
+To ensure compliance with the TLS BRs, Mozilla requires that CA operators:
+* engage in proactive communication and advise subscribers well in advance about the revocation timelines and explicitly warn them against using publicly-trusted TLS server certificates on systems that cannot tolerate timely revocation;
+* include appropriate language in customer agreements requiring subscribers’ timely cooperation in meeting revocation timelines and acknowledging the CA’s obligations to adhere to applicable policies and standards;*
+*  prepare and maintain credible plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing; and
+* engage a third party assessor to evaluate whether the CA Operator has:
+     * credible plans to handle mass revocation events;
+     * tested the operational effectiveness of the plans, including the accuracy and adequacy of documentation of plan testing, including timelines, results, and remediation steps; and
+     * incorporated feedback from such exercises to improve future readiness.
+
+Section 2.4 of this policy incorporates by reference the [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report). It has reporting requirements that MUST be followed by CA operators who determine they might delay revocation of certificates beyond the time period required by the TLS BRs. For instance, the Analysis field in the Impact section of such incident reports MUST explain "the factors and rationales behind the decision to delay revocation (including detailed and substantiated explanations of how extensive harm would result to third parties–such as essential public services or widely relied-upon systems–and why the situation is exceptionally rare and unavoidable)." All delayed revocation incidents MUST be listed as findings in the CA operator’s next TLS BR audit statement. Repeated incidents of delayed revocation without sufficient justification will result in heightened scrutiny and sanctions, which may include removal of the CA from the Mozilla Root Store.
+
 ### 6.2 S/MIME
 
 For any certificate in a hierarchy capable of being used for S/MIME, CAs MUST revoke certificates that they have issued upon the occurrence of any event listed in the appropriate subsection of section 4.9.1 of the [S/MIME Baseline Requirements][SMIME-BRs], according to the timeline defined therein. CAs MUST also revoke any certificates issued in violation of the then-current version of this policy according to the timeline defined in section 4.9.1 of the S/MIME Baseline Requirements.
