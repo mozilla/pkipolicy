@@ -851,6 +851,28 @@ For a root CA certificate trusted for server authentication, Mozilla will remove
 
 CA operators are strongly urged to apply to Mozilla for inclusion of their next generation root certificate at least 2 years before the distrust date of the CA certificate they wish to replace.
 
+### 7.5 Dedicated Root Certificates
+
+All root CA certificates added to Mozilla's Root Store after January 1, 2025, will only be trusted for either TLS server authentication (websites trust bit) or S/MIME email protection (email trust bit). Existing root CA certificates that do not comply with this requirement MUST transition to one or the other prior to December 31, 2028, i.e., by having one of their trust bits (websites or email) removed. 
+
+#### 7.5.1 Server Authentication Hierarchies
+
+Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the websites trust bit enabled MUST include an extendedKeyUsage extension that asserts only id-kp-serverAuth or both id-kp-serverAuth and id-kp-clientAuth. 
+
+#### 7.5.2 S/MIME Hierarchies
+
+Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the email trust bit enabled MUST include an extendedKeyUsage extension that asserts id-kp-emailProtection. They MAY include other extendedKeyUsages, but they MUST NOT include extendedKeyUsages of id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, or anyExtendedKeyUsage.
+
+#### 7.5.3 Transition Plan for Existing Roots
+
+Root CA certificates included in Mozilla's Root Store as of January 1, 2025, that have both the websites and the email trust bits enabled MAY remain trusted after April 15, 2026, if the CA operator has submitted a transition plan by April 15, 2026, to migrate to dedicated hierarchies by December 31, 2028.
+Transition plans MAY include:
+
+1.	Submission of requests for inclusion of single-purpose roots;
+2.	Requests to remove the websites trust bit or the email trust bit from a dual-purpose root;
+3.	Timelines for phasing out conflicting uses of the root (e.g. dates by which inconsistent certificates will expire or issuance will cease); and
+4.	Revocation or replacement of certificates that do not meet the requirements of Sections 7.5.1 or 7.5.2.
+
 ## 8. CA Operational Changes
 
 CA operators SHALL NOT assume that trust is transferable. All CA operators whose certificates
