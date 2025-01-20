@@ -726,8 +726,8 @@ To ensure compliance with the TLS BRs, Mozilla requires that CA operators:
 *  prepare and maintain comprehensive and actionable plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing; and
 * engage a third party assessor to evaluate whether the CA Operator has:
      * well-documented and actionable plans to handle mass revocation events;
-     * tested the operational effectiveness of the plans, including the accuracy and adequacy of documentation of plan testing, including timelines, results, and remediation steps; and
-     * incorporated feedback from such exercises to improve future readiness.
+     * demonstrated the implementation and feasibility of the plans through testing exercises, including documentation of testing processes, timelines, results, and remediation steps; and
+     * incorporated feedback from such testing exercises and other evaluations to enhance readiness and improve future performance.
 
 Section 2.4 of this policy incorporates by reference the [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report). It has reporting requirements that MUST be followed by CA operators who determine they might delay revocation of certificates beyond the time period required by the TLS BRs. For instance, the Analysis field in the Impact section of such incident reports MUST explain "the factors and rationales behind the decision to delay revocation (including detailed and substantiated explanations of how extensive harm would result to third parties–such as essential public services or widely relied-upon systems–and why the situation is exceptionally rare and unavoidable)." All delayed revocation incidents MUST be listed as findings in the CA operator’s next TLS BR audit statement. Repeated incidents of delayed revocation without sufficient justification will result in heightened scrutiny and sanctions, which may include removal of the CA from the Mozilla Root Store.
 
