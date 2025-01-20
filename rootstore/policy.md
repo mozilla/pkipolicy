@@ -868,15 +868,17 @@ CA operators are strongly urged to apply to Mozilla for inclusion of their next 
 
 ### 7.5 Dedicated Root Certificates
 
+CA operators with root certificates that have both websites and email trust bits enabled SHOULD consider the requirements in Section 7.4 (Root CA Lifecycles) when planning their compliance with the trust bit transitions outlined in this section.
+
 All root CA certificates added to Mozilla's Root Store after January 1, 2025, will only be trusted for either TLS server authentication (websites trust bit) or S/MIME email protection (email trust bit). Existing root CA certificates that do not comply with this requirement MUST transition to one or the other prior to December 31, 2028, i.e., by having one of their trust bits (websites or email) removed. 
 
 #### 7.5.1 Server Authentication Hierarchies
 
-Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the websites trust bit enabled MUST include an extendedKeyUsage extension that asserts only id-kp-serverAuth or both id-kp-serverAuth and id-kp-clientAuth. 
+Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the websites trust bit enabled MUST include an extendedKeyUsage extension that asserts only id-kp-serverAuth or both id-kp-serverAuth and id-kp-clientAuth. OCSP signing certificates are exempt from this EKU restriction and MUST only include the id-kp-OCSPSigning EKU.
 
 #### 7.5.2 S/MIME Hierarchies
 
-Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the email trust bit enabled MUST include an extendedKeyUsage extension that asserts id-kp-emailProtection. They MAY include other extendedKeyUsages, but they MUST NOT include extendedKeyUsages of id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, or anyExtendedKeyUsage.
+Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the email trust bit enabled MUST include an extendedKeyUsage extension that asserts id-kp-emailProtection. They MAY include other extendedKeyUsages, but they MUST NOT include extendedKeyUsages of id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, or anyExtendedKeyUsage. OCSP signing certificates are exempt from this EKU restriction and MUST only include the id-kp-OCSPSigning EKU.
 
 #### 7.5.3 Transition Plan for Existing Roots
 
