@@ -714,11 +714,11 @@ A CRL whose scope does not include all unexpired certificates that are issued by
 
 #### 6.1.3 Delayed Revocation
 
-Mozilla’s goal is to ensure that revocation occurs as swiftly as possible while maintaining the overall security and stability of the web. For any certificate in a hierarchy capable of being used for TLS-enabled servers, CAs MUST revoke certificates that they have issued upon the occurrence of any event listed in the appropriate subsection of section 4.9.1 of the [TLS BRs][TLS-BRs] (including for any violation of the then-current version of this policy), according to the timeline defined therein. Mozilla does not grant exceptions to the revocation requirements of the TLS BRs.
+Mozilla’s goal is to ensure that revocation occurs as swiftly as possible while maintaining the overall security and stability of the web. Mozilla does not grant exceptions to the revocation requirements of the TLS BRs.
 
 To ensure compliance with the TLS BRs, Mozilla requires that CA operators:
 * engage in proactive communication and advise subscribers well in advance about the revocation timelines and explicitly warn them against using publicly-trusted TLS server certificates on systems that cannot tolerate timely revocation;
-* include appropriate language in customer agreements requiring subscribers’ timely cooperation in meeting revocation timelines and acknowledging the CA’s obligations to adhere to applicable policies and standards;*
+* include appropriate language in customer agreements requiring subscribers’ timely cooperation in meeting revocation timelines and acknowledging the CA’s obligations to adhere to applicable policies and standards;
 *  prepare and maintain comprehensive and actionable plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing; and
 * engage a third party assessor to evaluate whether the CA Operator has:
      * well-documented and actionable plans to handle mass revocation events;
