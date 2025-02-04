@@ -719,7 +719,7 @@ Mozilla’s goal is to ensure that revocation occurs as swiftly as possible whil
 To ensure compliance with the TLS BRs, Mozilla requires that CA operators:
 * engage in proactive communication and advise subscribers well in advance about the revocation timelines and explicitly warn them against using publicly-trusted TLS server certificates on systems that cannot tolerate timely revocation;
 * include appropriate language in customer agreements requiring subscribers’ timely cooperation in meeting revocation timelines and acknowledging the CA’s obligations to adhere to applicable policies and standards;
-*  prepare and maintain comprehensive and actionable plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing; and
+*  prepare and maintain comprehensive and actionable plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing through tabletop exercises, simulations, parallel testing, or use of test environments, which do not involve the revocation of active certificates; and
 * engage a third party assessor to evaluate whether the CA Operator has:
      * well-documented and actionable plans to handle mass revocation events;
      * demonstrated the implementation and feasibility of the plans through testing exercises, including documentation of testing processes, timelines, results, and remediation steps; and
