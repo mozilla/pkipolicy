@@ -489,10 +489,11 @@ When ECDSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
 field MUST be one of the following, as specified by [RFC 5480, Section 2.1.1](https://datatracker.ietf.org/doc/html/rfc5480#section-2.1.1):
 
   * the encoded AlgorithmIdentifier for a P-256 key MUST match the following
-  hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`; *or*
-
+  hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`; 
   * the encoded AlgorithmIdentifier for a P-384 key MUST match the following
-  hex-encoded bytes: `301006072a8648ce3d020106052b81040022`.
+  hex-encoded bytes: `301006072a8648ce3d020106052b81040022`; *or*
+  * the encoded AlgorithmIdentifier for a P-521 key MUST match the following
+  hex-encoded bytes: `301006072a8648ce3d020106052b81040023`.
 
 The above encodings consist of an ecPublicKey OID (1.2.840.10045.2.1) with a
 named curve parameter of the corresponding curve OID. Certificates MUST NOT use
@@ -509,6 +510,9 @@ encoding requirements:
   * If the signing key is P-384, the signature MUST use ECDSA with SHA-384. The
   encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
   `300a06082a8648ce3d040303`.
+
+  * If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When encoded, the AlgorithmIdentifier MUST be byte-for-byte identical with the following hex-encoded bytes:
+  `300a06082a8648ce3d040304`.
 
 The above encodings consist of the corresponding OID with the parameters field
 omitted, as specified by [RFC 5758, Section 3.2](https://datatracker.ietf.org/doc/html/rfc5758#section-3.2).
