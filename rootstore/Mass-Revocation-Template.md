@@ -11,17 +11,15 @@
 
 
 
-------
-
-
-
 ### **CA Operator Contact Information**
 
 [Company Name]
-[Address]
-[Telephone]
-[Email]
 
+[Address]
+
+[Telephone]
+
+[Email]
 
 
 ------
