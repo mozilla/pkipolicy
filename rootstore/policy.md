@@ -2,7 +2,7 @@
 
 *Version 3.0*
 
-*[Effective March 1, 2025][Policy-Archive]*
+*[Effective March 15, 2025][Policy-Archive]*
 
 ## 1. Introduction
 
@@ -170,7 +170,7 @@ can be considered for addition or clarification.
 ### 2.4 Incidents
 
 When a CA operator fails to comply with any requirement of this policy - whether it be a misissuance, a procedural or operational issue, or any other variety of 
-non-compliance - the event is classified as an [incident][Incident]. Any matter documented in an audit as a qualification, a modified opinion, or non-conformity is also considered an incident. This policy incorporates by reference the [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report) (IRGs) as if fully set forth herein. As such, CA operators MUST report all incidents within 72 hours of the CA being made aware, and if a Full Incident Report is not yet ready, the CA operator MUST provide a Preliminary Incident Report. Full Incident Reports MUST be posted within 14 days of the incident’s initial disclosure. CA operators MUST update Incident Reports and respond to questions or comments in accordance with the IRGs until the corresponding [Bugzilla][Bugzilla] bug is closed.
+non-compliance - the event is classified as an [incident][Incident]. CA operators MUST adhere to the [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report) (IRGs). CA operators MUST update Incident Reports and respond to questions or comments in accordance with the IRGs until the corresponding [Bugzilla][Bugzilla] bug is closed.
 
 Mozilla expects the timely remediation of the problems that caused or gave rise to an incident. In response to incidents, Mozilla MAY further require that the CA operator submit a plan of action with milestones or submit one or more additional audits to provide sufficient assurance that the incident has been remediated. Such audits MAY be expected sooner than the CA operator’s next scheduled audit, and thus MAY be expected to be for a period less than a year.
 
@@ -265,16 +265,16 @@ If being audited to the ETSI criteria, the following audit requirements apply
 
 #### 3.1.3 Audit Parameters
 Full-surveillance period-of-time audits MUST be conducted and updated audit
-information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. CA private keys that have been generated but not yet associated with a CA certificate ("parked keys") MUST be identified by the SHA-256 hashes of their corresponding DER-encoded CA Public Keys and included in auditor-provided annual key lifecycle management reports (or a corresponding section of the CA operator's annual audit reports). These reports must account for the controls and measures applied to ensure the integrity, confidentiality, and protection of these keys throughout their lifecycle, consistent with the audit criteria cited above. These cradle-to-grave audit requirements apply equally to intermediate CAs as they do to root CAs. Successive period-of-time audits and auditor-provided annual key lifecycle management reports MUST be contiguous (no gaps).
+information provided no less frequently than **annually** from the time of CA key pair generation until the CA public key is no longer trusted by Mozilla's root store. For annual audit periods beginning on or after March 15, 2025, CA private keys that have been generated but not yet associated with a CA certificate ("parked keys") MUST be identified by the SHA-256 hashes of the CA Public Keys. Specifically, the SHA-256 hash MUST be calculated over the DER encoding of the SubjectPublicKeyInfo containing the CA Public Key and included in auditor-provided annual key lifecycle management reports (or a corresponding section or appendix of the CA operator's annual audit reports). These reports must account for the controls and measures applied to ensure the integrity, confidentiality, and protection of these keys throughout their lifecycle, consistent with the audit criteria cited above. These cradle-to-grave audit requirements apply equally to intermediate CAs as they do to root CAs. Successive period-of-time audits and auditor-provided annual key lifecycle management reports MUST be contiguous (no gaps).
 
-Point-in-time audit statements MAY be used to confirm that all of the problems
+Point-in-time audit statements MAY be used to confirm that all problems
 that an auditor previously identified in a qualified audit statement have been
 corrected. However, a point-in-time audit does not replace the
 period-of-time audit.
 
 Audit reports that are being supplied to maintain a certificate within the
 Mozilla root store MUST be provided to Mozilla via the CCADB within three
-months of the point-in-time date or the end date of the period.
+months of the point-in-time date or the end date of the period of time.
 
 #### 3.1.4 Public Audit Information
 
@@ -489,10 +489,11 @@ When ECDSA keys are encoded in a SubjectPublicKeyInfo structure, the algorithm
 field MUST be one of the following, as specified by [RFC 5480, Section 2.1.1](https://datatracker.ietf.org/doc/html/rfc5480#section-2.1.1):
 
   * the encoded AlgorithmIdentifier for a P-256 key MUST match the following
-  hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`; *or*
-
+  hex-encoded bytes: `301306072a8648ce3d020106082a8648ce3d030107`; 
   * the encoded AlgorithmIdentifier for a P-384 key MUST match the following
-  hex-encoded bytes: `301006072a8648ce3d020106052b81040022`.
+  hex-encoded bytes: `301006072a8648ce3d020106052b81040022`; *or*
+  * the encoded AlgorithmIdentifier for a P-521 key MUST match the following
+  hex-encoded bytes: `301006072a8648ce3d020106052b81040023`.
 
 The above encodings consist of an ecPublicKey OID (1.2.840.10045.2.1) with a
 named curve parameter of the corresponding curve OID. Certificates MUST NOT use
@@ -509,6 +510,9 @@ encoding requirements:
   * If the signing key is P-384, the signature MUST use ECDSA with SHA-384. The
   encoded AlgorithmIdentifier MUST match the following hex-encoded bytes:
   `300a06082a8648ce3d040303`.
+
+  * If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When encoded, the AlgorithmIdentifier MUST be byte-for-byte identical with the following hex-encoded bytes:
+  `300a06082a8648ce3d040304`.
 
 The above encodings consist of the corresponding OID with the parameters field
 omitted, as specified by [RFC 5758, Section 3.2](https://datatracker.ietf.org/doc/html/rfc5758#section-3.2).
@@ -714,18 +718,24 @@ A CRL whose scope does not include all unexpired certificates that are issued by
 
 #### 6.1.3 Delayed Revocation
 
-Mozilla’s goal is to ensure that revocation occurs as swiftly as possible while maintaining the overall security and stability of the web. Mozilla does not grant exceptions to the revocation requirements of the TLS BRs.
+Mozilla’s goal is to ensure that revocation occurs as swiftly as possible while maintaining the overall security and stability of the web. 
+Mozilla does not grant exceptions to the revocation requirements of the TLS BRs.
 
-To ensure compliance with the TLS BRs, Mozilla requires that CA operators:
+**Beginning September 1, 2025, each CA operator MUST:**
 * engage in proactive communication and advise subscribers well in advance about the revocation timelines and explicitly warn them against using publicly-trusted TLS server certificates on systems that cannot tolerate timely revocation;
-* include appropriate language in customer agreements requiring subscribers’ timely cooperation in meeting revocation timelines and acknowledging the CA’s obligations to adhere to applicable policies and standards;
-*  prepare and maintain comprehensive and actionable plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing through tabletop exercises, simulations, parallel testing, or use of test environments, which do not involve the revocation of active certificates; and
-* engage a third party assessor to evaluate whether the CA Operator has:
+* include appropriate language in customer agreements requiring subscribers’ timely cooperation in meeting revocation timelines and acknowledging the CA’s obligations to adhere to applicable policies and standards; and
+*  prepare and maintain comprehensive and actionable plans to address mass revocation events, including detailed procedures for handling mass revocations effectively, including rapid communication with affected parties and conducting annual plan testing through tabletop exercises, simulations, parallel testing, or use of test environments, which do not involve the revocation of active certificates.
+  
+**Assessment Requirement**
+
+Beginning with the CA operator’s next annual audit cycle starting on or after June 1, 2025, each CA operator MUST engage a third-party assessor to evaluate whether the CA operator has:
      * well-documented and actionable plans to handle mass revocation events;
      * demonstrated the implementation and feasibility of the plans through testing exercises, including documentation of testing processes, timelines, results, and remediation steps; and
      * incorporated feedback from such testing exercises and other evaluations to enhance readiness and improve future performance.
 
-Section 2.4 of this policy incorporates by reference the [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report). It has reporting requirements that MUST be followed by CA operators who determine they might delay revocation of certificates beyond the time period required by the TLS BRs. For instance, the Analysis field in the Impact section of such incident reports MUST explain "the factors and rationales behind the decision to delay revocation (including detailed and substantiated explanations of how extensive harm would result to third parties–such as essential public services or widely relied-upon systems–and why the situation is exceptionally rare and unavoidable)." All delayed revocation incidents MUST be listed as findings in the CA operator’s next TLS BR audit statement. Repeated incidents of delayed revocation without sufficient justification will result in heightened scrutiny and sanctions, which may include removal of the CA from the Mozilla Root Store.
+The above-referenced June 1, 2025, date is to ensure that compliance with the September 1, 2025, requirements will be evaluated within a reasonable timeframe while allowing CA operators to incorporate mass revocation testing into their CA processes and annual audit cycles. However, the assessment does not have to be conducted as part of the CA operator’s ETSI or WebTrust audit unless the CA operator finds it more convenient to include it within that scope. The assessment may be conducted separately by a qualified third-party assessor, provided it meets the stated evaluation criteria.
+
+The [CCADB's Incident Reporting Guidelines](https://www.ccadb.org/cas/incident-report) have reporting requirements that MUST be followed by CA operators who determine they might delay revocation of certificates beyond the time period required by the TLS BRs. For instance, the Analysis field in the Impact section of such incident reports MUST explain "the factors and rationales behind the decision to delay revocation (including detailed and substantiated explanations of how extensive harm would result to third parties–such as essential public services or widely relied-upon systems–and why the situation is exceptionally rare and unavoidable)." All delayed revocation incidents MUST be listed as findings in the CA operator’s next TLS BR audit statement. Repeated incidents of delayed revocation without sufficient justification will result in heightened scrutiny and sanctions, which may include removal of the CA from the Mozilla Root Store.
 
 ### 6.2 S/MIME
 
@@ -864,21 +874,22 @@ CA operators are strongly urged to apply to Mozilla for inclusion of their next 
 
 ### 7.5 Dedicated Root Certificates
 
-CA operators with root certificates that have both websites and email trust bits enabled SHOULD consider the requirements in Section 7.4 (Root CA Lifecycles) when planning their compliance with the trust bit transitions outlined in this section.
+All root CA certificates added to Mozilla's Root Store after March 15, 2025, will only be trusted for either TLS server authentication (websites trust bit) or S/MIME email protection (email trust bit). Existing root CA certificates that do not comply with this requirement MUST transition to one or the other prior to December 31, 2028, i.e., by having one of their trust bits (websites or email) removed. 
 
-All root CA certificates added to Mozilla's Root Store after January 1, 2025, will only be trusted for either TLS server authentication (websites trust bit) or S/MIME email protection (email trust bit). Existing root CA certificates that do not comply with this requirement MUST transition to one or the other prior to December 31, 2028, i.e., by having one of their trust bits (websites or email) removed. 
+CA operators with root certificates that have both the websites and email trust bits enabled SHOULD review the transition schedule associated with Section 7.4 (Root CA Lifecycles) when planning their compliance with this section 7.5. Specifically, CA operators SHOULD be aware that Mozilla’s trust bit transition schedule will result in the removal of the websites trust bit from certain root certificates before December 31, 2028.
 
 #### 7.5.1 Server Authentication Hierarchies
 
-Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the websites trust bit enabled MUST include an extendedKeyUsage extension that asserts only id-kp-serverAuth or both id-kp-serverAuth and id-kp-clientAuth. OCSP signing certificates are exempt from this EKU restriction and MUST only include the id-kp-OCSPSigning EKU.
+Subordinate CA and end entity certificates issued under a Root CA certificate added after March 15, 2025, with the websites trust bit enabled MUST include an extendedKeyUsage extension that asserts only id-kp-serverAuth or both id-kp-serverAuth and id-kp-clientAuth. OCSP signing certificates are exempt from this EKU restriction and MUST only include the id-kp-OCSPSigning EKU.
 
 #### 7.5.2 S/MIME Hierarchies
 
-Subordinate CA and end entity certificates issued under a Root CA certificate added after January 1, 2025, with the email trust bit enabled MUST include an extendedKeyUsage extension that asserts id-kp-emailProtection. They MAY include other extendedKeyUsages, but they MUST NOT include extendedKeyUsages of id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, or anyExtendedKeyUsage. OCSP signing certificates are exempt from this EKU restriction and MUST only include the id-kp-OCSPSigning EKU.
+Subordinate CA and end entity certificates issued under a Root CA certificate added after March 15, 2025, with the email trust bit enabled MUST include an extendedKeyUsage extension that asserts id-kp-emailProtection. They MAY include other extendedKeyUsages, but they MUST NOT include extendedKeyUsages of id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, or anyExtendedKeyUsage. OCSP signing certificates are exempt from this EKU restriction and MUST only include the id-kp-OCSPSigning EKU.
 
 #### 7.5.3 Transition Plan for Existing Roots
 
 Root CA certificates included in Mozilla's Root Store as of January 1, 2025, that have both the websites and the email trust bits enabled MAY remain trusted after April 15, 2026, if the CA operator has submitted a transition plan by April 15, 2026, to migrate to dedicated hierarchies by December 31, 2028.
+
 Transition plans MAY include:
 
 1.	Submission of requests for inclusion of single-purpose roots;
