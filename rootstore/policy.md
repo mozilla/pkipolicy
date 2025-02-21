@@ -349,8 +349,7 @@ CA operators with CA certificates capable of issuing working TLS server certific
 
 Mozilla manages its root store using the Common CA Database (CCADB). CA operators with
 certificates in Mozilla’s root store MUST use the CCADB, and are bound by the
-latest published version of the [CCADB Policy][CCADB-Policy], which is
-incorporated here by reference.
+latest published version of the [CCADB Policy][CCADB-Policy].
 
 Mozilla has requirements for the use of the CCADB above and beyond those in the
 CCADB Policy, as indicated below in this section 4.
