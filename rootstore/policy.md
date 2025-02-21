@@ -1031,7 +1031,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
 [MDSP]:                     https://groups.google.com/a/mozilla.org/g/dev-security-policy 
 [EVGLs]:                    https://cabforum.org/extended-validation/
-[TLS-BRs]:                  https://cabforum.org/baseline-requirements-documents/
+[TLS-BRs]:                  https://cabforum.org/working-groups/server/baseline-requirements/documents/
 [SMIME-BRs]:                https://cabforum.org/smime-br/
 [NSRs]:                     https://cabforum.org/network-security-requirements/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.04.01_60/en_31941101v010401p.pdf
