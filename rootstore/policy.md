@@ -9,7 +9,7 @@
 When distributing binary and source code versions of Firefox, Thunderbird, and
 other Mozilla-related software products, Mozilla includes with such software
 a set of X.509v3 root certificates from various Certification
-Authority (CA) operators. The included certificates have their "trust bits"
+Authority (CA) operators. As used herein, a CA operator is an organization or legal entity that is in possession or control of a CA certificate and associated keys, which are capable of being used to issue new certificates. The included certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
 certificates to anchor a chain of trust for certificates used by TLS servers
 and S/MIME email users without having to ask users for further permission or
@@ -28,7 +28,7 @@ information.
 
 ### 1.1 Scope
 
-As used herein, a CA operator is an organization or legal entity that is in possession or control of a CA certificate and associated keys, which are capable of being used to issue new certificates. This policy applies to CA operators and the certificates they issue or control that match any of the following:
+This policy applies to CA operators and the certificates they issue or control that match any of the following:
 
 1.  CA certificates included in, or under consideration for inclusion in, the
     Mozilla root store;
