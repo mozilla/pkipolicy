@@ -28,8 +28,7 @@ information.
 
 ### 1.1 Scope
 
-This policy applies, as appropriate, to certificates matching any of the
-following (and to the CA operators* that control or issue them):
+As used herein, a CA operator is an organization or legal entity that is in possession or control of a CA certificate and associated keys, which are capable of being used to issue new certificates. This policy applies to CA operators and the certificates they issue or control that match any of the following:
 
 1.  CA certificates included in, or under consideration for inclusion in, the
     Mozilla root store;
@@ -55,8 +54,6 @@ following (and to the CA operators* that control or issue them):
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in RFC 2119.
-
-\* A CA operator is an organization or legal entity that is in possession or control of a CA certificate and associated keys, which are capable of being used to issue new certificates.
 
 ### 1.2 Policy Ownership
 
