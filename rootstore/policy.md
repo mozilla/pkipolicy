@@ -195,8 +195,9 @@ following documents to be acceptable:
 **WebTrust Program for Certification Authorities** ([WebTrust][WebTrust-For-CAs])
 *   WebTrust "[Principles and Criteria for Certification Authorities - Version
     2.2.2][WebTrust-2.2.2]", or later;
+*   WebTrust "[Principles and Criteria for Certification Authorities – Network Security - Version 1.7][WebTrust-NetSec]", or later;  
 *   WebTrust "[Principles and Criteria for Certification Authorities – SSL
-    Baseline with Network Security - Version 2.6][WebTrust-BRs]", or later;
+    Baseline - Version 2.8][WebTrust-BRs]", or later;
 *   WebTrust "[Principles and Criteria for Certification Authorities -
     Extended Validation SSL 1.7.8][WebTrust-EV]", or later;
 *   WebTrust "[Principles and Criteria for Certification Authorities - S/MIME Certificates][WebTrust-SMIME];
