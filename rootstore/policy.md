@@ -763,7 +763,7 @@ Mozilla is under no obligation to explain the reasoning behind any inclusion dec
 
 Before being included, CA operators MUST provide evidence that their CA key pairs and CA certificates fully comply with the current Mozilla Root Store Requirements and the S/MIME BRs or TLS BRs, and have continually, from the time of CA private key creation (see section 3.1.3), complied with the then-current Mozilla Root Store Policy and the S/MIME BRs or TLS BRs, as applicable. 
 
-Additionally, CA operators applying for inclusion of new TLS-issuing root certificates MUST demonstrate support for at least one automated method of certificate issuance for each type of TLS certificate (EV, OV, DV, IV) intended to be issued under the root certificate being requested for inclusion. This means (1) automated domain control validation, as defined in the TLS BRs; and (2) automated certificate issuance and retrieval processes. Such automated methods MUST minimize hands-on human input during routine certificate issuance and renewal processes and comply with the TLS BRs, and EV Guidelines, if applicable. Acceptable "hands-on" input includes initial software setup, configuration, updates, and identity verification where required. CA operators MUST renew test certificates using such capability at least every 30 days to demonstrate compliance with these automation requirements. The test certificates MUST be served by publicly accessible websites, and the URL for each test site MUST be disclosed in the CCADB.
+Additionally, CA operators applying for inclusion of new root certificates with the websites trust bit enabled MUST demonstrate support for at least one automated method of certificate issuance for each type of TLS certificate (EV, OV, DV, IV) intended to be issued under the root certificate being requested for inclusion. This means (1) automated domain control validation, as defined in the TLS BRs; and (2) automated certificate issuance and retrieval processes. Such automated methods MUST minimize hands-on human input during routine certificate issuance and renewal processes and comply with the TLS BRs, and EV Guidelines, if applicable. Acceptable "hands-on" input includes initial software setup, configuration, updates, and identity verification where required. CA operators MUST renew test certificates using such capability at least every 30 days to demonstrate compliance with these automation requirements. The test certificates MUST be served by publicly accessible websites, and the URL for each test site MUST be disclosed in the CCADB.
 
 To request that its certificate(s) be added to Mozilla's root store, a CA operator
 SHOULD submit a formal request by submitting a [bug report][CA-Cert-Bug]
@@ -786,13 +786,11 @@ MUST include the following:
     issues Extended Validation certificates within the certificate hierarchy
     associated with the CA certificate and, if so, the CA/Browser Forum EV policy
     OID of 2.23.140.1.1 associated with the CA certificate;
-4.  a Certificate Policy and Certification Practice Statement (or
-    links to a CP and CPS) or equivalent disclosure document(s)
-    for the CA or CAs in question; 
+4.  links to the CP and CPS (or combined CP/CPS) for the CA or CAs in question; 
 5.  an auditor-witnessed root key generation ceremony report and contiguous 
     period-of-time audit reports performed thereafter no less frequently than 
     annually;
-6.  evidence of automated certificate issuance support as specified above;
+6.  evidence of automated certificate issuance support, as specified above (if seeking enablement of the websites trust bit);
     *and*
 7.  information as to how the CA operator has fulfilled the requirements
     stated above regarding its verification of certificate signing
