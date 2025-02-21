@@ -9,7 +9,7 @@
 When distributing binary and source code versions of Firefox, Thunderbird, and
 other Mozilla-related software products, Mozilla includes with such software
 a set of X.509v3 root certificates from various Certification
-Authority (CA) operators. As used herein, a CA operator is an organization or legal entity that is in possession or control of a CA certificate and associated keys, which are capable of being used to issue new certificates. The included certificates have their "trust bits"
+Authority (CA) operators. As used herein, a CA operator is an organization or legal entity that is in possession or control of a CA certificate and its associated keys, which are capable of being used to issue new certificates. The included CA certificates have their "trust bits"
 set for various purposes, so that the software in question can use the CA
 certificates to anchor a chain of trust for certificates used by TLS servers
 and S/MIME email users without having to ask users for further permission or
@@ -196,16 +196,16 @@ following documents to be acceptable:
 *   WebTrust "[Principles and Criteria for Certification Authorities – SSL
     Baseline - Version 2.8][WebTrust-BRs]", or later;
 *   WebTrust "[Principles and Criteria for Certification Authorities -
-    Extended Validation SSL 1.7.8][WebTrust-EV]", or later;
-*   WebTrust "[Principles and Criteria for Certification Authorities - S/MIME Certificates][WebTrust-SMIME];
+    Extended Validation SSL - Version 1.8][WebTrust-EV]", or later;
+*   WebTrust "[Principles and Criteria for Certification Authorities - S/MIME Certificates - Version 1.0.3][WebTrust-SMIME], or later;
 
 **European Telecommunications Standards Institute** (ETSI)
-*   "Trust Service Providers practice" in ETSI EN 319 411-1 v1.3.1 or
+*   "Trust Service Providers practice" in ETSI EN 319 411-1 v1.4.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 1: General requirements][ETSI-319-411-1],
     specifying a policy or policies appropriate to the trust bit(s) being
     applied for; 
-*   "Trust Service Providers practice" in ETSI EN 319 411-2 v2.4.1 or
+*   "Trust Service Providers practice" in ETSI EN 319 411-2 v2.5.1 or
     later version [Policy and security requirements for Trust Service Providers
     issuing certificates; Part 2: Requirements for trust service providers
     issuing EU qualified certificates][ETSI-319-411-2], specifying a
@@ -1027,10 +1027,10 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [CA-Policy-Module]:         https://wiki.mozilla.org/Modules/Activities#Mozilla_CA_Certificate_Policy
 [Gov-Module]:               https://wiki.mozilla.org/Modules/Firefox_Technical_Leadership
 [MDSP]:                     https://groups.google.com/a/mozilla.org/g/dev-security-policy 
-[EVGLs]:                    https://cabforum.org/extended-validation/
+[EVGLs]:                    https://cabforum.org/working-groups/server/extended-validation/documents/
 [TLS-BRs]:                  https://cabforum.org/working-groups/server/baseline-requirements/documents/
-[SMIME-BRs]:                https://cabforum.org/smime-br/
-[NSRs]:                     https://cabforum.org/network-security-requirements/
+[SMIME-BRs]:                https://cabforum.org/working-groups/smime/documents/
+[NSRs]:                     https://cabforum.org/working-groups/netsec/documents/
 [ETSI-319-411-1]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.04.01_60/en_31941101v010401p.pdf
 [ETSI-319-411-2]:           https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.05.01_60/en_31941102v020501p.pdf
 [ETSI-119-411-6]:           https://www.etsi.org/deliver/etsi_ts/119400_119499/11941106/01.01.01_60/ts_11941106v010101p.pdf
