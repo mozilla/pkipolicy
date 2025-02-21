@@ -729,9 +729,9 @@ Mozilla does not grant exceptions to the revocation requirements of the TLS BRs.
 **Assessment Requirement**
 
 Beginning with the CA operator’s next annual audit cycle starting on or after June 1, 2025, each CA operator MUST engage a third-party assessor to evaluate whether the CA operator has:
-     * well-documented and actionable plans to handle mass revocation events;
-     * demonstrated the implementation and feasibility of the plans through testing exercises, including documentation of testing processes, timelines, results, and remediation steps; and
-     * incorporated feedback from such testing exercises and other evaluations to enhance readiness and improve future performance.
+* well-documented and actionable plans to handle mass revocation events;
+* demonstrated the implementation and feasibility of the plans through testing exercises, including documentation of testing processes, timelines, results, and remediation steps; and
+* incorporated feedback from such testing exercises and other evaluations to enhance readiness and improve future performance.
 
 The above-referenced June 1, 2025, date is to ensure that compliance with the September 1, 2025, requirements will be evaluated within a reasonable timeframe while allowing CA operators to incorporate mass revocation testing into their CA processes and annual audit cycles. However, the assessment does not have to be conducted as part of the CA operator’s ETSI or WebTrust audit unless the CA operator finds it more convenient to include it within that scope. The assessment may be conducted separately by a qualified third-party assessor, provided it meets the stated evaluation criteria.
 
