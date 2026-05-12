@@ -299,7 +299,7 @@ Each Audit Report MUST be accompanied by a statement of audit team qualification
 
 We rely on publicly disclosed documentation in a Certification Practice Statement (CPS) or a combined Certificate Policy/Certification Practice Statement (CP/CPS) ("CP/CPS Documentation") to ascertain that our requirements are met.
 
-CA operators SHALL comply with item 2 below, and Sections 3.3.1 through 3.3.6, no later than October 15, 2026. Existing CP/CPS Documentation MAY be revised prior to October 15, 2026, to achieve compliance with these requirements.
+CA operators SHALL comply with item 2 below, and Sections 3.3.1 through 3.3.6, no later than July 1, 2027. Existing CP/CPS Documentation MAY be revised prior to July 1, 2027, to achieve compliance with these requirements.
 
 1.  CP/CPS Documentation MUST provide information in a manner that is explicit, bounded, auditable, and in a manner that is sufficient for Mozilla to determine whether and how the CA operator
     complies with this policy and other applicable requirements;
