@@ -298,7 +298,8 @@ Each Audit Report MUST be accompanied by a statement of audit team qualification
 ### 3.3 CPs and CPSes
 
 We rely on publicly disclosed documentation in a Certification Practice Statement (CPS) or a combined Certificate Policy/Certification Practice Statement (CP/CPS) ("CP/CPS Documentation") to ascertain that our requirements are met.
-Therefore:
+
+CA operators SHALL comply with item 2 below, and Sections 3.3.1 through 3.3.6, no later than October 15, 2026. Existing CP/CPS Documentation MAY be revised prior to October 15, 2026, to achieve compliance with these requirements.
 
 1.  CP/CPS Documentation MUST provide information in a manner that is explicit, bounded, auditable, and in a manner that is sufficient for Mozilla to determine whether and how the CA operator
     complies with this policy and other applicable requirements;
@@ -335,7 +336,7 @@ imposes no requirements related to that section; and
 
 #### 3.3.1 Sufficiency of Disclosure
 
-To satisfy Section 3.3(1), CP/CPS Documentation MUST contain sufficient CA-specific detail to allow a technically competent reviewer to understand how the CA operator implements applicable requirements and to evaluate conformance without requiring interpretive reconstruction across multiple external documents.
+To satisfy Section 3.3(1), CP/CPS Documentation MUST contain sufficient CA-specific detail to allow a technically competent reviewer to understand how the CA operator implements applicable requirements and to evaluate conformance without requiring excessive interpretive reconstruction across numerous disparate external documents.
 
 CP/CPS Documentation MUST describe the CA operator’s implementation commitments, including relevant operational parameters, constraints, and design choices, particularly in areas where applicable requirements permit discretion or variation.
 
@@ -344,6 +345,12 @@ CP/CPS Documentation MUST describe the CA operator’s implementation commitment
 To avoid duplication, divergence, and staleness, incorporation by reference SHOULD be used for shared definitions and for externally defined normative requirements (e.g., CA/Browser Forum Requirements, RFCs, and other applicable policies). This does not eliminate the requirement to describe CA-specific implementation practices.
 
 However, incorporation by reference MUST NOT be used as a substitute for describing CA-specific implementation commitments. CP/CPS Documentation MUST clearly identify incorporated documents and enable a reviewer to determine how the CA operator’s documented practices implement and conform to those requirements.
+
+CP/CPS Documentation MAY reference supplemental operational, contractual, or technical documentation maintained outside of the CP/CPS Documentation (e.g. Subscriber Agreements, validation procedures, or technical appendices), provided that:
+
+* such materials are clearly identified and publicly accessible where necessary to understand the CA operator’s implementation commitments;
+* the scope and applicability of such materials are clearly described; and
+* the CP/CPS Documentation remains sufficiently complete and coherent for a reviewer to understand how the CA operator complies with applicable requirements.
 
 #### 3.3.3 Implementation Commitments
 
@@ -365,7 +372,7 @@ CP/CPS Documentation MUST be organized and scoped such that a reviewer can deter
 * which root certificates, subordinate CAs, and certificate types or profiles are covered; and
 * how related documents, if any, apply to specific hierarchies.
 
-Documentation MUST not require a reviewer to assemble material operational commitments from numerous disparate documents without clear scoping and cross-reference.
+Documentation MUST not require a reviewer to assemble material operational commitments from numerous disparate documents that lack clear scoping, applicability, or cross-reference.
 
 #### 3.3.5 Certificate and Revocation Profiles
 
