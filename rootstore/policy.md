@@ -289,6 +289,14 @@ Mozilla is not an intended user of the DCR for purposes of reliance, unless expl
 
 Mozilla will treat any DCR provided under this section as confidential and will not disclose it to third parties except as required by law or as necessary to enforce this Policy.
 
+**Externally-Operated Subordinate CAs**
+
+Externally-operated subordinate CAs operating under a separate audit scope or separate operational control environment MUST obtain their own DCRs covering the systems and controls within their responsibility.
+
+Where portions of a CA hierarchy operate under shared controls or shared audit scope, the applicable DCRs MAY reference one another, provided that the dependencies, scope boundaries, covered time periods, and responsible parties are clearly identified.
+
+CA operators whose root CA certificates are included in Mozilla’s Root Store MUST maintain sufficient oversight and visibility into the DCRs obtained by their externally-operated subordinate CAs to ensure continuing compliance with this policy.
+
 ### 3.2 Auditors
 
 Audits MUST be performed by a Qualified Auditor. A Qualified Auditor MUST have relevant IT Security experience, or have audited a number of CAs, and be independent. ETSI Audit Attestation Letters MUST follow the Audit Attestation Letter template on the [ACAB'c website](https://www.acab-c.com/downloads), and ETSI auditors MUST be members of the [Accredited Conformity Assessment Bodies' Council][ACAB'c] and follow the ACAB'c Charter and Code of Conduct. WebTrust audit statements MUST follow the practitioner guidance, principles, and illustrative assurance reports on the [CPA Canada website](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria), and WebTrust auditors MUST be listed as [enrolled WebTrust practitioners][WebTrust Practitioners] on the CPA Canada website. Mozilla MAY, in its sole discretion, decide to temporarily waive membership or enrollment requirements.
