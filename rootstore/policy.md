@@ -295,6 +295,8 @@ Externally-operated subordinate CAs operating under a separate audit scope or se
 
 Where portions of a CA hierarchy operate under shared controls or shared audit scope, the applicable DCRs MAY reference one another, provided that the dependencies, scope boundaries, covered time periods, and responsible parties are clearly identified.
 
+Where DCRs reference one another across differing audit evaluation periods, the covered time periods and any resulting limitations MUST be clearly identified, and such references are acceptable only where the relevant controls remain applicable and have not undergone material changes.
+
 CA operators whose root CA certificates are included in Mozilla’s Root Store MUST maintain sufficient oversight and visibility into the DCRs obtained by their externally-operated subordinate CAs to ensure continuing compliance with this policy.
 
 ### 3.2 Auditors
@@ -350,15 +352,16 @@ CP/CPS Documentation MUST describe the CA operator’s implementation commitment
 
 #### 3.3.2 Normative References and Incorporation by Reference
 
-To avoid duplication, divergence, and staleness, incorporation by reference SHOULD be used for shared definitions and for externally defined normative requirements (e.g., CA/Browser Forum Requirements, RFCs, and other applicable policies). This does not eliminate the requirement to describe CA-specific implementation practices.
+To avoid duplication, divergence, and staleness, incorporation by reference SHOULD be used for shared definitions and externally defined normative requirements (e.g., CA/Browser Forum Requirements, RFCs, documents incorporated by reference therein, corresponding WebTrust or ETSI audit criteria, and other applicable policies).
 
-However, incorporation by reference MUST NOT be used as a substitute for describing CA-specific implementation commitments. CP/CPS Documentation MUST clearly identify incorporated documents and enable a reviewer to determine how the CA operator’s documented practices implement and conform to those requirements.
+However, incorporation by reference MUST NOT be used as a substitute for describing CA-specific implementation practices. CP/CPS Documentation MUST clearly identify incorporated documents.
 
-CP/CPS Documentation MAY reference supplemental operational, contractual, or technical documentation maintained outside of the CP/CPS Documentation (e.g. Subscriber Agreements, validation procedures, or technical appendices), provided that:
+CP/CPS Documentation MAY reference operational, contractual, informational, repository, or technical materials maintained outside the CP/CPS Documentation by the CA operator, Root Programs, the CCADB, standards bodies, or the CA/Browser Forum (e.g., webpages, Subscriber Agreements, validation procedures, or technical appendices), provided that:
 
-* such materials are clearly identified and publicly accessible where necessary to understand the CA operator’s implementation commitments;
-* the scope and applicability of such materials are clearly described; and
-* the CP/CPS Documentation remains sufficiently complete and coherent for a reviewer to understand how the CA operator complies with applicable requirements.
+* such materials are clearly identified and publicly accessible where necessary to understand the CA operator’s practices;
+their scope and applicability are clearly described;
+* the CP/CPS Documentation remains sufficiently complete and coherent for a reviewer to understand how the CA operator complies with applicable requirements; and
+* such references do not alter or supersede applicable requirements.
 
 #### 3.3.3 Implementation Commitments
 
