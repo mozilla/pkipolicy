@@ -307,14 +307,14 @@ Each Audit Report MUST be accompanied by a statement of audit team qualification
 
 ### 3.3 CPs and CPSes
 
-We rely on publicly disclosed documentation in a Certification Practice Statement (CPS) or a combined Certificate Policy/Certification Practice Statement (CP/CPS) ("CP/CPS Documentation") to ascertain that our requirements are met.
+We rely on publicly disclosed documentation in a Certification Practice Statement (CPS) or a combined Certificate Policy/Certification Practice Statement (CP/CPS) ("CP/CPS Documentation") to ascertain that our requirements are met. Compliance with this Section SHALL be evaluated based on whether a technically competent reviewer can, from the CA operator's CP/CPS Documentation, determine the CA operator's implementation commitments, understand the scope and applicability of the documented practices, and assess conformance with applicable requirements.
 
-CA operators SHALL comply with item 2 below, and Sections 3.3.1 through 3.3.6, no later than July 1, 2027. Existing CP/CPS Documentation MAY be revised prior to July 1, 2027, to achieve compliance with these requirements.
+CA operators SHALL comply with item 2 below, and Sections 3.3.1 through 3.3.6, no later than July 1, 2027. Existing CP/CPS Documentation MAY be revised prior to July 1, 2027, to achieve compliance with these requirements. 
 
 1.  CP/CPS Documentation MUST provide information in a manner that is explicit, bounded, auditable, and in a manner that is sufficient for Mozilla to determine whether and how the CA operator
     complies with this policy and other applicable requirements;
 
-2.  CA operators MUST ensure that CP/CPS Documentation is made available in a structured, text-based format (e.g. Markdown, AsciiDoc, or equivalent) and is hosted in a publicly accessible repository or equivalent system that provides publicly accessible version history. This requirement applies to the published form of the documentation and does not prescribe the CA operator’s internal authoring tools or processes;
+2.  CA operators MUST ensure that CP/CPS Documentation is made available in a structured, text-based format (e.g. Markdown, AsciiDoc, or equivalent) and is hosted in a publicly accessible repository or equivalent system that provides publicly accessible version history. An "equivalent system" is a publicly accessible document management or publication system that preserves version history, permits retrieval of prior versions, and identifies publication dates and version identifiers. Historic versions are not required to be converted to a structured text format retroactively, provided that they remain publicly accessible and their publication dates can be determined. This requirement applies to the published form of the documentation and does not prescribe the CA operator’s internal authoring tools or processes;
 
 3.  CP/CPS Documentation MUST be made available to Mozilla under one
     of the following Creative Commons licenses (or later versions):
@@ -346,9 +346,11 @@ imposes no requirements related to that section; and
 
 #### 3.3.1 Sufficiency of Disclosure
 
-To satisfy Section 3.3(1), CP/CPS Documentation MUST contain sufficient CA-specific detail to allow a technically competent reviewer to understand how the CA operator implements applicable requirements and to evaluate conformance without requiring excessive interpretive reconstruction across numerous disparate external documents.
+To satisfy Section 3.3(1), CP/CPS Documentation MUST contain sufficient CA-specific detail to allow a technically competent reviewer to understand how the CA operator implements applicable requirements and to evaluate conformance without requiring a reviewer to assemble material operational commitments from multiple external documents whose applicability is unclear.
 
 CP/CPS Documentation MUST describe the CA operator’s implementation commitments, including relevant operational parameters, constraints, and design choices, particularly in areas where applicable requirements permit discretion or variation.
+
+CP/CPS Documentation is not required to disclose information that would reasonably be expected to materially increase risk to the security of CA systems or facilities, provided that sufficient information remains available for a technically competent reviewer to understand the CA operator's implementation commitments and assess conformance with applicable requirements.
 
 #### 3.3.2 Normative References and Incorporation by Reference
 
@@ -371,9 +373,9 @@ Such disclosures MUST be:
 
 * Explicit (clearly stating what the CA does),
 * Bounded (defining limits, thresholds, or constraints where applicable), and
-* Testable (capable of being evaluated through audit or independent analysis).
+* Verifiable (capable of being independently evaluated through documentation review, audit procedures, or other objective evidence).
 
-Subjective or non-measurable language (e.g., “as appropriate,” “periodically,” “a few,” “promptly”) MUST NOT be used in place of defined operational parameters where those parameters can reasonably be specified.
+Subjective or non-measurable language (e.g., "as appropriate," "periodically," "a few," "promptly") MUST NOT be used in place of defined operational parameters where those parameters can reasonably be specified.
 
 #### 3.3.4 Organization and Scope
 
@@ -389,7 +391,7 @@ Documentation MUST not require a reviewer to assemble material operational commi
 
 CP/CPS Documentation MUST describe, or clearly reference, the certificate, CRL, and OCSP profiles used by the CA operator.
 
-Such profiles MAY be maintained in a separate CA-maintained appendix or companion document, provided that the referenced material is publicly accessible, clearly in-scope, versioned, and sufficient to describe the technical characteristics and constraints of issued certificates and revocation artifacts.
+Such profiles MAY be maintained in a separately versioned CA-maintained appendix or companion document, provided that the referenced material is publicly accessible, clearly in-scope, versioned, and sufficient to describe the technical characteristics and constraints of issued certificates and revocation artifacts.
 
 #### 3.3.6 Accuracy and Currency
 
