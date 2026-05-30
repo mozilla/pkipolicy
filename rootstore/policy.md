@@ -247,13 +247,13 @@ If Mozilla determines that an audit provided does not meet the requirements of t
 
 #### 3.1.5 Detailed Controls Reports
 
-**Applicability and Scope of Requirement**
+##### 3.1.5.1 Applicability and Scope
 
-For each annual audit period beginning on or after July 1, 2027, each CA operator with a CA certificate included in our root store with the websites trust bit enabled MUST obtain a Detailed Controls Report (DCR) covering the design, controls, verification methods, scope boundaries, and operating effectiveness of its CA systems as they relate to compliance with the CA/Browser Forum's TLS Baseline Requirements and the Network and Certificate System Security Requirements. This requirement is in addition to, and does not replace, any other audit reports required by this policy.
+For each annual audit period beginning on or after July 1, 2027, each CA operator with a CA certificate included in our root store with the websites trust bit enabled MUST obtain a Detailed Controls Report (DCR). The purpose of the DCR is to provide sufficient information for CA management and Mozilla oversight purposes regarding the design, controls, verification methods, scope boundaries, implementation, testing, and operating effectiveness of CA systems as they relate to compliance with the CA/Browser Forum's TLS Baseline Requirements and the Network and Certificate System Security Requirements. This requirement is in addition to, and does not replace, any other audit reports required by this policy.
 
-**Minimum Contents of DCR**
+##### 3.1.5.2 Minimum Contents
 
-The DCR MUST contain the following:
+The DCR may be issued under any audit framework (WebTrust DCR, ISAE 3000 Type 2 report, ETSI-based report, or another auditor-issued report), provided that it contains the information required by this section. 
 
 * A description of the CA system, including system boundaries, components, and interactions with subscribers, relying parties, and third parties;
 * Identification of applicable control objectives or criteria, and a mapping of controls to those objectives;
@@ -264,11 +264,19 @@ The DCR MUST contain the following:
 
 The DCR MUST include sufficient detail to enable an informed reviewer to understand the nature, timing, and extent of testing performed and the basis for the auditor’s conclusions.
 
-**Intended Use and Availability**
+The DCR MAY be prepared and issued in conjunction with the CA operator's regular annual audit engagement or other audit activities, provided that it is issued to management as a separate and distinct report meeting the requirements of this section.
 
-The DCR is intended for use by CA management and other parties with sufficient knowledge to understand the CA’s systems and controls and is not required to be publicly disclosed. However, a CA Operator MUST provide the DCR to Mozilla within 30 days of request to enable Mozilla to verify the audit scope, to assess control design and operating effectiveness, and to evaluate other matters relevant to compliance with this Policy.
+##### 3.1.5.3 Intended Use
 
-**Access and Provision to Mozilla**
+The DCR is intended for use by CA management and other parties with sufficient knowledge to understand the CA’s systems and controls and is not required to be publicly disclosed. 
+
+The CA Operator MUST maintain the ability to provide the most recently issued DCR to Mozilla within 30 days of request, to enable Mozilla to verify the audit scope, assess control design and operating effectiveness, and evaluate other matters relevant to compliance with this Policy.
+
+Each CA Operator required to obtain a DCR under this section MUST annually disclose, through the CCADB or another Mozilla-designated reporting mechanism, information sufficient for Mozilla to determine whether the DCR has been obtained and remains available for review upon request.
+
+The 30-day period specified in this section applies only to the CA Operator's provision of an existing DCR to Mozilla upon request. It does not establish a separate deadline for completion or issuance of the DCR. Nothing in this section alters the timing requirements applicable to the submission of annual audit reports to the CCADB. 
+
+##### 3.1.5.4 Provision to Mozilla**
 
 The CA Operator MUST ensure that the DCR is prepared and issued in a manner that permits disclosure to Mozilla upon request.
 
@@ -281,17 +289,17 @@ The CA Operator MUST NOT enter into audit or other agreements that would prevent
 
 Failure to provide the DCR to Mozilla upon request, due to contractual, legal, or other restrictions, may be considered a failure to meet the audit requirements of this Policy.
 
-**Use and Confidentiality**
+##### 3.1.5.5 Confidentiality and Use by Mozilla
 
-Mozilla’s access to the DCR is for informational and supervisory purposes related to evaluating compliance with this Policy.
+Mozilla’s access to the DCR is for informational and supervisory purposes related to evaluating compliance with this Policy. 
 
-Mozilla is not an intended user of the DCR for purposes of reliance, unless explicitly agreed to by the auditor.
+Mozilla recognizes that DCRs may contain sensitive security and operational information. A CA Operator MAY redact portions of a DCR provided to Mozilla where disclosure would materially increase risk to CA system security, provided that such redactions are narrowly tailored, clearly defined, and the remaining information is sufficient for Mozilla to evaluate the report's scope, findings, testing performed, limitations, and conclusions.
 
-Mozilla will treat any DCR provided under this section as confidential and will not disclose it to third parties except as required by law or as necessary to enforce this Policy.
+Mozilla will treat such reports as confidential supervisory information and will limit access to personnel with a need to review the information for compliance purposes. Mozilla will treat any DCR provided under this section as confidential and will not disclose it to third parties except as required by law or as necessary to enforce this Policy.
 
-**Externally-Operated Subordinate CAs**
+##### 3.1.5.6 Externally-Operated Subordinate CAs
 
-Externally-operated subordinate CAs operating under a separate audit scope or separate operational control environment MUST obtain their own DCRs covering the systems and controls within their responsibility.
+Externally-operated subordinate CAs operating under distinct management authority, separate audit scope, or separate operational control environment MUST obtain a separate DCR covering the systems and controls within their responsibility.
 
 Where portions of a CA hierarchy operate under shared controls or shared audit scope, the applicable DCRs MAY reference one another, provided that the dependencies, scope boundaries, covered time periods, and responsible parties are clearly identified.
 
