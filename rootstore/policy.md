@@ -354,7 +354,7 @@ imposes no requirements related to that section; and
 
 #### 3.3.1 Sufficiency of Disclosure
 
-To satisfy Section 3.3(1), CP/CPS Documentation MUST contain sufficient CA-specific detail to allow a technically competent reviewer to understand how the CA operator implements applicable requirements and to evaluate conformance without requiring a reviewer to assemble material operational commitments from multiple external documents whose applicability is unclear.
+To satisfy item 1 of Section 3.3 above, CP/CPS Documentation MUST contain sufficient CA-specific detail to allow a technically competent reviewer to understand how the CA operator implements applicable requirements and to evaluate conformance without requiring a reviewer to assemble material operational commitments from multiple external documents whose applicability is unclear.
 
 CP/CPS Documentation MUST describe the CA operator’s implementation commitments, including relevant operational parameters, constraints, and design choices, particularly in areas where applicable requirements permit discretion or variation.
 
