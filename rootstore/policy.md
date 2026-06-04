@@ -256,8 +256,8 @@ For each annual audit period beginning on or after July 1, 2027, each CA operato
 The DCR may be issued under any audit framework (WebTrust DCR, ISAE 3000 Type 2 report, ETSI-based report, or another auditor-issued report), provided that it contains the information required by this section. 
 
 * A description of the CA system, including system boundaries, components, and interactions with subscribers, relying parties, and third parties;
-* Identification of applicable control objectives or criteria, and a mapping of controls to those objectives;
-* A description of the controls implemented to meet those objectives;
+* Identification of applicable criteria, and a mapping of controls to those criteria;
+* A description of the controls implemented to meet those criteria;
 * The auditor’s tests of controls and the results of those tests;
 * An evaluation of the suitability of control design and operating effectiveness over a defined audit period; and
 * A clear statement of the scope of testing, including any limitations or exclusions.
