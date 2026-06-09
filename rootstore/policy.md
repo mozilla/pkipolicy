@@ -81,7 +81,7 @@ CA operators whose certificates are included in Mozilla's root store MUST:
 1.  provide some service relevant to users of our software products;
 2.  comply with the CA/Browser Forum's [Baseline Requirements for the Issuance and Management of Publicly‐Trusted TLS Server
 Certificates][TLS-BRs] ("TLS BRs"), the [Baseline Requirements for the Issuance and Management of Publicly‐Trusted S/MIME Certificates][SMIME-BRs] ("S/MIME BRs"), and for TLS certificates marked as Extended Validation, CA operators MUST comply with the [Guidelines for the Issuance and Management of Extended Validation Certificates][EVGLs] ("EV Guidelines");
-3.  follow industry best practice for securing their networks and comply with the [CA/Browser Forum's Network and Certificate System Security Requirements][NSRs];
+3.  follow industry best practice for securing their networks and comply with the [CA/Browser Forum's Network and Certificate System Security Requirements][NCSSRs] ("NCSSRs");
 4.  publicly disclose, in a Certification Practice Statement (CPS) or a combined Certificate Policy / Certification Practice Statement (CP/CPS) (collectively, “CP/CPS Documentation”), information sufficient to enable Mozilla, auditors, and relying parties to assess how the CA operator’s practices implement and comply with the requirements of this policy and requirements incorporated by reference;
 5.  use multi-factor authentication to protect accounts capable of directly causing certificate issuance, consistent with the requirements of the S/MIME BRs and TLS BRs, or implement equivalent technical controls that restrict certificate issuance to a limited set of pre-approved domains or email addresses;
 6.  comply with the Common CA Database policy ("[CCADB Policy][CCADB-Policy]");
@@ -249,7 +249,7 @@ If Mozilla determines that an audit provided does not meet the requirements of t
 
 ##### 3.1.5.1 Applicability and Scope
 
-For each annual audit period beginning on or after July 1, 2027, each CA operator with a CA certificate included in our root store with the websites trust bit enabled MUST obtain a Detailed Controls Report (DCR). The purpose of the DCR is to provide sufficient information for CA management and Mozilla oversight purposes regarding the design, controls, verification methods, scope boundaries, implementation, testing, and operating effectiveness of CA systems as they relate to compliance with the CA/Browser Forum's TLS Baseline Requirements and the Network and Certificate System Security Requirements. This requirement is in addition to, and does not replace, any other audit reports required by this policy.
+For each annual audit period beginning on or after July 1, 2027, each CA operator with a CA certificate included in our root store with the websites trust bit enabled MUST obtain a Detailed Controls Report (DCR). The purpose of the DCR is to provide sufficient information for CA management and Mozilla oversight purposes regarding the design, scope boundaries, implementation, testing, and operating effectiveness of controls intended to support compliance with the [TLS BRs][TLS-BRs] and the [NCSSRs][NCSSRs], which provide the primary applicable criteria for purposes of the DCR. This requirement is in addition to, and does not replace, any other audit reports required by this policy.
 
 ##### 3.1.5.2 Minimum Contents
 
@@ -257,9 +257,10 @@ The DCR may be issued under any audit framework (WebTrust DCR, ISAE 3000 Type 2 
 
 * A description of the CA system, including system boundaries, components, and interactions with subscribers, relying parties, and third parties;
 * Identification of applicable criteria, and a mapping of controls to those criteria;
-* A description of the controls implemented to meet those criteria;
-* The auditor’s tests of controls and the results of those tests;
-* An evaluation of the suitability of control design and operating effectiveness over a defined audit period; and
+* A description of the controls implemented to address risks and support compliance with those criteria;
+* The auditor’s tests of controls, including the nature, timing, extent, and results of those tests;
+* An evaluation of the suitability of control design and operating effectiveness over a defined audit period;
+* Identification of the evidence sources used by the auditor to evaluate control design and operating effectiveness; and
 * A clear statement of the scope of testing, including any limitations or exclusions.
 
 The DCR MUST include sufficient detail to enable an informed reviewer to understand the nature, timing, and extent of testing performed and the basis for the auditor’s conclusions.
@@ -268,15 +269,15 @@ The DCR MAY be prepared and issued in conjunction with the CA operator's regular
 
 ##### 3.1.5.3 Intended Use
 
-The DCR is intended for use by CA management and other parties with sufficient knowledge to understand the CA’s systems and controls and is not required to be publicly disclosed. 
+The DCR is intended for use by CA management and other intended users with sufficient knowledge to understand the CA’s systems and controls and is not required to be publicly disclosed. 
 
-The CA Operator MUST maintain the ability to provide the most recently issued DCR to Mozilla within 30 days of request, to enable Mozilla to verify the audit scope, assess control design and operating effectiveness, and evaluate other matters relevant to compliance with this Policy.
+The CA Operator MUST maintain the ability to provide the most recently issued DCR to Mozilla within 30 days of request, to enable Mozilla to verify the audit scope, assess control design and operating effectiveness, and evaluate other matters relevant to compliance with this policy.
 
 Each CA Operator required to obtain a DCR under this section MUST annually disclose, through the CCADB or another Mozilla-designated reporting mechanism, information sufficient for Mozilla to determine whether the DCR has been obtained and remains available for review upon request.
 
 The 30-day period specified in this section applies only to the CA Operator's provision of an existing DCR to Mozilla upon request. It does not establish a separate deadline for completion or issuance of the DCR. Nothing in this section alters the timing requirements applicable to the submission of annual audit reports to the CCADB. 
 
-##### 3.1.5.4 Provision to Mozilla**
+##### 3.1.5.4 Provision to Mozilla
 
 The CA Operator MUST ensure that the DCR is prepared and issued in a manner that permits disclosure to Mozilla upon request.
 
@@ -287,15 +288,15 @@ This requirement includes ensuring, at the time of audit engagement, that:
 
 The CA Operator MUST NOT enter into audit or other agreements that would prevent or materially restrict the provision of the DCR to Mozilla.
 
-Failure to provide the DCR to Mozilla upon request, due to contractual, legal, or other restrictions, may be considered a failure to meet the audit requirements of this Policy.
+Failure to provide the DCR to Mozilla upon request, due to contractual, legal, or other restrictions, may be considered a failure to meet the audit requirements of this policy.
 
 ##### 3.1.5.5 Confidentiality and Use by Mozilla
 
-Mozilla’s access to the DCR is for informational and supervisory purposes related to evaluating compliance with this Policy. 
+Mozilla’s access to the DCR is for informational and supervisory purposes related to evaluating compliance with this policy. 
 
 Mozilla recognizes that DCRs may contain sensitive security and operational information. A CA Operator MAY redact portions of a DCR provided to Mozilla where disclosure would materially increase risk to CA system security, provided that such redactions are narrowly tailored, clearly defined, and the remaining information is sufficient for Mozilla to evaluate the report's scope, findings, testing performed, limitations, and conclusions.
 
-Mozilla will treat such reports as confidential supervisory information and will limit access to personnel with a need to review the information for compliance purposes. Mozilla will treat any DCR provided under this section as confidential and will not disclose it to third parties except as required by law or as necessary to enforce this Policy.
+Mozilla will treat such reports as confidential supervisory information and will limit access to personnel with a need to review the information for compliance purposes. Mozilla will treat any DCR provided under this section as confidential and will not disclose it to third parties except as required by law or as necessary to enforce this policy.
 
 ##### 3.1.5.6 Externally-Operated Subordinate CAs
 
@@ -1091,7 +1092,7 @@ Any copyright in this document is [dedicated to the Public Domain][CC-0].
 [EVGLs]:                    https://cabforum.org/working-groups/server/extended-validation/documents/
 [TLS-BRs]:                  https://cabforum.org/working-groups/server/baseline-requirements/documents/
 [SMIME-BRs]:                https://cabforum.org/working-groups/smime/documents/
-[NSRs]:                     https://cabforum.org/working-groups/netsec/documents/
+[NCSSRs]:                   https://cabforum.org/working-groups/netsec/documents/
 [ETSI-319-411-1V1.4.1]:     https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.05.01_60/en_31941101v010401p.pdf
 [ETSI-319-411-1V1.5.1]:     https://www.etsi.org/deliver/etsi_en/319400_319499/31941101/01.05.01_60/en_31941101v010501p.pdf
 [ETSI-319-411-2V2.5.1]:     https://www.etsi.org/deliver/etsi_en/319400_319499/31941102/02.06.01_60/en_31941102v020501p.pdf
