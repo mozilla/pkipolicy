@@ -294,9 +294,11 @@ Failure to provide the DCR to Mozilla upon request, due to contractual, legal, o
 
 Mozilla’s access to the DCR is for informational and supervisory purposes related to evaluating compliance with this policy. 
 
-Mozilla recognizes that DCRs may contain sensitive security and operational information. A CA Operator MAY redact portions of a DCR provided to Mozilla where disclosure would materially increase risk to CA system security, provided that such redactions are narrowly tailored, clearly defined, and the remaining information is sufficient for Mozilla to evaluate the report's scope, findings, testing performed, limitations, and conclusions.
+Mozilla recognizes that DCRs may contain sensitive security and operational information. DCRs should provide sufficient detail to enable understanding of the CA's systems, controls, risks, and compliance activities, including how risks are managed and how controls operate, while avoiding unnecessary disclosure of information that would materially increase risk to the security of CA systems or operations. System descriptions, diagrams, and control narratives should be prepared with this objective in mind..
 
-Mozilla will treat such reports as confidential supervisory information and will limit access to personnel with a need to review the information for compliance purposes. Mozilla will treat any DCR provided under this section as confidential and will not disclose it to third parties except as required by law or as necessary to enforce this policy.
+A CA Operator MAY redact portions of a DCR provided to Mozilla where disclosure would materially increase risk to CA system security, provided that such redactions are narrowly tailored, clearly identified, and the remaining information is sufficient for Mozilla to evaluate the DCR's scope, findings, testing performed, limitations, and conclusions.
+
+Mozilla will treat DCRs as confidential supervisory information and will limit access to personnel with a need to review the information for compliance purposes. Mozilla will not disclose DCRs to third parties except as required by law or as reasonably necessary to enforce this policy.
 
 ##### 3.1.5.6 Externally-Operated Subordinate CAs
 
