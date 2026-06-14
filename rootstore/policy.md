@@ -2,7 +2,7 @@
 
 *Version 3.1*
 
-*[Effective June 15, 2026][Policy-Archive]*
+*[Effective July 1, 2026][Policy-Archive]*
 
 ## 1. Introduction
 
